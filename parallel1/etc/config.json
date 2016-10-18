@@ -1,0 +1,64 @@
+{
+  "provider": "openstack",
+  "redis": {
+      "host": "200.21.101.1",
+      "port": 6379
+  },
+  "crossSite": {
+      "allowHosts": ["http://localhost:9000"]
+  },
+  "adminProject": "admin",
+  "memberRole": "Member",
+  "openstack": {
+    "keystone": {
+      "authUrl": "http://200.21.101.1:5000/v2.0",
+      "v3": "http://200.21.101.1:35357/v3"
+    },
+    "register": {
+      "baseUrl": "http://200.21.101.1:7303"
+    },
+    "version": {
+      "compute": "1.1",
+      "identity": "2.0",
+      "keeper": "1.0",
+      "project": "3.0",
+      "deployment": "1.0",
+      "maintenance": "1.0"
+    },
+    "member_role": "Member"
+  },
+  "email": {
+    "smtp_server": "smtp.qq.com",
+    "sender": "system@hihuron.com",
+    "password": "cloud8520.",
+    "sender_name": "ECONE",
+    "site_display_name": "ECONE"
+  },
+  "passwordResetConf": {
+    "URLExpireHours": 24,
+    "URLSecureKey": "3a9d609e387d29bd81c7cb4c7231c2b5"
+  },
+  "adminUser": {
+    "username": "admin",
+    "password": "password",
+    "tenant": "admin"
+  },
+  "storageBackends": {
+    "RegionOne": {
+      "storageType": "federator",
+      "auth": "admin:password",
+      "API": {
+        "host": "200.21.110.3",
+        "port": "8356",
+        "protocol": "https"
+      },
+      "requestHeaders": {
+        "x-cdmi-specification-version": "1.0.2",
+        "Content-Type": "application/cdmi-container",
+        "Accept": "application/cdmi-container"
+      },
+      "adapter": "cdmi-dpl"
+    }
+  },
+  "waitVolumeCreatedMins": 6
+}
