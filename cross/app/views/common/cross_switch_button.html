@@ -1,0 +1,11 @@
+<form>
+  <div ng-show="loading" class="unknown"></div>
+  <div ng-show="!loading"
+    class="toggle-bg toggle-alternate {{switchAlternate}}">
+    <label class="{{switchAlternate}}"></label>
+    <input type="radio" name="toggle" value="off" ng-model="switchAlternate" ng-change="trunOff()" ng-disabled="!enable" />
+    <input type="radio" name="toggle" value="on" ng-model="switchAlternate" ng-change="trunOn()" ng-disabled="!enable">
+    <span class="switch {{switchAlternate}}">
+      <i class="flag"></i></span>
+  </div>
+</form>

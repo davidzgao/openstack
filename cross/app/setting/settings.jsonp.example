@@ -1,0 +1,68 @@
+settings = {
+  "debug": 'true',
+  "websiteTitle": "ECONE",
+  "dashboards": ["menu", "admin", "project"],
+  "serverURL": "http://localhost:4000",
+  "gossipURL": "http://localhost:9000/gossip",
+  "vmwareDisktype": "sparse",
+  "vmwareAdaptertype": "ide",
+  "storageWarning": 90,
+  "cpuOverDistribute": 16,
+  "cpuWarning": 90,
+  "locale": "zh_cn",
+  "defaultView": "admin",
+  "hiddenProjects": ["service"],
+  "banEditProjects": ["admin"],
+  "defaultRole": "Member",
+  "adminRole": "admin",
+  "adminProject": "admin",
+  "adminUser": "admin",
+  "originalPassword": "cloud123",
+  "instanceRecycle": "false",
+  "alarmServerURL": "http://200.21.101.1:",
+  "default_nameservers": ["8.8.8.8"],
+  "default_network_types": "vxlan,local",
+  "defaultHypervisorType": "QEMU",
+  "useVolumeType": "true",
+  "use_vlan": false,
+  "useFederator": true,
+  "storageLink": "http://200.21.101.1/federator",
+  "mtu": "1500",
+  "maxQuotaSet": {
+    "cores": 1000,
+    "instances": 1000,
+    "volumes": 1000,
+    "volume_size": 10000,
+    "ram": 100000,
+    "floating": 1000,
+    "key_paris": 1000,
+    "security_groups": 100,
+    "volume_snapshots": 100
+  },
+  "hypervisorTypes": ["QEMU"],
+  "ruleTypes": [{
+    "slug": "HL:Nova:Backup",
+    "name": "Backup server",
+    "sourceType": "instance"
+  }],
+  "allowBrowsers": [{
+    "name": "firefox",
+    "version": 27,
+    "url": "http://www.firefox.com.cn/download/#more"
+  }, {
+    "name": "chrome",
+    "version": 27,
+    "url": "http://www.google.cn/intl/zh-CN/chrome"
+  }, {
+    "name": "ie",
+    "version": 10,
+    "url": "http://windows.microsoft.com/en-us/internet-explorer/download-ie"
+  }, {
+    "name": "safari",
+    "version": 7,
+    "url": "http://support.apple.com/downloads/#safari"
+  }],
+  "osTypes": ["windows", "linux"],
+  "hyperLink": "http://www.hihuron.com",
+  "interfaces": ["eth0", "eth1"]
+}

@@ -1,0 +1,59 @@
+form.modal-image_create, .detail_area {
+  .self-define-note {
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    text-decoration: underline;
+    color: #29aaee;
+    cursor: pointer;
+  }
+
+  .define-container {
+    text-align: center;
+
+    > .define-field {
+      height: 30px;
+
+      > .define-key, > .define-value {
+        width: 140px;
+        padding: 5px 3px;
+        line-height: 12px;
+      }
+    }
+
+    .define-add, .define-minus {
+      background-color: #29aaee;
+      color: #fff;
+      line-height: 20px;
+      margin-left: 5px;
+      padding: 0px 6px;
+      vertical-align: middle;
+
+      &:hover {
+        background-color: #05A0DB;
+      }
+    }
+
+    > .defined-fields {
+      > .item {
+        margin-top: 3px;
+        height: 27px;
+        line-height: 27px;
+        margin-bottom: 3px;
+
+        > .item-key, > .item-value {
+          text-align: left;
+          border-bottom: 1px dotted #afafaf;
+          display: inline-block;
+          line-height: 24px;
+          vertical-align: middle;
+          width: 140px;
+          overflow-x: hidden;
+          word-wrap: break-word;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,50 @@
+<div class='other_info detail_info'>
+  <div class='detail_title'>{{ detailItem.replay }}
+  </div>
+  <div class='detail_area feedback_replies'>
+    <ul>
+      <li ng-repeat='row in replies' class="feedback_reply_detail"
+        ng-class="{even: $even, odd: $odd}">
+        <div class="reply_detail">
+          <div class='left'>
+            <div class="reply_detail_user">{{row.admin_name}}</div>
+            <div class="reply_detail_date">
+              {{row.created_at | dateLocalize | date:"yyyy-MM-dd HH:mm"}}
+            </div>
+          </div>
+          <div class='right'>
+            <div class='reply_content'>{{row.content}}</div>
+          </div>
+        </div>
+      </li>
+      <li ng-if="replies.length==0" class="feedback_reply_detail">
+        {{noReply}}
+      </li>
+    </ul>
+    <div class='reply_footer' ng-if="showFooter">
+      <div class='pagecode_area'>
+      <ul>
+          <li ng-repeat="page in showPages"
+            class="pageCode"
+            ng-class="{true: 'active'}[showPages[$index]==currentPage-1]"
+            ng-click="changePage($index)">
+            {{page + 1}}</li>
+      </ul>
+      </div>
+    </div>
+  </div>
+  <div class='add_reply' ng-if="canReply">
+      <textarea class='textarea'
+          placeholder="{{addReplyTips}}"
+          ng-model="feed.newReply"
+          ng-change="checkReply()"
+          ng-class="feed.validate"
+          ></textarea>
+      <div class='reply_tips' ng-if="feed.validate=='invalidate'">
+        {{feed.tips}}
+      </div>
+      <button class='btn'
+          ng-class="submitEnableClass"
+          ng-click="commitReply()">{{addReply}}</button>
+  </div>
+</div>

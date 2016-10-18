@@ -1,0 +1,496 @@
+@import "variables.less";
+
+.cross-dashboards-admin-overview {
+  width: 100%;
+  height: 100%;
+  min-height: 2 * @DASHBOARD_ADMIN_OVERVIEW_TOP_HEIGHT + 30px;
+  position: absolute;
+
+  .system-lead {
+    text-align: left;
+    height: 30px;
+    line-height: 30px;
+    color: #666666;
+    font-size: 15px;
+
+    & > .message-more {
+      display: inline-block;
+      position: absolute;
+      right: 10px;
+
+      a {
+        font-size: 12px;
+        color: #888;
+      }
+    }
+
+    & > i {
+      width: 20px;
+      height: 20px;
+      margin: 0 5px 0 5px;
+      display: inline-block;
+      vertical-align: middle;
+
+      &.alarm {
+        background: url(../images/dashboard_admin/overview/alarm.png) no-repeat;
+      }
+
+      &.usage {
+        height: 16px;
+        background: url(../images/dashboard_admin/overview/usage.png) no-repeat;
+      }
+
+      &.topology {
+        background: url(../images/dashboard_admin/overview/topology.png) no-repeat;
+      }
+
+      &.message {
+        margin-right: 8px;
+        background: url(../images/dashboard_admin/overview/message.png) no-repeat;
+      }
+
+      &.hotspot {
+        margin-right: 8px;
+        background: url(../images/dashboard_admin/overview/hotspot.png) no-repeat;
+      }
+    }
+  }
+
+  & > .overview-top {
+    margin-right: 20px;
+    padding-bottom: 5px;
+    position: relative;
+    border-bottom: 1px solid #eee;
+  }
+
+  & > .overview-main {
+    margin-right: 20px;
+    position: relative;
+    border-bottom: 1px solid #eee;
+  }
+
+  & > .overview-top > .system-usage {
+    padding-left: 10px;
+    border-radius: 4px;
+    height: 100%;
+    background-color: #fff;
+
+    & > .system-usage-main {
+      margin-top: 30px;
+      margin-bottom: 20px;
+      text-align: center;
+
+      & > .usage-item {
+        position: relative;
+        width: 22%;
+        text-align: center;
+        display: inline-block;
+      }
+
+      & > .usage-item {
+        > .global-resource-usage {
+          border-radius: 3px;
+          background-color: #f9f9f9;
+          min-width: 140px;
+          width: 64%;
+          display: inline-block;
+          text-align: center;
+
+          & > .usage-item-name {
+            font-size: 14px;
+            height: 45px;
+            color: #888;
+          }
+
+          & > .usage-item-detail {
+            height: 42px;
+            line-height: 42px;
+            font-size: 12px;
+
+            & >span:first-child {
+              color: #269bd8;
+            }
+            & >span:last-child {
+              color: #bfbfbf;
+            }
+          }
+        }
+        > .resource-usage-warning {
+          border-radius: 3px;
+          background-color: @RES_USAGE_WAR_BG;
+          min-width: 140px;
+          width: 64%;
+          display: inline-block;
+          text-align: center;
+
+          & > .usage-item-name {
+            font-size: 14px;
+            height: 45px;
+            color: @RES_ITEM_FI_COL;
+          }
+
+          & > .usage-item-detail {
+            height: 42px;
+            line-height: 42px;
+            font-size: 12px;
+
+            & >span:first-child {
+              color: @RES_USAGE_WAR_COL;
+            }
+            & >span:last-child {
+              color: @RES_ITEM_LA_COL;
+            }
+          }
+        }
+      }
+
+      & > .usage-item > .global-resource-usage .sector-outer {
+        height: 90px;
+        font-style: italic;
+        text-align: center;
+        line-height: 120px;
+        display: inline-block;
+        vertical-align: middle;
+        color: #269bd8;
+        font-size: 30px;
+        font-weight: 800;
+      }
+      & > .usage-item > .resource-usage-warning {
+        .sector-warning {
+          height: 90px;
+          font-style: italic;
+          text-align: center;
+          line-height: 120px;
+          display: inline-block;
+          vertical-align: middle;
+          color: #FF2222;
+          font-size: 30px;
+          font-weight: 800;
+        }
+      }
+    }
+
+    & > .cross-line-vertical {
+      margin-top: 36px;
+    }
+  }
+
+  & .overview-latest-alarm, & .overview-latest-message {
+    position: absolute;
+    padding-top: 10px;
+    top: 0;
+    display: block;
+    height: 100%;
+    width: 32%;
+
+    & > .message-list {
+      position: relative;
+      margin-left: -1px;
+    }
+
+    & > .message-empty {
+      text-align: center;
+      position: absolute;
+      width: 100%;
+      top: 40%;
+      font-style: italic;
+      padding-left: 30px;
+      font-size: 15px;
+      color: #999;
+      margin-top: 20px;
+    }
+
+    & > .message-list > .message-item {
+      position: relative;
+      cursor: default;
+      height: 36px;
+
+      & > .message-lead {
+        position: absolute;
+        width: 10px;
+        margin-left: 15px;
+        border-left: 1px solid #e4e4e4;
+        height: 36px;
+        bottom: 0;
+
+        & > i {
+          position: absolute;
+          margin-left: -8px;
+          height: 36px;
+          width: 14px;
+          display: inline-block;
+          background: url(../images/dashboard_admin/overview/message_point.png) 4px 16px no-repeat;
+        }
+
+        &.first {
+          vertical-align: bottom;
+          height: 22px;
+
+          & > i {
+            height: 22px;
+            background: url(../images/dashboard_admin/overview/message_clock.png) top center no-repeat;
+          }
+        }
+      }
+
+      .item-message, .item-alarm {
+        margin-left: 30px;
+        margin-right: 134px;
+      }
+
+      .item-main {
+        padding-top: 8px;
+        height: 24px;
+        line-height: 24px;
+      }
+
+      .item-time {
+        position: absolute;
+        top: 8px;
+        right: 10px;
+        height: 24px;
+        line-height: 24px;
+        text-align: left;
+      }
+
+      .log-content {
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+  }
+
+  & .overview-latest-message {
+    left: 33%;
+    width: 33%;
+    border-right: 1px solid #eee;
+  }
+
+  & .overview-latest-alarm {
+    padding-left: 10px;
+    right: 10px;
+    width: 33%;
+  }
+
+  & > .overview-main {
+    min-height: 300px;
+  }
+
+  & > .overview-main > .system-resource-list {
+    position: absolute;
+    width: @DASHBOARD_ADMIN_OVERVIEW_RIGHT_WIDTH;
+    right: 0;
+    top: 40px;
+
+    & > .resource-item {
+      height: 48px;
+      width: 200px;
+      line-height: 48px;
+      margin-left: 20px;
+      margin-top: 27px;
+      margin-bottom: 27px;
+      border: 1px dotted #ccc;
+      text-align: center;
+      color: #888;
+
+      & > .content {
+        display: inline-block;
+      }
+
+      & > .content > .lead {
+        display: inline-block;
+        font-size: 14px;
+        text-align: left;
+      }
+
+      & > .content > .lead > .lead-name {
+        font-size: 14px;
+        display: inline-block;
+        height: 20px;
+      }
+
+      & > .content > .detail {
+        display: inline-block;
+        font-size: 14px;
+        text-align: left;
+      }
+
+      & > .content > .detail > .detail-number {
+        color: #269bd8;
+        font-size: 14px;
+      }
+    }
+  }
+
+  & > .overview-main > .overview-hosts-topology {
+    padding-left: 10px;
+    padding-top: 10px;
+    background-color: #fff;
+    border-radius: 4px;
+    margin-right: @DASHBOARD_ADMIN_OVERVIEW_RIGHT_WIDTH + 10px;
+    height: 100%;
+    text-align: center;
+
+    & > .host-topology-view {
+      position: relative;
+      overflow-x: hidden;
+      overflow-y: hidden;
+      display: inline-block;
+      max-width: 100%;
+    }
+    & > .host-topology-view:hover {
+      position: relative;
+      overflow-x: auto;
+    }
+  }
+
+  & > .overview-bottom {
+    position: relative;
+  }
+
+  & > .overview-bottom > .overview-hotspot-rank {
+    width: 32%;
+    position: relative;
+    padding-top: 10px;
+    display: block;
+    padding-left: 10px;
+    background-color: #fff;
+    border-right: 1px solid #eee;
+    min-height: 80px;
+
+    .message-empty {
+      text-align: center;
+      position: absolute;
+      width: 100%;
+      top: 40%;
+      font-style: italic;
+      padding-left: 30px;
+      font-size: 15px;
+      color: #999;
+      margin-top: 20px;
+    }
+
+    .item {
+      position: relative;
+      margin-left: 10px;
+    }
+
+    .bottom-horizon {
+      position: absolute;
+      width: 95%;
+      right: 0;
+      bottom: 0;
+      height: 1px;
+      .horizontal(@color: #ddd);
+    }
+
+    .item-main {
+      line-height: 24px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+
+      .content-desc {
+        line-height: 16px;
+        margin-left: 24px;
+        color: #aaa;
+      }
+
+      .progress {
+        height: 8px;
+        margin-left: 24px;
+        margin-right: 20px;
+        margin-bottom: 0;
+        position: relative;
+        cursor: default;
+        border-radius: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+
+        .detail-content {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          text-align: right;
+          padding-right: 5px;
+          line-height: 20px;
+        }
+
+        > .progress-bar {
+          opacity: 0.8;
+          filter: alpha(opacity=80);
+        }
+
+
+        > .hot {
+          background-color: #dd3830;
+        }
+
+        > .green {
+          background-color: #67be4c;
+        }
+
+        > .cold {
+          background-color: #83cbf1;
+        }
+      }
+
+      .level {
+        display: inline-block;
+        vertical-align: middle;
+        width: 30px;
+        height: 36px;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      .host-rank {
+        font-weight: 800;
+        font-size: 12px;
+
+        &.hot {
+          color: #e47160;
+        }
+
+        &.green {
+          color: #9bd389;
+        }
+
+        &.cold {
+          color: #83cbf1;
+        }
+      }
+
+      .lead-point {
+        display: inline-block;
+        position: absolute;
+        left: 3px;
+        vertical-align: middle;
+        width: 10px;
+        height: 44px;
+        border-left: 1px solid #e4e4e4;
+
+        .point {
+          top: 6px;
+          left: -5px;
+          position: absolute;
+          width: 9px;
+          height: 9px;
+          border-radius: 50%;
+          border: 1px solid #aaa;
+          background-color: #fff;
+        }
+
+        &.first {
+          height: 38px;
+          margin-top: 6px;
+
+          .point {
+            top: 0;
+          }
+        }
+      }
+    }
+  }
+}

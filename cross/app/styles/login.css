@@ -1,0 +1,378 @@
+/* Variables will be used in index page */
+
+/* Usage warning */
+
+/* Min width of cross app */
+
+/* Min height of cross app */
+
+/* Background of app */
+
+/* Left frame width of cross app */
+
+/* Left frame background of cross app */
+
+/* Top height of cross app */
+
+/* Left logo background of cross app */
+
+/* Top tool background of cross app */
+
+/* Left nav bar item background */
+
+/* Attr at data table */
+
+/* Style of button for action */
+
+/* left width of dashboard admin over view page */
+
+/* top height of dashboard admin over view page */
+
+/* Login container background-color */
+
+/* Login container width */
+
+/* Login container height */
+
+/* Login logo image */
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.cross-login-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url(../images/login/back.png) center no-repeat;
+  background-size: 84%;
+}
+
+.cross-login-stuff {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(0.5, rgba(110, 110, 110, 0.72)), to(0, 0, 0, 0.72));
+  background-image: -moz-linear-gradient(rgba(0, 0, 0, 0.72), rgba(110, 110, 110, 0.72) 50%, rgba(0, 0, 0, 0.72));
+  background-image: -o-linear-gradient(rgba(0, 0, 0, 0.72), #6e6e6e 50%, rgba(0, 0, 0, 0.72));
+  background-image: linear-gradient(rgba(0, 0, 0, 0.72), rgba(110, 110, 110, 0.72) 50%, rgba(0, 0, 0, 0.72));
+}
+
+.cross-login-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  width: 460px;
+  height: 48px;
+  margin-top: -145px;
+  margin-left: -262px;
+  background-color: #29aaee;
+  opacity: 0.72;
+  filter: alpha(opacity=72);
+}
+
+.cross-login-logo .logo-tip {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 32px;
+  height: 20px;
+  background: url(../images/login/book_tip.png) left top no-repeat;
+}
+
+.cross-login-logo .logo-container {
+  width: 160px;
+  height: 42px;
+  margin-top: 4px;
+  margin-left: 56px;
+  background: url(../images/login/login_logo.png) center no-repeat;
+}
+
+.action-status {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  width: 600px;
+  margin-top: -170px;
+  margin-left: -230px;
+  color: white;
+}
+
+.action-status .action-success {
+  padding-left: 35px;
+  background: url('../images/action_success.png') no-repeat left center;
+}
+
+.action-status .action-failed {
+  padding-left: 35px;
+  background: url('../images/action_failed.png') no-repeat left center;
+}
+
+.action-status a {
+  font-size: 14px;
+  color: white;
+  cursor: pointer;
+}
+
+.cross-login-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 460px;
+  height: 340px;
+  padding: 10px;
+  padding-top: 80px;
+  margin-top: -170px;
+  margin-left: -230px;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #d0d0d0;
+  border-radius: 2px;
+  opacity: 0.72;
+  filter: alpha(opacity=72);
+  box-shadow: 4px 4px 4px 2px rgba(1, 1, 1, 0.25);
+}
+
+.cross-login-container .control-group {
+  position: relative;
+}
+
+.cross-login-container .control-group.single {
+  margin-top: 15px;
+}
+
+.cross-login-container .control-group .note-title-lead {
+  position: absolute;
+  left: 10%;
+  font-size: 14px;
+  color: #aaa;
+}
+
+.cross-login-container .control-group .note-title-lead.username {
+  top: 25px;
+}
+
+.cross-login-container .control-group .note-title-lead.password {
+  top: 81px;
+  letter-spacing: 14px;
+}
+
+.cross-login-container .login-title {
+  height: 30px;
+  font-size: 16px;
+  line-height: 30px;
+  color: #3d3d3d;
+  text-align: center;
+}
+
+.cross-login-container .valid-input {
+  position: relative;
+  height: 50px;
+  margin-right: 6%;
+  margin-left: 7%;
+  text-align: left;
+}
+
+.cross-login-container .valid-input .password-forget {
+  position: absolute;
+  top: 5px;
+  right: 12px;
+}
+
+.cross-login-container .valid-input .notice {
+  height: 40px;
+  font-size: 13px;
+  line-height: 40px;
+  color: #ee7176;
+}
+
+.cross-login-container .valid-input .notice i {
+  display: inline-block;
+  width: 22px;
+  height: 40px;
+  vertical-align: middle;
+  background: url(../images/login/notice.png) 6px 12px no-repeat;
+}
+
+.cross-login-container input {
+  width: 84%;
+  padding: 8px 3px 8px 54px;
+  margin-top: 15px;
+  font-size: 14px;
+  background-color: rgba(200, 200, 200, 0.2);
+  border: 2px solid #ccc;
+  border-radius: 2px;
+}
+
+.cross-login-container input:focus {
+  border-color: #29aaee;
+  outline: none;
+  outline-offset: 0;
+}
+
+.cross-login-container input[name="email"] {
+  padding-left: 72px;
+}
+
+.cross-login-container button {
+  width: 84%;
+  font-weight: 800;
+  color: #fff;
+  background-color: #29aaee;
+}
+
+.cross-login-container button:hover {
+  color: #fff;
+  background-color: #28a9ee;
+}
+
+.cross-login-container button:active {
+  color: #fff;
+  background-color: #28a9ee;
+}
+
+.cross-login-container button:focus {
+  color: #fff;
+}
+
+.cross-login-container .login-loading-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 32px;
+  height: 32px;
+  margin-top: -16px;
+  margin-left: -16px;
+  letter-spacing: 8px;
+  background: url(../images/login/loading_image.png) center no-repeat;
+  background-size: 14px;
+}
+
+.cross-login-container .loading-container {
+  display: none;
+}
+
+.cross-login-container .login-loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 32px;
+  height: 32px;
+  margin-top: -16px;
+  margin-left: -16px;
+  background: url(../images/login/loading.png) center no-repeat;
+  background-size: 32px;
+  -webkit-animation-delay: 0;
+     -moz-animation-delay: 0;
+      -ms-animation-delay: 0;
+  -webkit-animation-duration: 1s;
+     -moz-animation-duration: 1s;
+      -ms-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-iteration-count: infinite;
+     -moz-animation-iteration-count: infinite;
+      -ms-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-name: loading;
+     -moz-animation-name: loading;
+      -ms-animation-name: loading;
+          animation-name: loading;
+  -webkit-animation-play-state: running;
+     -moz-animation-play-state: running;
+      -ms-animation-play-state: running;
+          animation-play-state: running;
+  -webkit-animation-timing-function: linear;
+     -moz-animation-timing-function: linear;
+      -ms-animation-timing-function: linear;
+          animation-timing-function: linear;
+  animation-linearanimation-delay: 0;
+}
+
+/* animation for loading */
+
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@-ms-keyframes loading {
+  0% {
+    -ms-transform: rotate(0deg);
+  }
+  25% {
+    -ms-transform: rotate(90deg);
+  }
+  50% {
+    -ms-transform: rotate(180deg);
+  }
+  75% {
+    -ms-transform: rotate(270deg);
+  }
+  100% {
+    -ms-transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes loading {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  25% {
+    -webkit-transform: rotate(90deg);
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+  }
+  75% {
+    -webkit-transform: rotate(270deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@-moz-keyframes moveWindmill {
+  0% {
+    -moz-transform: rotate(0deg);
+  }
+  25% {
+    -moz-transform: rotate(90deg);
+  }
+  50% {
+    -moz-transform: rotate(180deg);
+  }
+  75% {
+    -moz-transform: rotate(270deg);
+  }
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}

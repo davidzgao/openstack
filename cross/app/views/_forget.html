@@ -1,0 +1,25 @@
+<div class="cross-login-container">
+  <div class="login-title">{{note.header}}</div>
+  <form method='post' action=''
+        autocomplete="off" ng-submit='retireveSubmit()'
+        form-autofill-fix
+        name='login' class='form-horizontal'>
+   <div class="control-group single">
+     <div class="note-title-lead username">{{note.email}}</div>
+     <input name="email"
+       ng-model='user.email'
+       ng-blur="fieldBlur('email')">
+    <div class="valid-input">
+      <div ng-show="validator.isInvalid" class="notice">
+        <i></i>{{validator.note}}</div>
+      <div class="login-loading loading-container"></div>
+      <div class="login-loading-image loading-container"></div>
+      <div class="password-forget">
+        <a ui-sref="login.login">{{note.return}} ?</a></div>
+      </div>
+    </div>
+    <button id='login_submit' type='submit' value='Login' class="btn">
+      {{note.submit}}</button>
+   </div>
+  </form>
+</div>

@@ -1,0 +1,285 @@
+@import "variables.less";
+
+.cross-dashboards-project-overview {
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+
+  .system-lead {
+    padding: 10px 0 0 5px;
+    text-align: left;
+    height: 30px;
+    line-height: 30px;
+    color: #666666;
+    font-size: 15px;
+
+    & > .message-more {
+      display: inline-block;
+      position: absolute;
+      right: 10px;
+
+      a {
+        font-size: 12px;
+        color: #888;
+      }
+    }
+
+    & > i {
+      width: 20px;
+      height: 16px;
+      margin: 0 5px 0 5px;
+      display: inline-block;
+      vertical-align: middle;
+
+      &.create {
+        background: url(../images/dashboard_project/overview/resource_create.png) no-repeat;
+      }
+      &.usage {
+        background: url(../images/dashboard_project/overview/usage.png) no-repeat;
+      }
+      &.log {
+        background: url(../images/dashboard_project/overview/recent_log.png) no-repeat;
+      }
+    }
+  }
+
+  & > .overview-top {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+
+  & > .overview-top > .split {}
+
+  & > .overview-top > .system-usage {
+    position: relative;
+    height: 100%;
+    overflow-y: auto;
+    margin-right: 310px;
+
+    .resource-create {
+      .resource-create-items {
+        margin-top: 30px;
+        text-align: center;
+        margin-bottom: 10px;
+        .resource-item {
+          height: 120px;
+          display: inline-block;
+          border: 1px solid #F0F0F0;
+          margin: 5px 2%;
+          min-width: 120px;
+          width: 22%;
+          padding-top: 90px;
+          text-decoration: none;
+          cursor: pointer;
+          color: #888888;
+          &.create-instance {
+            background: url(../images/instance.png) no-repeat center 25px;
+          }
+          &.create-volume {
+            background: url(../images/volume.png) no-repeat center 25px;
+          }
+          &.create-floating {
+            background: url(../images/floatingIp.png) no-repeat center 25px;
+          }
+          &:hover {
+            background-color: #EDECEC;
+          }
+        }
+      }
+    }
+
+    & > .system-usage-main {
+      margin-top: 40px;
+      text-align: center;
+
+      & > .usage-item {
+        text-align: center;
+        display: inline-block;
+        margin: 10px 5%;
+      }
+
+      & > .usage-item > .resource-usage {
+        height: 106px;
+        width: 106px;
+        display: inline-block;
+        line-height: 105px;
+        text-align: center;
+        border-radius: 52px;
+        cursor: pointer;
+        &:hover {
+          background-color: #269BD8;
+        }
+      }
+
+      & > .usage-item > .resource-usage .sector-outer {
+        width: 100px;
+        height: 100px;
+        border-radius: 50px;
+        background-color: #dfdfdf;
+        text-align: center;
+        line-height: 50px;
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      & > .usage-item > .resource-usage .sector-inner {
+        width: 90px;
+        height: 90px;
+        border-radius: 45px;
+        background-color: #ffffff;
+        position: absolute;
+        margin-top: 5px;
+        margin-left: 5px;
+        line-height: 90px;
+        text-align: center;
+        color: #269bd8;
+        font-size: 24px;
+        .normal {
+          color: #666666;
+          font-size: 16px;
+        }
+      }
+
+      & > .usage-item > .resource-usage svg {
+        width: 100%;
+        height: 100%;
+      }
+
+      & > .usage-item > .resource-usage svg path {
+        stroke-width: 0;
+        fill-opacity: 1;
+      }
+
+      & > .usage-item > .resource-usage svg path.ok {
+        fill: #269bd8;
+      }
+
+      & > .usage-item > .resource-usage svg path.warn {
+        stroke-width: 0;
+        fill: #f65e5e;
+        fill-opacity: 1;
+      }
+
+      & > .usage-item > .usage-item-name {
+        color: #555555;
+      }
+
+      & > .usage-item > .usage-item-detail {
+        height: 15px;
+        line-height: 50px;
+        font-size: 12px;
+      }
+      & > .usage-item > .resource-usage span:first-child.ok {
+        color: #269bd8;
+      }
+      & > .usage-item > .resource-usage span:first-child.warn {
+        color: red;
+      }
+      & > .usage-item > .resource-usage span:last-child {
+        color: #bfbfbf;
+      }
+    }
+  }
+
+  & > .overview-top > .recent-log {
+    top: 0;
+    right: 0;
+    position: absolute;
+    width: 290px;
+    height: 100%;
+    overflow-y: auto;
+
+    > .system-log-main {
+      margin-top: 20px;
+    }
+
+    > .system-log-main > .message-empty {
+      font-style: italic;
+      padding-left: 30px;
+      font-size: 15px;
+      color: #999;
+      .cell-loading {
+        top: 100px;
+        left: -10px;
+      }
+    }
+
+    & > .system-log-main > .log-row {
+
+      & > .log-lead {
+        margin-left: 16px;
+        display: inline-block;
+        width: 10px;
+        border-left: 1px solid #e4e4e4;
+        height: 50px;
+        vertical-align: middle;
+
+        & > i {
+          position: absolute;
+          margin-left: -8px;
+          height: 50px;
+          width: 14px;
+          display: inline-block;
+          background: url(../images/dashboard_admin/overview/message_point.png) 4px 12px no-repeat;
+        }
+
+        &.first {
+          vertical-align: bottom;
+          height: 40px;
+
+          & > i {
+            height: 40px;
+            background: url(../images/dashboard_admin/overview/message_clock.png) top center no-repeat;
+          }
+        }
+      }
+
+      .message-item {
+        margin: 3px 0;
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      .item-main {
+        height: 24px;
+        line-height: 24px;
+      }
+
+      .item-time {
+        height: 20px;
+        line: 20px;
+        text-align: left;
+      }
+
+      .log-content {
+        vertical-align: middle;
+        display: inline-block;
+        width: 200px;
+        white-space: nowrap;
+        overflow-x: hidden;
+      }
+
+      .log-status {
+        vertical-align: middle;
+        display: inline-block;
+        margin-left: 5px;
+        width: 20px;
+        height: 20px;
+
+        &.success {
+          background: url(../images/dashboard_project/overview/info.png) center no-repeat;
+        }
+
+        &.error {
+          background: url(../images/dashboard_project/overview/error.png) center no-repeat;
+        }
+
+        &.warn {
+          background: url(../images/dashboard_project/overview/error.png) center no-repeat;
+        }
+      }
+    }
+  }
+}

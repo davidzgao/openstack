@@ -1,0 +1,37 @@
+<div class="step-area">
+  <div class="field-label-left text-align-right">{{modal.steps[0].fields[0].label}}</div>
+  <div class="image-source-lead">
+    <span ng-bind="source.name"
+          class="item {{modal.selectedSource==source.slug?'active':''}}"
+          ng-repeat="source in modal.steps[0].fields[0].default"
+          ng-click="selectSource(source.slug)"></span>
+  </div>
+  <div class="image-source" ng-show="modal.selectedSource==source.slug"
+       ng-repeat="source in modal.steps[0].fields[0].default">
+    <div class="image-source-filter">
+      <span class="filter-lead" ng-bind="note.modal.filter" ng-if="source.subs"></span>
+      <span ng-click="selectSub(sub.type)"
+            class="sub-filter {{modal.selectedSub==sub.type?'active':''}}"
+            ng-repeat="sub in source.subs" ng-bind="sub.name"></span>
+    </div>
+    <div class="image-source-list">
+      <div ng-show="note.imageEmpty" class="image-empty">
+        {{note.imageEmpty}}<a ng-show="modal.createUrl"
+                              href="{{modal.createUrl}}" ng-bind="note.create"></a>
+      </div>
+      <div ng-click="imageClick(image)"
+           class="image-item {{modal.selectedImage==image.id+'_'+source.slug?'active':''}}"
+           ng-repeat="image in source.images" ng-bind="image.name"
+           ng-show="modal.selectedSub=='all'||modal.selectedSub==image.subType"></div>
+    </div>
+  </div>
+  <div class="field-with_delete field" ng-show="modal.selectedSource=='volume'&&!note.imageEmpty">
+    <div class="field-input">
+      <input ng-change="validator('with_delete', 'image')"
+             name="with_delete"
+             ng-model="form['image']['with_delete']"
+             type="checkbox"/>
+    </div>
+    <div class="field-label-right">{{modal.steps[0].fields[1].label}}</div>
+  </div>
+</div>

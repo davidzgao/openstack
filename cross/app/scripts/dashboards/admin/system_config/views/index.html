@@ -1,0 +1,29 @@
+<div>
+  <div class='instance_tabs'>
+    <ul>
+        <li ng-repeat="tab in tabs"
+          ng-class="{active:isActiveTab(tab.template)}"
+          class="tab"
+          ng-click="onClickTab(tab)" ng-if="tab.enable">{{tab.title}}
+        </li>
+    </ul>
+  </div>
+</div>
+
+<div id="mainView">
+    <div ng-include="currentTab"></div>
+</div>
+
+<script type="text/ng-template" id="option.html">
+  <div class='table-tab ui-view-container'>
+    <div class='action_group'>
+      <button class='btn edit' ng-class="editEnabledClass"
+          id="assign-project"
+          ng-click='editOption()'>
+        <i></i> {{ note.buttonGroup.edit }}
+      </button>
+    </div>
+
+    <div datatable="optionOpts" class="rules_table"></div>
+  </div>
+</script>

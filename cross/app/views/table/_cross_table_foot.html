@@ -1,0 +1,13 @@
+<td colspan="{{tableCol}}">
+  <div class="cross-footer-panel">
+    <div class="cross-total-select-container">
+    </div>
+    <div class="pageCode" ng-if="showPageCode">
+      <div ng-disabled='!unFristPage' ng-click="gotoPage('frist')" class="change-page page-item to-right" data-toggle="tooltip" data-placement="top"></div>
+      <div class="page-items">
+        <div ng-repeat="page in showPages" class="page{{page+1==pagingOptions.currentPage}} page-item" ng-click="gotoPage($index)">{{ page + 1 }}</div>
+      </div>
+      <div ng-disabled='!unLastPage' ng-click="gotoPage('last')" class="change-page page-item to-left" data-toggle="tooltip" data-placement="top"></div>
+    </div>
+  </div>
+</td>

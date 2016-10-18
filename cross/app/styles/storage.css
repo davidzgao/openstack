@@ -1,0 +1,555 @@
+#mainView .storage-area {
+  width: 100%;
+}
+
+#mainView .storage-area .title {
+  height: 40px;
+  margin-bottom: 5px;
+  line-height: 40px;
+}
+
+#mainView .storage-area .title i {
+  display: block;
+  float: left;
+  width: 30px;
+  height: 30px;
+  margin-top: 5px;
+}
+
+#mainView .storage-area .title i.overview {
+  background: url("../images/storage_overview.png") no-repeat;
+  background-position: 6px 8px;
+}
+
+#mainView .storage-area .title i.node {
+  background: url("../images/storage_node.png") no-repeat;
+  background-position: 6px 8px;
+}
+
+#mainView .storage-area .title i.topology {
+  background: url("../images/storage_topology.png") no-repeat;
+  background-position: 6px 8px;
+}
+
+#mainView .storage-area.storage-topology {
+  width: auto;
+  height: auto;
+}
+
+#mainView .storage-area.node-stats {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+#mainView .storage-area.node-stats .content {
+  max-height: 240px;
+  margin-right: 20px;
+  overflow-y: auto;
+  border: 1px solid #eee;
+}
+
+#mainView .storage-area.node-stats .content .table-background {
+  padding: 12px 8px 8px 12px;
+  text-align: center;
+}
+
+#mainView .storage-area.node-stats .content .table-background .item {
+  position: relative;
+  display: inline-block;
+  width: 6.666666666666667%;
+  height: 80px;
+  margin-top: -1px;
+  margin-left: -1px;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid #ededed;
+}
+
+#mainView .storage-area.node-stats .content .table-background .item .node {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-top: 28px;
+  border-radius: 12px;
+}
+
+#mainView .storage-area.node-stats .content .table-background .item .node.mon {
+  background: red;
+}
+
+#mainView .storage-area.node-stats .content .table-background .item .node.mon.normal {
+  background: #269bd8 url("../images/mon_normal.png") center no-repeat;
+}
+
+#mainView .storage-area.node-stats .content .table-background .item .node.mon.error {
+  background: #ffa7a7 url("../images/mon_error.png") center no-repeat;
+}
+
+#mainView .storage-area.node-stats .content .table-background .item .node.osd.normal {
+  background: #269bd8 url("../images/osd_normal.png") center no-repeat;
+}
+
+#mainView .storage-area.node-stats .content .table-background .item .node.osd.error {
+  background: #ffa7a7 url("../images/osd_error.png") center no-repeat;
+}
+
+#mainView .storage-area .overview-detail {
+  position: relative;
+  padding-top: 10px;
+  margin-bottom: 10px;
+}
+
+#mainView .storage-area .overview-detail .storage-item {
+  position: relative;
+  display: inline-block;
+  width: 49%;
+  padding: 0;
+  margin: 0;
+  margin-left: -5px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+#mainView .storage-area .overview-detail .storage-item .container {
+  display: inline-block;
+  width: 100%;
+  height: 180px;
+  padding: 5px 5px;
+  border: 1px solid #eee;
+}
+
+#mainView .storage-area .overview-detail .storage-item:first-child {
+  margin-left: 0;
+  text-align: left;
+}
+
+#mainView .storage-area .overview-detail .storage-item:last-child {
+  margin-left: 0;
+  text-align: right;
+}
+
+#mainView .storage-area .overview-detail .storage-item .detail-footer {
+  color: #29aaee;
+  text-align: center;
+}
+
+#mainView .storage-area .overview-detail .storage-item .detail-footer .desc {
+  color: #888;
+}
+
+#mainView .storage-area .overview-detail .storage-item .detail-content {
+  position: relative;
+  text-align: center;
+}
+
+#mainView .storage-area .overview-detail .storage-item .detail-content .resource-usage {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  line-height: 80px;
+  text-align: center;
+}
+
+#mainView .storage-area .overview-detail .storage-item .detail-content .resource-usage .sector-outer {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  line-height: 40px;
+  text-align: center;
+  vertical-align: middle;
+  background-color: #dfdfdf;
+  border-radius: 40px;
+}
+
+#mainView .storage-area .overview-detail .storage-item .detail-content .resource-usage .sector-inner {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  margin-top: 5px;
+  margin-left: 5px;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 70px;
+  color: #269bd8;
+  text-align: center;
+  background-color: #ffffff;
+  border-radius: 35px;
+}
+
+#mainView .storage-area .overview-detail .storage-item .detail-content .resource-usage .sector-inner .sector-per-cent {
+  font-size: 14px;
+}
+
+#mainView .storage-area .overview-detail .storage-item .detail-content .resource-usage svg {
+  width: 100%;
+  height: 100%;
+}
+
+#mainView .storage-area .overview-detail .storage-item .detail-content .resource-usage svg path {
+  stroke-width: 0;
+  fill-opacity: 1;
+}
+
+#mainView .storage-area .overview-detail .storage-item .detail-content .resource-usage svg path.normal {
+  fill: #269bd8;
+}
+
+#mainView .storage-area .overview-detail .storage-item .detail-content .resource-usage svg path.error {
+  stroke-width: 0;
+  fill: #f65e5e;
+  fill-opacity: 1;
+}
+
+#mainView .storage-area .overview-detail .storage-item .detail-content .detail-status {
+  height: 120px;
+  font-size: 30px;
+  line-height: 120px;
+  letter-spacing: 2px;
+  color: #29aaee;
+  text-align: center;
+}
+
+#mainView .storage-area .overview-detail .storage-item .detail-content .detail-status.error {
+  color: #f65e5e;
+}
+
+#mainView .storage-area .overview-detail .storage-item .detail-content .detail-desc {
+  font-size: 12px;
+  color: #888;
+  text-align: center;
+}
+
+#mainView .storage-area .overview-detail .storage-item .top-desc {
+  position: relative;
+  text-align: left;
+}
+
+#mainView .storage-area .overview-detail .storage-item .top-desc .lead-title {
+  line-height: 20px;
+}
+
+#mainView .storage-area .overview-detail .storage-item .top-desc .item-status {
+  position: absolute;
+  top: 0;
+  right: 5px;
+  width: 20px;
+  height: 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#mainView .storage-area .overview-detail .storage-item .top-desc .item-status.error {
+  background-image: url(../images/dashboard_admin/storage/status-warn.png);
+}
+
+#mainView .storage-area .overview-detail .storage-item .top-desc .item-status.normal {
+  background-image: url(../images/dashboard_admin/storage/status-normal.png);
+}
+
+#mainView .storage-area .overview-detail .storage-item.health .top-desc .lead-title {
+  padding-left: 24px;
+  background: url(../images/dashboard_admin/storage/lead-health.png) left no-repeat;
+}
+
+#mainView .storage-area .overview-detail .storage-item.usage .top-desc .lead-title {
+  padding-left: 24px;
+  background: url(../images/dashboard_admin/storage/lead-usage.png) left no-repeat;
+}
+
+#mainView .storage-area .overview-detail .item {
+  position: relative;
+  display: inline-block;
+  width: 25%;
+  padding: 0;
+  margin: 0;
+  margin-left: -9px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+#mainView .storage-area .overview-detail .item .container {
+  display: inline-block;
+  width: 80%;
+  height: 180px;
+  padding: 5px 5px;
+  border: 1px solid #eee;
+}
+
+#mainView .storage-area .overview-detail .item:first-child {
+  margin-left: 0;
+  text-align: left;
+}
+
+#mainView .storage-area .overview-detail .item:last-child {
+  margin-left: 0;
+  text-align: right;
+}
+
+#mainView .storage-area .overview-detail .item .detail-footer {
+  color: #29aaee;
+  text-align: center;
+}
+
+#mainView .storage-area .overview-detail .item .detail-footer .desc {
+  color: #888;
+}
+
+#mainView .storage-area .overview-detail .item .detail-content {
+  position: relative;
+  text-align: center;
+}
+
+#mainView .storage-area .overview-detail .item .detail-content .resource-usage {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  line-height: 80px;
+  text-align: center;
+}
+
+#mainView .storage-area .overview-detail .item .detail-content .resource-usage .sector-outer {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  line-height: 40px;
+  text-align: center;
+  vertical-align: middle;
+  background-color: #dfdfdf;
+  border-radius: 40px;
+}
+
+#mainView .storage-area .overview-detail .item .detail-content .resource-usage .sector-inner {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  margin-top: 5px;
+  margin-left: 5px;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 70px;
+  color: #269bd8;
+  text-align: center;
+  background-color: #ffffff;
+  border-radius: 35px;
+}
+
+#mainView .storage-area .overview-detail .item .detail-content .resource-usage .sector-inner .sector-per-cent {
+  font-size: 14px;
+}
+
+#mainView .storage-area .overview-detail .item .detail-content .resource-usage svg {
+  width: 100%;
+  height: 100%;
+}
+
+#mainView .storage-area .overview-detail .item .detail-content .resource-usage svg path {
+  stroke-width: 0;
+  fill-opacity: 1;
+}
+
+#mainView .storage-area .overview-detail .item .detail-content .resource-usage svg path.normal {
+  fill: #269bd8;
+}
+
+#mainView .storage-area .overview-detail .item .detail-content .resource-usage svg path.error {
+  stroke-width: 0;
+  fill: #f65e5e;
+  fill-opacity: 1;
+}
+
+#mainView .storage-area .overview-detail .item .detail-content .detail-status {
+  height: 120px;
+  font-size: 30px;
+  line-height: 120px;
+  letter-spacing: 2px;
+  color: #29aaee;
+  text-align: center;
+}
+
+#mainView .storage-area .overview-detail .item .detail-content .detail-status.error {
+  color: #f65e5e;
+}
+
+#mainView .storage-area .overview-detail .item .detail-content .detail-desc {
+  font-size: 12px;
+  color: #888;
+  text-align: center;
+}
+
+#mainView .storage-area .overview-detail .item .top-desc {
+  position: relative;
+  text-align: left;
+}
+
+#mainView .storage-area .overview-detail .item .top-desc .lead-title {
+  line-height: 20px;
+}
+
+#mainView .storage-area .overview-detail .item .top-desc .item-status {
+  position: absolute;
+  top: 0;
+  right: 5px;
+  width: 20px;
+  height: 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#mainView .storage-area .overview-detail .item .top-desc .item-status.error {
+  background-image: url(../images/dashboard_admin/storage/status-warn.png);
+}
+
+#mainView .storage-area .overview-detail .item .top-desc .item-status.normal {
+  background-image: url(../images/dashboard_admin/storage/status-normal.png);
+}
+
+#mainView .storage-area .overview-detail .item.health .top-desc .lead-title {
+  padding-left: 24px;
+  background: url(../images/dashboard_admin/storage/lead-health.png) left no-repeat;
+}
+
+#mainView .storage-area .overview-detail .item.osd-node .top-desc .lead-title {
+  padding-left: 24px;
+  background: url(../images/dashboard_admin/storage/lead-osd.png) left no-repeat;
+}
+
+#mainView .storage-area .overview-detail .item.mon-node .top-desc .lead-title {
+  padding-left: 24px;
+  background: url(../images/dashboard_admin/storage/lead-mon.png) left no-repeat;
+}
+
+#mainView .storage-area .overview-detail .item.usage .top-desc .lead-title {
+  padding-left: 24px;
+  background: url(../images/dashboard_admin/storage/lead-usage.png) left no-repeat;
+}
+
+#ceph-topology {
+  position: relative;
+  height: 310px;
+  margin-bottom: 15px;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+#ceph-topology .osd {
+  position: absolute;
+  bottom: 5px;
+  width: 55px;
+  height: 55px;
+}
+
+#ceph-topology .osd .node-bg {
+  display: block;
+  width: 55px;
+  height: 45px;
+  background: url("../images/ceph_osd.png") no-repeat top center;
+}
+
+#ceph-topology .osd .node-title {
+  position: relative;
+  text-align: center;
+  white-space: nowrap;
+}
+
+#ceph-topology .host {
+  position: absolute;
+  bottom: 80px;
+  width: 75px;
+  height: 45px;
+}
+
+#ceph-topology .host .node-bg {
+  display: block;
+  width: 75px;
+  height: 25px;
+  background: url("../images/ceph_host.png") no-repeat top center;
+}
+
+#ceph-topology .host .node-title {
+  position: relative;
+  width: 100px;
+  margin-left: -10px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+#ceph-topology .rack {
+  position: absolute;
+  bottom: 150px;
+  width: 85px;
+  height: 75px;
+}
+
+#ceph-topology .rack .node-bg {
+  display: block;
+  width: 85px;
+  height: 55px;
+  background: url("../images/ceph_rack.png") no-repeat top center;
+}
+
+#ceph-topology .rack .node-title {
+  position: relative;
+  width: 100px;
+  margin-left: -10px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+#ceph-topology .root {
+  position: absolute;
+  bottom: 240px;
+  width: 100px;
+  height: 65px;
+}
+
+#ceph-topology .root .node-bg {
+  display: block;
+  width: 100px;
+  height: 45px;
+  background: url("../images/ceph_root.png") no-repeat left;
+  background-position: 5px 5px;
+}
+
+#ceph-topology .root .node-title {
+  position: relative;
+  width: 100px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.storage-fixed-logo {
+  position: relative;
+  bottom: 5px;
+  width: 100%;
+}
+
+.storage-fixed-logo .storage-power-by {
+  width: 360px;
+  margin: 0 auto;
+  font-family: inherit;
+  font-size: x-large;
+  line-height: 2;
+}
+
+.storage-fixed-logo .storage-power-by > .storage-logo {
+  float: right;
+  width: 250px;
+  height: 50px;
+  background: url("../images/logo_federator.png") 3px 0 no-repeat;
+  background-color: #333;
+  border-radius: 10px;
+}
+
+.storage-fixed-logo .storage-power-by > .storage-logo a {
+  position: absolute;
+  width: inherit;
+  height: inherit;
+}
+
+.pool_table {
+  max-height: 260px;
+}

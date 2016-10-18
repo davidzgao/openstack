@@ -1,0 +1,268 @@
+.project_memeber_container, .selector-member-container,
+.group_member_container{
+  min-height: 200px;
+  padding: 10px;
+  .project_memebership, .selector-membership,
+  .group_membership{
+    .header {
+      .left {
+        width: 49%;
+        float: left;
+        .fake_table_header {
+          font-weight: bold;
+          line-height: 40px;
+          overflow: hidden;
+          margin-top: 10px;
+          span {
+            padding-left: 5px;
+          }
+          .users_search {
+            width: 110px;
+            display: inline-block;
+            height: 26px;
+            line-height: 26px;
+            border-radius: 15px;
+            padding: 5px 14px;
+            margin-left: 50px;
+            font-weight: normal;
+            margin-bottom: 4px;
+            background: url(../images/search.png) 5px 7px no-repeat;
+          }
+        }
+      }
+      .right {
+        width: 49%;
+        float: right;
+        .fake_table_header {
+          font-weight: bold;
+          line-height: 40px;
+          overflow: hidden;
+          margin-top: 10px;
+          span {
+            padding-left: 5px;
+          }
+          .users_search {
+            width: 110px;
+            display: inline-block;
+            height: 26px;
+            line-height: 26px;
+            border-radius: 15px;
+            padding: 5px 14px;
+            margin-left: 50px;
+            font-weight: normal;
+            margin-bottom: 4px;
+            background: url(../images/search.png) 5px 7px no-repeat;
+          }
+        }
+      }
+      .clear {
+        clear: both;
+      }
+    }
+    .left {
+      width: 49%;
+      float: left;
+    }
+    .right {
+      width: 49%;
+      float: right;
+    }
+    .fake_table {
+      max-height: 200px;
+      overflow-y: auto;
+      margin: 0;
+      padding: 0;
+
+      & > .no_results > li {
+        background-color: #f6f6f6;
+        padding-left: 10px;
+        color: #aaa;
+      }
+
+      li {
+        padding-right: 1px;
+        width: 100%;
+        border-top: 1px solid #ededed;
+        border-bottom: 0;
+        height: 35px;
+        line-height: 35px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        position: relative;
+        border-bottom: none;
+
+        &:last-child {
+          border-bottom: 1px solid #ededed;
+        }
+        &.even {
+          background: #f6f6f6;
+        }
+        &:hover {
+          background-color: #efefef;
+        }
+        span {
+          display: inline-block;
+          width: 80%;
+          padding-left: 5px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+
+          &.del-icon {
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            margin-bottom: 9px;
+            background: url('../images/action_delete.png') no-repeat;
+            color: red;
+          }
+
+          &.open-icon-container {
+            width: 5%;
+          }
+
+          &.open-icon {
+            position: absolute;
+            border-right-width: 2.52px;
+            border-right-style: solid;
+            border-bottom-width: 2.52px;
+            border-bottom-style: solid;
+            transform: rotate(45deg);
+            top: 33%;
+            width: 4%;
+            height: 27%;
+            visibility: visible;
+          }
+
+          &.close-icon {
+            position: absolute;
+            border-right-width: 2.52px;
+            border-right-style: solid;
+            border-bottom-width: 2.52px;
+            border-bottom-style: solid;
+            transform: rotate(225deg);
+            top: 40%;
+            width: 4%;
+            height: 27%;
+            visibility: visible;
+          }
+
+          &.group-user {
+            padding-left: 15px;
+            width: 100%;
+
+            &:hover {
+              background-color: #dedede;
+            }
+          }
+        }
+        a {
+          position: absolute;
+          margin-top: 6px;
+          margin-right: 3px;
+          background-color: #78D0FF;
+          border-color: #78D0FF;
+          &:hover {
+            background-color: #2CABEE;
+            border-color: #2CABEE;
+          }
+
+          &.btn {
+            text-align: center;
+            height: 23px;
+            width: 23px;
+            -webkit-padding-before: 4px;
+            padding: 2px 4px 4px 3px;
+            background-repeat: no-repeat;
+            background-position: 6px 6px;
+            &.add_left {
+              background-image: url(../images/add_to_left.png);
+            }
+            &.add_right {
+              background-image: url(../images/add_to_right.png);
+            }
+          }
+        }
+      }
+    }
+    .clear {
+      clear: both;
+    }
+  }
+}
+
+.project_quota_container {
+  padding: 10px;
+  padding-top: 15px;
+  .quota-item {
+    padding: 14px;
+    position: relative;
+    .quota-item-title {
+      min-width: 100px;
+      display: inline-block;
+    }
+    .slider-mate {
+      width: 70px;
+      height: 30px;
+      line-height: 30px;
+      float: right;
+      position: absolute;
+      top: 6px;
+      right: 5px;
+      padding: 0px;
+      &.ng-invalid {
+        border: 1px solid #E36F6F;
+      }
+    }
+  }
+  .quota_advance_trigger {
+    text-align: center;
+    a {
+      text-decoration: none;
+      cursor: pointer;
+    }
+  }
+  .slider.slider-horizontal {
+    width: 270px;
+    .slider-track {
+      border: 1px solid #DDDDDD;
+    }
+  }
+}
+
+.project-base-tips, .project-member-tips, .user-create-tips {
+  padding: 10px;
+  li {
+    margin-top: 15px;
+    list-style: none;
+  }
+}
+
+
+
+.quota-assign-tips {
+  width: auto;
+  padding: 5px;
+  .tips-title {
+    width: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin: 10px;
+    text-align: center;
+  }
+  table {
+    width: 90%;
+    margin-left: 10px;
+    .resource_stat {
+      td {
+        border: 1px solid #DDDDDD;
+        height: 35px;
+      }
+    }
+  }
+  .tips-note {
+    padding: 10px;
+  }
+}

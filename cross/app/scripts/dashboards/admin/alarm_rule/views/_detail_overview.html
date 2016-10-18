@@ -1,0 +1,134 @@
+<div class='base_info detail_info'>
+  <div>
+    <div detail-tips
+      detail="rule_detail"
+      slug="detailItem.slug">
+    </div>
+  </div>
+  <div class="detail_title">{{detailItem.info}}
+    <div class="edit-btn-group">
+      <button ng-if="editing" class='btn btn-enable'
+        ng-click="save()">
+        {{ detailItem.save }}</button>
+      <button ng-if="editing" class='btn btn-enable'
+          ng-click="cancel()">
+          {{detailItem.cancel}}</button>
+      <button class='btn'
+              ng-class="canEdit"
+              ng-if="!editing"
+              ng-click="edit()">{{detailItem.edit}}</button>
+    </div>
+  </div>
+  <div class='detail_area'>
+    <ul>
+      <li>
+        <span class="title">{{detailItem.item.name}}</span>
+        <span class="value"
+          ng-class="inEdit"> {{rule_detail.name}} </span>
+        <span class='edit-input' ng-class="inEdit">
+          <div class="modal-tip" ng-show="nameInValidate">
+            <div>{{nameTips}}</div>
+            <div class="tips-pointer">
+              <span class="tips-pointer-outer"></span>
+              <span class="tips-pointer-inner"></span>
+            </div>
+          </div>
+          <input ng-model="rule_detail.name"
+            name="name"
+            ng-class="[inEdit, usernameValidate]"
+            value="{{rule_detail.name}}"
+            ng-change="checkName()"
+            >
+        </span>
+      </li>
+      <li>
+      <span class="title">{{detailItem.item.id}}</span>
+      <span class="value"> {{rule_detail.alarm_id}} </span>
+      </li>
+      <li>
+      <span class="title">{{detailItem.item.status}}</span>
+      <span class="value">
+        <span class="status" ng-class="rule_detail.statusClass"></span>
+          {{rule_detail.status}} </span>
+      </li>
+      <li>
+        <span class="title">{{detailItem.item.meter_name}}</span>
+        <span class="value"> {{rule_detail.meter_name}} </span>
+      </li>
+      <li>
+      <span class="title">{{detailItem.item.severity}}</span>
+      <span class="value"
+        ng-class="inEdit"> {{rule_detail.severity}} </span>
+        <span class='edit-input' ng-class='inEdit'>
+          <select
+            name='severity'
+            class="selectDirective"
+            items="severityItems"
+            ng-model="selected.severity"
+            val="selected.severity"
+            ng-options="opt.text for opt in severityItems track by opt.value">
+          </select>
+        </span>
+      </li>
+      <li>
+      <span class="title">{{detailItem.item.statistic}}</span>
+      <span class="value"
+        ng-class="inEdit"> {{rule_detail.statistic_type}} </span>
+        <span class='edit-input' ng-class='inEdit'>
+          <select
+            name='statistic'
+            class="selectDirective"
+            items="statTypeItems"
+            ng-model="selected.statistic"
+            val="selected.statistic"
+            ng-options="opt.text for opt in statTypeItems track by opt.value">
+          </select>
+        </span>
+      </li>
+      <li>
+      <span class="title">{{detailItem.item.operator}}</span>
+      <span class="value"
+        ng-class="inEdit"> {{rule_detail.operator}} </span>
+      <span class='edit-input' ng-class='inEdit'>
+        <select
+          name='operator'
+          class="selectDirective"
+          items="operatorItems"
+          ng-model="selected.operator"
+          val="selected.operator"
+          ng-options="opt.text for opt in operatorItems track by opt.value">
+        </select>
+      </span>
+      </li>
+      <li>
+      <span class="title">{{detailItem.item.threshold}}</span>
+      <span class="value special"
+        ng-class="inEdit"> {{rule_detail.threshold}} </span>
+      <span class='edit-input' ng-class="inEdit">
+        <div class="modal-tip" ng-show="thresholdInValidate">
+          <div>{{thresholdTips}}</div>
+          <div class="tips-pointer">
+            <span class="tips-pointer-outer"></span>
+            <span class="tips-pointer-inner"></span>
+          </div>
+        </div>
+        <input ng-model="rule_detail.threshold"
+          name="name"
+          ng-class="[inEdit, thresholdValidate]"
+          value="{{rule_detail.threshold}}"
+          ng-change="checkThreshold()"
+          >
+      </span>
+      <span class="unit">{{rule_detail.thresholdUnit}}</span>
+      </li>
+      <li>
+      <span class="title">{{detailItem.item.created_at}}</span>
+      <span class="value"> {{rule_detail.timestamp | dateLocalize | date:"yyyy-MM-dd HH:mm"}} </span>
+      </li>
+      <li>
+      <span class="title">{{detailItem.item.owner}}</span>
+      <span class="value"> {{rule_detail.user_id}} </span>
+      </li>
+    </ul>
+  </div>
+</div>

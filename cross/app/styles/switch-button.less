@@ -1,0 +1,199 @@
+@toggleheight: 1.6em;
+@togglewidth: 3em;
+@togglebg: rgb(255,255,255);
+@togglebordersize: .12em;
+@togglebordercolor: rgb(230,230,230);
+@toggleinputwidth: @togglewidth * 1.5;
+
+@switchbg: rgb(255,255,255);
+@switchsize: @toggleheight;
+@switchWidth: 2em;
+@switchbordersize: .1em;
+@switchbordercolor: darken(@switchbg, 15%);
+
+@activecolor: #29A1E1;
+@diablecolor: #A1A1A1;
+@activebordercolor: darken(@activecolor, 5%);
+
+@labeloffset: .2em;
+@borderradius: 0.3em;
+
+@labelbackgroundcolor: #F2F2F2;
+
+@switchOnBorderColor: #1972A1;
+
+.switch-button {
+  display: block;
+  height: 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.toggle-bg {
+  background: @togglebg;
+  border-radius: @borderradius;
+  border: @togglebordersize solid @togglebordercolor;
+  display: block;
+  float: left;
+  height: @toggleheight;
+  position: relative;
+  width: @togglewidth;
+  transition-duration: 0.2s;
+  position: relative;
+  border-color: #B5B5B5;
+  background: @labelbackgroundcolor;
+  &.on {
+    background: @labelbackgroundcolor;
+    border-color: #B5B5B5;
+  }
+  input {
+    margin: 0;
+    padding: 0;
+    width: @toggleinputwidth;
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    cursor: pointer;
+    z-index: 2;
+    zoom: 1;
+    filter: alpha(opacity=0);
+    &:checked~.switch{
+      left: -1px;
+    }
+    &~:checked~.switch{
+      left: (@togglewidth - @switchWidth - @togglebordersize);
+    }
+    &:checked{
+      z-index: 0;
+    }
+  }
+}
+
+.switch {
+  background: @switchbg;
+  border-radius: @borderradius;
+  border: @switchbordersize solid @switchbordercolor;
+  display: block;
+  float: left;
+  height: @switchsize;
+  width: @switchWidth;
+  left: -0.1em;
+  top: -0.1em;
+  position: relative;
+  transition-duration: 0.2s;
+  z-index: 1;
+  .flag {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+  }
+  &.on {
+    border: 0.12em solid @switchOnBorderColor;
+    background-color: @activecolor;
+    .flag {
+      width: 0.15em;
+      background: white;
+    }
+  }
+  &.off {
+    border: 0.12em solid #B5B5B5;
+    background-color: @labelbackgroundcolor;
+    .flag {
+      border: 0.1em solid #B5B5B5;
+      border-radius: 50%;
+    }
+  }
+}
+
+.loading() {
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-linearanimation-delay:0;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+
+  -moz-animation-name: loading;
+  -moz-animation-duration: 1s;
+  -moz-animation-timing-function: linear;
+  -moz-animation-delay: 0;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-play-state: running;
+
+  -webkit-animation-name: loading;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-delay: 0;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-play-state: running;
+
+  -ms-animation-name: loading;
+  -ms-animation-duration: 1s;
+  -ms-animation-timing-function: linear;
+  -ms-animation-delay: 0;
+  -ms-animation-iteration-count: infinite;
+  -ms-animation-play-state: running;
+}
+
+.unknown {
+  width: 20px;
+  height: 15px;
+  margin-left: 15px;
+  margin-top: 5px;
+  position: relative;
+  background-size: 100%;
+  background: url(../images/login/loading.png) no-repeat left center;
+
+  .loading();
+}
+
+.toggle-alternate {
+  clear: both;
+  width: @togglewidth * 1.2;
+  input {
+    width: @toggleinputwidth * 1.3;
+    &~:checked~.switch{
+      left: (@togglewidth * 1.2 - @switchWidth - @togglebordersize);
+    }
+  }
+  label {
+    top: 0.2em;
+  }
+}
+
+.toggle-alternate label {
+  font-weight: 300;
+  font-size: 10px;
+  text-transform: uppercase;
+  position: absolute;
+  top: @labeloffset;
+}
+
+.toggle-bg label.on {
+  left: .25em;
+  color: @activecolor;
+}
+
+.toggle-bg label.off {
+  right: .25em;
+  color: @diablecolor;
+}
+
+@-moz-document url-prefix() {
+  .toggle-bg label.on {
+    left: .45em;
+  }
+
+  .toggle-bg label.off {
+    right: .45em;
+  }
+  .compute_node_enable {
+    .toggle-bg label.off {
+      right: .45em;
+    }
+  }
+  .toggle-alternate label {
+    font-size: 11px;
+  }
+}

@@ -1,0 +1,24 @@
+<div>
+  <div class='instance_tabs'>
+    <ul>
+      <li ng-repeat="tab in tabs"
+      ng-class="{active:isActiveTab(tab.template)}"
+      class="tab"
+      ng-click="onClickTab(tab)" ng-if="tab.enable">{{tab.title}}
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div id="mainView">
+  <div ng-include="currentTab"></div>
+</div>
+
+<script type="text/ng-template" id="lb.html">
+  <div class="table-tab ui-view-container" ng-controller="project.lbaas.LBCtr">
+    <div class="action_group" action-button buttons="actionButtons"
+      items="selectedItems">
+    </div>
+    <div datatable="lbsOpts" class="router_table"></div>
+  </div>
+</script>

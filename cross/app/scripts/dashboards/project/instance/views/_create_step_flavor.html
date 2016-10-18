@@ -1,0 +1,75 @@
+<div class="step-area">
+  <div class="field-vcpu field">
+    <div class="field-label-left">{{modal.steps[1].fields[0].label}}</div>
+    <div class="field-input">
+      <div class="field-vcpu-list">
+        <span class="item {{item.isActive}} {{item.isDisable}}" ng-click="vcpuClick(item)"
+              ng-bind="item.value" ng-repeat="item in modal.steps[1].fields[0].default"></span>
+      </div>
+      <div ng-show="tips['flavor']['vcpus']&&modal.currentStep=='flavor'" class="modal-tip">
+        <div>&lowast; {{tips['flavor']['vcpus']}}</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="field-ram field">
+    <div class="field-label-left">{{modal.steps[1].fields[1].label}}</div>
+    <div class="field-input">
+      <div class="field-ram-list">
+        <span class="item {{item.isActive}} {{item.isDisable}}" ng-click="ramClick(item)"
+              ng-bind="item.value" ng-repeat="item in modal.steps[1].fields[1].default"></span>
+      </div>
+      <div ng-show="tips['flavor']['ram']&&modal.currentStep=='flavor'" class="modal-tip">
+        <div>&lowast; {{tips['flavor']['ram']}}</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="field-disk field">
+    <div class="field-label-left">{{modal.steps[1].fields[2].label}}</div>
+    <div class="field-disk-switch field-switch">
+      <span class="default-disk" ng-show="modal.isDiskDefault"
+            ng-bind="note.diskDefault"></span>
+      <span class="self-define-disk"
+            ng-click="diskChange()"
+            ng-bind="note.selfDefine"></span>
+    </div>
+    <div class="field-input" ng-show="!modal.isDiskDefault">
+      <div class="field-disk-list">
+        <span class="item {{item.isActive}} {{item.isDisable}}" ng-bind="item.value" ng-click="diskClick(item)"
+              ng-repeat="item in modal.steps[1].fields[2].default"></span>
+      </div>
+      <div ng-show="tips['flavor']['disk']&&modal.currentStep=='flavor'" class="modal-tip">
+        <div>&lowast; {{tips['flavor']['disk']}}</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="field-type field" ng-if="form['image']['image'].subType!='volumeSnapshot' && useVolumeType=='true'">
+    <div class="field-label-left">{{modal.steps[1].fields[4].label}}</div>
+    <div class="field-input">
+      <div class="field-type-list">
+        <span class="item {{item.isActive}} {{item.isDisable}}" ng-click="typeClick(item)"
+              ng-bind="item.text" ng-repeat="item in modal.steps[1].fields[4].default"></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="field-number field">
+    <div class="field-label-fix">{{modal.steps[1].fields[3].label}}</div>
+    <div class="field-input-fix">
+      <slider2 ng-model="form['flavor']['number']" min="1"
+        ng-max="quota.instance.max"
+        ng-blur="validator('number', 'flavor')"></slider2>
+      <input class="slider-input slider-mate"
+        type="number"
+        ng-model="form['flavor']['number']"
+        ng-blur="validator('number', 'flavor')"
+        min="1" max="{{quota.instance.max}}" />
+      <div ng-show="tips['flavor']['number']" class="modal-tip">
+        <div>&lowast; {{tips['flavor']['number']}}</div>
+      </div>
+    </div>
+  </div>
+
+</div>

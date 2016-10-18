@@ -1,0 +1,183 @@
+.network-topology-view {
+  position: relative;
+  padding-right: 10px;
+}
+
+.network-topology-view .topology-root {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: url(../images/topology/root.png) center bottom no-repeat;
+}
+
+.network-topology-view .topology-detail-cont {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  z-index: 1001;
+  display: none;
+  width: 160px;
+  padding: 8px;
+  margin-bottom: 5px;
+  margin-left: -80px;
+  text-align: left;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0px 0px 3px #ccc;
+}
+
+.network-topology-view .topology-detail-cont .item-title {
+  height: 24px;
+  font-size: 12px;
+  line-height: 24px;
+  color: #888;
+  vertical-align: middle;
+}
+
+.network-topology-view .topology-detail-cont .item-value {
+  height: 24px;
+  overflow: hidden;
+  font-size: 12px;
+  line-height: 24px;
+  color: #666;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+}
+
+.network-topology-view .topology-detail-cont .status-ACTIVE {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: url(../images/status_active.png) center no-repeat;
+}
+
+.network-topology-view .topology-detail-cont .topology-detail-wrap {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin-bottom: -20px;
+  margin-left: -10px;
+}
+
+.network-topology-view .topology-detail-cont .topology-detail-wrap .wrap-outer {
+  width: 0;
+  height: 0;
+  border: 10px solid #ddd;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid transparent;
+}
+
+.network-topology-view .topology-detail-cont .topology-detail-wrap .wrap-inner {
+  position: absolute;
+  top: 0;
+  left: 2px;
+  width: 0;
+  height: 0;
+  border: 8px solid #fff;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 8px solid transparent;
+}
+
+.network-topology-view .topology-network {
+  position: relative;
+  padding: 5px;
+}
+
+.network-topology-view .topology-network .topology-network-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.3;
+  filter: alpha(opacity=30);
+}
+
+.network-topology-view .topology-network .topology-network-title {
+  position: relative;
+  z-index: 1000;
+  height: 20px;
+}
+
+.network-topology-view .topology-network .topology-router {
+  position: absolute;
+  text-align: center;
+  cursor: pointer;
+  background: #ffffff url(../images/topology/router.png) center 10px no-repeat;
+  border: 1px solid #a5d8fb;
+}
+
+.network-topology-view .topology-network .topology-router .topology-router-title {
+  width: 100%;
+  margin-top: 36px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.network-topology-view .topology-network .topology-router:hover .topology-detail-cont {
+  display: block;
+}
+
+.network-topology-view .topology-network .topology-server {
+  position: absolute;
+  text-align: center;
+  cursor: pointer;
+  background: url(../images/topology/server.png) center 10px no-repeat;
+  border: 1px solid #d9d9d9;
+}
+
+.network-topology-view .topology-network .topology-server .topology-server-title {
+  width: 100%;
+  margin-top: 36px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.network-topology-view .topology-network .topology-server:hover .topology-detail-cont {
+  display: block;
+}
+
+.network-topology-view .topology-network-subnet .subnet-back {
+  position: relative;
+  margin-top: 5px;
+  color: #fff;
+  margin-buttom: 5px;
+}
+
+.network-topology-view .topology-port {
+  position: absolute;
+}
+
+.network-topology-view .topology-port .topology-port-title {
+  position: absolute;
+  margin-top: 18px;
+  font-size: 10px;
+  color: #999;
+  -webkit-transform: rotate(90deg);
+     -moz-transform: rotate(90deg);
+       -o-transform: rotate(90deg);
+  transform-origin: 15px 0;
+  webkit-transform: rotate(90deg);
+}
+
+.network-topology-view .topology-port .topology-port-buttom {
+  position: absolute;
+  bottom: 0;
+  left: -50%;
+  width: 200%;
+  height: 2px;
+}
+
+.network-topology-view .topology-port .topology-port-top {
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 200%;
+  height: 3px;
+}

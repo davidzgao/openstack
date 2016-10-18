@@ -1,0 +1,10 @@
+
+<div ng-if="field.slug=='email'">
+    <input ng-change="validator(field.slug)"
+                   class="{{field.classes?field.classes:''}} {{tips[field.slug]?'invalid':''}}"
+                   name="{{field.slug}}" ng-model="form[field.slug]"
+                   type="{{field.type?field.type:'text'}}"
+                   ng-disabled="{'disable': 'true'}[field.type]"
+                   ng-attr-placeholder="{{field.placeholder?field.placeholder:''}}"
+                   id="email" />
+</div>

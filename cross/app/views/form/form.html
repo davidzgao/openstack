@@ -1,0 +1,79 @@
+<div>
+<form name="form.name"
+  ng-if="form.view=='modal'">
+  <div class="form-area">
+    <div class="step-header"
+      ng-include="'./views/form/_form_header.html'">
+    </div>
+    <!-- Multi Steps Form Start -->
+    <div class="steps-container">
+      <div class="form-steps"
+        ng-style="{'margin-left': (-form.currentStep * 500) + 'px'}">
+        <div class="form-step step-{{$index}}"
+          ng-repeat="step in form.steps"
+          ng-class=step.title>
+          <div class="form-fields"
+            ng-if="step.sorted_fields"
+            ng-repeat="field in step.sorted_fields">
+            <div ng-repeat="(fieldK, fieldV) in field"
+              field-builder=fieldV key=fieldK></div>
+          </div>
+          <div class="form-fields"
+            ng-if="step.fields"
+            ng-repeat="(fieldK, fieldV) in step.fields">
+            <div field-builder=fieldV key=fieldK></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <!-- Multi Steps Form Start -->
+    <div class="form-footer">
+      <button ng-show="form.currentStep!=0"
+        class="btn btn-enable"
+        type="button"
+        name="stepPrevious"
+        ng-click="stepChange('prev')">{{note.prevStep}}</button>
+      <button ng-if="form.currentStep!=form.steps.length-1"
+        class="btn btn-enable"
+        type="button"
+        ng-click="stepChange('next')">{{note.nextStep}}</button>
+      <button ng-if="form.currentStep==form.steps.length-1"
+        class="btn btn-enable"
+        type="button"
+        ng-click="stepChange('commit')">{{note.commit}}</button>
+    </div>
+  </div>
+  <div class="form-summary">
+    <div class="summary-content">
+      <div ng-repeat="step in form.steps">
+        <ul ng-repeat="field in step.sorted_fields">
+          <li ng-repeat="(fieldK, fieldV) in field"
+            ng-if="!fieldV.alternative">
+          {{fieldV.label}}: {{fieldV.value}}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="clear"></div>
+</form>
+  <div ng-if="form.view=='flat'">
+    <div ng-repeat="step in form.steps | reverse" ng-class="step.page">
+      <div class="form-step-summ">{{step.title | i18n}}
+        <button ng-if="step.handle_result"
+          ng-click="approve(step)"
+          ng-disabled="!approveEnable"
+          class="btn btn-enable">{{note.commit}}</button>
+      </div>
+      <div class="form-fields"
+        ng-repeat="field in step.sorted_fields track by $index">
+        <div ng-repeat="(fieldK, fieldV) in field"
+          ng-if="!fieldV.editable || !step.handle_result"
+          flat-field=fieldV key=fieldK state=form.state></div>
+        <div ng-repeat="(fieldK, fieldV) in field"
+          ng-if="fieldV.editable && step.handle_result"
+          field-builder=fieldV key=fieldK></div>
+      </div>
+    </div>
+  </div>
+</div>

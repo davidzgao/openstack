@@ -1,0 +1,9 @@
+<div class="field-custom-radio">
+  <label>{{field.label | i18n}}</label>
+  <span ng-repeat="item in field.source"
+    ng-click="switchRatio($index)"
+    class="radio-item"
+    ng-class="{true: 'active'}[field.value==item]">
+    {{field.display_value[item] | i18n}}
+  </span>
+</div>

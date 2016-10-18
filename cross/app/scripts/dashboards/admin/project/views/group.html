@@ -1,0 +1,116 @@
+<form method="post" action="" id="_modal_{{modal.slug}}" autocomplete="off">
+<div >
+      <div class="step-header">
+        <div class="step-header-empty"></div>
+        <div class="step-notes">
+          <div class="step-parallel">
+            <div class="step-tab {{$index==modal.stepIndex?'active':''}}" ng-repeat="step in modal.steps" ng-click="jumpStep(step.slug, $index)">
+              {{step.name}}
+            </div>
+          </div>
+        </div>
+      </div>
+  <div class="group_member_container" ng-if="0==modal.stepIndex">
+    <div class="group_membership">
+      <div class="header">
+        <div class="left">
+          <div class="fake_table fake_table_header">
+              <span class="users_title">{{title.all_user}}</span>
+              <input class="users_search" type='text'
+                ng-model="search.all">
+          </div>
+        </div>
+        <div class="right">
+          <div class="fake_table fake_table_header">
+              <span class="users_title">{{title.project_groups}}</span>
+              <input class="users_search" type='test'
+                ng-model="search.member">
+          </div>
+        </div>
+        <div class="clear"></div>
+      </div>
+
+      <div class="left filterable">
+        <div class="fake_table" id="available_users">
+          <ul ui-on-Drop="dropComplete($event, $data)">
+            <li ng-repeat="item in modal.steps[0].fields[0].default | filter:searchAllUser" ui-draggable="true" drag="item" class="available-item"
+            ng-class="{last: $last, even: $even, odd: $odd}">
+              <span>{{item.text}}</span>
+            </li>
+          </ul>
+          <ul class="no_results" ng-show="no_available">
+              <li class="last">{{tipsNoAvailableUsers}}</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="right filterable">
+        <div class="fake_table" id="available_users">
+          <ul class="available-item" ng-repeat="item in modal.steps[0].fields[1].default | filter:searchMembers" ui-on-Drop="dropComplete($event, $data, item, true)">
+            <li
+            ng-mouseover="addDeleteIcon(item)"
+            ng-mouseleave="rmDeleteIcon(item)"
+            ng-class="{last: $last, even: $even, odd: $odd}"
+            >
+              <span class="open-icon-container">
+                <span ng-class="{true: 'close-icon', false: 'open-icon', undefined: 'open-icon'}[item.showGroupUsersFlag]"></span>
+              </span>
+              <span ng-click="showGroupUsers(item)">{{item.text}}</span>
+              <span class="del-icon" ng-if="item.canDelete"
+                cross-confirm="deleteGroup(item.id)"
+                items="[item]" action-enable="btn-enable"></span>
+            </li>
+            <li id="project-group" ng-repeat="user in item.users"
+            ng-show="item.showGroupUsersFlag" ui-draggable="true"
+            drag="user">
+              <span class="group-user">{{user.name}}</span>
+            </li>
+          </ul>
+          <ul class="no_results" ng-show="no_selected">
+            <li class="last">{{tipsNoUsers}}</li>
+          </ul>
+
+        </div>
+      </div>
+
+
+      <div class="clear">
+      </div>
+
+    </div>
+  </div>
+  <div class="fields-area" ng-if="1==modal.stepIndex">
+    <div class="modal-steps">
+      <div ng-repeat="field in modal.steps[1].fields" class="field-{{field.slug}} field">
+        <div class="field-label {{field.inLine?'field-next-line':''}}">
+        <span ng-if="field.restrictions.required">*</span>
+        {{field.label}}</div>
+        <div class="field-input" ng-if="field.tag == 'input'">
+          <div ng-if="field.type!='checkbox-list'&&field.type!='file'">
+            <input ng-change="validator(field.slug, 'group')"
+            class="{{field.classes?field.classes:''}} {{tips['group'][field.slug]?'invalid':''}}"
+            name = "{{field.slug}}"
+            ng-model="form['group']['name']"
+            type="{{field.type?field.type:'text'}}"
+            />
+          </div>
+        </div>
+        <div ng-if="tips['group'][field.slug]" class="modal-tip">
+          <div>&lowast; {{tips['group'][field.slug]}}</div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="cross-modal-footer">
+    <button class="btn" name="cancel" ng-click="close()" ng-if="1==modal.stepIndex">
+      {{note.modal.cancel}}
+    </button>
+    <button class="btn" name="submit" type="submit" ng-click="handle()" ng-if="1==modal.stepIndex">
+      {{note.modal.save}}
+    </button>
+  </div>
+</div>
+</form>

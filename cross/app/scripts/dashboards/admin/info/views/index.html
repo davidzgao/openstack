@@ -1,0 +1,32 @@
+<div class="os-service">
+  <div class='common_page_tabs'>
+    <ul>
+      <li class="tab active">{{note.title}}</li>
+    </ul>
+  </div>
+
+  <div class="os-service-host" ng-repeat="(host, item) in services">
+    <div class="os-service-host-name">
+      <span class="small"></span>
+      <span>{{host}}</span>
+    </div>
+    <div class="services-list">
+      <div class="item" ng-class="service.status" ng-repeat="service in item" ng-bind="service.name"></div>
+    </div>
+  </div>
+
+  <div class="os-service-tips">
+    <div class="item">
+      <span class="status-enabled status"></span>
+      <span class="content" ng-bind="note.service.enabled"></span>
+    </div>
+    <div class="item">
+      <span class="status-down status"></span>
+      <span class="content" ng-bind="note.service.down"></span>
+    </div>
+    <div class="item">
+      <span class="status-disabled status"></span>
+      <span class="content" ng-bind="note.service.disabled"></span>
+    </div>
+  </div>
+</div>

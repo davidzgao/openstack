@@ -1,0 +1,176 @@
+.switch-button {
+  display: block;
+  height: 20px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.toggle-bg {
+  position: relative;
+  display: block;
+  float: left;
+  width: 3em;
+  height: 1.6em;
+  background: #ffffff;
+  background: #f2f2f2;
+  border: 0.12em solid #e6e6e6;
+  border-color: #B5B5B5;
+  border-radius: 0.3em;
+  transition-duration: 0.2s;
+}
+
+.toggle-bg.on {
+  background: #f2f2f2;
+  border-color: #B5B5B5;
+}
+
+.toggle-bg input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 4.5em;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  zoom: 1;
+}
+
+.toggle-bg input:checked ~ .switch {
+  left: -1px;
+}
+
+.toggle-bg input ~ :checked ~ .switch {
+  left: 0.88em;
+}
+
+.toggle-bg input:checked {
+  z-index: 0;
+}
+
+.switch {
+  position: relative;
+  top: -0.1em;
+  left: -0.1em;
+  z-index: 1;
+  display: block;
+  float: left;
+  width: 2em;
+  height: 1.6em;
+  background: #ffffff;
+  border: 0.1em solid #d9d9d9;
+  border-radius: 0.3em;
+  transition-duration: 0.2s;
+}
+
+.switch .flag {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+}
+
+.switch.on {
+  background-color: #29a1e1;
+  border: 0.12em solid #1972a1;
+}
+
+.switch.on .flag {
+  width: 0.15em;
+  background: white;
+}
+
+.switch.off {
+  background-color: #f2f2f2;
+  border: 0.12em solid #B5B5B5;
+}
+
+.switch.off .flag {
+  border: 0.1em solid #B5B5B5;
+  border-radius: 50%;
+}
+
+.unknown {
+  position: relative;
+  width: 20px;
+  height: 15px;
+  margin-top: 5px;
+  margin-left: 15px;
+  background: url(../images/login/loading.png) no-repeat left center;
+  background-size: 100%;
+  -webkit-animation-delay: 0;
+     -moz-animation-delay: 0;
+      -ms-animation-delay: 0;
+  -webkit-animation-duration: 1s;
+     -moz-animation-duration: 1s;
+      -ms-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-iteration-count: infinite;
+     -moz-animation-iteration-count: infinite;
+      -ms-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-name: loading;
+     -moz-animation-name: loading;
+      -ms-animation-name: loading;
+  -webkit-animation-play-state: running;
+     -moz-animation-play-state: running;
+      -ms-animation-play-state: running;
+          animation-play-state: running;
+  -webkit-animation-timing-function: linear;
+     -moz-animation-timing-function: linear;
+      -ms-animation-timing-function: linear;
+          animation-timing-function: linear;
+  animation-linearanimation-delay: 0;
+}
+
+.toggle-alternate {
+  width: 3.5999999999999996em;
+  clear: both;
+}
+
+.toggle-alternate input {
+  width: 5.8500000000000005em;
+}
+
+.toggle-alternate input ~ :checked ~ .switch {
+  left: 1.4799999999999995em;
+}
+
+.toggle-alternate label {
+  top: 0.2em;
+}
+
+.toggle-alternate label {
+  position: absolute;
+  top: 0.2em;
+  font-size: 10px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.toggle-bg label.on {
+  left: .25em;
+  color: #29a1e1;
+}
+
+.toggle-bg label.off {
+  right: .25em;
+  color: #a1a1a1;
+}
+
+@-moz-document url-prefix() {
+  .toggle-bg label.on {
+    left: .45em;
+  }
+  .toggle-bg label.off {
+    right: .45em;
+  }
+  .compute_node_enable .toggle-bg label.off {
+    right: .45em;
+  }
+  .toggle-alternate label {
+    font-size: 11px;
+  }
+}

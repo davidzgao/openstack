@@ -1,0 +1,16 @@
+<div>
+  <h5 class="metering_h5"><b>实例名称：{{insName}}</b></h5>
+  <div>
+    <table class="gridtable">
+      <tr>
+        <th ng-repeat="col in columnDefs" >{{col.displayName}}</th>
+      </tr>
+      <tr ng-repeat="itemInfos in columnInfos">
+        <td>{{itemInfos.field}}</td><td>{{itemInfos.nums}}</td><td>{{itemInfos.price | fixed}}</td>
+      </tr>
+      <tr>
+        <th>{{sumPrice.title}}</th><th></th><th>{{sumPrice.num | fixed}}</th>
+      </tr>
+    </table>
+  </div>
+</div>

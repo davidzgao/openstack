@@ -1,0 +1,23 @@
+<div class="field-select-list">
+  <label>{{field.label | i18n}}</label>
+  <div class="select-list-area" ng-if="editable">
+    <ul>
+      <li class="list-item"
+        ng-if="showDefault"
+        ng-click="selectedChange()"
+        ng-class="{true: 'active'}[defaultValue==true]">
+        {{tips.title}}
+      </li>
+      <li class="list-item" ng-if="field.source.length>0" ng-repeat="item in field.source"
+        ng-click="selectedChange(item.id)"
+        ng-class="{true: 'active'}[item.active]">
+        {{item.name}}
+      </li>
+    </ul>
+  </div>
+  <div ng-if="!editable" class="select-list-area">
+    <li class="active list-item">
+      {{field.value}}
+    </li>
+  </div>
+</div>

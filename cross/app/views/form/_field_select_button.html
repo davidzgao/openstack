@@ -1,0 +1,13 @@
+<div class="field_select_button">
+  <label>{{field.label}}</label>
+  <div class="select-button-group">
+    <ul>
+      <li ng-repeat="item in field.source"
+          ng-click="itemClicked(item)"
+          class="{{optionsObjs[item].available}} select-button"
+          ng-class="{true:'active'}[optionsObjs[item].active]">
+      {{item}}
+      </li>
+    </ul>
+  </div>
+</div>

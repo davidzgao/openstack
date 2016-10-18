@@ -1,0 +1,25 @@
+<tr ng-repeat='item in datatable.data | orderBy:sort.sortingOrder:sort.reverse'
+  table-row
+  ng-class="{even: $even, odd: $odd, selected:item.isSelected, last: $last}"
+  class='cross-data-table-body-row animate-row'>
+  <td class='cross-checkbox-in-table'
+    ng-if="datatable.showCheckbox">
+    <input type='checkbox'
+      ng-model="item.isSelected"
+      ng-change='selectChange()'>
+  </td>
+  <td ng-repeat='col in datatable.columnDefs'
+    class='cross-data-table-cell cellText'
+    ng-class="col.field">
+    <div dynamic=col.cellTemplate></div>
+  </td>
+</tr>
+<tr ng-if="loading">
+  <td style="position: relative; color: white;"
+    colspan="{{tableCol}}">
+    <div class="datatable-loading">
+      <div class='logo-continer'></div>
+      <div class='cricle-continer'></div>
+    </div>
+</td>
+</tr>

@@ -1,0 +1,90 @@
+<div>
+  <div class='instance_tabs'>
+    <ul>
+      <li ng-repeat="tab in tabs"
+        ng-class="{active:isActiveTab(tab.template)}"
+        class="tab"
+        ng-click="onClickTab(tab)" ng-if="tab.enable">{{tab.title}}</li>
+    </ul>
+  </div>
+
+<div id="mainView">
+  <div ng-include="currentTab"></div>
+</div>
+
+<script type="text/ng-template" id="one.tpl.html">
+  <div id="viewOne" class='table-tab ui-view-container' ng-controller='project.instance.instancesCtrl'>
+    <div class='action_group'>
+      <a class='btn create btn-enable' href="#/project/instance/create">
+        <i></i>{{ buttonGroup.create }}
+      </a>
+      <li class='btn vnc' ng-class="vncLinkEnableClass" ng-model='singleSelectedItem'>
+        <i></i>
+        <a href="#/project/instance/{{singleSelectedItem.id}}/console">{{ buttonGroup.console }}</a>
+      </li>
+    <button class='btn del' ng-class="batchActionEnableClass"
+        cross-confirm='deleteServer()'
+        items=selectedItems
+        cross-confirm-action="{{buttonGroup.delete}}"
+        action-enable="{{batchActionEnableClass}}"
+        slug={{slug}}>
+      <i></i>{{ buttonGroup.delete }}</button>
+      <div class="btn-group">
+        <button type="button" class="btn btn-default dropdown-toggle btn-enable more" data-toggle="dropdown"><i></i>
+        {{ buttonGroup.more }}
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu">
+        <li ng-repeat="action in batchActions">
+        <a cross-confirm="serverAction($index, 'batch', action.addition)"
+            items=selectedItems cross-confirm-action={{action.verbose}}
+            ng-class="action.enable"
+            action-enable="{{action.enable}}"
+            slug={{slug}}
+            addition=action.addition>
+          <i ng-class="action.action"></i>{{action.verbose}}</a></li>
+        <li class='split-line'></li>
+        <li ng-repeat="action in mantanceActions" dynamic=action.actionTemplate></li>
+        <li class='split-line'></li>
+        <li ng-repeat="action in networkActions" dynamic=action.actionTemplate>
+        <li class='split-line'></li>
+        <li ng-repeat="action in volumeActions" dynamic=action.actionTemplate>
+      </ul>
+      </div>
+      <button class='btn btn-enable fresh' ng-click='refresResource(instances)'><i></i>{{ buttonGroup.refresh }}</button>
+    </div>
+    <div datatable='instancesOpts'></div>
+  </div>
+</script>
+
+<script type="text/ng-template" id="three.tpl.html">
+    <div id="viewThree" class='table-tab ui-view-container' ng-controller='project.instance.softDeletedCtrl'>
+      <div class='action_group'>
+        <button class='btn del' ng-class="batchActionEnableClass"
+            cross-confirm='deleteServer()'
+            items=selectedItems
+            cross-confirm-action="{{buttonGroup.delete}}"
+            action-enable="{{batchActionEnableClass}}"
+            slug={{slug}}>
+          <i></i>{{ buttonGroup.delete }}</button>
+
+        <button class='btn restore' ng-class="batchActionEnableClass"
+            cross-confirm='restoreServer()'
+            items=selectedItems
+            cross-confirm-action="{{buttonGroup.restore}}"
+            action-enable="{{batchActionEnableClass}}"
+            slug={{slug}}>
+          <i></i>{{ buttonGroup.restore }}</button>
+        <button class='btn btn-enable fresh' ng-click='refresResource(instances)'><i></i>{{ buttonGroup.refresh }}</button>
+      </div>
+      <div datatable='instancesOpts'></div>
+    </div>
+</script>
+
+<script type="text/ng-template" id="two.tpl.html">
+    <div id="viewTwo">
+        <h1>View Two</h1>
+    </div>
+</script>
+
+</div>

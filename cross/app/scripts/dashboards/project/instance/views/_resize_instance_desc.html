@@ -1,0 +1,43 @@
+<div class="instance-resize-desc">
+  <div class="desc-lead">{{note.desc.compare}}</div>
+  <table class="flavor-compare">
+    <tr class="row-header">
+      <td colspan="2">{{note.desc.oldFlavor}}</td>
+      <td colspan="2">{{note.desc.newFlavor}}</td>
+    </tr>
+    <tr>
+      <td>{{note.desc.vcpu}}</td>
+      <td>{{serverFlavor.vcpus}}</td>
+      <td>{{note.desc.vcpu}}</td>
+      <td>{{form.vcpus}}</td>
+    </tr>
+    <tr>
+      <td>{{note.desc.ram}}</td>
+      <td>{{serverFlavor.ram}}</td>
+      <td>{{note.desc.ram}}</td>
+      <td>{{form.ram}}</td>
+    </tr>
+    <tr>
+      <td>{{note.desc.disk}}</td>
+      <td>{{serverFlavor.disk}}</td>
+      <td>{{note.desc.disk}}</td>
+      <td>{{form.disk}}</td>
+    </tr>
+  </table>
+
+  <div class="quota-usage">
+    <div class="desc-lead">{{note.desc.usage}}</div>
+    <div class="usage">
+      <div>{{note.desc.vcpu}}: {{quota.cores.usage}}% ({{quota.cores.used}}/{{quota.cores.total}})</div>
+      <div class="progress">
+        <div class="progress-bar" style="width: {{quota.cores.usage}}%;">
+        </div>
+      </div>
+      <div>{{note.desc.ram}}: {{quota.ram.usage}}% ({{quota.ram.used}}/{{quota.ram.total}})</div>
+      <div class="progress">
+        <div class="progress-bar" style="width: {{quota.ram.usage}}%;">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

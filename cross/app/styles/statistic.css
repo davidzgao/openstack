@@ -1,0 +1,155 @@
+.statistic-query {
+  padding-top: 8px;
+  padding-bottom: 20px;
+}
+
+.statistic-query .ui-select {
+  display: inline-block;
+  width: 210px;
+}
+
+.statistic-query select {
+  width: 200px;
+  height: 30px;
+  padding-right: 5px;
+  padding-left: 5px;
+  background: url(../images/select-slide.png) no-repeat right center;
+  background-color: white;
+  background-position: 180px 12px;
+  border: 1px solid #a4a4a4;
+  border-radius: 4px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+.statistic-query select:focus {
+  border-color: #29aaee;
+  outline: none;
+}
+
+.statistic-query .btn {
+  padding-top: 5px;
+  padding-bottom: 4px;
+  padding-left: 15px;
+  margin-left: 5px;
+}
+
+.usage-loading {
+  position: relative;
+  width: 100%;
+  height: 50px;
+}
+
+.usage-null {
+  width: 100%;
+  font-style: italic;
+  text-align: center;
+}
+
+.statistic {
+  margin-right: 20px;
+}
+
+.statistic .statistic-overview {
+  position: relative;
+  height: 40px;
+  padding: 3px;
+  line-height: 34px;
+  border: 1px solid #f0f0f0;
+  border-bottom: none;
+}
+
+.statistic .statistic-overview.active {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.statistic .statistic-overview .statistic-project-name {
+  display: inline-block;
+  width: 120px;
+  padding-left: 10px;
+  text-align: left;
+}
+
+.statistic .statistic-overview .statistic-item {
+  padding: 0 5px;
+}
+
+.statistic .statistic-overview .detail-button {
+  position: absolute;
+  right: 0;
+  width: 100%;
+  height: 35px;
+  cursor: pointer;
+}
+
+.statistic .statistic-overview .detail-button i {
+  display: inline-block;
+  float: right;
+  width: 20px;
+  height: 20px;
+  margin-top: 12px;
+  margin-right: 15px;
+  background: url("../images/detail_show.png") no-repeat;
+}
+
+.statistic .statistic-overview .detail-button.open i {
+  background: url("../images/detail_hide.png") no-repeat;
+}
+
+.statistic .statistic-overview .export {
+  position: absolute;
+  top: 5px;
+  right: 70px;
+  width: 30px;
+  height: 30px;
+}
+
+.statistic .statistic-overview .export i {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-top: 3px;
+  background: url("../images/export.png") no-repeat;
+}
+
+.statistic .statistic-detail {
+  min-height: 80px;
+  padding: 3px;
+  border-right: 1px solid #f0f0f0;
+  border-left: 1px solid #f0f0f0;
+}
+
+.statistic.last .statistic-overview {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.statistic.last .statistic-detail {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+@-moz-document url-prefix() {
+  .statistic .statistic-overview .export i {
+    background-position: 6px 0;
+  }
+  .statistic-query {
+    height: 60px;
+  }
+  .statistic-query .btn {
+    margin-bottom: 25px;
+  }
+  .ui-select {
+    position: relative;
+    display: inline-block;
+    width: 200px;
+    margin: 0 5px 0px 0px;
+    overflow: hidden;
+    border: 1px solid #a1a1a1;
+    border-radius: 4px;
+  }
+  .ui-select select {
+    width: 110%;
+    background-position: right 30px center !important;
+    border: none !important;
+  }
+}

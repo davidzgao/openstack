@@ -1,0 +1,568 @@
+/* Variables will be used in index page */
+
+/* Usage warning */
+
+/* Min width of cross app */
+
+/* Min height of cross app */
+
+/* Background of app */
+
+/* Left frame width of cross app */
+
+/* Left frame background of cross app */
+
+/* Top height of cross app */
+
+/* Left logo background of cross app */
+
+/* Top tool background of cross app */
+
+/* Left nav bar item background */
+
+/* Attr at data table */
+
+/* Style of button for action */
+
+/* left width of dashboard admin over view page */
+
+/* top height of dashboard admin over view page */
+
+/* Login container background-color */
+
+/* Login container width */
+
+/* Login container height */
+
+/* Login logo image */
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.cross-dashboards-admin-overview {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  min-height: 630px;
+}
+
+.cross-dashboards-admin-overview .system-lead {
+  height: 30px;
+  font-size: 15px;
+  line-height: 30px;
+  color: #666666;
+  text-align: left;
+}
+
+.cross-dashboards-admin-overview .system-lead > .message-more {
+  position: absolute;
+  right: 10px;
+  display: inline-block;
+}
+
+.cross-dashboards-admin-overview .system-lead > .message-more a {
+  font-size: 12px;
+  color: #888;
+}
+
+.cross-dashboards-admin-overview .system-lead > i {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin: 0 5px 0 5px;
+  vertical-align: middle;
+}
+
+.cross-dashboards-admin-overview .system-lead > i.alarm {
+  background: url(../images/dashboard_admin/overview/alarm.png) no-repeat;
+}
+
+.cross-dashboards-admin-overview .system-lead > i.usage {
+  height: 16px;
+  background: url(../images/dashboard_admin/overview/usage.png) no-repeat;
+}
+
+.cross-dashboards-admin-overview .system-lead > i.topology {
+  background: url(../images/dashboard_admin/overview/topology.png) no-repeat;
+}
+
+.cross-dashboards-admin-overview .system-lead > i.message {
+  margin-right: 8px;
+  background: url(../images/dashboard_admin/overview/message.png) no-repeat;
+}
+
+.cross-dashboards-admin-overview .system-lead > i.hotspot {
+  margin-right: 8px;
+  background: url(../images/dashboard_admin/overview/hotspot.png) no-repeat;
+}
+
+.cross-dashboards-admin-overview > .overview-top {
+  position: relative;
+  padding-bottom: 5px;
+  margin-right: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.cross-dashboards-admin-overview > .overview-main {
+  position: relative;
+  margin-right: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.cross-dashboards-admin-overview > .overview-top > .system-usage {
+  height: 100%;
+  padding-left: 10px;
+  background-color: #fff;
+  border-radius: 4px;
+}
+
+.cross-dashboards-admin-overview > .overview-top > .system-usage > .system-usage-main {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.cross-dashboards-admin-overview > .overview-top > .system-usage > .system-usage-main > .usage-item {
+  position: relative;
+  display: inline-block;
+  width: 22%;
+  text-align: center;
+}
+
+.cross-dashboards-admin-overview > .overview-top > .system-usage > .system-usage-main > .usage-item > .global-resource-usage {
+  display: inline-block;
+  width: 64%;
+  min-width: 140px;
+  text-align: center;
+  background-color: #f9f9f9;
+  border-radius: 3px;
+}
+
+.cross-dashboards-admin-overview > .overview-top > .system-usage > .system-usage-main > .usage-item > .global-resource-usage > .usage-item-name {
+  height: 45px;
+  font-size: 14px;
+  color: #888;
+}
+
+.cross-dashboards-admin-overview > .overview-top > .system-usage > .system-usage-main > .usage-item > .global-resource-usage > .usage-item-detail {
+  height: 42px;
+  font-size: 12px;
+  line-height: 42px;
+}
+
+.cross-dashboards-admin-overview > .overview-top > .system-usage > .system-usage-main > .usage-item > .global-resource-usage > .usage-item-detail > span:first-child {
+  color: #269bd8;
+}
+
+.cross-dashboards-admin-overview > .overview-top > .system-usage > .system-usage-main > .usage-item > .global-resource-usage > .usage-item-detail > span:last-child {
+  color: #bfbfbf;
+}
+
+.cross-dashboards-admin-overview > .overview-top > .system-usage > .system-usage-main > .usage-item > .resource-usage-warning {
+  display: inline-block;
+  width: 64%;
+  min-width: 140px;
+  text-align: center;
+  background-color: #ddbbbb;
+  border-radius: 3px;
+}
+
+.cross-dashboards-admin-overview > .overview-top > .system-usage > .system-usage-main > .usage-item > .resource-usage-warning > .usage-item-name {
+  height: 45px;
+  font-size: 14px;
+  color: #f8ffee;
+}
+
+.cross-dashboards-admin-overview > .overview-top > .system-usage > .system-usage-main > .usage-item > .resource-usage-warning > .usage-item-detail {
+  height: 42px;
+  font-size: 12px;
+  line-height: 42px;
+}
+
+.cross-dashboards-admin-overview > .overview-top > .system-usage > .system-usage-main > .usage-item > .resource-usage-warning > .usage-item-detail > span:first-child {
+  color: #eb4848;
+}
+
+.cross-dashboards-admin-overview > .overview-top > .system-usage > .system-usage-main > .usage-item > .resource-usage-warning > .usage-item-detail > span:last-child {
+  color: #ffeeee;
+}
+
+.cross-dashboards-admin-overview > .overview-top > .system-usage > .system-usage-main > .usage-item > .global-resource-usage .sector-outer {
+  display: inline-block;
+  height: 90px;
+  font-size: 30px;
+  font-style: italic;
+  font-weight: 800;
+  line-height: 120px;
+  color: #269bd8;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.cross-dashboards-admin-overview > .overview-top > .system-usage > .system-usage-main > .usage-item > .resource-usage-warning .sector-warning {
+  display: inline-block;
+  height: 90px;
+  font-size: 30px;
+  font-style: italic;
+  font-weight: 800;
+  line-height: 120px;
+  color: #FF2222;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.cross-dashboards-admin-overview > .overview-top > .system-usage > .cross-line-vertical {
+  margin-top: 36px;
+}
+
+.cross-dashboards-admin-overview .overview-latest-alarm,
+.cross-dashboards-admin-overview .overview-latest-message {
+  position: absolute;
+  top: 0;
+  display: block;
+  width: 32%;
+  height: 100%;
+  padding-top: 10px;
+}
+
+.cross-dashboards-admin-overview .overview-latest-alarm > .message-list,
+.cross-dashboards-admin-overview .overview-latest-message > .message-list {
+  position: relative;
+  margin-left: -1px;
+}
+
+.cross-dashboards-admin-overview .overview-latest-alarm > .message-empty,
+.cross-dashboards-admin-overview .overview-latest-message > .message-empty {
+  position: absolute;
+  top: 40%;
+  width: 100%;
+  padding-left: 30px;
+  margin-top: 20px;
+  font-size: 15px;
+  font-style: italic;
+  color: #999;
+  text-align: center;
+}
+
+.cross-dashboards-admin-overview .overview-latest-alarm > .message-list > .message-item,
+.cross-dashboards-admin-overview .overview-latest-message > .message-list > .message-item {
+  position: relative;
+  height: 36px;
+  cursor: default;
+}
+
+.cross-dashboards-admin-overview .overview-latest-alarm > .message-list > .message-item > .message-lead,
+.cross-dashboards-admin-overview .overview-latest-message > .message-list > .message-item > .message-lead {
+  position: absolute;
+  bottom: 0;
+  width: 10px;
+  height: 36px;
+  margin-left: 15px;
+  border-left: 1px solid #e4e4e4;
+}
+
+.cross-dashboards-admin-overview .overview-latest-alarm > .message-list > .message-item > .message-lead > i,
+.cross-dashboards-admin-overview .overview-latest-message > .message-list > .message-item > .message-lead > i {
+  position: absolute;
+  display: inline-block;
+  width: 14px;
+  height: 36px;
+  margin-left: -8px;
+  background: url(../images/dashboard_admin/overview/message_point.png) 4px 16px no-repeat;
+}
+
+.cross-dashboards-admin-overview .overview-latest-alarm > .message-list > .message-item > .message-lead.first,
+.cross-dashboards-admin-overview .overview-latest-message > .message-list > .message-item > .message-lead.first {
+  height: 22px;
+  vertical-align: bottom;
+}
+
+.cross-dashboards-admin-overview .overview-latest-alarm > .message-list > .message-item > .message-lead.first > i,
+.cross-dashboards-admin-overview .overview-latest-message > .message-list > .message-item > .message-lead.first > i {
+  height: 22px;
+  background: url(../images/dashboard_admin/overview/message_clock.png) top center no-repeat;
+}
+
+.cross-dashboards-admin-overview .overview-latest-alarm > .message-list > .message-item .item-message,
+.cross-dashboards-admin-overview .overview-latest-message > .message-list > .message-item .item-message,
+.cross-dashboards-admin-overview .overview-latest-alarm > .message-list > .message-item .item-alarm,
+.cross-dashboards-admin-overview .overview-latest-message > .message-list > .message-item .item-alarm {
+  margin-right: 134px;
+  margin-left: 30px;
+}
+
+.cross-dashboards-admin-overview .overview-latest-alarm > .message-list > .message-item .item-main,
+.cross-dashboards-admin-overview .overview-latest-message > .message-list > .message-item .item-main {
+  height: 24px;
+  padding-top: 8px;
+  line-height: 24px;
+}
+
+.cross-dashboards-admin-overview .overview-latest-alarm > .message-list > .message-item .item-time,
+.cross-dashboards-admin-overview .overview-latest-message > .message-list > .message-item .item-time {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  height: 24px;
+  line-height: 24px;
+  text-align: left;
+}
+
+.cross-dashboards-admin-overview .overview-latest-alarm > .message-list > .message-item .log-content,
+.cross-dashboards-admin-overview .overview-latest-message > .message-list > .message-item .log-content {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cross-dashboards-admin-overview .overview-latest-message {
+  left: 33%;
+  width: 33%;
+  border-right: 1px solid #eee;
+}
+
+.cross-dashboards-admin-overview .overview-latest-alarm {
+  right: 10px;
+  width: 33%;
+  padding-left: 10px;
+}
+
+.cross-dashboards-admin-overview > .overview-main {
+  min-height: 300px;
+}
+
+.cross-dashboards-admin-overview > .overview-main > .system-resource-list {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  width: 300px;
+}
+
+.cross-dashboards-admin-overview > .overview-main > .system-resource-list > .resource-item {
+  width: 200px;
+  height: 48px;
+  margin-top: 27px;
+  margin-bottom: 27px;
+  margin-left: 20px;
+  line-height: 48px;
+  color: #888;
+  text-align: center;
+  border: 1px dotted #ccc;
+}
+
+.cross-dashboards-admin-overview > .overview-main > .system-resource-list > .resource-item > .content {
+  display: inline-block;
+}
+
+.cross-dashboards-admin-overview > .overview-main > .system-resource-list > .resource-item > .content > .lead {
+  display: inline-block;
+  font-size: 14px;
+  text-align: left;
+}
+
+.cross-dashboards-admin-overview > .overview-main > .system-resource-list > .resource-item > .content > .lead > .lead-name {
+  display: inline-block;
+  height: 20px;
+  font-size: 14px;
+}
+
+.cross-dashboards-admin-overview > .overview-main > .system-resource-list > .resource-item > .content > .detail {
+  display: inline-block;
+  font-size: 14px;
+  text-align: left;
+}
+
+.cross-dashboards-admin-overview > .overview-main > .system-resource-list > .resource-item > .content > .detail > .detail-number {
+  font-size: 14px;
+  color: #269bd8;
+}
+
+.cross-dashboards-admin-overview > .overview-main > .overview-hosts-topology {
+  height: 100%;
+  padding-top: 10px;
+  padding-left: 10px;
+  margin-right: 310px;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 4px;
+}
+
+.cross-dashboards-admin-overview > .overview-main > .overview-hosts-topology > .host-topology-view {
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.cross-dashboards-admin-overview > .overview-main > .overview-hosts-topology > .host-topology-view:hover {
+  position: relative;
+  overflow-x: auto;
+}
+
+.cross-dashboards-admin-overview > .overview-bottom {
+  position: relative;
+}
+
+.cross-dashboards-admin-overview > .overview-bottom > .overview-hotspot-rank {
+  position: relative;
+  display: block;
+  width: 32%;
+  min-height: 80px;
+  padding-top: 10px;
+  padding-left: 10px;
+  background-color: #fff;
+  border-right: 1px solid #eee;
+}
+
+.cross-dashboards-admin-overview > .overview-bottom > .overview-hotspot-rank .message-empty {
+  position: absolute;
+  top: 40%;
+  width: 100%;
+  padding-left: 30px;
+  margin-top: 20px;
+  font-size: 15px;
+  font-style: italic;
+  color: #999;
+  text-align: center;
+}
+
+.cross-dashboards-admin-overview > .overview-bottom > .overview-hotspot-rank .item {
+  position: relative;
+  margin-left: 10px;
+}
+
+.cross-dashboards-admin-overview > .overview-bottom > .overview-hotspot-rank .bottom-horizon {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 95%;
+  height: 1px;
+  background-image: -webkit-linear-gradient(left, #ffffff 0%, #dddddd 50%, #ffffff 100%);
+  background-image: -o-linear-gradient(left, #ffffff 0%, #dddddd 50%, #ffffff 100%);
+  background-image: -webkit-gradient(linear, left, right, from(#ffffff), color-to(50%, #dddddd), color-to(100%, #dddddd));
+  background-image: linear-gradient(to right, #ffffff 0%, #dddddd 50%, #ffffff 100%);
+  background-repeat: repeat-x;
+}
+
+.cross-dashboards-admin-overview > .overview-bottom > .overview-hotspot-rank .item-main {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  line-height: 24px;
+}
+
+.cross-dashboards-admin-overview > .overview-bottom > .overview-hotspot-rank .item-main .content-desc {
+  margin-left: 24px;
+  line-height: 16px;
+  color: #aaa;
+}
+
+.cross-dashboards-admin-overview > .overview-bottom > .overview-hotspot-rank .item-main .progress {
+  position: relative;
+  height: 8px;
+  margin-right: 20px;
+  margin-bottom: 0;
+  margin-left: 24px;
+  cursor: default;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.cross-dashboards-admin-overview > .overview-bottom > .overview-hotspot-rank .item-main .progress .detail-content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding-right: 5px;
+  line-height: 20px;
+  text-align: right;
+}
+
+.cross-dashboards-admin-overview > .overview-bottom > .overview-hotspot-rank .item-main .progress > .progress-bar {
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+}
+
+.cross-dashboards-admin-overview > .overview-bottom > .overview-hotspot-rank .item-main .progress > .hot {
+  background-color: #dd3830;
+}
+
+.cross-dashboards-admin-overview > .overview-bottom > .overview-hotspot-rank .item-main .progress > .green {
+  background-color: #67be4c;
+}
+
+.cross-dashboards-admin-overview > .overview-bottom > .overview-hotspot-rank .item-main .progress > .cold {
+  background-color: #83cbf1;
+}
+
+.cross-dashboards-admin-overview > .overview-bottom > .overview-hotspot-rank .item-main .level {
+  display: inline-block;
+  width: 30px;
+  height: 36px;
+  vertical-align: middle;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.cross-dashboards-admin-overview > .overview-bottom > .overview-hotspot-rank .item-main .host-rank {
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.cross-dashboards-admin-overview > .overview-bottom > .overview-hotspot-rank .item-main .host-rank.hot {
+  color: #e47160;
+}
+
+.cross-dashboards-admin-overview > .overview-bottom > .overview-hotspot-rank .item-main .host-rank.green {
+  color: #9bd389;
+}
+
+.cross-dashboards-admin-overview > .overview-bottom > .overview-hotspot-rank .item-main .host-rank.cold {
+  color: #83cbf1;
+}
+
+.cross-dashboards-admin-overview > .overview-bottom > .overview-hotspot-rank .item-main .lead-point {
+  position: absolute;
+  left: 3px;
+  display: inline-block;
+  width: 10px;
+  height: 44px;
+  vertical-align: middle;
+  border-left: 1px solid #e4e4e4;
+}
+
+.cross-dashboards-admin-overview > .overview-bottom > .overview-hotspot-rank .item-main .lead-point .point {
+  position: absolute;
+  top: 6px;
+  left: -5px;
+  width: 9px;
+  height: 9px;
+  background-color: #fff;
+  border: 1px solid #aaa;
+  border-radius: 50%;
+}
+
+.cross-dashboards-admin-overview > .overview-bottom > .overview-hotspot-rank .item-main .lead-point.first {
+  height: 38px;
+  margin-top: 6px;
+}
+
+.cross-dashboards-admin-overview > .overview-bottom > .overview-hotspot-rank .item-main .lead-point.first .point {
+  top: 0;
+}

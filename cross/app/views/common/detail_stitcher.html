@@ -1,0 +1,77 @@
+<div ng-repeat="info in keySet.detail">
+  <div class="detail_info"
+    ng-repeat="(key,value) in info"
+    ng-if="!value.hidden || source[value.hidden]">
+    <div class="detail_title">{{value.title}}</div>
+    <div class="detail_area">
+      <ul>
+        <li ng-repeat="(item, title) in value.keys">
+          <span class="title">{{title.value}}</span>
+          <span class="value"
+            ng-if="title.key=='is_public'" ng-class="title.inEdit">
+            {{source[title.key]?'Public':'Private' | i18n }}
+          </span>
+          <span class="value"
+            ng-if="title.key=='autoBoot'" ng-class="title.inEdit">
+            {{source[title.key]?'Enable':'Disable' | i18n }}
+          </span>
+          <span class="value"
+            ng-if="title.dynamic"
+            ng-class="title.inEdit"
+            dynamic="source[title.key]">{{source[title.key]}}
+          </span>
+          <span class="value"
+            ng-if="title.template"
+            ng-class="title.inEdit"
+            dynamic=title.template>
+          </span>
+          <span class="value"
+            ng-if="!title.dynamic && !title.template && !title.type && title.key != 'is_public' && title.key != 'autoBoot'"
+            ng-class="title.inEdit">
+            {{source[title.key] | i18n}}
+          </span>
+          <span class="value"
+            ng-if="title.type=='data'">
+            {{source[title.key] || source['created'] | dateLocalize | date: "yyyy-MM-dd H:mm"}}
+          </span>
+          <span class='edit-input' ng-class="title.inEdit"
+            ng-if="title.editable">
+            <div class="modal-tip" ng-show="title.inValidate">
+              <div>{{title.errorTips}}</div>
+              <div class="tips-pointer">
+                <span class="tips-pointer-outer"></span>
+                <span class="tips-pointer-inner"></span>
+              </div>
+            </div>
+            <input ng-model="source[title.key]"
+            name="title.key"
+              ng-if="!title.editType||title.editType=='input'"
+              ng-class="[title.inEdit, title.validate]"
+              ng-change="validate(title)"
+              value="{{source[title.key]}}"/>
+            <select ng-model="source[title.key]"
+            name="title.key" class="selectDirective"
+            ng-if="title.editType=='select'" val="title.default"
+            ng-options="opt.value as opt.text group by opt.group for opt in title.default"></select>
+          </span>
+
+          <span class="edit action-in-detail"
+            ng-if="title.editable"
+            ng-hide="title.inEdit=='editing'"
+            ng-click="editItem(title)"
+            title="{{edit}}"></span>
+          <span class="save action-in-detail"
+            ng-if="title.editable && title.inEdit=='editing'"
+            ng-click="editAction(title)"
+            title="{{save}}">
+          </span>
+          <span class="cancel action-in-detail"
+            ng-if="title.editable && title.inEdit=='editing'"
+            ng-click="cancel(title)"
+            title="{{canc}}">
+          </span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

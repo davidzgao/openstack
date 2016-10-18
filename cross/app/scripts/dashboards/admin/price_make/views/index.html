@@ -1,0 +1,22 @@
+<div>
+  <div class='common_page_tabs'>
+    <ul>
+      <li ng-repeat="tab in tabs"
+        ng-class="{active:isActiveTab(tab.template)}"
+        class="tab"
+        ng-click="onClickTab(tab)" ng-if="tab.enable">{{tab.title}}</li>
+    </ul>
+  </div>
+</div>
+
+<div>
+  <div class='table-tab ui-view-container'  ng-if="currentTab=='pending.tpl.html'">
+    <div class='action_group'>
+      <a class='btn btn-enable create'
+          ui-sref='admin.price_make.priceModify'><i></i>{{ note.buttonGroup.modify}}</a>
+    </div>
+
+    <div datatable='priceMakeOpts'></div>
+  </div>
+
+</div>

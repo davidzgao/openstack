@@ -1,0 +1,104 @@
+<div>
+  <div class='common_page_tabs'>
+    <ul>
+      <li ng-repeat="tab in tabs"
+        ng-class="{active:isActiveTab(tab.template)}"
+        class="tab"
+        ng-click="onClickTab(tab)" ng-if="tab.enable">{{tab.title}}</li>
+    </ul>
+  </div>
+</div>
+
+<div>
+  <div class='table-tab ui-view-container' ng-if="currentTab=='pending.tpl.html'">
+    <div class='action_group'>
+      <button class='btn btn-enable fresh'
+              ng-click='refresResource()'>
+        <i></i>{{ note.buttonGroup.refresh }}</button>
+    </div>
+    <div class="statistic-query">
+      <div class='ui-select'>
+      <select ng-model="query.year"
+        ng-change="yearUpdate()"
+        ng-options="year for year in yearList">
+        <option style="display:none" value=""></option>
+      </select>
+      </div>
+      <div class='ui-select'>
+      <select ng-model="query.month"
+        ng-options="month as month.name for month in monthNames">
+        <option style="display:none" value=""></option>
+      </select>
+      </div>
+      <div class='ui-select'>
+      <select ng-model="query.project"
+        ng-options="project as project.project_name for project in projectList">
+        <option style="display:none" value=""></option>
+      </select>
+      </div>
+      <button class='btn btn-enable query'
+        ng-disabled="{true: true}[statistic.query]"
+        ng-click="getTabStatistic()">{{note.query}}</button>
+      <button class='btn btn-enable'
+        ng-disabled="{true: true}[statistic.query]"
+        ng-click="exportAll()">{{note.export_all}}</button>
+    </div>
+    <div class="usage-loading" ng-if="loading">
+      <div class="datatable-loading">
+        <div class='logo-continer'></div>
+        <div class='cricle-continer'></div>
+      </div>
+    </div>
+    <div class="usage-null"
+      ng-if="projectReprs.length==0 && !loading">{{note.usagenull}}</div>
+    <div ng-repeat="project in projectReprs"
+      class="statistic"
+      ng-class="{'last':$last}">
+      <div class="statistic-overview" id="porject_{{project.tenant_id}}_metering"
+        ng-class="project.active">
+        <span class="statistic-project-name">
+          {{project.project_name | limitTo:15}}</span>
+        <span class="statistic-item">
+          {{note.totalUsage}}: {{project.totalHours | fixed}}  </span>
+        <span class="statistic-item">
+          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp {{note.totalPrice}}:{{project.totalPrice | fixed}}</span>
+        <a ng-click="showDetail($index, project.show)"
+          class='detail-button'
+          ng-class="{true: 'open'}[project.show]"
+          data-toggle="tootip"
+          title="{{project.showOrHide}}"
+          ><i></i></a>
+        <!--  download need to do -->
+        <button ng-click="exportData($index)"
+          class="export btn-enable btn"
+          ng-if="project.show && serverOpts.data"
+          data-toggle="tootip"
+          title="{{note.export}}"
+          ><i></i></button>
+        <div style="display: none"
+          id="project_{{project.tenant_id}}_statistic">
+          <table>
+            <tr>
+               <td>   {{project.project_name | limitTo:15}}</td>
+               <td>   {{note.totalUsage}}: {{project.totalHours | fixed}}  </td>
+               <td> {{note.totalPrice}}:{{project.totalPrice | fixed}}</td>
+            </tr>
+            <tr>
+              <td ng-repeat="col in columnDownloadDefs">{{col.displayName}}</td>
+            </tr>
+            <tr ng-repeat="server in servers">
+              <td ng-repeat="column in columnDownloadDefs">{{server[column.field]}}</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="statistic-detail" ng-if="project.show">
+        <div datatable='serverOpts' class="usage_table"></div>
+      </div>
+      <div id="all_project_statistic"
+        dynamic=all_usage
+        style="display: none">
+      </div>
+    </div>
+  </div>
+</div>

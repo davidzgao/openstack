@@ -1,0 +1,46 @@
+<form method="post" action="" class="modal-{{modal.slug}}" id="_modal_{{modal.slug}}" autocomplete="off">
+  <div ng-show="modal.globalTip" class="modal-global-tip">{{modal.globalTip}}</div>
+  <div ng-if="!modal.single">
+    <div class="step-header">
+      <div class="step-header-empty"></div>
+      <div class="step-notes">
+        <table ng-if="!modal.parallel">
+          <tr>
+            <td class="step-item {{$index==modal.stepIndex?'active':''}}"
+                ng-repeat="step in modal.steps">
+              <div class="step-inner">
+                <div class="step-lead-field">
+                  <div class="step-note">{{step.name}}</div>
+                  <div class="step-index">{{$index + 1}}</div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="fields-area">
+      <div class="modal-steps" ng-style="{'margin-left': (-modal.stepIndex * 500) + 'px'}">
+        <div class="modal-step modal-step-count0" style="visibility: {{modal.stepIndex<0?'hidden':'visible'}}" ng-include="'scripts/dashboards/project/instance/views/_create_step_image.html'">
+        </div>
+        <div class="modal-step modal-step-count1" style="visibility: {{modal.stepIndex<1?'hidden':'visible'}}" ng-include="'scripts/dashboards/project/instance/views/_create_step_flavor.html'">
+        </div>
+        <div class="modal-step modal-step-count2" style="visibility: {{modal.stepIndex<2?'hidden':'visible'}}" ng-include="'scripts/dashboards/project/instance/views/_create_step_network.html'">
+        </div>
+        <div class="modal-step modal-step-count3" style="visibility: {{modal.stepIndex<3?'hidden':'visible'}}" ng-include="'scripts/dashboards/project/instance/views/_create_step_basic.html'"></div>
+
+        <div class="clear-float"></div>
+      </div>
+    </div>
+    <div class="cross-modal-footer">
+      <button class="btn" name="cancel" ng-show="modal.parallel"
+              ng-click="close()" type="button">{{note.modal.cancel}}</button>
+      <button ng-show="modal.stepIndex&&!modal.parallel" name="stepPrevious" class="btn" type="button"
+              ng-click="stepPrevious()">{{note.modal.stepPrevious}}</button>
+      <button ng-show="modal.stepIndex<modal.steps.length-1&&!modal.parallel" class="btn"
+              name="stepNext" type="button" ng-click="stepNext()">{{note.modal.stepNext}}</button>
+      <button  ng-show="modal.stepIndex==modal.steps.length-1||modal.parallel" class="btn"
+              name="submit" type="button" ng-click="handle()">{{note.modal.save}}</button>
+    </div>
+  </div>
+</form>

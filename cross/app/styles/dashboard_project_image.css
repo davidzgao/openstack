@@ -1,0 +1,71 @@
+form.modal-image_create .self-define-note,
+.detail_area .self-define-note {
+  display: block;
+  height: 30px;
+  line-height: 30px;
+  color: #29aaee;
+  text-align: center;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+form.modal-image_create .define-container,
+.detail_area .define-container {
+  text-align: center;
+}
+
+form.modal-image_create .define-container > .define-field,
+.detail_area .define-container > .define-field {
+  height: 30px;
+}
+
+form.modal-image_create .define-container > .define-field > .define-key,
+.detail_area .define-container > .define-field > .define-key,
+form.modal-image_create .define-container > .define-field > .define-value,
+.detail_area .define-container > .define-field > .define-value {
+  width: 140px;
+  padding: 5px 3px;
+  line-height: 12px;
+}
+
+form.modal-image_create .define-container .define-add,
+.detail_area .define-container .define-add,
+form.modal-image_create .define-container .define-minus,
+.detail_area .define-container .define-minus {
+  padding: 0 6px;
+  margin-left: 5px;
+  line-height: 20px;
+  color: #fff;
+  vertical-align: middle;
+  background-color: #29aaee;
+}
+
+form.modal-image_create .define-container .define-add:hover,
+.detail_area .define-container .define-add:hover,
+form.modal-image_create .define-container .define-minus:hover,
+.detail_area .define-container .define-minus:hover {
+  background-color: #05A0DB;
+}
+
+form.modal-image_create .define-container > .defined-fields > .item,
+.detail_area .define-container > .defined-fields > .item {
+  height: 27px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  line-height: 27px;
+}
+
+form.modal-image_create .define-container > .defined-fields > .item > .item-key,
+.detail_area .define-container > .defined-fields > .item > .item-key,
+form.modal-image_create .define-container > .defined-fields > .item > .item-value,
+.detail_area .define-container > .defined-fields > .item > .item-value {
+  display: inline-block;
+  width: 140px;
+  overflow-x: hidden;
+  line-height: 24px;
+  text-align: left;
+  word-wrap: break-word;
+  white-space: nowrap;
+  vertical-align: middle;
+  border-bottom: 1px dotted #afafaf;
+}

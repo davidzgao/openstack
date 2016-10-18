@@ -1,0 +1,23 @@
+<div ng-show='active'>
+  <div ng-if="matchedField=='selectList.html'">
+    <div nest-select-list key=key field=field>
+    </div>
+  </div>
+  <div ng-if="matchedField=='standardInput.html'"
+      class="standard-input align-{{field.alignment}} {{field.tag}}">
+    <label>{{field.label | i18n}}</label>
+    <input type={{field.tag}}
+      ng-change="validator(field, $index)"
+      ng-class="{true: 'invalid'}[field.invalidate]"
+      ng-model="field.value"
+      ng-if="field.tag!='textarea'">
+    <textarea type={{field.tag}}
+      ng-change="validator(field, $index)"
+      ng-class="{true: 'invalid'}[field.invalidate]"
+      ng-model="field.value"
+      row="8" cols="20"
+      ng-if="field.tag=='textarea'"></textarea>
+    <span ng-show="field.invalidate"
+      class="field-error-tips">{{field.error_tips}}</span>
+  </div>
+</div>

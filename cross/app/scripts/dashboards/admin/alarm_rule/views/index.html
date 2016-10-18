@@ -1,0 +1,39 @@
+<div>
+  <div class='instance_tabs'>
+    <ul>
+      <li ng-repeat="tab in tabs"
+      ng-class="{active:isActiveTab(tab.template)}"
+      class="tab"
+      ng-click="onClickTab(tab)" ng-if="tab.enable">{{tab.title}}
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div id="mainView">
+  <div ng-include="currentTab"></div>
+</div>
+
+<script type="text/ng-template" id="alarm.tpl.html">
+  <div class='table-tab ui-view-container'>
+    <div class='action_group'>
+      <a class='btn btn-enable create'
+          ui-sref="admin.alarm_rule.create"><i></i>{{createAction}}</a>
+      <button class='btn del' ng-class="deleteEnableClass"
+        cross-confirm='deleteRule()'
+        items=selectedItems
+        cross-confirm-action="{{deleteAction}}"
+        action-enable="{{deleteEnableClass}}"
+        slug={{slug}}>
+        <i></i>
+        {{deleteAction}}
+      </button>
+      <button class='btn btn-enable fresh' ng-click='refresResource()'>
+          <i></i>{{refesh}}
+      </button>
+    </div>
+
+    <div datatable='rulesOpts' class="rules_table"></div>
+
+  </div>
+</script>

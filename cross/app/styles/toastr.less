@@ -1,0 +1,91 @@
+﻿// colors
+@grey: #999999;
+@black: #000000;
+@green: #35ac4e;
+@red: #f96876;
+@blue: #29aaee;
+@orange: #daa93f;
+
+.boxShadow(@boxShadow) {
+  -moz-box-shadow: @boxShadow;
+  -webkit-box-shadow: @boxShadow;
+  box-shadow: @boxShadow;
+}
+
+.toast-message {
+  a, label {
+    color: @grey;
+  }
+
+  a:hover {
+    color: @grey;
+    text-decoration: none;
+  }
+}
+
+.opacity(@opacity) {
+  @opacityPercent: @opacity * 100;
+  opacity: @opacity;
+  -ms-filter: ~"progid:DXImageTransform.Microsoft.Alpha(Opacity=@{opacityPercent})";
+  filter: ~"alpha(opacity=@{opacityPercent})";
+}
+
+.toast-close-button {
+  .opacity(1);
+
+  &:hover, &:focus {
+    .opacity(1);
+  }
+}
+
+.toast-top-right {
+  top: 50px;
+  right: 5px;
+}
+
+#toast-container {
+  > div {
+    width: 240px;
+    padding: 10px 15px 10px 40px;
+    background-position: 10px center;
+    background-color: #fff;
+    color: #000;
+    .boxShadow(0 0 1px @grey);
+    .opacity(1);
+  }
+
+  > :hover {
+    .boxShadow(0 0 2px @grey);
+    .opacity(1);
+  }
+
+  > .toast-success {
+    background-image: url(../images/info/success.png) !important;
+    color: @green;
+    border: 1px solid @green;
+  }
+
+  > .toast-error {
+    color: @red;
+    border: 1px solid @red;
+    background-image: url(../images/info/error.png) !important;
+  }
+
+  > .toast-info {
+    color: @blue;
+    border: 1px solid @blue;
+    background-image: url(../images/info/info.png) !important;
+  }
+
+  > .toast-warning {
+    color: @orange;
+    border: 1px solid @orange;
+    background-image: url(../images/info/warning.png) !important;
+  }
+
+  > .toast-loading {
+    color: @green;
+    border: 1px solid @green;
+    background-image: url(../images/info/loading.gif) !important;
+  }
+}

@@ -1,0 +1,39 @@
+<div>
+  <div class='common_page_tabs'>
+    <ul>
+      <li class="tab active">{{note.title}}</li>
+    </ul>
+  </div>
+
+  <div>
+    <div class='table-tab ui-view-container'>
+      <div class='action_group'>
+        <a class='btn create btn-enable' href="#/project/public_net/allocate">
+          <i></i>{{ note.buttonGroup.allocate }}
+        </a>
+        <button class="btn bind" enabled-status="{{canBind}}"
+          ng-class="canBind" ng-click="bindIp()">
+          <i ng-class="attach"></i>{{note.buttonGroup.bind}}</button>
+         <button class='btn unbind' ng-class="canUnbind"
+                cross-confirm='unbindIp()'
+                slug='{{note.title}}'
+                action-enable="{{canUnbind}}"
+                items=selectedItems cross-confirm-action="{{note.buttonGroup.unbind}}">
+          <i></i>{{ note.buttonGroup.unbind }}</button>
+        <button class='btn del' ng-class="batchActionEnableClass"
+                cross-confirm='reallocateNet()'
+                slug=''
+                action-enable="{{batchActionEnableClass}}"
+                items=selectedItems cross-confirm-action="{{note.buttonGroup.reallocate}}">
+          <i></i>{{ note.buttonGroup.reallocate }}</button>
+        <button class='btn btn-enable fresh'
+                ng-click='refresResource(nets)'>
+          <i></i>{{ note.buttonGroup.refresh }}</button>
+      </div>
+      <div datatable='netsOpts'></div>
+      <div ui-view ng-init="detail_show='detail_hide'"
+           class="detail-panel" ng-class={{"detail_show"}}
+           ng-style="{height: detailHeight, minHeight: 480, width: detailWidth}"></div>
+    </div>
+  </div>
+</div>

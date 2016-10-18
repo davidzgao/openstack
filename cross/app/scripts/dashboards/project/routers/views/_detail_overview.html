@@ -1,0 +1,45 @@
+<div detail-tips
+  detail="router_detail">
+</div>
+
+<div detail-stitcher key-set=detailKeySet source=router_detail>
+</div>
+
+<div class='detail_info'>
+  <div class="detail_title">{{"Connected Subnets" | i18n}}</div>
+  <div class="detail_area">
+    <table class="table_in_detail">
+      <thead>
+        <tr>
+          <th>{{subnetDetail.sub_name}}</th>
+          <th>{{subnetDetail.ip_address}}</th>
+          <th>{{subnetDetail.net_name}}</th>
+          <th>{{subnetDetail.action}}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="sub in conSubs">
+            <td><a href="/#/project/networks/{{sub.id}}/overview?tab=subnet">{{sub.name | parseNull}}</a></td>
+            <td>{{sub.router_ip | parseNull}}</td>
+            <td><a href="/#/project/networks/{{sub.network_id}}/overview">{{sub.network_name | parseNull}}</a></td>
+            <td><a class="btn action-detailtable remove"
+
+                    action-enable="true"
+                    allow-empty-items="true"
+                    cross-confirm-action={{subnetDetail.detach}}
+                    cross-confirm="detachNet(sub.id)"
+                    tips={{subnetDetail.detach_tips}}
+                    slug={{sub.name}} title={{subnetDetail.detach}}>
+                </a>
+            </td>
+        </tr>
+        <tr ng-if="conSubs.length==0">
+            <td>{{subnetDetail.is_null}}</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

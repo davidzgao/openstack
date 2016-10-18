@@ -1,0 +1,26 @@
+<div class="cross-login-container">
+  <div class="login-title">{{note.title}}</div>
+  <form method='post' action=''
+        autocomplete="off" ng-submit='resetSubmit()'
+        form-autofill-fix
+        name='login' class='form-horizontal'>
+   <div class="control-group">
+     <input name="password" type='password'
+       ng-model='user.password'
+       ng-attr-placeholder="{{note.password}}">
+     <input name="password" type='password'
+       ng-model='user.passwordConf'
+       ng-attr-placeholder="{{note.passwordConf}}">
+    <div class="valid-input">
+      <div ng-show="validator.isInvalid" class="notice">
+        <i></i>{{inputTips}}</div>
+      <div class="login-loading loading-container"></div>
+      <div class="login-loading-image loading-container"></div>
+      <div class="password-forget">
+        <a ui-sref="login.login">{{note.return}}</a></div>
+      </div>
+    </div>
+    <button type='submit' value='Login' class="btn">{{note.submit}}</button>
+   </div>
+  </form>
+</div>

@@ -1,0 +1,88 @@
+.os-service .os-service-tips {
+  position: fixed;
+  top: 100px;
+  right: 10px;
+  width: 190px;
+  text-align: left;
+}
+
+.os-service .os-service-tips .item {
+  margin: 10px 0 0 10px;
+}
+
+.os-service .os-service-tips .item .status {
+  display: inline-block;
+  width: 30px;
+  height: 27px;
+  vertical-align: middle;
+  border-radius: 6px;
+}
+
+.os-service .os-service-tips .item .status-down {
+  background-color: #f07878;
+}
+
+.os-service .os-service-tips .item .status-enabled {
+  background-color: #a9df75;
+}
+
+.os-service .os-service-tips .item .status-disabled {
+  background-color: #d8dbd9;
+}
+
+.os-service .os-service-tips .item .content {
+  display: inline-block;
+  margin-left: 10px;
+  line-height: 30px;
+  vertical-align: middle;
+}
+
+.os-service .os-service-host {
+  padding: 0 20px 0 0;
+  margin-top: 18px;
+  margin-right: 200px;
+  margin-bottom: 10px;
+  background-color: #fff;
+  border: 1px dashed #d2d2d2;
+  border-radius: 3px;
+}
+
+.os-service .os-service-host .os-service-host-name {
+  margin-left: 10px;
+  font-size: 14px;
+  line-height: 30px;
+  color: #333;
+}
+
+.os-service .os-service-host .os-service-host-name .small {
+  display: inline-block;
+  width: 10px;
+  height: 8px;
+  background: url(../images/lead_right.png) center no-repeat;
+}
+
+.os-service .os-service-host .services-list:last-child {
+  margin-right: 20px;
+}
+
+.os-service .os-service-host .services-list .item {
+  display: inline-block;
+  padding: 20px 15px;
+  margin: 8px 0 8px 20px;
+  color: #fff;
+}
+
+.os-service .os-service-host .services-list .item.enabled {
+  background-color: #a9df75;
+  border-radius: 5px;
+}
+
+.os-service .os-service-host .services-list .item.disabled {
+  background-color: #d8dbd9;
+  border-radius: 5px;
+}
+
+.os-service .os-service-host .services-list .item.down {
+  background-color: #f07878;
+  border-radius: 5px;
+}

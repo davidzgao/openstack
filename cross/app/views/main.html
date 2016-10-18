@@ -1,0 +1,47 @@
+<!-- cross application index -->
+<div class="cross-index">
+  <!-- cross left tool bar -->
+  <div class="cross-frame-left">
+    <div class="cross-tool-nav-logo">
+      <a target="_blank" href={{logoHyperLink}}></a>
+    </div>
+    <div class="cross-tool-nav" ng-controller='navbarCtrl'>
+      <accordion close-others='true' class='cross-tool-nav-bar'>
+        <accordion-group ng-repeat="dashboard in $dashboards" is-open="{true:'true'}[dashboard.slug==currentDashboardSlug]">
+        <accordion-heading ng-if="dashboard.single==false"
+        arrow="{{dashboard.slug}}">
+          <i class="cross-nav-{{dashboard.slug}}"></i>
+          <i class="accordion-tip" arrow="{{dashboard.slug}}" ng-class='tip'></i>
+          {{dashboard.name}}
+          </accordion-heading>
+          <accordion-heading ng-if="dashboard.single==true">
+          <div class='cross-nav-single-heading'
+               ng-class="{true: 'active'}[dashboard.panels[0].slug==currentPanelSlug]" >
+              <i class="cross-nav-{{dashboard.slug}}"></i>
+              <a ui-sref="{{$view}}.{{dashboard.panels[0].slug}}"
+                 ng-class="{true: 'active'}[dashboard.panels[0].slug==currentPanelSlug]"
+                 class="cross-nav-single-panel">
+                 {{dashboard.name}}</a>
+             </div>
+          </accordion-heading>
+          <div class="nav-title-item"
+               ng-repeat="panel in dashboard.panels"
+               ng-if="dashboard.single==false">
+            <a ui-sref="{{$view}}.{{panel.slug}}"
+               ng-class="{true: 'active'}[panel.slug==currentPanelSlug]">
+               {{panel.name}}
+            </a>
+          </div>
+        </accordion-group>
+      </accordion>
+    </div>
+  </div>
+
+  <!-- cross main view page -->
+  <div class="cross-frame-main">
+    <div class="cross-frame-main-top-tool">
+      <ng-include src="'views/common/_nav_top.html'"></ng-include>
+    </div>
+    <div class="cross-frame-main-center" ui-view></div>
+  </div>
+</div>

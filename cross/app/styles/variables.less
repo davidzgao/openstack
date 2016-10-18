@@ -1,0 +1,133 @@
+/* Variables will be used in index page */
+
+/* Usage warning */
+@RES_USAGE_WAR_BG: #DDBBBB;
+@RES_USAGE_WAR_COL: #EB4848;
+@RES_ITEM_FI_COL: #F8FFEE;
+@RES_ITEM_LA_COL: #FFEEEE;
+
+/* Min width of cross app */
+@APP_MIN_WIDTH: 800px;
+
+/* Min height of cross app */
+@APP_MIN_HEIGHT: 600px;
+
+/* Background of app */
+@APP_BACKGROUND: #ffffff;
+
+/* Left frame width of cross app */
+@APP_FRAME_LEFT_WIDTH: 200px;
+
+/* Left frame background of cross app */
+@APP_FRAME_LEFT_BACKGROUND: #373636;
+
+/* Top height of cross app */
+@APP_TOP_HEIGHT: 45px;
+
+@TOP_BAR_BG: #2d2c2c;
+
+@TOP_LOGO_BG: #2d2c2c;
+
+/* Left logo background of cross app */
+@APP_FRAME_LEFT_LOGO_BACKGROUND: #2d2c2c url(../images/logo.png) 25px 10px no-repeat;
+
+/* Top tool background of cross app */
+@APP_FRAME_TOP_TOOL_BACKGROUND: #2d2c2c;
+
+/* Left nav bar item background */
+@APP_LEFT_NAV_ITEM_ACTIVE_COLOR: #269bd8;
+
+@APP_LEFT_NAV_ITEM_HOVER_COLOR: #269BD8;
+
+/* Attr at data table */
+@DATA_TABLE_HEADER_BG: #CCE4F6;
+@DATA_TABLE_ODD_ROW_BG: #F2F2F2;
+@DATA_TABLE_EVEN_ROW_BG: #FFFFFF;
+@DATA_TABLE_ROW_HOVER: #E1F2FF;
+@DATA_TABLE_HEADER_TEXT: #3D3D3D;
+
+/* Style of button for action */
+@BUTTON_DISABLED_BG: #E3E3E3;
+@BUTTON_DANGER_BG: #E05C69;
+@BUTTON_DISABLED_TEXT_COLOR: #ABABAB;
+@BUTTON_ENABLED_BG: #28A9EE;
+@BUTTON_ENABLED_TEXT_COLOR: #FFFFFF;
+@BUTTON_DANGER_BG: #E15A67;
+@BUTTON_HOVER_BG: #28A9EE;
+
+@LINK_COLOR: #269BD8;
+
+@ACTIVE_TEXT_COLOR: #28A9EE;
+
+.crossLeftNavLeadFont() {
+  font-size: 15px;
+  color: #ddd;
+  font-weight: normal;
+}
+
+.crossLeftNavItemFont() {
+  font-size: 14px;
+  color: #ddd;
+  font-weight: normal;
+}
+
+/* left width of dashboard admin over view page */
+@DASHBOARD_ADMIN_OVERVIEW_RIGHT_WIDTH: 300px;
+
+/* top height of dashboard admin over view page */
+@DASHBOARD_ADMIN_OVERVIEW_TOP_HEIGHT: 300px;
+
+.lineGradient(@width, @color){
+    width: @width;
+    height: 1px;
+}
+
+.horizontal(@color: #000;@height:1px;) {
+  background-image: -webkit-linear-gradient(left, #fff 0%, @color 50%, #fff 100%);
+  background-image: -o-linear-gradient(left, #fff 0%, @color 50%, #fff 100%);
+  background-image: -webkit-gradient(linear, left, right, from(#fff), color-to(50%, @color), color-to(100%, @color));
+  background-image: linear-gradient(to right, #fff 0%, @color 50%, #fff 100%);
+  background-repeat: repeat-x;
+  height: @height;
+}
+
+.vertical(@color: #000;@width: 1px;) {
+  background-image: -webkit-linear-gradient(top, #fff 0%, @color 50%, #fff 100%);
+  background-image: -o-linear-gradient(top, #fff 0%, @color 50%, #fff 100%);
+  background-image: -webkit-gradient(linear, top, bottom, from(#fff), color-to(50%, @color), color-to(100%, @color));
+  background-image: linear-gradient(to bottom, #fff 0%, @color 50%, #fff 100%);
+  background-repeat: repeat-x;
+  width: @width;
+}
+
+/* Login container background-color */
+@LOGIN_BACK_COLOR: #2c4a67;
+
+/* Login container width */
+@LOGIN_WIDTH: 460px;
+
+/* Login container height */
+@LOGIN_HEIGHT: 300px;
+
+/* Login logo image */
+@LOGIN_LOGO_IMAGE: url(../images/login/login_logo.png) center no-repeat;
+
+@LOGO_HEIGHT: 45px;
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to   {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to   {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,57 @@
+<div>
+  <div ng-if="matchedField=='standardInput.html'"
+    class="standard-input align-{{field.alignment}}">
+    <label>{{field.label | i18n}}</label>
+    <input type={{field.tag}}
+      ng-change="validator(field, $index)"
+      ng-model="field.value"
+      ng-class="{true: 'invalid'}[field.invalidate]">
+    <span ng-show="field.invalidate"
+      class="field-error-tips">{{field.error_tips}}</span>
+  </div>
+
+  <div ng-if="matchedField=='radio.html'">
+    <span field=field key=key custom-radio>
+    </span>
+  </div>
+
+  <div ng-if="matchedField=='alternative.html'">
+    <div alternative-field key=key field=field>
+    </div>
+  </div>
+
+  <div ng-if="matchedField=='slide.html'">
+    <div slide-field key=key field=field>
+    </div>
+  </div>
+
+  <div ng-if="matchedField=='selectList.html'">
+    <div select-list key=key field=field>
+    </div>
+  </div>
+
+  <div ng-if="matchedField=='selectButton.html'">
+    <div select-button key=key field=field>
+    </div>
+  </div>
+
+  <div ng-if="matchedField=='duration.html'">
+    <div duration-input key=key field=field>
+    </div>
+  </div>
+
+  <div ng-if="matchedField=='standardRadio.html'">
+    <div standard-radio key=key field=field>
+    </div>
+  </div>
+
+  <div ng-if="matchedField=='muti-select.html'">
+    <div muti-select key=key field=field>
+    </div>
+  </div>
+
+  <div ng-if="matchedField=='checkbox.html'">
+    <div check-box key=key field=field>
+    </div>
+  </div>
+</div>

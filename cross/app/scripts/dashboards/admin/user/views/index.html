@@ -1,0 +1,55 @@
+<div>
+  <div class='instance_tabs'>
+    <ul>
+      <li ng-repeat="tab in tabs"
+      ng-class="{active:isActiveTab(tab.template)}"
+      class="tab"
+      ng-click="onClickTab(tab)" ng-if="tab.enable">{{tab.title}}      </li>
+    </ul>
+  </div>
+</div>
+
+<div id="mainView">
+  <div ng-include="currentTab"></div>
+</div>
+
+<script type="text/ng-template" id="user.tpl.html">
+  <div class='table-tab ui-view-container'>
+    <div class='action_group'>
+      <a class='btn btn-enable create'
+          ui-sref="admin.user.create"><i></i>{{createAction}}</a>
+      <button class='btn del' ng-class="deleteEnableClass"
+        cross-confirm='deleteUser()'
+        items=selectedItems
+        cross-confirm-action="{{deleteAction}}"
+        action-enable="{{deleteEnableClass}}"
+        slug={{slug}}>
+        <i></i>
+        {{deleteAction}}
+      </button>
+      <a class='btn project'
+          id="assign-project"
+          ng-class="canAssginProject"
+          href="#/admin/user/{{singleSelectedItem.id}}/projects"
+          ng-if="canAssginProject=='btn-enable'"
+          >
+          <i></i>{{projectAction}}</a>
+      <a class='btn project'
+          id="assign-project"
+          ng-class="canAssginProject"
+          ng-if="canAssginProject=='btn-disable'"
+          >
+          <i></i>{{projectAction}}</a>
+      <button class='btn btn-enable fresh' ng-click='refresResource()'>
+          <i></i>{{refesh}}
+      </button>
+      <div class="tabSearch" ng-if="searchOpts.showSearch">
+        <input class="search ng-pristine" ng-model="searchOpts.val"
+          ng-change="searchOpts.search(searchKey, searchOpts.val)">
+      </div>
+    </div>
+
+    <div datatable='usersOpts' class="users_table"></div>
+
+  </div>
+</script>

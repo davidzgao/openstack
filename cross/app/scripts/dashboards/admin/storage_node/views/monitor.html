@@ -1,0 +1,85 @@
+<div class='monitor_tabs'>
+  <div class='each_tabs'>
+  <ul>
+    <li ng-repeat="tab in monitorTabs"
+      ng-class="{active:isActiveTab(tab.template)}"
+      class="monitor-tab"
+      ng-click="switchTab(tab)" ng-if="tab.enable">{{tab.title}}</li>
+  </ul>
+  </div>
+  <div class='clear'></div>
+</div>
+
+<div id="monitoArea" class="storageMonitorArea">
+  <div ng-include="currentMonitorTab"></div>
+</div>
+
+<script type="text/ng-template" id="real-time-monitor">
+<div ng-controller='admin.storage_node.StorageMonitorRealTimeCtl'>
+    <common-monitor class="monitorLine storageMonitorLine"
+     data="writeRate" meter_name="ceph.write" resouce="ceph">
+    </common-monitor>
+    <common-monitor class="monitorLine storageMonitorLine"
+     data="readRate" meter_name="ceph.read" resouce="ceph">
+    </common-monitor>
+    <common-monitor class="monitorLine storageMonitorLine"
+     data="operationsRate" meter_name="ceph.operations" resouce="ceph">
+    </common-monitor>
+</div>
+</script>
+
+<script type="text/ng-template" id="one-hour-ago">
+<div ng-controller='admin.storage_node.StorageMonitorRealTimeCtl'>
+    <common-monitor class="monitorLine storageMonitorLine"
+     data="writeRate" meter_name="ceph.write" resouce="ceph">
+    </common-monitor>
+    <common-monitor class="monitorLine storageMonitorLine"
+     data="readRate" meter_name="ceph.read" resouce="ceph">
+    </common-monitor>
+    <common-monitor class="monitorLine storageMonitorLine"
+     data="operationsRate" meter_name="ceph.operations" resouce="ceph">
+    </common-monitor>
+</div>
+</script>
+
+<script type="text/ng-template" id="one-day-ago">
+<div ng-controller='admin.storage_node.StorageMonitorRealTimeCtl'>
+    <common-monitor class="monitorLine storageMonitorLine"
+     data="writeRate" meter_name="ceph.write" resouce="ceph">
+    </common-monitor>
+    <common-monitor class="monitorLine storageMonitorLine"
+     data="readRate" meter_name="ceph.read" resouce="ceph">
+    </common-monitor>
+    <common-monitor class="monitorLine storageMonitorLine"
+     data="operationsRate" meter_name="ceph.operations" resouce="ceph">
+    </common-monitor>
+</div>
+</script>
+
+<script type="text/ng-template" id="one-week-ago">
+<div ng-controller='admin.storage_node.StorageMonitorRealTimeCtl'>
+    <common-monitor class="monitorLine storageMonitorLine"
+     data="writeRate" meter_name="ceph.write" resouce="ceph">
+    </common-monitor>
+    <common-monitor class="monitorLine storageMonitorLine"
+     data="readRate" meter_name="ceph.read" resouce="ceph">
+    </common-monitor>
+    <common-monitor class="monitorLine storageMonitorLine"
+     data="operationsRate" meter_name="ceph.operations" resouce="ceph">
+    </common-monitor>
+</div>
+</script>
+
+<script type="text/ng-template" id="one-month-ago">
+<div ng-controller='admin.storage_node.StorageMonitorRealTimeCtl'>
+    <common-monitor class="monitorLine storageMonitorLine"
+     data="writeRate" meter_name="ceph.write" resouce="ceph">
+    </common-monitor>
+    <common-monitor class="monitorLine storageMonitorLine"
+     data="readRate" meter_name="ceph.read" resouce="ceph">
+    </common-monitor>
+    <common-monitor class="monitorLine storageMonitorLine"
+     data="operationsRate" meter_name="ceph.operations" resouce="ceph">
+    </common-monitor>
+</div>
+</script>

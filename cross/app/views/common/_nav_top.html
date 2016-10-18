@@ -1,0 +1,101 @@
+<!--
+The top bar. Display logo and info of user login.
+-->
+<div id="top_bar">
+ <div id="user_info" ng-controller='UserCtrl' class="cross-nav-user">
+   <ul>
+     <li class="cross-nav-user-select-region {{multiRegion}}"
+       ng-class="{true: 'clicked'}[showRegions]"
+       ng-blur="regionBlur()"
+       tabindex="1"
+       ng-click="selectRegion()"> {{currentRegion.name}}
+       <div class="cross-region-list" ng-show="showRegions">
+        <div ng-repeat="region in otherRegions"
+            class="region-item"
+            ng-click="switchRegion(region.name)">
+          {{region.name}}
+        </div>
+       </div>
+
+     </li>
+     <li class="cross-nav-user-select-dashboard cross-change-project" ng-hide="hideChangeProject">{{changeView}}</li>
+     <li id="users_projects" ng-blur="dashboardBlur()" ng-hide="hideChangeProject"
+     class="cross-nav-user-select-dashboard {{showSelect?'active':''}}" tabindex="1">
+       <div title="{{selectedDashboard}}" ng-click="selectDashboard()" class="cross-current-dashboard"></div>
+       <div class="cross-dashboard-list" ng-show="showSelect">
+         <div class="cross-dashboard-item {{selectedDashboard=='admin'&&slug=='admin'?'active':''}}"
+              ng-repeat="(slug, name) in dashboards">
+           <div class="content" ng-click="changeDashboard(slug)"> {{name}} </div>
+           <div class="recent" ng-if="slug=='project'">
+             <div ng-repeat="pro in dash.recProjects" title="{{pro.name}}"
+                  class="item {{pro.isActive?'active':''}}"
+                  ng-click="selectedProject(pro.id, pro.name)">
+               <div class="field">{{pro.name}}</div>
+             </div>
+           </div>
+           <div class="project-more" ng-if="slug=='project'&&enoughProjects">
+             <div class="more" ng-click="dashMouseEnter(slug)">&nbsp;&gt;&gt;&nbsp;{{note.more}}</div>
+             <div class="cross-dash-project" ng-show="dash.show">
+               <div class="all-projects">
+                 <div class="tool-search">
+                   <input class="search-input"
+                          ng-focus="inputFocus()"
+                          ng-blur="inputBlur()"
+                          ng-change="searchProjects()" ng-model="dash.search" />
+                 </div>
+                 <div class="project-list">
+                   <div ng-repeat="pro in dash.projects" title="{{pro.name}}"
+                        class="item {{pro.isActive?'active':''}}"
+                        ng-show="pro.isShow"
+                        ng-click="selectedProject(pro.id, pro.name)">
+                     <div class="field">{{pro.name}}</div>
+                   </div>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+     </li>
+     <li id="current_user" ng-blur="userBlur()" ng-click="userInfo()"
+         class="cross-nav-user-username {{showInfo?'active':''}}" tabindex="1">
+       <div class="user-container"></div>
+       <div class="cross-nav-user-info" ng-show="showInfo">
+        <div class="cross-nav-user-set" ng-click="userSetting()">
+            {{setting}}
+        </div>
+       </div>
+     </li>
+     <li id="message_box" ng-blur="blurMessage()"
+         class="cross-nav-user-message {{showMessage?'active':''}}"
+         tabindex="1" ng-focus="focusMessage()">
+       <div class="message-container">
+         <div ng-show="record.workflow||record.alarm"
+              class="record-number {{animatedRecord?'animated infinite rubberBand':''}}"></div>
+       </div>
+       <div ng-show="showMessage" class="cross-message-list">
+         <div class="message-item" ng-click="orient('admin.alarm_log')">
+           <span class="title-lead">{{note.message.alarm}}</span>
+           <span class="record">{{record.alarm}}</span>
+         </div>
+         <div ng-click="orient('admin.workflow_log')" class="message-item">
+           <span class="title-lead">{{note.message.workflow}}</span>
+           <span class="record">{{record.workflow}}</span>
+         </div>
+       </div>
+     </li>
+     <li id="logout"
+         class="cross-nav-user-logout"
+         action-enable="true"
+         allow-empty-items="true"
+         cross-confirm-action="{{note.logout}}"
+         cross-confirm="logout()" ></li>
+   </ul>
+ </div>
+ <div class="loading-change-dashboard" ng-show="showLoading">
+   <div class="backend"></div>
+   <div class="http-loader__wrapper">
+     <div class="http-loader"></div>
+   </div>
+ </div>
+</div>

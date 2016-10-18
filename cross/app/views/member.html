@@ -1,0 +1,84 @@
+<div class="member_box">
+  <div class="box-title">{{"Available servers" | i18n}}</div>
+  <div class="option_box">
+    <div class="socrll-wapper">
+      <div class="datatable-wapper">
+        <div class="datatable">
+          <table class="table_in_form">
+            <thead>
+              <tr>
+                <th><span class="title">{{"Server Name" | i18n}}</span></th>
+                <th><span class="title">{{"IP" | i18n}}</span></th>
+                <th><span class="title">{{"Add" | i18n}}</span></th>
+              </tr>
+            </thead>
+            <tbody ng-if="step">
+              <tr ng-repeat="item in step.fields[0].default"
+                  ng-class="{even: $even, odd: $odd}">
+                <td>{{item.name}}</td>
+                <td>{{item.port.fixed_ips[0].ip_address}}</td>
+                <td><a class="btn btn-primary" ng-click="addToSelect(item)">+</a></td>
+              </tr>
+              <tr ng-if="step.fields[0].default.length<=0">
+                  <td><i>{{"No Available Servers" | i18n}}</i></td></tr>
+            </tbody>
+            <tbody ng-if="!step">
+              <tr ng-repeat="item in avMembers"
+                  ng-class="{even: $even, odd: $odd}">
+                <td>{{item.name}}</td>
+                <td>{{item.port.fixed_ips[0].ip_address}}</td>
+                <td><a class="btn btn-primary" ng-click="addToSelect(item)">+</a></td>
+              </tr>
+              <tr ng-if="avMembers.length<=0">
+                  <td><i>{{"No Available Servers" | i18n}}</i></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="box-title">{{"Selected members" | i18n}}</div>
+  <div class="selected_box">
+    <div class="socrll-wapper">
+      <div class="datatable-wapper">
+        <div class="datatable">
+        <table class="table_in_form">
+          <thead>
+            <tr>
+              <th><span class="title">{{"Server Name" | i18n}}</span></th>
+              <th><span class="title">{{"IP" | i18n}}</span></th>
+              <th><span class="title">{{"Protocol Port" | i18n}}</span></th>
+              <th><span class="title">{{"Weight" | i18n}}</span></th>
+              <th><span class="title">{{"Remove" | i18n}}</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="member in selectedMember"
+                ng-class="{even: $even, odd: $odd}">
+              <td>{{member.name}}</td>
+              <td>{{member.fixed_ip}}</td>
+              <td>
+                <input ng-model="member.port" type="number"
+                min="0" max="65535"
+                ng-disabled="{false: 'true'}[!member.member_id]"
+                ng-change="portChange(member, $index)"
+                class="edit-in-cell"></td>
+              <td>
+                <input ng-model="member.weight" type="number"
+                min="1" class="edit-in-cell"></td>
+              <td><a class="btn btn-primary" ng-click="remove(member, $index)">-</a></td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="cross-modal-footer" ng-if="!step">
+    <button class="btn" name="cancel"
+        ng-click="close()">{{note.cancel}}</button>
+    <button class="btn" name="submit"
+        ng-click="handle()">{{note.save}}</button>
+</div>

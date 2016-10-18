@@ -1,0 +1,66 @@
+<div>
+  <div class='instance_tabs'>
+    <ul>
+      <li ng-repeat="tab in tabs"
+      ng-class="{active:isActiveTab(tab.template)}"
+      class="tab"
+      ng-click="onClickTab(tab)" ng-if="tab.enable">{{tab.title}}
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div id="mainView">
+  <div ng-if="currentTab=='pending.tpl.html'">
+    <div class='table-tab ui-view-container'
+         ng-controller='admin.feedback.pendingCtr'>
+      <div class='action_group'>
+          <button class='btn del' ng-class="deleteEnableClass"
+              cross-confirm='closeFeedback()'
+              items=selectedItems
+              cross-confirm-action="{{closeAction}}"
+              action-enable="{{deleteEnableClass}}"
+              slug={{slug}}
+              tips={{deleteTips}}>
+              <i></i>
+              {{closeAction}}
+          </button>
+          <button class='btn btn-enable fresh'
+                  ng-click='refresResource()'>
+              <i></i>{{refesh}}
+          </button>
+      </div>
+      <div datatable='feedbacksOpts' class="feedbacks_table"></div>
+    </div>
+  </div>
+  <div ng-if="currentTab=='processing.tpl.html'">
+    <div class='table-tab ui-view-container'
+         ng-controller='admin.feedback.pendingCtr'>
+      <div class='action_group'>
+          <button class='btn del' ng-class="deleteEnableClass"
+              cross-confirm='closeFeedback()'
+              items=selectedItems
+              cross-confirm-action="{{closeAction}}"
+              action-enable="{{deleteEnableClass}}"
+              slug={{slug}}
+              tips={{deleteTips}}>
+              <i></i>
+              {{closeAction}}
+          </button>
+          <button class='btn btn-enable fresh'
+                  ng-click='refresResource()'>
+              <i></i>{{refesh}}
+          </button>
+      </div>
+      <div datatable='feedbacksOpts' class="feedbacks_table"></div>
+    </div>
+  </div>
+  <div ng-if="currentTab=='closed.tpl.html'">
+    <div class='table-tab ui-view-container'
+         ng-controller='admin.feedback.pendingCtr'>
+      <div class='action_group'>
+      </div>
+      <div datatable='feedbacksOpts' class="feedbacks_table"></div>
+    </div>
+  </div>
+</div>

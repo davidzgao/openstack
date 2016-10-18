@@ -1,0 +1,96 @@
+i {
+  background: url(../images/menu/system.png) no-repeat center;
+  background-position: 0 3px;
+}
+
+.cross-nav-system {
+  background-image: url(../images/menu/overview.png);
+}
+
+.cross-nav-user {
+  background-image: url(../images/menu/user.png);
+}
+
+.cross-nav-volume {
+  background-image: url(../images/menu/volume.png);
+}
+
+.cross-nav-workflow {
+  background-image: url(../images/menu/workflow.png);
+}
+
+.cross-nav-instance {
+  background-image: url(../images/menu/instance.png);
+}
+
+.cross-nav-strategy {
+  background-image: url(../images/menu/strategy.png);
+}
+
+.cross-nav-monitor {
+  background-image: url(../images/menu/monitor.png);
+}
+
+.cross-nav-network {
+  background-image: url(../images/menu/network.png);
+}
+
+.cross-nav-pool {
+  background-image: url(../images/menu/pool.png);
+}
+
+.cross-nav-alarm {
+  background-image: url(../images/menu/alarm.png);
+}
+
+.cross-nav-statistic {
+  background-image: url(../images/menu/reports.png);
+}
+
+.cross-nav-deploy {
+  background-image: url(../images/menu/deploy.png);
+}
+
+.cross-nav-public_net {
+  background-image: url(../images/menu/public_net.png);
+}
+
+.cross-nav-image {
+  background-image: url(../images/menu/image.png);
+}
+
+.cross-nav-secret_key {
+  background-image: url(../images/menu/secret_key.png);
+}
+
+.cross-nav-security_group {
+  background-image: url(../images/menu/security_group.png);
+}
+
+.cross-nav-operation_log {
+  background-image: url(../images/menu/operation_log.png);
+}
+
+.cross-nav-networks {
+  background-image: url(../images/menu/network.png);
+}
+
+.cross-nav-routers {
+  background-image: url(../images/menu/router_icon.png);
+}
+
+.cross-nav-ports {
+  background-image: url(../images/menu/port.png);
+}
+
+.cross-nav-lbaas {
+  background-image: url(../images/menu/lbaas.png);
+}
+
+.cross-nav-net_topology {
+  background-image: url(../images/menu/topology.png);
+}
+
+.cross-nav-metering {
+  background-image: url(../images/menu/metering.png);
+}

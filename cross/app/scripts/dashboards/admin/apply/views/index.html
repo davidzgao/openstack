@@ -1,0 +1,81 @@
+<div>
+  <div class='instance_tabs'>
+    <ul>
+      <li ng-repeat="tab in tabs"
+        ng-class="{active:isActiveTab(tab.template)}"
+        class="tab"
+        ng-click="onClickTab(tab)" ng-if="tab.enable">{{tab.title}}</li>
+    </ul>
+  </div>
+
+<div id="mainView">
+  <div ng-if="currentTab=='pending.tpl.html'">
+    <div class='table-tab ui-view-container' ng-controller='admin.apply.pendingCtr'>
+        <div class='action_group'>
+            <button class='btn del' ng-class="deleteEnabledClass"
+                cross-confirm='deleteApply()'
+                items=selectedItems
+                cross-confirm-action="{{deleteAction}}"
+                action-enable="{{deleteEnabledClass}}"
+                slug={{slug}}>
+                <i></i>
+                {{deleteAction}}
+            </button>
+            <button class='btn btn-enable fresh'
+                ng-click='refresResource()'>
+                <i></i>{{refesh}}
+            </button>
+        </div>
+        <div datatable='applysOpts' class="applys_table"></div>
+    </div>
+  </div>
+  <div ng-if="currentTab=='error.tpl.html'">
+    <div class='table-tab ui-view-container' ng-controller='admin.apply.pendingCtr'>
+        <div class='action_group'>
+            <button class='btn retry' ng-class="retryEnabledClass"
+                cross-confirm='retryCreate()'
+                items=selectedItems
+                cross-confirm-action="{{retrigger}}"
+                action-enable="{{retryEnabledClass}}"
+                slug={{slug}}>
+                <i></i>
+                {{retrigger}}
+            </button>
+            <button class='btn del' ng-class="deleteEnabledClass"
+                cross-confirm='deleteApply()'
+                items="selectedItems"
+                cross-confirm-action="{{deleteAction}}"
+                action-enable="{{deleteEnabledClass}}"
+                slug={{slug}}>
+                <i></i>
+                {{deleteAction}}
+            </button>
+            <button class='btn btn-enable fresh'
+                ng-click='refresResource()'>
+                <i></i>{{refesh}}
+            </button>
+        </div>
+        <div datatable='applysOpts' class="applys_table"></div>
+    </div>
+  </div>
+  <div ng-if="currentTab=='reviewed.tpl.html'">
+    <div class='table-tab ui-view-container' ng-controller='admin.apply.pendingCtr'>
+        <div class='action_group'>
+            <button class='btn del' ng-class="deleteEnabledClass"
+                cross-confirm='deleteApply()'
+                items=selectedItems
+                cross-confirm-action="{{deleteAction}}"
+                action-enable="{{deleteEnabledClass}}"
+                slug={{slug}}>
+                <i></i>
+                {{deleteAction}}
+            </button>
+            <button class='btn btn-enable fresh'
+                ng-click='refresResource()'>
+                <i></i>{{refesh}}
+            </button>
+        </div>
+        <div datatable='applysOpts' class="applys_table"></div>
+    </div>
+  </div>
+</div>

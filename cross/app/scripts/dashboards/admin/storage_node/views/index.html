@@ -1,0 +1,16 @@
+<div>
+  <div class='instance_tabs'>
+    <ul>
+      <li ng-repeat="tab in tabs"
+      ng-class="{active:isActiveTab(tab.url)}"
+      class="tab storage-tab"
+      ng-if="tab.enable">
+        <a ui-sref='{{tab.url}}'>{{tab.title}}</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div id="mainView">
+  <div ui-view></div>
+</div>

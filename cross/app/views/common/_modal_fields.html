@@ -1,0 +1,185 @@
+<form method="post" action="" id="_modal_{{modal.slug}}"
+      class="modal-{{modal.slug}}" autocomplete="off" enctype="{{modal.containFile?'multipart/form-data':''}}">
+  <div ng-show="modal.globalTip" class="modal-global-tip">{{modal.globalTip}}</div>
+  <div ng-if="modal.single">
+    <div class="fields-area">
+      <div class="field-warning" ng-if="form['warningFlag']">{{form.warningInfo}}</div>
+      <div ng-if="field.type!='hidden'" class="field-{{field.slug}} field" ng-repeat="field in modal.fields">
+          <div class="field-label {{field.inLine?'field-next-line':''}}">
+            <span ng-if="field.restrictions.required">* </span>
+              {{field.label}}</div>
+        <div class="field-mulit-select {{field.classes?field.classes:''}}" ng-if="field.tag=='mulit-select'">
+          <div ng-repeat="vol in volumes" class="field-select-area">
+            <div class="field-value field-select-item {{vol.selected==true?'active':''}} {{vol.bootable=='true'?'field-value-disable':''}}" ng-click="volumeClick(vol)">{{vol.display_name}}</div>
+          </div>
+        </div>
+        <div class="field-custom" ng-if= "field.tag == 'custom'">
+          <div ng-if="field.templateUrl" ng-include="field.templateUrl"></div>
+        </div>
+        <div class="field-input" ng-if="field.tag == 'input'">
+          <div ng-if="field.type!='checkbox-list'&&field.type!='file'">
+            <input ng-change="validator(field.slug)"
+                   class="{{field.classes?field.classes:''}} {{tips[field.slug]?'invalid':''}}"
+                   name="{{field.slug}}" ng-model="form[field.slug]"
+                   type="{{field.type?field.type:'text'}}"
+                   ng-disabled="{'disable': 'true'}[field.type]"
+                   ng-attr-placeholder="{{field.placeholder?field.placeholder:''}}"/>
+          </div>
+          <div ng-if="field.type!='checkbox-list'&&field.type=='file'">
+            <input ng-change="validator(field.slug)"
+                   class="{{field.classes?field.classes:''}} {{tips[field.slug]?'invalid':''}}"
+                   name="{{field.slug}}" ng-model="form[field.slug]"
+                   type="file"
+                   ng-attr-placeholder="{{field.placeholder?field.placeholder:''}}"/>
+          </div>
+          <div ng-if="field.type=='checkbox-list'">
+            <div class="checkbox-list-field" ng-repeat="opt in field.default">
+              <input ng-click="validator(field.slug)"
+                     type="checkbox" checklist-model="form[field.slug]"
+                     checklist-value="opt.value">{{opt.text}}
+            </div>
+          </div>
+        </div>
+        <div class="field-input ip" ng-if="field.tag == 'ipinput'"
+            ng-class="{true: 'complete'}[ipMore]">
+          <div ng-repeat="ipset in field.default"
+              class="ip-checkbox {{ipset.invalid}}"
+              ng-class="{true: 'selected'}[$index==ipSelected]"
+              ng-click="selectChange($index)">
+              <div ip-input address=ipset></div>
+          </div>
+        </div>
+        <!-- end ng-if field.tag == ipinput -->
+        <div class="field-input" ng-if="field.tag == 'textarea'">
+          <textarea ng-change="validator(field.slug)" name="{{field.slug}}"
+                    class="{{field.classes?field.classes:''}} {{tips[field.slug]?'invalid':''}}"
+                    ng-model="form[field.slug]"
+                    ng-attr-placeholder="{{field.placeholder?field.placeholder:''}}"></textarea>
+        </div>
+        <div class="field-input" ng-if="field.tag == 'select'">
+          <select ng-change="validator(field.slug)" name="{{field.slug}}"
+                  class="selectDirective {{field.classes?field.classes:''}} {{tips[field.slug]?'invalid':''}}"
+                  ng-attr-placeholder="{{field.placeholder?field.placeholder:''}}"
+                  ng-model="form[field.slug]" val="field.default"
+                  ng-options="opt.value as opt.text group by opt.group for opt in field.default">
+          </select>
+        </div>
+        <div ng-if="tips[field.slug]" class="modal-tip">
+          <div>&lowast; {{tips[field.slug]}}</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cross-modal-footer">
+      <button class="btn" name="submit" type="submit" ng-click="handle()">{{note.modal.save}}</button>
+      <button class="btn" name="cancel" ng-click="close()">{{note.modal.cancel}}</button>
+    </div>
+  </div>
+  <div ng-if="!modal.single">
+    <div class="step-header">
+      <div class="step-header-empty"></div>
+      <div class="step-notes">
+        <table ng-if="!modal.parallel">
+          <tr>
+            <td class="step-item {{$index<=modal.stepIndex?'active':''}}"
+                ng-repeat="step in modal.steps">
+              <div class="step-inner">
+                <div class="step-lead-field">
+                  <div class="step-note">{{step.name}}</div>
+                  <div class="step-index">{{$index + 1}}</div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table><!--End of ng-if !modal.parallel-->
+        <div ng-if="modal.parallel" class="step-parallel">
+          <div class="step-tab {{$index==modal.stepIndex?'active':''}}"
+               ng-repeat="step in modal.steps"
+               ng-click="jumpStep(step.slug, $index)">
+            {{step.name}}
+          </div>
+        </div><!-- End of ng-if modal.parallel-->
+      </div>
+    </div>
+    <div class="fields-area">
+      <div class="modal-steps" ng-style="{'margin-left': (-modal.stepIndex * 500) + 'px'}">
+        <div ng-repeat="step in modal.steps"
+             class="modal-step modal-step-count{{$index}}"
+             style="visibility: {{modal.stepIndex<$index?'hidden':'visible'}}" >
+             <div ng-if="step.template" ng-include="step.template"></div>
+             <div ng-if="field.type!='hidden'" class="field-{{field.slug}} field" ng-repeat="field in step.fields" ng-if="!step.template">
+            <div class="field-label {{field.inLine?'field-next-line':''}}">
+            <span ng-if="field.restrictions.required">* </span>
+                {{field.label}}</div>
+            <div class="field-input" ng-if="field.tag == 'input'">
+              <div ng-if="field.type!='checkbox-list'&&field.type!='file'">
+                <input ng-change="validator(field.slug, step.slug)"
+                       class="{{field.classes?field.classes:''}} {{tips[step.slug][field.slug]?'invalid':''}}"
+                       name="{{field.slug}}"
+                       ng-model="form[step.slug][field.slug]"
+                       type="{{field.type?field.type:'text'}}"
+                       ng-attr-placeholder="{{field.placeholder?field.placeholder:''}}"/>
+              </div>
+              <div ng-if="field.type!='checkbox-list'&&field.type=='file'">
+                <input ng-change="validator(field.slug, step.slug)"
+                       class="{{field.classes?field.classes:''}} {{tips[step.slug][field.slug]?'invalid':''}}"
+                       name="{{field.slug}}"
+                       ng-model="form[step.slug][field.slug]"
+                       type="file"
+                       ng-attr-placeholder="{{field.placeholder?field.placeholder:''}}"/>
+              </div>
+              <div ng-if="field.type=='checkbox-list'">
+                <div class="checkbox-list-field" ng-repeat="opt in field.default">
+                  <input ng-click="validator(field.slug, step.slug)"
+                         type="checkbox" checklist-model="form[step.slug][field.slug]"
+                         checklist-value="opt.value">{{opt.text}}
+                </div>
+              </div>
+            </div>
+            <!-- end of field.tag == 'input' -->
+            <div class="field-input ip" ng-if="field.tag == 'ipinput'"
+                ng-class="{true: 'complete'}[ipMore]">
+              <div ng-repeat="ipset in field.default"
+                  class="ip-checkbox {{ipset.invalid}}"
+                  ng-class="{true: 'selected'}[$index==ipSelected]"
+                  ng-click="selectChange($index)">
+                  <div ip-input address=ipset></div>
+              </div>
+            </div>
+            <!-- end ng-if field.tag == ipinput -->
+            <div class="field-input" ng-if="field.tag == 'textarea'">
+              <textarea ng-change="validator(field.slug, step.slug)"  name="{{field.slug}}"
+                        class="{{field.classes?field.classes:''}} {{tips[step.slug][field.slug]?'invalid':''}}"
+                        rows="{{field.rows || 2}}"
+                        ng-model="form[step.slug][field.slug]"
+                        ng-attr-placeholder="{{field.placeholder?field.placeholder:''}}"></textarea>
+            </div>
+            <!-- end of field.tag == 'textarea' -->
+            <div class="field-input" ng-if="field.tag == 'select'">
+              <select ng-change="validator(field.slug, step.slug)"  name="{{field.slug}}"
+                    class="selectDirective {{field.classes?field.classes:''}} {{tips[step.slug][field.slug]?'invalid':''}}"
+                        ng-attr-placeholder="{{field.placeholder?field.placeholder:''}}"
+                        ng-model="form[step.slug][field.slug]" val="field.default"
+                        ng-options="opt.value as opt.text group by opt.group for opt in field.default">
+              </select>
+            </div>
+            <div ng-if="tips[step.slug][field.slug]&&modal.currentStep==step.slug" class="modal-tip">
+              <div>&lowast; {{tips[step.slug][field.slug]}}</div>
+            </div>
+          </div> <!-- end of field in step.fields -->
+        </div>
+        <div class="clear-float"></div>
+      </div>
+    </div>
+    <div class="cross-modal-footer">
+      <button class="btn" name="cancel" ng-show="modal.parallel"
+              ng-click="close()">{{note.modal.cancel}}</button>
+      <button ng-show="modal.stepIndex&&!modal.parallel" name="stepPrevious" class="btn"
+              ng-click="stepPrevious()">{{note.modal.stepPrevious}}</button>
+      <button ng-show="modal.stepIndex<modal.steps.length-1&&!modal.parallel" class="btn"
+              name="stepNext" ng-click="stepNext()">{{note.modal.stepNext}}</button>
+      <button  ng-show="modal.stepIndex==modal.steps.length-1||modal.parallel" class="btn"
+              name="submit" type="submit" ng-click="handle()">{{note.modal.save}}</button>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,30 @@
+<div ng-if="modal.stepIndex==0" class="project-base-tips">
+  <li>{{createTips.base_tips}}</li>
+</div>
+<div ng-if="modal.stepIndex==1" class="project-member-tips">
+  <li>{{createTips.member_tips}}</li>
+</div>
+<div ng-if="modal.stepIndex==2" class="quota-assign-tips">
+    <div class="tips-title">{{systemStatistic.title}}</div>
+    <table>
+        <tr class="resource_stat">
+          <td>{{systemStatistic.vcpus.name}}</td>
+          <td>{{systemStatistic.vcpus.value}}</td>
+        </tr>
+        <tr class="resource_stat">
+          <td>{{systemStatistic.ram.name}}</td>
+          <td>{{systemStatistic.ram.value}}
+              {{systemStatistic.ram.unit}}</td>
+        </tr>
+        <tr class="resource_stat">
+          <td>{{systemStatistic.disk.name}}</td>
+          <td>{{systemStatistic.disk.value}}
+              {{systemStatistic.disk.unit}}</td>
+        </tr>
+        <tr class="resource_stat">
+          <td>{{systemStatistic.floatings.name}}</td>
+          <td>{{systemStatistic.floatings.value}}</td>
+        </tr>
+    </table>
+    <div class="tips-note">{{systemStatistic.note}}</div>
+</div>

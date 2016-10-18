@@ -1,0 +1,20 @@
+<div>
+  <div ng-repeat="passage in passages"
+      ng-class="passage.focused"
+      class="ip-passage-select {{passage.invalid}}">
+    <div ip-input address=passage
+        ng-click="selectIp($index, passage)"
+        ng-if="passage.subnet_id"
+        validate="passage.validate(passage, passage.subnet_id)"
+        set=network>
+    </div>
+    <div ip-input address=passage
+        ng-click="selectIp($index, passage)"
+        ng-if="!passage.subnet_id"
+        validate="passage.validate(passage, network)"
+        set=network>
+    </div>
+    <div ng-show="passage.focused"
+        class="ip-error-tips">{{passage.err_tip}}</div>
+  </div>
+</div>

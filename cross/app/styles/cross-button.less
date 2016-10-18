@@ -1,0 +1,817 @@
+@import "variables.less";
+
+.action_group {
+  .btn {
+    line-height: 20px;
+    vertical-align: middle;
+    font-size: 12px;
+    margin: 0px 10px 0 0;
+  }
+  .tabSearch {
+    display: inline-block;
+    position: absolute;
+    right: 20px;
+    .search {
+      border-radius: 13px;
+      font-size: 12px;
+      line-height: 16px;
+      vertical-align: middle;
+      padding: 5px 3px 5px 20px;
+      border: 1px solid #d0d0d0;
+      outline: none;
+      background: url('../images/action_search.png') no-repeat left center;
+      background-position-x: 5px;
+      &:hover {
+        outline: none;
+      }
+      &:focus {
+        border: 1px solid @BUTTON_ENABLED_BG;
+      }
+    }
+  }
+}
+
+.btn {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 8px;
+  padding-right: 15px;
+  border-radius: 2px;
+  &:active {
+    -webkit-box-shadow: none;
+    box-shandow: none;
+    outline: none;
+  }
+  &:focus {
+    outline: none;
+    color: @BUTTON_DISABLED_TEXT_COLOR;
+  }
+  &:active:focus {
+    outline: none;
+  }
+
+  &.more {
+    padding-left: 5px;
+    padding-right: 8px;
+    i{
+      width: 15px;
+      height: 15px;
+      display: inline-block;
+      float: left;
+      margin-top: 4px;
+      margin-left: 7px;
+      margin-right: 3px;
+      background: url('../images/action_more_hover.png') no-repeat;
+    }
+
+    .caret {
+      margin-left: 15px;
+    }
+  }
+}
+
+.btn-disable {
+  background: @BUTTON_DISABLED_BG;
+  color: @BUTTON_DISABLED_TEXT_COLOR;
+  cursor: default;
+  border: none;
+  border-bottom: 1px solid #C2C2C2;
+  &:hover {
+    color: @BUTTON_DISABLED_TEXT_COLOR;
+  }
+  &.download {
+    i{
+      width: 15px;
+      height: 15px;
+      display: inline-block;
+      float: left;
+      margin-top: 4px;
+      margin-right: 2px;
+      margin-left: 7px;
+      background: url('../images/action_download_disabled.png') no-repeat;
+    }
+  }
+  &.bind {
+    display: inline-block;
+    color: @BUTTON_DISABLED_TEXT_COLOR;
+    i{
+      width: 15px;
+      height: 15px;
+      display: inline-block;
+      float: left;
+      margin-top: 3px;
+      margin-left: 8px;
+      margin-right: 2px;
+      background: url(../images/action_bindIp_disabled.png) no-repeat;
+    }
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  &.unbind {
+    display: inline-block;
+    color: @BUTTON_DISABLED_TEXT_COLOR;
+    i{
+      width: 15px;
+      height: 15px;
+      display: inline-block;
+      float: left;
+      margin-top: 3px;
+      margin-left: 8px;
+      margin-right: 2px;
+      background: url(../images/action_unbindIp_dis.png) no-repeat;
+    }
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  &.attach {
+    display: inline-block;
+    color: @BUTTON_DISABLED_TEXT_COLOR;
+    i{
+      width: 15px;
+      height: 15px;
+      display: inline-block;
+      float: left;
+      margin-top: 3px;
+      margin-left: 8px;
+      margin-right: 2px;
+      background: url(../images/action_attachvolume_disabled.png) no-repeat;
+    }
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  &.create {
+    a {
+      display: block;
+      color: #fff;
+    }
+    i{
+      width: 15px;
+      height: 15px;
+      display: inline-block;
+      float: left;
+      margin-top: 4px;
+      margin-right: 2px;
+      margin-left: 7px;
+      background: url('../images/action_create_disable.png') no-repeat;
+    }
+  }
+  &.detach {
+    display: inline-block;
+    color: @BUTTON_DISABLED_TEXT_COLOR;
+    i{
+      width: 15px;
+      height: 15px;
+      display: inline-block;
+      float: left;
+      margin-top: 3px;
+      margin-left: 8px;
+      margin-right: 2px;
+      background: url(../images/action_untachvolume_disabled.png) no-repeat;
+    }
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  &.del {
+    i{
+      width: 15px;
+      height: 15px;
+      display: inline-block;
+      float: left;
+      margin-top: 4px;
+      margin-right: 2px;
+      margin-left: 7px;
+      background: url('../images/action_delete.png') no-repeat;
+    }
+  }
+  &.retry {
+    i{
+      width: 15px;
+      height: 15px;
+      display: inline-block;
+      float: left;
+      margin-top: 4px;
+      margin-right: 2px;
+      margin-left: 5px;
+      background: url('../images/retry_disable.png') no-repeat;
+    }
+  }
+  &.snapshot {
+    display: inline-block;
+    color: @BUTTON_DISABLED_TEXT_COLOR;
+    i{
+      width: 15px;
+      height: 15px;
+      display: inline-block;
+      float: left;
+      margin-top: 4px;
+      margin-left: 7px;
+      margin-right: 2px;
+      background: url('../images/action_back_disable.png') no-repeat;
+    }
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  &.vnc {
+    a {
+      display: inline-block;
+      color: @BUTTON_DISABLED_TEXT_COLOR;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+    i{
+      width: 15px;
+      height: 15px;
+      display: inline-block;
+      float: left;
+      margin-top: 4px;
+      margin-left: 7px;
+      margin-right: 2px;
+      background: url('../images/action_vnc.png') no-repeat;
+    }
+  }
+  &.topology {
+    a {
+      display: inline-block;
+      color: @BUTTON_DISABLED_TEXT_COLOR;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+    i{
+      width: 15px;
+      height: 15px;
+      display: inline-block;
+      float: left;
+      margin-top: 4px;
+      margin-left: 7px;
+      margin-right: 2px;
+      background: url('../images/action_vnc.png') no-repeat;
+    }
+  }
+  &.restore {
+    a {
+      display: inline-block;
+      color: @BUTTON_DISABLED_TEXT_COLOR;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+    i{
+      width: 15px;
+      height: 15px;
+      display: inline-block;
+      float: left;
+      margin-top: 4px;
+      margin-left: 7px;
+      margin-right: 2px;
+      background: url('../images/action_restore.png') no-repeat;
+    }
+  }
+  &.read {
+    i{
+      width: 15px;
+      height: 15px;
+      display: inline-block;
+      float: left;
+      margin-top: 4px;
+      margin-left: 7px;
+      margin-right: 2px;
+      background: url('../images/action_read_disable.png') no-repeat;
+    }
+  }
+  &#assign-project {
+    a {
+      display: inline-block;
+      color: @BUTTON_DISABLED_TEXT_COLOR;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+    i{
+      width: 15px;
+      height: 15px;
+      display: inline-block;
+      float: left;
+      margin-top: 4px;
+      margin-left: 7px;
+      margin-right: 2px;
+      background: url('../images/assign_project_disable.png') no-repeat;
+    }
+  }
+}
+
+.btn-enable {
+  background: @BUTTON_ENABLED_BG;
+  background-color: @BUTTON_ENABLED_BG;
+  color: @BUTTON_ENABLED_TEXT_COLOR;
+  border: none;
+  border-bottom: 1px solid #1782C6;
+
+  &.bind {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    i{
+      width: 15px;
+      height: 15px;
+      display: inline-block;
+      float: left;
+      margin-top: 2px;
+      margin-left: 4px;
+      margin-right: 5px;
+      background: url(../images/action_bindIp_hover.png) center no-repeat;
+    }
+  }
+  &.unbind {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    i{
+      width: 15px;
+      height: 15px;
+      display: inline-block;
+      float: left;
+      margin-top: 2px;
+      margin-left: 4px;
+      margin-right: 5px;
+      background: url(../images/action_unbindIp_hover.png) center no-repeat;
+    }
+  }
+  &.detach {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    i{
+      width: 15px;
+      height: 15px;
+      display: inline-block;
+      float: left;
+      margin-top: 2px;
+      margin-left: 4px;
+      margin-right: 5px;
+      background: url(../images/action_removevolume_hover.png) center no-repeat;
+    }
+  }
+
+  &.attach {
+    display: inline-block;
+    color: #fff;
+    i{
+      width: 15px;
+      height: 15px;
+      display: inline-block;
+      float: left;
+      margin-top: 2px;
+      margin-left: 4px;
+      margin-right: 5px;
+      background: url(../images/action_attachvolume_hover.png) center no-repeat;
+    }
+  }
+
+  &.snapshot {
+    display: inline-block;
+    color: #fff;
+    i{
+      width: 15px;
+      height: 15px;
+      display: inline-block;
+      float: left;
+      margin: 3px;
+      margin-left: 6px;
+      background: url('../images/action_back.png') center no-repeat;
+    }
+  }
+
+  &.create {
+    a {
+      display: block;
+      color: #fff;
+    }
+    i{
+      width: 15px;
+      height: 15px;
+      display: inline-block;
+      float: left;
+      margin-top: 4px;
+      margin-right: 2px;
+      margin-left: 7px;
+      background: url('../images/action_create_hover.png') no-repeat;
+    }
+  }
+  &:hover {
+    background: @BUTTON_ENABLED_BG;
+    background-color: #05A0DB;
+    color: @BUTTON_ENABLED_TEXT_COLOR;
+    border-bottom: 1px solid @BUTTON_ENABLED_BG;
+  }
+  &:focus {
+    outline: none;
+    color: @BUTTON_ENABLED_TEXT_COLOR;
+  }
+  &.download {
+    background-color: @BUTTON_ENABLED_BG;
+    i{
+      width: 15px;
+      height: 15px;
+      display: inline-block;
+      float: left;
+      margin-top: 4px;
+      margin-left: 7px;
+      margin-right: 2px;
+      background: url('../images/action_download.png') no-repeat;
+    }
+    &:hover {
+      background: @BUTTON_ENABLED_BG;
+      background-color: #05A0DB;
+      color: @BUTTON_ENABLED_TEXT_COLOR;
+      border-bottom: 1px solid @BUTTON_ENABLED_BG;
+    }
+  }
+  &.del {
+    background-color: @BUTTON_DANGER_BG;
+    border-bottom: 1px solid #B34852;
+    i{
+      width: 15px;
+      height: 15px;
+      display: inline-block;
+      float: left;
+      margin-top: 4px;
+      margin-left: 7px;
+      margin-right: 2px;
+      background: url('../images/action_delete_hover.png') no-repeat;
+    }
+    &:hover {
+      background-color: #D25662;
+      border-bottom: 1px solid #D25662;
+    }
+  }
+  &.retry {
+    i{
+      width: 15px;
+      height: 15px;
+      display: inline-block;
+      float: left;
+      margin-top: 4px;
+      margin-right: 2px;
+      margin-left: 5px;
+      background: url('../images/retry.png') no-repeat;
+    }
+  }
+  &.vnc {
+    a {
+      color: white;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+    i{
+      width: 15px;
+      height: 15px;
+      display: inline-block;
+      float: left;
+      margin-top: 4px;
+      margin-left: 7px;
+      margin-right: 2px;
+      background: url('../images/action_console_hover.png') no-repeat;
+    }
+  }
+  &.topology {
+    a {
+      color: white;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+    i{
+      width: 15px;
+      height: 15px;
+      display: inline-block;
+      float: left;
+      margin-top: 4px;
+      margin-left: 7px;
+      margin-right: 2px;
+      background: url('../images/action_console_hover.png') no-repeat;
+    }
+  }
+  &.restore {
+    a {
+      color: white;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+    i{
+      width: 15px;
+      height: 15px;
+      display: inline-block;
+      float: left;
+      margin-top: 4px;
+      margin-left: 7px;
+      margin-right: 2px;
+      background: url('../images/action_restore_hover.png') no-repeat;
+    }
+  }
+  &.read {
+    i{
+      width: 15px;
+      height: 15px;
+      display: inline-block;
+      float: left;
+      margin-top: 4px;
+      margin-left: 7px;
+      margin-right: 2px;
+      background: url('../images/action_read_hover.png') no-repeat;
+    }
+  }
+  &#assign-project {
+    i{
+      width: 15px;
+      height: 15px;
+      display: inline-block;
+      float: left;
+      margin-top: 4px;
+      margin-right: 2px;
+      margin-left: 7px;
+      background: url('../images/assign_project.png') no-repeat;
+    }
+  }
+  &.fresh {
+    i{
+      width: 15px;
+      height: 15px;
+      display: inline-block;
+      float: left;
+      margin-top: 4px;
+      margin-left: 7px;
+      margin-right: 2px;
+      background: url('../images/action_fresh.png') no-repeat;
+    }
+  }
+}
+
+.btn-group.open .dropdown-toggle {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  background: @BUTTON_ENABLED_BG;
+  color: @BUTTON_ENABLED_TEXT_COLOR;
+}
+
+.btn-group.open .dropdown-toggle.btn-default {
+  background: @BUTTON_ENABLED_BG;
+  background-color: @BUTTON_ENABLED_BG;
+  color: @BUTTON_ENABLED_TEXT_COLOR;
+}
+
+.btn-group {
+   margin-right: 0px;
+   open .dropdown-toggle {
+   }
+  .dropdown-menu {
+    border-radius: 0 0 2px 2px;
+    padding: 0;
+    min-width: 124px;
+    border: 1px solid #efefef;
+    border-top: 1px solid #29aaee;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.176);
+    li {
+      font-size: 12px;
+      display: block;
+      margin: 3px 0;
+      &.split-line {
+        margin: 0 5px;
+        height: 1px;
+        background: #ddd;
+      }
+      a {
+        line-height: 20px;
+        display: block;
+        padding: 3px 10px 3px 7px;
+        cursor: pointer;
+        color: #269bd8;
+        &.enabled {
+          i {
+            width: 15px;
+            height: 15px;
+            margin-top: 3px;
+            margin-right: 3px;
+            margin-left: 4px;
+            display: inline-block;
+            float: left;
+            &.reboot {
+              background: url('../images/action_reboot.png') no-repeat left center;
+            }
+            &.poweron {
+              background: url('../images/action_poweron.png') no-repeat left center;
+            }
+            &.poweroff {
+              background: url('../images/action_poweroff.png') no-repeat left center;
+            }
+            &.suspend {
+              background: url('../images/action_suspend.png') no-repeat left center;
+            }
+            &.snapshot {
+              background: url('../images/action_snapshot.png') no-repeat left center;
+            }
+            &.wakeup {
+              background: url('../images/action_wakeup.png') no-repeat left center;
+            }
+            &.resize {
+              background: url('../images/action_resize.png') no-repeat left center;
+            }
+            &.bindIp {
+              background: url('../images/action_bindIp.png') no-repeat left center;
+            }
+            &.unbindIp {
+              background: url('../images/action_unbindIp.png') no-repeat left center;
+            }
+            &.attachVolume {
+              background: url('../images/action_attachvolume.png') no-repeat left center;
+            }
+            &.detachVolume {
+              background: url('../images/action_untachvolume.png') no-repeat left center;
+            }
+            &.migrate {
+              background: url('../images/action_migrate.png') no-repeat left center;
+            }
+            &.member {
+              background: url('../images/action_member.png') no-repeat left center;
+            }
+            &.topoloty {
+              background: url('../images/action_topo.png') no-repeat left center;
+            }
+            &.compute_nodes {
+              background: url('../images/action_node.png') no-repeat left center;
+            }
+            &.quota {
+              background: url('../images/action_quota.png') no-repeat left center;
+            }
+            &.open_gateway {
+              background: url('../images/action_opengateway.png') no-repeat left center;
+            }
+            &.clear_gateway {
+              background: url('../images/action_cleargateway.png') no-repeat left center;
+            }
+            &.add_interface {
+              background: url('../images/action_linksubnet.png') no-repeat left center;
+            }
+          }
+          &:hover {
+            color: white;
+            background: @BUTTON_ENABLED_BG;
+            i{
+              &.bindIp {
+                background: url('../images/action_bindIp_hover.png') no-repeat left center;
+              }
+              &.unbindIp {
+                background: url('../images/action_unbindIp_hover.png') no-repeat left center;
+              }
+              &.reboot {
+                background: url('../images/action_reboot_hover.png') no-repeat left center;
+              }
+              &.poweron {
+                background: url('../images/action_poweron_hover.png') no-repeat left center;
+              }
+              &.poweroff {
+                background: url('../images/action_poweroff_hover.png') no-repeat left center;
+              }
+              &.suspend {
+                background: url('../images/action_suspend_hover.png') no-repeat left center;
+              }
+              &.migrate {
+                background: url('../images/action_migrate_hover.png') no-repeat left center;
+              }
+             &.wakeup {
+                background: url('../images/action_wakeup_hover.png') no-repeat left center;
+              }
+              &.resize {
+                background: url('../images/action_resize_hover.png') no-repeat left center;
+              }
+              &.snapshot {
+                background: url('../images/action_snapshot_hover.png') no-repeat left center;
+              }
+              &.attachVolume {
+                background: url('../images/action_attachvolume_hover.png') no-repeat left center;
+              }
+              &.detachVolume {
+                background: url('../images/action_removevolume_hover.png') no-repeat left center;
+              }
+              &.member {
+                background: url('../images/action_member_hover.png') no-repeat left center;
+              }
+              &.topoloty {
+                background: url('../images/action_node_hover.png') no-repeat left center;
+              }
+              &.compute_nodes {
+                background: url('../images/action_topo_hover.png') no-repeat left center;
+              }
+              &.quota {
+                background: url('../images/action_quota_hover.png') no-repeat left center;
+              }
+              &.open_gateway {
+                background: url('../images/action_opengateway_hover.png') no-repeat left center;
+              }
+              &.clear_gateway {
+                background: url('../images/action_cleargateway_hover.png') no-repeat left center;
+              }
+              &.add_interface {
+                background: url('../images/action_linksubnet_hover.png') no-repeat left center;
+              }
+            }
+          }
+        }
+        &.disabled {
+          margin-right: 3px;
+          color: @BUTTON_DISABLED_TEXT_COLOR;
+          cursor: url(../images/NO.ico), auto;
+          &:hover {
+            background-color: #fff;
+          }
+          i {
+            width: 15px;
+            height: 15px;
+            margin-top: 3px;
+            margin-right: 3px;
+            margin-left: 4px;
+            display: inline-block;
+            float: left;
+            &.reboot {
+              background: url('../images/action_reboot_disabled.png') no-repeat left center;
+            }
+            &.poweron {
+              background: url('../images/action_poweron_disabled.png') no-repeat left center;
+            }
+            &.poweroff {
+              background: url('../images/action_shutdown_disabled.png') no-repeat left center;
+            }
+            &.suspend {
+              background: url('../images/action_suspend_disabled.png') no-repeat left center;
+            }
+            &.snapshot {
+              background: url('../images/action_snapshot_disabled.png') no-repeat left center;
+            }
+            &.wakeup {
+              background: url('../images/action_wakeup_disabled.png') no-repeat left center;
+            }
+            &.resize {
+              background: url('../images/action_resize_disabled.png') no-repeat left center;
+            }
+            &.bindIp {
+              background: url('../images/action_bindIp_disabled.png') no-repeat left center;
+            }
+            &.unbindIp {
+              background: url('../images/action_unbindIp_dis.png') no-repeat left center;
+            }
+            &.attachVolume {
+              background: url('../images/action_attachvolume_disabled.png') no-repeat left center;
+            }
+            &.detachVolume {
+              background: url('../images/action_untachvolume_disabled.png') no-repeat left center;
+            }
+            &.migrate {
+              background: url('../images/action_migrate_disabled.png') no-repeat left center;
+            }
+            &.member {
+              background: url('../images/action_member_disabled.png') no-repeat left center;
+            }
+            &.topoloty {
+              background: url('../images/action_topo_disabled.png') no-repeat left center;
+            }
+            &.compute_nodes {
+              background: url('../images/action_node_disabled.png') no-repeat left center;
+            }
+            &.quota {
+              background: url('../images/action_quota_disabled.png') no-repeat left center;
+            }
+            &.open_gateway {
+              background: url('../images/action_opengateway_disable.png') no-repeat left center;
+            }
+            &.clear_gateway {
+              background: url('../images/action_cleargateway_disable.png') no-repeat left center;
+            }
+            &.add_interface {
+              background: url('../images/action_linksubnet_disable.png') no-repeat left center;
+            }
+          }
+        }      
+      }
+    }
+  }
+}
+
+.edit-btn-group {
+  position: absolute;
+  right: 20px;
+  top: 0px;
+  .btn {
+    margin: 0px 5px;
+    line-height: 20px;
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+}

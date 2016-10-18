@@ -1,0 +1,27 @@
+<div>
+  <div class='common_page_tabs'>
+    <ul>
+      <li class="tab active">{{note.title}}</li>
+    </ul>
+  </div>
+
+  <div>
+    <div class='table-tab ui-view-container'>
+      <div class='action_group'>
+        <a class='btn create btn-enable' href="#/project/security_group/create">
+          <i></i>{{ note.buttonGroup.create }}
+        </a>
+        <button class='btn del' ng-class="batchActionEnableClass"
+                cross-confirm='deleteSecurityGroup()'
+                slug='{{note.title}}'
+                action-enable="{{batchActionEnableClass}}"
+                items=selectedItems cross-confirm-action="{{note.buttonGroup.delete}}">
+          <i></i>{{ note.buttonGroup.delete }}</button>
+        <button class='btn btn-enable fresh'
+                ng-click='refresResource(keys)'>
+          <i></i>{{ note.buttonGroup.refresh }}</button>
+      </div>
+      <div datatable='securityGroupsOpts'></div>
+    </div>
+  </div>
+</div>

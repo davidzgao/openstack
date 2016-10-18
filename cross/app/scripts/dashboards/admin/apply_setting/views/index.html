@@ -1,0 +1,21 @@
+<div>
+  <div class='instance_tabs'>
+    <ul>
+      <li ng-repeat="tab in tabs"
+      ng-class="{active:isActiveTab(tab.template)}"
+      class="tab"
+      ng-click="onClickTab(tab)" ng-if="tab.enable">{{tab.title}}
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div id="mainView">
+  <div ng-include="currentTab"></div>
+</div>
+
+<script type="text/ng-template" id="types.tpl.html">
+  <div class='table-tab ui-view-container'>
+    <div datatable='typesOpts' class="types_table"></div>
+  </div>
+</script>

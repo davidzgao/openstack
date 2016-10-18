@@ -1,0 +1,19 @@
+<div class="field-muti-select">
+  <label>{{field.label}}</label>
+  <div class="select-list-area">
+    <ul>
+      <li class="list-item" ng-repeat="item in field.source"
+        ng-click="selectedChange(item.id)"
+        ng-class="{true: 'active'}[item.selected]">
+        {{item.name}}
+      </li>
+      <li class="list-item list-null"
+        ng-if="field.source.length==0">
+        {{tips.noSource}}
+      </li>
+    </ul>
+  </div>
+  <div class="clear"></div>
+  <div ng-if="field.invalidate"
+    class="error-tips">{{field.error_tips}}</div>
+</div>

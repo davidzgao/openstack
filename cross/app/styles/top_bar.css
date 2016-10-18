@@ -1,0 +1,126 @@
+/* Style of top nav bar */
+
+/* Variables will be used in index page */
+
+/* Usage warning */
+
+/* Min width of cross app */
+
+/* Min height of cross app */
+
+/* Background of app */
+
+/* Left frame width of cross app */
+
+/* Left frame background of cross app */
+
+/* Top height of cross app */
+
+/* Left logo background of cross app */
+
+/* Top tool background of cross app */
+
+/* Left nav bar item background */
+
+/* Attr at data table */
+
+/* Style of button for action */
+
+/* left width of dashboard admin over view page */
+
+/* top height of dashboard admin over view page */
+
+/* Login container background-color */
+
+/* Login container width */
+
+/* Login container height */
+
+/* Login logo image */
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#top_bar #user_info {
+  text-align: right;
+}
+
+#top_bar #user_info ul li {
+  position: relative;
+  display: inline-block;
+  font-size: 12px;
+  color: white;
+  vertical-align: middle;
+  list-style: none;
+}
+
+#top_bar #user_info ul li.cross-nav-user-select-region {
+  position: absolute;
+  left: 5px;
+  float: left;
+  width: 130px;
+  padding-top: 8px;
+  text-align: center;
+  cursor: pointer;
+}
+
+#top_bar #user_info ul li.cross-nav-user-select-region.clicked {
+  padding-top: 7px;
+  color: #269BD8;
+  border: 1px solid #666666;
+  border-bottom: none;
+}
+
+#top_bar #user_info ul li.cross-nav-user-select-region.hidden {
+  display: none;
+}
+
+#top_bar #user_info ul li.cross-nav-user-select-region .cross-region-list {
+  position: absolute;
+  left: -1px;
+  width: 130px;
+  padding-top: 8px;
+  text-align: center;
+  background-color: #2D2C2C;
+  border: 1px solid #666666;
+  border-top: none;
+}
+
+#top_bar #user_info ul li.cross-nav-user-select-region .cross-region-list .region-item {
+  height: 30px;
+  line-height: 30px;
+  color: white;
+  cursor: pointer;
+}
+
+#top_bar #user_info ul li.cross-nav-user-select-region .cross-region-list .region-item:hover {
+  background-color: #269BD8;
+}
+
+#top_bar #user_info ul li.cross-nav-user-select-dashboard {
+  left: 135px;
+  float: left;
+}
+
+#top_bar #user_info ul li.cross-change-project {
+  left: 135px;
+  float: left;
+  width: 50px;
+  padding-top: 8px;
+  text-align: center;
+}

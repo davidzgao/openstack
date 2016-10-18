@@ -1,0 +1,6 @@
+app/setting/settings.jsonp
+node_modules
+dist
+.tmp
+bower_components
+*.swp

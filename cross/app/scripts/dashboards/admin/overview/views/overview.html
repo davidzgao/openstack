@@ -1,0 +1,208 @@
+<div class="cross-dashboards-admin-overview">
+  <div class="overview-top">
+    <div class="system-usage">
+      <div class="system-lead">
+        <i class="usage"></i><span>{{note.usage.lead}}</span>
+      </div>
+      <div class="system-usage-main">
+        <div class="usage-item">
+          <div class="detailLoading" ng-show="!usage.vcpuHadGot">
+            <div class="logo-continer"></div>
+          </div>
+          <div ng-show="usage.vcpu >= cpuWarning" class="resource-usage-warning">
+            <div class="sector-warning">{{usage.vcpu}}%</div>
+            <div class="usage-item-detail">
+              <span>{{usage.vcpuUsed}}/</span><span>{{usage.vcpuTotalOver}}</span>
+            </div>
+            <div class="usage-item-name">{{note.usage.vcpu}}({{note.unit.core}})</div>
+          </div>
+          <div ng-show="usage.vcpu < cpuWarning" class="global-resource-usage">
+            <div class="sector-outer">{{usage.vcpu}}%</div>
+            <div class="usage-item-detail">
+              <span>{{usage.vcpuUsed}}/</span><span>{{usage.vcpuTotalOver}}</span>
+            </div>
+            <div class="usage-item-name">{{note.usage.vcpu}}({{note.unit.core}})</div>
+          </div>
+        </div>
+
+        <div class="usage-item">
+          <div class="detailLoading" ng-show="!usage.ramHadGot">
+            <div class="logo-continer"></div>
+          </div>
+          <div class="global-resource-usage">
+            <div class="sector-outer">{{usage.ram}}%</div>
+            <div class="usage-item-detail">
+              <span>{{usage.ramUsed}}/</span><span>{{usage.ramTotal}}</span>
+            </div>
+            <div class="usage-item-name">{{note.usage.ram}}({{note.unit.gb}})</div>
+          </div>
+        </div>
+
+        <div class="usage-item">
+          <div class="detailLoading" ng-show="!usage.volumeHadGot">
+            <div class="logo-continer"></div>
+          </div>
+          <div ng-show="usage.volume >= storageWarning" class="resource-usage-warning">
+            <div class="sector-warning">{{usage.volume}}%</div>
+            <div class="usage-item-detail">
+              <span>{{usage.volumeUsed}}/</span><span>{{usage.volumeTotal}}</span>
+            </div>
+            <div class="usage-item-name">{{note.usage.volume}}
+              <span ng-if="!enable_ceph">({{note.unit.gb}})</span></div>
+          </div>
+          <div ng-show="usage.volume < storageWarning" class="global-resource-usage">
+            <div class="sector-outer">{{usage.volume}}%</div>
+            <div class="usage-item-detail">
+              <span>{{usage.volumeUsed}}/</span><span>{{usage.volumeTotal}}</span>
+            </div>
+            <div class="usage-item-name">{{note.usage.volume}}
+              <span ng-if="!enable_ceph">({{note.unit.gb}})</span></div>
+          </div>
+        </div>
+
+        <div class="usage-item" ng-show="!useNeutron">
+          <div class="detailLoading" ng-show="!usage.floatingIPHadGot">
+            <div class="logo-continer"></div>
+          </div>
+          <div class="global-resource-usage">
+            <div class="sector-outer">{{usage.floatingIP}}%</div>
+            <div class="usage-item-detail">
+              <span>{{usage.floatingIPUsed}}/</span><span>{{usage.floatingIPTotal}}</span>
+            </div>
+            <div class="usage-item-name">{{note.usage.floatingIP}}({{note.unit.num}})</div>
+          </div>
+        </div>
+
+        <div class="usage-item" ng-show="useNeutron">
+          <div class="detailLoading" ng-show="!usageNeutron.floatingIPHadGot">
+            <div class="logo-continer"></div>
+          </div>
+          <div class="global-resource-usage">
+            <div class="sector-outer">{{usageNeutron.floatingIP}}%</div>
+            <div class="usage-item-detail">
+              <span>{{usageNeutron.floatingIPUsed}}/</span><span>{{usageNeutron.floatingIPTotal}}</span>
+            </div>
+            <div class="usage-item-name">{{note.usage.floatingIP}}({{note.unit.num}})</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="overview-main">
+    <div class="overview-hosts-topology">
+      <div class="system-lead">
+        <i class="topology"></i><span>{{note.topology.lead}}</span>
+      </div>
+      <div val="topology.hostView" class="host-topology-view hostTopologyDirective">
+      </div>
+    </div>
+    <div class="system-resource-list">
+      <div class="resource-item">
+        <div class="content">
+          <div class="lead">
+            <span class="lead-name">{{note.resource.cluster}}</span>
+          </div>
+          <div class="detail">
+            <span class="detail-number">{{resource.clusters}}</span>
+            <span class="unit">{{note.resource.unit}}</span>
+          </div>
+        </div>
+      </div>
+      <div class="resource-item">
+        <div class="content">
+          <div class="lead">
+            <span class="lead-name">{{note.resource.host}}</span>
+          </div>
+          <div class="detail">
+            <span class="detail-number">{{resource.hosts}}</span>
+            <span class="unit">{{note.resource.unit}}</span>
+          </div>
+        </div>
+      </div>
+      <div class="resource-item">
+        <div class="content">
+          <div class="lead">
+            <span class="lead-name">{{note.resource.vm}}</span>
+          </div>
+          <div class="detail">
+            <span class="detail-number">{{resource.vms}}</span>
+            <span class="unit">{{note.resource.unit}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="overview-bottom">
+    <div class="overview-latest-alarm">
+      <div class="system-lead">
+        <i class="alarm"></i><span>{{note.alarm.lead}}</span>
+        <div class="message-more">
+          <a ui-sref="admin.alarm_log">{{note.message.more}}&gt;</a>
+        </div>
+      </div>
+      <div class="message-list" ng-show="alarms.length">
+        <div ng-repeat="alarm in alarms" class="message-item">
+          <div class="message-lead {{$index==0?'first':''}}"><i></i></div>
+          <div class="item-alarm">
+            <div class="item-main">
+              <span class="log-content" ng-bind="alarm.content" title="{{alarm.content}}"></span>
+            </div>
+            <div class="item-time">
+              <span class="log-time">{{alarm.creat_at|date:"yyyy-MM-dd HH:mm"}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="message-empty" ng-show="!alarms.length">{{note.alarm.empty}}</div>
+    </div>
+    <div class="overview-hotspot-rank">
+      <div class="system-lead">
+        <i class="hotspot"></i><span>{{note.hotspot.lead}}</span>
+        <div class="message-more">
+          <a ui-sref="admin.hotspot">{{note.hotspot.detail}}&gt;</a>
+        </div>
+      </div>
+      <div class="message-list" ng-show="hostRanks.length">
+        <div ng-repeat="host in hostRanks">
+          <div class="item">
+            <div class="item-main">
+              <span class="lead-point {{$index==0?'first':''}}"><span class="point"></span></span>
+              <div class="progress" title="{{host.name}}{{host.metric}}: {{host.rank}}%">
+                <div class="progress-bar" ng-class="host.level"
+                     ng-style="{width: host.rank+'%'}"></div>
+              </div>
+              <div class="content-desc">
+                <span class="host-name" title="{{host.name}}">{{host.name|limitTo: 18}}</span>,&nbsp;
+                <span class="host-metric" ng-bind="host.metric" title="{{host.metric}}"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="message-empty" ng-show="!hostRanks.length">{{note.hotspot.empty}}</div>
+    </div>
+    <div class="overview-latest-message">
+      <div class="system-lead">
+        <i class="message"></i><span>{{note.message.lead}}</span>
+        <div class="message-more">
+          <a ui-sref="admin.workflow_log">{{note.message.more}}&gt;</a>
+        </div>
+      </div>
+      <div class="message-list" ng-show="messages.length">
+        <div ng-repeat="message in messages" class="message-item">
+          <div class="message-lead {{$index==0?'first':''}}"><i></i></div>
+          <div class="item-message">
+            <div class="item-main">
+              <span class="log-content" ng-bind="message.content" title="{{message.content}}"></span>
+            </div>
+            <div class="item-time">
+              <span class="log-time">{{message.creat_at|date:"yyyy-MM-dd HH:mm"}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="message-empty" ng-show="!messages.length">{{note.message.empty}}</div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,46 @@
+<div class='base_info detail_info'>
+  <div class='detail_title'>{{ detailItem.info }}
+  </div>
+  <div class='detail_area feedback_detail_area'>
+    <ul>
+      <li>
+        <span class="title">{{detailItem.item.title}}</span>
+        <span class="value"> {{feedback.title}}
+        </span>
+      </li>
+      <li>
+        <span class="title">{{detailItem.item.status}}</span>
+        <span class="value"> {{feedback.status}}
+        </span>
+      </li>
+      <li>
+        <span class="title">{{ detailItem.item.id }}</span>
+        <span class="value">{{feedback.id}}</span>
+      </li>
+      <li>
+        <span class="title">{{ detailItem.item.initial }}</span>
+        <span class="value wrap">{{feedback.content}}</span>
+      </li>
+      <li>
+        <span class="title">{{ detailItem.item.user }}</span>
+        <span class="value wrap">{{feedback.user_name}}</span>
+      </li>
+      <li>
+        <span class="title">{{ detailItem.item.project }}</span>
+        <span class="value wrap">{{feedback.project_name}}</span>
+      </li>
+      <li>
+        <span class="title">{{ detailItem.item.createAt }}</span>
+        <span class="value">
+          {{feedback.created_at | dateLocalize | date:"yyyy-MM-dd HH:mm"}}
+        </span>
+      </li>
+      <li>
+        <span class="title">{{ detailItem.item.lastReply }}</span>
+        <span class="value">
+          {{feedback.updated_at | dateLocalize | date:"yyyy-MM-dd HH:mm"}}
+        </span>
+      </li>
+    </ul>
+  </div>
+</div>

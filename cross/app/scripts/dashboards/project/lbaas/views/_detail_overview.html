@@ -1,0 +1,28 @@
+<div detail-tips
+  detail="pool_detail">
+</div>
+<div detail-stitcher key-set=detailKeySet source=pool_detail></div>
+
+<div class='detail_info'>
+  <div class='detail_title'>{{"Members" | i18n}}</div>
+  <div class='detail_area'>
+    <table class='table_in_detail'>
+      <thead>
+        <tr>
+          <th>{{"Address" | i18n}}</th>
+          <th>{{"Protocol Port" | i18n}}</th>
+          <th>{{"Weight" | i18n}}</th>
+          <th>{{"Status" | i18n}}</th>
+        </tr>
+      </thead>
+      <tbody ng-if="pool_detail.members.length > 0">
+        <tr ng-repeat="member in pool_detail.members">
+          <td>{{member.address}}</td>
+          <td>{{member.protocol_port}}</td>
+          <td>{{member.weight}}</td>
+          <td>{{member.status | i18n}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

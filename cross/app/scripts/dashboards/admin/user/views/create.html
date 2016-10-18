@@ -1,0 +1,47 @@
+<form method="post" action="" id="_modal_{{modal.slug}}"
+    form-autofill-fix
+    autocomplete="off">
+  <div ng-show="modal.globalTip" class="modal-global-tip">{{modal.globalTip}}</div>
+  <div ng-if="modal.single">
+    <div class="fields-area">
+      <div ng-show="field.type!='hidden'" class="field-{{field.slug}} field" ng-repeat="field in modal.fields">
+        <div class="field-label {{field.inLine?'field-next-line':''}}"><span ng-if="field.restrictions.required && field.slug !='project'">* </span>{{field.label}}</div>
+        <div class="field-input" ng-if="field.tag == 'input'">
+          <div ng-if="field.type!='checkbox-list'">
+            <input ng-change="validator(field.slug)"
+                   class="{{field.classes?field.classes:''}} {{tips[field.slug]?'invalid':''}}"
+                   name="{{field.slug}}" ng-model="form[field.slug]"
+                   type="{{field.type?field.type:'text'}}"
+                   ng-attr-placeholder="{{field.placeholder?field.placeholder:''}}"/>
+            <!-- for solve the firefox autocomplete off bug-->
+            <input type="text" style="display:none">
+            <input type="password" style="display:none">
+          </div>
+          <div ng-if="field.type=='checkbox-list'">
+            <div class="checkbox-list-field" ng-repeat="opt in field.default">
+              <input type="checkbox" ng-model="form[field.slug]">{{opt.text}}
+            </div>
+          </div>
+        </div>
+        <div class="field-input" ng-if="field.tag == 'select'">
+          <select ng-change="validator(field.slug)" name="{{field.slug}}"
+                  class="selectDirective {{field.classes?field.classes:''}} {{tips[field.slug]?'invalid':''}}"
+                  ng-attr-placeholder="{{field.placeholder?field.placeholder:''}}"
+                  ng-model="form[field.slug]" val="field.default"
+                  ng-options="opt.value as opt.text group by opt.group for opt in field.default">
+          </select>
+        </div>
+        <div ng-show="tips[field.slug]" class="modal-tip">
+          <div>&lowast; {{tips[field.slug]}}</div>
+        </div>
+      </div>
+    </div> <!-- end of fields area -->
+
+    <div class="cross-modal-footer">
+      <button class="btn" name="cancel"
+              ng-click="close()">{{note.modal.cancel}}</button>
+      <button class="btn" name="submit" type="submit"
+              ng-click="handle()">{{note.modal.save}}</button>
+    </div> <!-- end of cross-modal-footer -->
+  </div> <!-- end of modal.single -->
+</form>

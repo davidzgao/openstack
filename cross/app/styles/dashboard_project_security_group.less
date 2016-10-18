@@ -1,0 +1,185 @@
+.security-group-rule-detail {
+
+  .security-group-lead {
+    height: 36px;
+    line-height: 36px;
+    background-color: #ecf0f2;
+    padding-left: 36px;
+  }
+
+  .detail_info {
+    padding: 0 20px;
+  }
+
+  div.rule-add-btn {
+    margin-top: 20px;
+    text-align: left;
+  }
+
+  div.rule-save-btn {
+    margin-top: 20px;
+    text-align: right;
+  }
+
+  ul.rule-example {
+    margin: 20px 0 0 0;
+
+    li.btn {
+      margin: 5px 5px 5px 5px;
+      width: 80px;
+      height: 27px;
+      text-align: center;
+      line-height: 27px;
+      padding: 0 0 0 0;
+      border: 1px solid #d1d1d1;
+      background-color: #ffffff;
+      color: #555555;
+    }
+
+    li.btn:hover {
+      background-color: #e7f0f9;
+      color: #151515;
+      border: 1px solid #86b4df;
+    }
+
+    li.btn.active {
+      background-color: #86b4df;
+      color: #ffffff;
+      border: 1px solid #86b4df;
+    }
+  }
+
+  table.rule-table {
+    width: 100%;
+    border: 1px solid #ececec;
+    border-top: 0;
+
+    tr {
+      td {
+        padding-left: 10px;
+        padding-right: 3px;
+        border: 1px solid #ececec;
+      }
+    }
+
+    tr {
+      height: 35px;
+    }
+
+    tr.header-lead {
+      height: 40px;
+    }
+
+    tr.rule-row-add {
+      height: 40px;
+
+      td {
+        text-align: center;
+        border: 1px solid #e0e0e0;
+
+        input.invalid {
+          border-color: #ff4d59;
+        }
+      }
+      div.rule-direction {
+        margin-top: 4px;
+        display: inline-block;
+
+        .wrap-select-field {
+          width: 120px;
+        }
+      }
+
+      div.rule-protocol {
+        margin-top: 4px;
+        display: inline-block;
+
+        .wrap-select-field {
+          width: 120px;
+        }
+      }
+    }
+
+    input {
+      width: 90%;
+      -webkit-border-radius: 0;
+      border-radius: 3px;
+      margin-bottom: 0;
+      height: 30px;
+      padding: 3px 3px;
+      margin: 0 0;
+      border: 1px solid #c9c9c9;
+
+      &[type="checkbox"] {
+        vertical-align: middle;
+      }
+
+      &:focus {
+        outline: none;
+        border-color: #29aaee;
+      }
+    }
+
+    div.rule-port {
+
+      & > input {
+        width: 90%;
+      }
+    }
+
+    div.rule-ip-range {
+
+      & > input {
+        width: 90%;
+      }
+    }
+
+    .rule-action-handle {
+      text-align: left;
+      vertical-align: middle;
+
+      button {
+        border: 0;
+        background: #fff;
+        vertical-align: middle;
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        border-radius: 2px;
+
+        &.icon-remove {
+          background: #e05c69;
+          color: #eee;
+          &:hover {
+            background: #D25662;
+          }
+        }
+
+        &.icon-ok {
+          color: #eee;
+          background: #28a9ee;
+
+          &:hover {
+            background: #05A0DB;
+          }
+        }
+      }
+    }
+  }
+
+  .rule-add-btn .btn, .rule-save-btn .btn {
+    padding-left: 15px;
+    padding-right: 15px;
+    color: #eee;
+    background-color: #28a9ee;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+      background-color: #05A0DB;
+    }
+  }
+}

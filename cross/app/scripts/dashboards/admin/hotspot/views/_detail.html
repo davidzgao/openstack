@@ -1,0 +1,157 @@
+<div class="cross-modal-header">
+  <div class="header-row">
+    <div class="title">{{note.title}}</div>
+    <div class="close" ng-click="cancel()">&times;</div>
+  </div>
+</div>
+<div class="cross-modal-body">
+  <div class="hostspot-host-detail-list">
+    <div class="hotspot-host-detail">
+      <span class="detail-title" ng-bind="note.host.name"></span>:&nbsp;
+      <span class="detail-content" ng-bind="host.name"></span>
+    </div>
+    <div class="hotspot-host-detail inline">
+      <span class="detail-title" ng-bind="note.host.ip"></span>:&nbsp;
+      <span class="detail-content" ng-bind="host.ip"></span>
+    </div>
+    <div class="hotspot-host-detail inline">
+      <span class="detail-title" ng-bind="note.host.cpu"></span>:&nbsp;
+      <span class="detail-content" ng-bind="host.vcpus"></span>
+    </div>
+    <div class="hotspot-host-detail inline">
+      <span class="detail-title" ng-bind="note.host.mem"></span>:&nbsp;
+      <span class="detail-content" ng-bind="host.memory_mb"></span>
+    </div>
+    <div class="hotspot-host-detail inline">
+      <span class="detail-title" ng-bind="note.host.usedMem"></span>:&nbsp;
+      <span class="detail-content" ng-bind="host.memory_mb_used"></span>
+    </div>
+    <div class="hotspot-host-detail inline">
+      <span class="detail-title" ng-bind="note.host.memUsage"></span>:&nbsp;
+      <div class="progress">
+        <div class="progress-bar" ng-class="host.usage.memory.level"
+             ng-style="{width: host.usage.memory.value+'%'}"></div>
+        <div class="detail-content">{{host.usage.memory.value}}{{host.usage.memory.unit}}</div>
+      </div>
+    </div>
+    <div class="hotspot-host-detail inline">
+      <span class="detail-title" ng-bind="note.host.cpuUsage"></span>:&nbsp;
+      <div class="progress">
+        <div class="progress-bar" ng-class="host.usage.cpu.level"
+             ng-style="{width: host.usage.cpu.value+'%'}"></div>
+        <div class="detail-content">{{host.usage.cpu.value}}{{host.usage.cpu.unit}}</div>
+      </div>
+    </div>
+  </div>
+  <div class="hotspot-instance-lead">
+    <div class="title">{{note.instance.title}}</div>
+    <div class="button" ng-if="host.instances.length">
+      <button ng-click="showAvailableHost()" class="btn">{{note.action.migrate}}</button>
+    </div>
+  </div>
+  <div class="instance-empty" ng-if="!host.instances.length" ng-bind="note.instance.empty"></div>
+  <div class="hotspot-instance-list" ng-if="host.instances.length">
+    <div class="hotspot-rank" ng-repeat="instance in host.instances">
+      <div class="hotspot-rank-item {{instance['cpu_util'].level}} {{instance['memory.usage'].level}}"
+           ui-draggable="{{showHosts}}" drag-channel="hotspot" drag="instance">
+        <div class="instance-detail" ng-if="instance['cpu_util'].level||instance['memory.usage'].level">
+          <div class="detail-content">
+            <div class="item">
+              <span class="item-title" ng-bind="note.instance.name"></span>:&nbsp;
+              <span class="item-content" title="{{instance.name}}">
+                {{instance.name|limitTo: 12}}</span>
+            </div>
+            <div class="item">
+              <span class="item-title" ng-bind="note.instance.userName"></span>:&nbsp;
+              <span class="item-content" ng-bind="instance.userName"></span>
+            </div>
+            <div class="item">
+              <span class="item-title" ng-bind="note.instance.projectName"></span>:&nbsp;
+              <span class="item-content" ng-bind="instance.projectName"></span>
+            </div>
+            <div class="item">
+              <span class="item-title" ng-bind="note.instance.cpu"></span>:&nbsp;
+              <span class="item-content" ng-bind="instance.vcpus"></span>
+            </div>
+            <div class="item">
+              <span class="item-title" ng-bind="note.instance.mem"></span>:&nbsp;
+              <span class="item-content" ng-bind="instance.ram"></span>
+            </div>
+            <div class="item">
+              <span class="item-title" ng-bind="note.instance.cpuUsage"></span>:&nbsp;
+              <span class="item-content">{{instance['cpu_util'].value}}%</span>
+            </div>
+            <div class="item">
+              <span class="item-title" ng-bind="note.instance.memUsage"></span>:&nbsp;
+              <span class="item-content">{{instance['memory.usage'].value||0}}%</span>
+            </div>
+          </div>
+          <div class="arrow-group">
+            <div class="tips-arrow">
+              <span class="arrow-outer"></span>
+              <span class="arrow-inner"></span>
+            </div>
+            <div class="arrow-right">
+              <span class="arrow-outer"></span>
+              <span class="arrow-inner"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hotspot-av-host-lead" ng-show="showHosts">
+    <div class="title">{{note.host.title}}</div>
+  </div>
+  <div class="hotspot-available-hosts" ng-if="showHosts">
+    <div class="host-empty" ng-show="!availableHosts || !availableHosts.length">
+      <div ng-if="clusterName=='Default'">{{note.defaultCluster}}</div>
+      <div ng-if="clusterName!='Default'">{{note.noAvailableHosts}}</div>
+    </div>
+    <div class="hotspot-host-item {{avHost['cpu_util'].level}} {{avHost['memory.usage'].level}}"
+         ng-repeat="avHost in availableHosts" drop-channel="hotspot"
+         ui-on-drop="migrate($event, $data, avHost)" drag-hover-class="drag-hover" drag-enter-class="drag-enter">
+      <div class="item-list">
+        <div class="item">
+          <span class="item-content" ng-bind="avHost.name"></span>
+        </div>
+        <div class="item">
+          <span class="item-title" ng-bind="note.host.cpu"></span>:&nbsp;
+          <span class="item-content" ng-bind="avHost.vcpus"></span>
+        </div>
+        <div class="item">
+          <span class="item-title" ng-bind="note.host.mem"></span>:&nbsp;
+          <span class="item-content" ng-bind="avHost.memory_mb"></span>
+        </div>
+        <div class="item">
+          <span class="item-title" ng-bind="note.host.usedMem"></span>:&nbsp;
+          <span class="item-content" ng-bind="avHost.memory_mb_used"></span>
+        </div>
+        <div class="item">
+          <span class="item-title" ng-bind="note.host.cpuUsage"></span>:&nbsp;
+          <span class="item-content">{{avHost['cpu_util'].value}}%</span>
+        </div>
+        <div class="item">
+          <span class="item-title" ng-bind="note.host.memUsage"></span>:&nbsp;
+          <span class="item-content">{{avHost['memory.usage'].value}}%</span>
+        </div>
+        <div class="arrow-group">
+          <div class="tips-arrow">
+            <span class="arrow-outer"></span>
+            <span class="arrow-inner"></span>
+          </div>
+          <div class="arrow-right">
+            <span class="arrow-outer"></span>
+            <span class="arrow-inner"></span>
+          </div>
+        </div>
+      </div>
+      <div class="host-name">{{avHost.name|limitTo: 14}}</div>
+    </div>
+  </div>
+</div>
+
+<div ng-show="showLoading" class="modal-loading">
+  <div class="backend"></div>
+  <div class="http-loader__wrapper"><div class="http-loader"></div></div>
+</div>

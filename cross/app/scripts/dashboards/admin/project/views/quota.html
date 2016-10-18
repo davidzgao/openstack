@@ -1,0 +1,80 @@
+<form method="post" action="" id="_modal_{{modal.slug}}" autocomplete="off">
+ <div>
+  <div class="project_quota_container">
+    <ul>
+      <li class="quota-item" ng-repeat="item in baseNovaQuotaSet">
+      <span class="quota-item-title">{{item.name}}
+          <i ng-if="item.unit">({{item.unit}})</i></span>
+          <slider2 ng-model="novaQuota[item.item]" min=0
+                  max="{{item.max}}"
+                  value={{item.current}}></slider2>
+          <input class="slider-input slider-mate"
+                 type="number"
+                 ng-blur="checkInput(item.item, novaQuota, $index, 'base')"
+                 name="item.item"
+                 max="{{item.max}}"
+                 ng-model="novaQuota[item.item]"
+                 value="{{item.current}}">
+      </li>
+      <li class="quota-item" ng-repeat="item in baseCinderQuotaSet">
+      <span class="quota-item-title">{{item.name}}
+          <i ng-if="item.unit">({{item.unit}})</i></span>
+          <slider2 ng-model="cinderQuota[item.item]" min=0
+                  max="{{item.max}}"
+                  value={{item.current}}></slider2>
+          <input class="slider-input slider-mate"
+                 type="number"
+                 ng-blur="checkInput(item.item, cinderQuota, $index, 'base')"
+                 name="item.item"
+                 max="{{item.max}}"
+                 ng-model="cinderQuota[item.item]"
+                 value="{{item.current}}">
+      </li>
+    </ul>
+    <div class="quota_advance_trigger">
+      <a ng-if="!showAdvance"
+         ng-click="advTrigge()">{{advanceTriggerShow}}</a>
+      <a ng-if="showAdvance"
+         ng-click="advTrigge()">{{advanceTriggerHide}}</a>
+    </div>
+    <ul ng-if="showAdvance">
+      <li ng-repeat="item in advanceNovaQuotaSet" class="quota-item">
+        <span class="quota-item-title">{{item.name}}
+          <i ng-if="item.unit">({{item.unit}})</i></span>
+          <slider2 ng-model="novaQuota[item.item]" min=0
+                  max="{{item.max}}"
+                  value={{item.current}}></slider2>
+          <input class="slider-input slider-mate"
+                 type="number"
+                 ng-blur="checkInput(item.item, novaQuota, $index, 'advance')"
+                 name="item.item"
+                 max="{{item.max}}"
+                 ng-model="novaQuota[item.item]"
+                 value="{{item.current}}">
+      </li>
+      <li ng-repeat="item in advanceCinderQuotaSet" class="quota-item">
+        <span class="quota-item-title">{{item.name}}
+          <i ng-if="item.unit">({{item.unit}})</i></span>
+          <slider2 ng-model="cinderQuota[item.item]" min=0
+                  max="{{item.max}}"
+                  value={{item.current}}></slider2>
+          <input class="slider-input slider-mate"
+                 type="number"
+                 ng-blur="checkInput(item.item, cinderQuota, $index, 'advance')"
+                 name="item.item"
+                 max="{{item.max}}"
+                 ng-model="cinderQuota[item.item]"
+                 value="{{item.current}}">
+      </li>
+    </ul>
+  </div>
+  <div class="cross-modal-footer">
+    <button class="btn" name="cancel" ng-click="close()">
+      {{note.modal.cancel}}
+    </button>
+    <button class="btn" name="submit" type="submit" ng-click="update()">
+      {{note.modal.save}}
+    </button>
+  </div>
+ </div>
+</form>

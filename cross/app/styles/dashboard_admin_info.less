@@ -1,0 +1,94 @@
+.os-service {
+
+  .os-service-tips {
+    position: fixed;
+    top: 100px;
+    right: 10px;
+    width: 190px;
+    text-align: left;
+
+    .item {
+      margin: 10px 0 0 10px;
+
+      .status {
+        display: inline-block;
+        vertical-align: middle;
+        border-radius: 6px;
+        width: 30px;
+        height: 27px;
+      }
+
+      .status-down {
+        background-color: #f07878;
+      }
+
+      .status-enabled {
+        background-color: #a9df75;
+      }
+
+      .status-disabled {
+        background-color: #d8dbd9;
+      }
+
+      .content {
+        margin-left: 10px;
+        display: inline-block;
+        vertical-align: middle;
+        line-height: 30px;
+      }
+    }
+  }
+
+  .os-service-host {
+    padding: 0 20px 0 0;
+    margin-right: 200px;
+    background-color: #fff;
+    border: 1px dashed #d2d2d2;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    margin-top: 18px;
+
+    .os-service-host-name {
+      margin-left: 10px;
+      font-size: 14px;
+      line-height: 30px;
+      color: #333;
+
+      .small {
+        display: inline-block;
+        height: 8px;
+        width: 10px;
+        background: url(../images/lead_right.png) center no-repeat;
+      }
+    }
+
+    .services-list {
+
+      &:last-child {
+        margin-right: 20px;
+      }
+
+      .item {
+        display: inline-block;
+        padding: 20px 15px;
+        margin: 8px 0 8px 20px;
+        color: #fff;
+
+        &.enabled {
+          background-color: #a9df75;
+          border-radius: 5px;
+        }
+
+        &.disabled {
+          background-color: #d8dbd9;
+          border-radius: 5px;
+        }
+
+        &.down {
+          background-color: #f07878;
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+}

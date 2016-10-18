@@ -1,0 +1,408 @@
+@import "variables.less";
+
+.gridStyle {
+  border: none;
+  width: 100%;
+  height: 500px;
+
+  .ngHeaderContainer {
+    background: @DATA_TABLE_HEADER_BG;
+  }
+
+  .ngHeaderSortColumn {
+    text-align: center;
+  }
+  .ngVerticalBarVisible {
+    background: none;
+  }
+
+  .enableClick {
+    color: @LINK_COLOR;
+    a:hover {
+      text-decoration: none;
+    }
+  }
+
+  .ngViewport {
+    height: auto !important;
+  }
+  .ngRow.even {
+    background: @DATA_TABLE_EVEN_ROW_BG;
+    &:hover {
+      background: @DATA_TABLE_ROW_HOVER; }
+  }
+  .ngRow.odd {
+    background: @DATA_TABLE_ODD_ROW_BG;
+    &:hover {
+      background: @DATA_TABLE_ROW_HOVER;
+    }
+  }
+
+}
+
+.enableClick {
+  color: @LINK_COLOR;
+  cursor: pointer;
+  a {
+    color: @LINK_COLOR;
+    display: block;
+    width: inherit;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  a:hover {
+    text-decoration: none;
+  }
+}
+
+.socrll-wapper {
+  background: #F4F5F6;
+  padding-top: 1px;
+}
+
+.datatable-wapper {
+  position: relative;
+}
+
+.datatable {
+  background: white;
+  margin-top: 36px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: auto;
+}
+
+.cross-data-table {
+  border: 1px solid #F0F0F0;
+  border-top: none;
+  border-bottom: none;
+  width: 100%;
+  table-layout: fixed;
+  thead tr th, tfoot tr td{
+    height: 36px;
+    border-left: 1px solid #fff;
+    text-align: left;
+    padding-left: 10px;
+    border: none;
+    &:first-child {
+      border-left: 0;
+    }
+    &.checkbox-in-table {
+      text-align: center;
+      padding-left: 0;
+    }
+    a {
+      text-decoration: none;
+      cursor: pointer;
+      color: @DATA_TABLE_HEADER_TEXT;
+      font-weight: normal;
+      display: block;
+      height: 36px;
+      overflow: hidden;
+      &:hover {
+        color: @DATA_TABLE_HEADER_TEXT;
+      }
+      position: absolute;
+      top: -35px;
+      border-left: 1px solid white;
+      padding-left: 10px;
+      margin-left: -11px;
+      &.true {
+        &.start {
+          border-left: none;
+        }
+      }
+    }
+    span {
+      white-space: nowrap;
+      line-height: 35px;
+    }
+    .icon-chevron-up {
+      display: inline-block;
+      height: 8px;
+      width: 8px;
+      background: url('../images/icon-arrow.png') no-repeat;
+    }
+    .icon-chevron-down {
+      -webkit-transform: rotate(180deg);
+      transform: rotate(180deg);
+      display: inline-block;
+      height: 8px;
+      width: 8px;
+      background: url('../images/icon-arrow.png') no-repeat;
+    }
+  }
+  .cross-data-table-header {
+    background-color: #f4f5f6;
+    border: none;
+    th {
+      height: 0px;
+    }
+    th input {
+      position: absolute;
+      top: -30px;
+      left: 11px;
+    }
+  }
+  /* End of .cross-data-table-header */
+
+  .cross-data-table-body {
+    .cross-data-table-body-row {
+
+      td {
+        height: 32px;
+        border-bottom: 1px solid #f0f0f0;
+        padding-left: 10px;
+
+        &.cross-checkbox-in-table {
+          text-align: center;
+          padding-left: 0;
+        }
+
+        .ngCellText {
+           text-align: left;
+           border: none;
+           .list-in-cell {
+             margin: 0px 3px;
+           }
+        }
+      }
+      &.even {
+        background: #ffffff;
+        &:hover {
+          background: #f9f9f9;
+        }
+      }
+      &.odd {
+        background: #ffffff;
+        &:hover {
+          background: #f9f9f9;
+        }
+      }
+      &.selected {
+        background: #E3E3E3 !important;
+      }
+      .cross-data-table-body-cell {
+        white-space: nowrap;
+        word-break : keep-all;
+        overflow: hidden;
+      }
+    }
+  }
+  /* End of .cross-data-table-body */
+
+  .clear {
+    clear: both;
+  }
+
+  .checkbox-in-table {
+    width: 3%;
+    border: none;
+  }
+}
+
+.datatable-null-tips {
+  height: 50px;
+  text-align: center;
+  margin-top: 20px;
+  color: #B7B5B5;
+  font-style: italic;
+}
+
+.instances-table {
+  .name, .project, .hypervisor_hostname {
+    width: 15%;
+  }
+  .fixed, .floating {
+    width: 10%;
+  }
+  .vcpus, .ram {
+    width: 6%;
+  }
+  th.status {
+    width: 10%;
+  }
+}
+
+.projects_table {
+  table {
+    .name {
+      width: 30%;
+    }
+    .description {
+      width: 50%;
+    }
+  }
+}
+
+.alarm_logs_table {
+  .resource_type, .type, .created_at {
+    width: 15%;
+  }
+  .alarm_id {
+    width: 25%;
+  }
+  .resource {
+    width: 30%;
+  }
+}
+
+.users_table {
+  table {
+    .name {
+      width: 25%;
+    }
+    .email {
+      width: 30%;
+    }
+    .project_name {
+      width: 30%;
+    }
+  }
+}
+
+.footer-table {
+  width: 100%;
+}
+
+.ngFooterPanel, .cross-footer-panel {
+  background-color: white;
+  border-top: none;
+  position: relative;
+  height: 35px;
+
+  .pageCode {
+    position: absolute;
+    right: 0;
+    display: inline-block;
+    text-align: right;
+    height: 22px;
+    margin-top: 5px;
+    margin-right: 20px;
+
+    .page-item {
+      position: relative;
+      margin-bottom: -2px;
+      display: inline-block;
+      vertical-align: middle;
+      list-style: none;
+      font-size: 12px;
+      width: 20px;
+      margin-left: 5px;
+      margin-right: 5px;
+      height: 22px;
+      line-height: 20px;
+      text-align: center;
+      cursor: pointer;
+      color: #666;
+
+      &:hover {
+        border-bottom: 2px solid #3ba7e0;
+        color: #555;
+      }
+
+      &.pagetrue {
+        border-bottom: 2px solid #3ba7e0;
+        font-weight: 800;
+        color: #3ba7e0;
+        font-size: 14px;
+        &:hover {
+          border-bottom: 2px solid #3ba7e0;
+          color: #3ba7e0;
+        }
+      }
+      &.change-page {
+        color: #aaa;
+        width: 27px;
+        margin-left: 0;
+        margin-right: 0;
+        line-height: 24px;
+        font-size: 12px;
+        letter-spacing: 0;
+        text-align: center;
+        border-color: #fff;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        &.to-left {
+          background-image: url(../images/page/to-left.png);
+        }
+
+        &.to-right {
+          background-image: url(../images/page/to-right.png);
+        }
+
+        &:hover {
+          border-color: #3ba7e0;
+          background-color: #3ba7e0;
+          border-radius: 2px;
+          color: #eee;
+
+          &.to-left {
+            background-image: url(../images/page/to-left-hover.png);
+          }
+
+          &.to-right {
+            background-image: url(../images/page/to-right-hover.png);
+          }
+        }
+      }
+      &[disabled] {
+        color: #aaa;
+        cursor: default;
+
+        &.to-left {
+          background-image: url(../images/page/to-left-hover.png);
+        }
+
+        &.to-right {
+          background-image: url(../images/page/to-right-hover.png);
+        }
+
+        &:hover {
+          border-color: #fff;
+          background-color: #fff;
+          color: #aaa;
+        }
+      }
+    }
+
+    & .page-items {
+      margin: 0 10px;
+      display: inline-block;
+      vertical-align: middle;
+      position: relative;
+      border-bottom: 2px solid #eee;
+
+      .page-item:first-child {
+        margin-left: 0;
+      }
+      .page-item:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.data-filter {
+  position: relative;
+  .table-arrow {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    left: 3px;
+    background: url("../images/table_arrow.png") no-repeat;
+    background-position: 5px 5px;
+    cursor: pointer;
+    margin-top: 6px;
+  }
+  .filter-select {
+    width: 25px;
+    opacity: 0;
+    margin-left: 9px;
+    option {
+      white-space: pre;
+    }
+  }
+}

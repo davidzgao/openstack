@@ -1,0 +1,129 @@
+<div class="step-area">
+  <div class="field-name field">
+    <div class="field-label"><span ng-if="modal.steps[3].fields[0].restrictions.required">* </span>{{modal.steps[3].fields[0].label}}</div>
+    <div class="field-input">
+      <input ng-change="validator('name', 'basic')"
+             class="{{tips['basic']['name']?'invalid':''}}"
+             name="name"
+             ng-model="form['basic']['name']"
+             type="text"/>
+    </div>
+    <div ng-show="tips['basic']['name']&&modal.currentStep=='basic'" class="modal-tip">
+      <div>&lowast; {{tips['basic']['name']}}</div>
+    </div>
+  </div>
+  <div class="field-cluster field">
+    <div class="field-label">{{modal.steps[3].fields[1].label}}</div>
+    <div class="field-input">
+      <select ng-change="validator('secret_key', 'basic')"  name="secret_key"
+              class="selectDirective {{tips['basic']['secret_key']?'invalid':''}}"
+              ng-model="form['basic']['cluster']" val="modal.steps[3].fields[1].default"
+              ng-options="opt.value as opt.text for opt in modal.steps[3].fields[1].default">
+      </select>
+    </div>
+    <div ng-show="tips['basic']['cluster']&&modal.currentStep=='basic'" class="modal-tip">
+      <div>&lowast; {{tips['basic']['cluster']}}</div>
+    </div>
+  </div>
+  <div class="field-security_group field" ng-if="modal.steps[3].fields[2].type!='hidden'">
+    <div class="field-label">{{modal.steps[3].fields[2].label}}</div>
+    <div class="field-input">
+      <div>
+        <div class="checkbox-list-field"
+             ng-repeat="opt in modal.steps[3].fields[2].default">
+          <input ng-click="validator('security_group', 'basic')"
+                 type="checkbox" checklist-model="form['basic']['security_group']"
+                 checklist-value="opt.value">{{opt.text}}
+        </div>
+      </div>
+    </div>
+    <div ng-show="tips['basic']['security_group']&&modal.currentStep=='basic'" class="modal-tip">
+      <div>&lowast; {{tips['basic']['security_group']}}</div>
+    </div>
+  </div>
+  <div class="field-credential field">
+    <div class="field-label">{{note.modal.login}}</div>
+    <div class="field-input">
+      <span ng-show="form['image']['image'].osType!='windows'"
+            class="credential-switch {{modal.credential!='password'?'active':''}}"
+            ng-click="changeCreden('secret_key')">{{note.modal.secretKey}}</span>
+      <span class="credential-switch {{modal.credential=='password'?'active':''}}"
+            ng-click="changeCreden('password')">{{note.modal.password}}</span>
+    </div>
+  </div>
+  <div class="field-username field"
+       ng-show="modal.credential=='password'">
+    <div class="field-label">{{modal.steps[3].fields[3].label}}</div>
+    <div class="field-input">
+      <input ng-change="validator('username', 'basic')"
+             class="{{tips['basic']['username']?'invalid':''}}"
+             name="username"
+             disabled
+             ng-model="form['basic']['username']"
+             type="text"/>
+    </div>
+    <div ng-show="tips['basic']['username']&&modal.currentStep=='basic'" class="modal-tip">
+      <div>&lowast; {{tips['basic']['username']}}</div>
+    </div>
+  </div>
+  <div class="field-secret_key field"
+       ng-show="modal.credential!='password'">
+    <div class="field-label">{{modal.steps[3].fields[4].label}}</div>
+    <div class="field-input">
+      <select ng-if="modal.steps[3].fields[4].default.length"
+              ng-change="validator('secret_key', 'basic')"  name="secret_key"
+              class="{{tips['basic']['secret_key']?'invalid':''}} selectDirective"
+              ng-model="form['basic']['secret_key']"
+              val="modal.steps[3].fields[4].default"
+              ng-options="opt.value as opt.text for opt in modal.steps[3].fields[4].default">
+      </select>
+      <div class="key-pair-empty" ng-if="!modal.steps[3].fields[4].default.length">
+        {{note.keyPaireEmpty}}?
+        <a ui-sref="project.secret_key.create">{{note.create}}</a>
+      </div>
+    </div>
+    <div ng-show="tips['basic']['secret_key']&&modal.currentStep=='basic'" class="modal-tip">
+      <div>&lowast; {{tips['basic']['secret_key']}}</div>
+    </div>
+  </div>
+  <div class="field-password field"
+       ng-show="modal.credential=='password'">
+    <div class="field-label">{{modal.steps[3].fields[5].label}}</div>
+    <div class="field-input">
+      <input style="display:none;"></input>
+      <input ex-popover
+             content=modal.passwordTip
+             ng-change="validator('password', 'basic')"
+             class="{{tips['basic']['password']?'invalid':''}}"
+             name="password"
+             ng-model="form['basic']['password']"
+             type="password"
+             />
+      <span class="glyphicon ng-scope glyphicon-eye-close"
+          ng-click="passwordToText($event)"></span>
+    </div>
+    <div ng-show="tips['basic']['password']&&modal.currentStep=='basic'" class="modal-tip">
+      <div>&lowast; {{tips['basic']['password']}}</div>
+    </div>
+  </div>
+  <!--
+  TODO(Li Xipeng):
+  Comments advanced options now, and I will do a fix after doing some
+  research at injecting file when booting vms from volume.-->
+  <!--
+  <div class="note" ng-click="modal.custom=modal.custom?false:true">
+    {{note.modal.advOptions}}
+  </div>
+  <div ng-show="modal.custom" class="field-custom field">
+    <div class="field-label">{{modal.steps[3].fields[6].label}}</div>
+    <div class="field-input">
+      <textarea ng-change="validator('custom', 'basic')"
+             class="{{tips['basic']['custom']?'invalid':''}}"
+             name="custom"
+             ng-model="form['basic']['custom']"></textarea>
+    </div>
+    <div ng-show="tips['basic']['custom']&&modal.currentStep=='basic'" class="modal-tip">
+      <div>&lowast; {{tips['basic']['custom']}}</div>
+    </div>
+  </div>-->
+</div>

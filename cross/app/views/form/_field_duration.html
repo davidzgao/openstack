@@ -1,0 +1,9 @@
+<div class="field-duration">
+  <label>{{field.label}}</label>
+  <div class="item-group">
+  <span ng-repeat="item in itemOpts"
+    ng-class="{true: 'active'}[item.active]"
+    ng-click="selectChange($index)"
+    class="radio-item">{{item.name}}</span>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+<div>
+  <div class='common_page_tabs'>
+    <ul>
+      <li class="active tab">{{tab.title}}</li>
+    </ul>
+  </div>
+
+    <div class="statistic-query">
+      <div class='ui-select'>
+      <select ng-model="query.year"
+        ng-options="year for year in yearList">
+      </select>
+      </div>
+      <div class='ui-select'>
+      <select ng-model="query.month"
+        ng-options="month.index as month.name for month in monthNames">
+      </select>
+      </div>
+      <button class='btn btn-enable query'
+        ng-click="queryLogs()">{{note.query}}</button>
+    </div>
+  <div id="mainView">
+    <div id="viewOne" class='table-tab ui-view-container'>
+      <div datatable='logsOpts'></div>
+    </div>
+  </div>
+</div>

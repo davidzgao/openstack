@@ -1,0 +1,17 @@
+<div>
+  <div class='common_page_tabs'>
+    <ul>
+      <li class="tab active">{{note.title}}</li>
+    </ul>
+  </div>
+</div>
+
+<div>
+  <div class='table-tab ui-view-container'>
+    <div class='action_group'>
+      <button class='btn btn-enable fresh'
+              ng-click='refresResource(instances)'><i></i>{{ note.buttonGroup.refresh }}</button>
+    </div>
+    <div datatable='flavorOpts'></div>
+  </div>
+</div>

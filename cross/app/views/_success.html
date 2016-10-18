@@ -1,0 +1,9 @@
+<div class='action-status'>
+  <h2 ng-class="actionStatus">{{note.title}}</h2>
+  <p>{{counter}}{{note.tips}}</p>
+  <p>{{note.tip}}</p>
+  <div ng-if="actionStatus=='action-success'">
+    <a ng-click="goToLogin()">{{note.login}}</a></div>
+  <div ng-if="actionStatus=='action-failed'">
+    <a ng-click="goToLogin()">{{note.forget}}</a></div>
+</div>

@@ -1,0 +1,537 @@
+.project_memeber_container,
+.selector-member-container,
+.group_member_container {
+  min-height: 200px;
+  padding: 10px;
+}
+
+.project_memeber_container .project_memebership .header .left,
+.selector-member-container .project_memebership .header .left,
+.group_member_container .project_memebership .header .left,
+.project_memeber_container .selector-membership .header .left,
+.selector-member-container .selector-membership .header .left,
+.group_member_container .selector-membership .header .left,
+.project_memeber_container .group_membership .header .left,
+.selector-member-container .group_membership .header .left,
+.group_member_container .group_membership .header .left {
+  float: left;
+  width: 49%;
+}
+
+.project_memeber_container .project_memebership .header .left .fake_table_header,
+.selector-member-container .project_memebership .header .left .fake_table_header,
+.group_member_container .project_memebership .header .left .fake_table_header,
+.project_memeber_container .selector-membership .header .left .fake_table_header,
+.selector-member-container .selector-membership .header .left .fake_table_header,
+.group_member_container .selector-membership .header .left .fake_table_header,
+.project_memeber_container .group_membership .header .left .fake_table_header,
+.selector-member-container .group_membership .header .left .fake_table_header,
+.group_member_container .group_membership .header .left .fake_table_header {
+  margin-top: 10px;
+  overflow: hidden;
+  font-weight: bold;
+  line-height: 40px;
+}
+
+.project_memeber_container .project_memebership .header .left .fake_table_header span,
+.selector-member-container .project_memebership .header .left .fake_table_header span,
+.group_member_container .project_memebership .header .left .fake_table_header span,
+.project_memeber_container .selector-membership .header .left .fake_table_header span,
+.selector-member-container .selector-membership .header .left .fake_table_header span,
+.group_member_container .selector-membership .header .left .fake_table_header span,
+.project_memeber_container .group_membership .header .left .fake_table_header span,
+.selector-member-container .group_membership .header .left .fake_table_header span,
+.group_member_container .group_membership .header .left .fake_table_header span {
+  padding-left: 5px;
+}
+
+.project_memeber_container .project_memebership .header .left .fake_table_header .users_search,
+.selector-member-container .project_memebership .header .left .fake_table_header .users_search,
+.group_member_container .project_memebership .header .left .fake_table_header .users_search,
+.project_memeber_container .selector-membership .header .left .fake_table_header .users_search,
+.selector-member-container .selector-membership .header .left .fake_table_header .users_search,
+.group_member_container .selector-membership .header .left .fake_table_header .users_search,
+.project_memeber_container .group_membership .header .left .fake_table_header .users_search,
+.selector-member-container .group_membership .header .left .fake_table_header .users_search,
+.group_member_container .group_membership .header .left .fake_table_header .users_search {
+  display: inline-block;
+  width: 110px;
+  height: 26px;
+  padding: 5px 14px;
+  margin-bottom: 4px;
+  margin-left: 50px;
+  font-weight: normal;
+  line-height: 26px;
+  background: url(../images/search.png) 5px 7px no-repeat;
+  border-radius: 15px;
+}
+
+.project_memeber_container .project_memebership .header .right,
+.selector-member-container .project_memebership .header .right,
+.group_member_container .project_memebership .header .right,
+.project_memeber_container .selector-membership .header .right,
+.selector-member-container .selector-membership .header .right,
+.group_member_container .selector-membership .header .right,
+.project_memeber_container .group_membership .header .right,
+.selector-member-container .group_membership .header .right,
+.group_member_container .group_membership .header .right {
+  float: right;
+  width: 49%;
+}
+
+.project_memeber_container .project_memebership .header .right .fake_table_header,
+.selector-member-container .project_memebership .header .right .fake_table_header,
+.group_member_container .project_memebership .header .right .fake_table_header,
+.project_memeber_container .selector-membership .header .right .fake_table_header,
+.selector-member-container .selector-membership .header .right .fake_table_header,
+.group_member_container .selector-membership .header .right .fake_table_header,
+.project_memeber_container .group_membership .header .right .fake_table_header,
+.selector-member-container .group_membership .header .right .fake_table_header,
+.group_member_container .group_membership .header .right .fake_table_header {
+  margin-top: 10px;
+  overflow: hidden;
+  font-weight: bold;
+  line-height: 40px;
+}
+
+.project_memeber_container .project_memebership .header .right .fake_table_header span,
+.selector-member-container .project_memebership .header .right .fake_table_header span,
+.group_member_container .project_memebership .header .right .fake_table_header span,
+.project_memeber_container .selector-membership .header .right .fake_table_header span,
+.selector-member-container .selector-membership .header .right .fake_table_header span,
+.group_member_container .selector-membership .header .right .fake_table_header span,
+.project_memeber_container .group_membership .header .right .fake_table_header span,
+.selector-member-container .group_membership .header .right .fake_table_header span,
+.group_member_container .group_membership .header .right .fake_table_header span {
+  padding-left: 5px;
+}
+
+.project_memeber_container .project_memebership .header .right .fake_table_header .users_search,
+.selector-member-container .project_memebership .header .right .fake_table_header .users_search,
+.group_member_container .project_memebership .header .right .fake_table_header .users_search,
+.project_memeber_container .selector-membership .header .right .fake_table_header .users_search,
+.selector-member-container .selector-membership .header .right .fake_table_header .users_search,
+.group_member_container .selector-membership .header .right .fake_table_header .users_search,
+.project_memeber_container .group_membership .header .right .fake_table_header .users_search,
+.selector-member-container .group_membership .header .right .fake_table_header .users_search,
+.group_member_container .group_membership .header .right .fake_table_header .users_search {
+  display: inline-block;
+  width: 110px;
+  height: 26px;
+  padding: 5px 14px;
+  margin-bottom: 4px;
+  margin-left: 50px;
+  font-weight: normal;
+  line-height: 26px;
+  background: url(../images/search.png) 5px 7px no-repeat;
+  border-radius: 15px;
+}
+
+.project_memeber_container .project_memebership .header .clear,
+.selector-member-container .project_memebership .header .clear,
+.group_member_container .project_memebership .header .clear,
+.project_memeber_container .selector-membership .header .clear,
+.selector-member-container .selector-membership .header .clear,
+.group_member_container .selector-membership .header .clear,
+.project_memeber_container .group_membership .header .clear,
+.selector-member-container .group_membership .header .clear,
+.group_member_container .group_membership .header .clear {
+  clear: both;
+}
+
+.project_memeber_container .project_memebership .left,
+.selector-member-container .project_memebership .left,
+.group_member_container .project_memebership .left,
+.project_memeber_container .selector-membership .left,
+.selector-member-container .selector-membership .left,
+.group_member_container .selector-membership .left,
+.project_memeber_container .group_membership .left,
+.selector-member-container .group_membership .left,
+.group_member_container .group_membership .left {
+  float: left;
+  width: 49%;
+}
+
+.project_memeber_container .project_memebership .right,
+.selector-member-container .project_memebership .right,
+.group_member_container .project_memebership .right,
+.project_memeber_container .selector-membership .right,
+.selector-member-container .selector-membership .right,
+.group_member_container .selector-membership .right,
+.project_memeber_container .group_membership .right,
+.selector-member-container .group_membership .right,
+.group_member_container .group_membership .right {
+  float: right;
+  width: 49%;
+}
+
+.project_memeber_container .project_memebership .fake_table,
+.selector-member-container .project_memebership .fake_table,
+.group_member_container .project_memebership .fake_table,
+.project_memeber_container .selector-membership .fake_table,
+.selector-member-container .selector-membership .fake_table,
+.group_member_container .selector-membership .fake_table,
+.project_memeber_container .group_membership .fake_table,
+.selector-member-container .group_membership .fake_table,
+.group_member_container .group_membership .fake_table {
+  max-height: 200px;
+  padding: 0;
+  margin: 0;
+  overflow-y: auto;
+}
+
+.project_memeber_container .project_memebership .fake_table > .no_results > li,
+.selector-member-container .project_memebership .fake_table > .no_results > li,
+.group_member_container .project_memebership .fake_table > .no_results > li,
+.project_memeber_container .selector-membership .fake_table > .no_results > li,
+.selector-member-container .selector-membership .fake_table > .no_results > li,
+.group_member_container .selector-membership .fake_table > .no_results > li,
+.project_memeber_container .group_membership .fake_table > .no_results > li,
+.selector-member-container .group_membership .fake_table > .no_results > li,
+.group_member_container .group_membership .fake_table > .no_results > li {
+  padding-left: 10px;
+  color: #aaa;
+  background-color: #f6f6f6;
+}
+
+.project_memeber_container .project_memebership .fake_table li,
+.selector-member-container .project_memebership .fake_table li,
+.group_member_container .project_memebership .fake_table li,
+.project_memeber_container .selector-membership .fake_table li,
+.selector-member-container .selector-membership .fake_table li,
+.group_member_container .selector-membership .fake_table li,
+.project_memeber_container .group_membership .fake_table li,
+.selector-member-container .group_membership .fake_table li,
+.group_member_container .group_membership .fake_table li {
+  position: relative;
+  width: 100%;
+  height: 35px;
+  padding-right: 1px;
+  overflow: hidden;
+  line-height: 35px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  border-top: 1px solid #ededed;
+  border-bottom: 0;
+  border-bottom: none;
+}
+
+.project_memeber_container .project_memebership .fake_table li:last-child,
+.selector-member-container .project_memebership .fake_table li:last-child,
+.group_member_container .project_memebership .fake_table li:last-child,
+.project_memeber_container .selector-membership .fake_table li:last-child,
+.selector-member-container .selector-membership .fake_table li:last-child,
+.group_member_container .selector-membership .fake_table li:last-child,
+.project_memeber_container .group_membership .fake_table li:last-child,
+.selector-member-container .group_membership .fake_table li:last-child,
+.group_member_container .group_membership .fake_table li:last-child {
+  border-bottom: 1px solid #ededed;
+}
+
+.project_memeber_container .project_memebership .fake_table li.even,
+.selector-member-container .project_memebership .fake_table li.even,
+.group_member_container .project_memebership .fake_table li.even,
+.project_memeber_container .selector-membership .fake_table li.even,
+.selector-member-container .selector-membership .fake_table li.even,
+.group_member_container .selector-membership .fake_table li.even,
+.project_memeber_container .group_membership .fake_table li.even,
+.selector-member-container .group_membership .fake_table li.even,
+.group_member_container .group_membership .fake_table li.even {
+  background: #f6f6f6;
+}
+
+.project_memeber_container .project_memebership .fake_table li:hover,
+.selector-member-container .project_memebership .fake_table li:hover,
+.group_member_container .project_memebership .fake_table li:hover,
+.project_memeber_container .selector-membership .fake_table li:hover,
+.selector-member-container .selector-membership .fake_table li:hover,
+.group_member_container .selector-membership .fake_table li:hover,
+.project_memeber_container .group_membership .fake_table li:hover,
+.selector-member-container .group_membership .fake_table li:hover,
+.group_member_container .group_membership .fake_table li:hover {
+  background-color: #efefef;
+}
+
+.project_memeber_container .project_memebership .fake_table li span,
+.selector-member-container .project_memebership .fake_table li span,
+.group_member_container .project_memebership .fake_table li span,
+.project_memeber_container .selector-membership .fake_table li span,
+.selector-member-container .selector-membership .fake_table li span,
+.group_member_container .selector-membership .fake_table li span,
+.project_memeber_container .group_membership .fake_table li span,
+.selector-member-container .group_membership .fake_table li span,
+.group_member_container .group_membership .fake_table li span {
+  display: inline-block;
+  width: 80%;
+  padding-left: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.project_memeber_container .project_memebership .fake_table li span.del-icon,
+.selector-member-container .project_memebership .fake_table li span.del-icon,
+.group_member_container .project_memebership .fake_table li span.del-icon,
+.project_memeber_container .selector-membership .fake_table li span.del-icon,
+.selector-member-container .selector-membership .fake_table li span.del-icon,
+.group_member_container .selector-membership .fake_table li span.del-icon,
+.project_memeber_container .group_membership .fake_table li span.del-icon,
+.selector-member-container .group_membership .fake_table li span.del-icon,
+.group_member_container .group_membership .fake_table li span.del-icon {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin-bottom: 9px;
+  color: red;
+  background: url('../images/action_delete.png') no-repeat;
+}
+
+.project_memeber_container .project_memebership .fake_table li span.open-icon-container,
+.selector-member-container .project_memebership .fake_table li span.open-icon-container,
+.group_member_container .project_memebership .fake_table li span.open-icon-container,
+.project_memeber_container .selector-membership .fake_table li span.open-icon-container,
+.selector-member-container .selector-membership .fake_table li span.open-icon-container,
+.group_member_container .selector-membership .fake_table li span.open-icon-container,
+.project_memeber_container .group_membership .fake_table li span.open-icon-container,
+.selector-member-container .group_membership .fake_table li span.open-icon-container,
+.group_member_container .group_membership .fake_table li span.open-icon-container {
+  width: 5%;
+}
+
+.project_memeber_container .project_memebership .fake_table li span.open-icon,
+.selector-member-container .project_memebership .fake_table li span.open-icon,
+.group_member_container .project_memebership .fake_table li span.open-icon,
+.project_memeber_container .selector-membership .fake_table li span.open-icon,
+.selector-member-container .selector-membership .fake_table li span.open-icon,
+.group_member_container .selector-membership .fake_table li span.open-icon,
+.project_memeber_container .group_membership .fake_table li span.open-icon,
+.selector-member-container .group_membership .fake_table li span.open-icon,
+.group_member_container .group_membership .fake_table li span.open-icon {
+  position: absolute;
+  top: 33%;
+  width: 4%;
+  height: 27%;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-right-width: 2.52px;
+  border-bottom-width: 2.52px;
+  visibility: visible;
+  transform: rotate(45deg);
+}
+
+.project_memeber_container .project_memebership .fake_table li span.close-icon,
+.selector-member-container .project_memebership .fake_table li span.close-icon,
+.group_member_container .project_memebership .fake_table li span.close-icon,
+.project_memeber_container .selector-membership .fake_table li span.close-icon,
+.selector-member-container .selector-membership .fake_table li span.close-icon,
+.group_member_container .selector-membership .fake_table li span.close-icon,
+.project_memeber_container .group_membership .fake_table li span.close-icon,
+.selector-member-container .group_membership .fake_table li span.close-icon,
+.group_member_container .group_membership .fake_table li span.close-icon {
+  position: absolute;
+  top: 40%;
+  width: 4%;
+  height: 27%;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-right-width: 2.52px;
+  border-bottom-width: 2.52px;
+  visibility: visible;
+  transform: rotate(225deg);
+}
+
+.project_memeber_container .project_memebership .fake_table li span.group-user,
+.selector-member-container .project_memebership .fake_table li span.group-user,
+.group_member_container .project_memebership .fake_table li span.group-user,
+.project_memeber_container .selector-membership .fake_table li span.group-user,
+.selector-member-container .selector-membership .fake_table li span.group-user,
+.group_member_container .selector-membership .fake_table li span.group-user,
+.project_memeber_container .group_membership .fake_table li span.group-user,
+.selector-member-container .group_membership .fake_table li span.group-user,
+.group_member_container .group_membership .fake_table li span.group-user {
+  width: 100%;
+  padding-left: 15px;
+}
+
+.project_memeber_container .project_memebership .fake_table li span.group-user:hover,
+.selector-member-container .project_memebership .fake_table li span.group-user:hover,
+.group_member_container .project_memebership .fake_table li span.group-user:hover,
+.project_memeber_container .selector-membership .fake_table li span.group-user:hover,
+.selector-member-container .selector-membership .fake_table li span.group-user:hover,
+.group_member_container .selector-membership .fake_table li span.group-user:hover,
+.project_memeber_container .group_membership .fake_table li span.group-user:hover,
+.selector-member-container .group_membership .fake_table li span.group-user:hover,
+.group_member_container .group_membership .fake_table li span.group-user:hover {
+  background-color: #dedede;
+}
+
+.project_memeber_container .project_memebership .fake_table li a,
+.selector-member-container .project_memebership .fake_table li a,
+.group_member_container .project_memebership .fake_table li a,
+.project_memeber_container .selector-membership .fake_table li a,
+.selector-member-container .selector-membership .fake_table li a,
+.group_member_container .selector-membership .fake_table li a,
+.project_memeber_container .group_membership .fake_table li a,
+.selector-member-container .group_membership .fake_table li a,
+.group_member_container .group_membership .fake_table li a {
+  position: absolute;
+  margin-top: 6px;
+  margin-right: 3px;
+  background-color: #78D0FF;
+  border-color: #78D0FF;
+}
+
+.project_memeber_container .project_memebership .fake_table li a:hover,
+.selector-member-container .project_memebership .fake_table li a:hover,
+.group_member_container .project_memebership .fake_table li a:hover,
+.project_memeber_container .selector-membership .fake_table li a:hover,
+.selector-member-container .selector-membership .fake_table li a:hover,
+.group_member_container .selector-membership .fake_table li a:hover,
+.project_memeber_container .group_membership .fake_table li a:hover,
+.selector-member-container .group_membership .fake_table li a:hover,
+.group_member_container .group_membership .fake_table li a:hover {
+  background-color: #2CABEE;
+  border-color: #2CABEE;
+}
+
+.project_memeber_container .project_memebership .fake_table li a.btn,
+.selector-member-container .project_memebership .fake_table li a.btn,
+.group_member_container .project_memebership .fake_table li a.btn,
+.project_memeber_container .selector-membership .fake_table li a.btn,
+.selector-member-container .selector-membership .fake_table li a.btn,
+.group_member_container .selector-membership .fake_table li a.btn,
+.project_memeber_container .group_membership .fake_table li a.btn,
+.selector-member-container .group_membership .fake_table li a.btn,
+.group_member_container .group_membership .fake_table li a.btn {
+  width: 23px;
+  height: 23px;
+  padding: 2px 4px 4px 3px;
+  text-align: center;
+  background-position: 6px 6px;
+  background-repeat: no-repeat;
+  -webkit-padding-before: 4px;
+}
+
+.project_memeber_container .project_memebership .fake_table li a.btn.add_left,
+.selector-member-container .project_memebership .fake_table li a.btn.add_left,
+.group_member_container .project_memebership .fake_table li a.btn.add_left,
+.project_memeber_container .selector-membership .fake_table li a.btn.add_left,
+.selector-member-container .selector-membership .fake_table li a.btn.add_left,
+.group_member_container .selector-membership .fake_table li a.btn.add_left,
+.project_memeber_container .group_membership .fake_table li a.btn.add_left,
+.selector-member-container .group_membership .fake_table li a.btn.add_left,
+.group_member_container .group_membership .fake_table li a.btn.add_left {
+  background-image: url(../images/add_to_left.png);
+}
+
+.project_memeber_container .project_memebership .fake_table li a.btn.add_right,
+.selector-member-container .project_memebership .fake_table li a.btn.add_right,
+.group_member_container .project_memebership .fake_table li a.btn.add_right,
+.project_memeber_container .selector-membership .fake_table li a.btn.add_right,
+.selector-member-container .selector-membership .fake_table li a.btn.add_right,
+.group_member_container .selector-membership .fake_table li a.btn.add_right,
+.project_memeber_container .group_membership .fake_table li a.btn.add_right,
+.selector-member-container .group_membership .fake_table li a.btn.add_right,
+.group_member_container .group_membership .fake_table li a.btn.add_right {
+  background-image: url(../images/add_to_right.png);
+}
+
+.project_memeber_container .project_memebership .clear,
+.selector-member-container .project_memebership .clear,
+.group_member_container .project_memebership .clear,
+.project_memeber_container .selector-membership .clear,
+.selector-member-container .selector-membership .clear,
+.group_member_container .selector-membership .clear,
+.project_memeber_container .group_membership .clear,
+.selector-member-container .group_membership .clear,
+.group_member_container .group_membership .clear {
+  clear: both;
+}
+
+.project_quota_container {
+  padding: 10px;
+  padding-top: 15px;
+}
+
+.project_quota_container .quota-item {
+  position: relative;
+  padding: 14px;
+}
+
+.project_quota_container .quota-item .quota-item-title {
+  display: inline-block;
+  min-width: 100px;
+}
+
+.project_quota_container .quota-item .slider-mate {
+  position: absolute;
+  top: 6px;
+  right: 5px;
+  float: right;
+  width: 70px;
+  height: 30px;
+  padding: 0;
+  line-height: 30px;
+}
+
+.project_quota_container .quota-item .slider-mate.ng-invalid {
+  border: 1px solid #E36F6F;
+}
+
+.project_quota_container .quota_advance_trigger {
+  text-align: center;
+}
+
+.project_quota_container .quota_advance_trigger a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.project_quota_container .slider.slider-horizontal {
+  width: 270px;
+}
+
+.project_quota_container .slider.slider-horizontal .slider-track {
+  border: 1px solid #DDDDDD;
+}
+
+.project-base-tips,
+.project-member-tips,
+.user-create-tips {
+  padding: 10px;
+}
+
+.project-base-tips li,
+.project-member-tips li,
+.user-create-tips li {
+  margin-top: 15px;
+  list-style: none;
+}
+
+.quota-assign-tips {
+  width: auto;
+  padding: 5px;
+}
+
+.quota-assign-tips .tips-title {
+  width: auto;
+  margin: 10px;
+  overflow: hidden;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.quota-assign-tips table {
+  width: 90%;
+  margin-left: 10px;
+}
+
+.quota-assign-tips table .resource_stat td {
+  height: 35px;
+  border: 1px solid #DDDDDD;
+}
+
+.quota-assign-tips .tips-note {
+  padding: 10px;
+}

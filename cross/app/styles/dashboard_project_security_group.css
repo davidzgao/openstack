@@ -1,0 +1,179 @@
+.security-group-rule-detail .security-group-lead {
+  height: 36px;
+  padding-left: 36px;
+  line-height: 36px;
+  background-color: #ecf0f2;
+}
+
+.security-group-rule-detail .detail_info {
+  padding: 0 20px;
+}
+
+.security-group-rule-detail div.rule-add-btn {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.security-group-rule-detail div.rule-save-btn {
+  margin-top: 20px;
+  text-align: right;
+}
+
+.security-group-rule-detail ul.rule-example {
+  margin: 20px 0 0 0;
+}
+
+.security-group-rule-detail ul.rule-example li.btn {
+  width: 80px;
+  height: 27px;
+  padding: 0 0 0 0;
+  margin: 5px 5px 5px 5px;
+  line-height: 27px;
+  color: #555555;
+  text-align: center;
+  background-color: #ffffff;
+  border: 1px solid #d1d1d1;
+}
+
+.security-group-rule-detail ul.rule-example li.btn:hover {
+  color: #151515;
+  background-color: #e7f0f9;
+  border: 1px solid #86b4df;
+}
+
+.security-group-rule-detail ul.rule-example li.btn.active {
+  color: #ffffff;
+  background-color: #86b4df;
+  border: 1px solid #86b4df;
+}
+
+.security-group-rule-detail table.rule-table {
+  width: 100%;
+  border: 1px solid #ececec;
+  border-top: 0;
+}
+
+.security-group-rule-detail table.rule-table tr td {
+  padding-right: 3px;
+  padding-left: 10px;
+  border: 1px solid #ececec;
+}
+
+.security-group-rule-detail table.rule-table tr {
+  height: 35px;
+}
+
+.security-group-rule-detail table.rule-table tr.header-lead {
+  height: 40px;
+}
+
+.security-group-rule-detail table.rule-table tr.rule-row-add {
+  height: 40px;
+}
+
+.security-group-rule-detail table.rule-table tr.rule-row-add td {
+  text-align: center;
+  border: 1px solid #e0e0e0;
+}
+
+.security-group-rule-detail table.rule-table tr.rule-row-add td input.invalid {
+  border-color: #ff4d59;
+}
+
+.security-group-rule-detail table.rule-table tr.rule-row-add div.rule-direction {
+  display: inline-block;
+  margin-top: 4px;
+}
+
+.security-group-rule-detail table.rule-table tr.rule-row-add div.rule-direction .wrap-select-field {
+  width: 120px;
+}
+
+.security-group-rule-detail table.rule-table tr.rule-row-add div.rule-protocol {
+  display: inline-block;
+  margin-top: 4px;
+}
+
+.security-group-rule-detail table.rule-table tr.rule-row-add div.rule-protocol .wrap-select-field {
+  width: 120px;
+}
+
+.security-group-rule-detail table.rule-table input {
+  width: 90%;
+  height: 30px;
+  padding: 3px 3px;
+  margin: 0 0;
+  margin-bottom: 0;
+  border: 1px solid #c9c9c9;
+  -webkit-border-radius: 0;
+          border-radius: 3px;
+}
+
+.security-group-rule-detail table.rule-table input[type="checkbox"] {
+  vertical-align: middle;
+}
+
+.security-group-rule-detail table.rule-table input:focus {
+  border-color: #29aaee;
+  outline: none;
+}
+
+.security-group-rule-detail table.rule-table div.rule-port > input {
+  width: 90%;
+}
+
+.security-group-rule-detail table.rule-table div.rule-ip-range > input {
+  width: 90%;
+}
+
+.security-group-rule-detail table.rule-table .rule-action-handle {
+  text-align: left;
+  vertical-align: middle;
+}
+
+.security-group-rule-detail table.rule-table .rule-action-handle button {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  cursor: pointer;
+  background: #fff;
+  border: 0;
+  border-radius: 2px;
+}
+
+.security-group-rule-detail table.rule-table .rule-action-handle button.icon-remove {
+  color: #eee;
+  background: #e05c69;
+}
+
+.security-group-rule-detail table.rule-table .rule-action-handle button.icon-remove:hover {
+  background: #D25662;
+}
+
+.security-group-rule-detail table.rule-table .rule-action-handle button.icon-ok {
+  color: #eee;
+  background: #28a9ee;
+}
+
+.security-group-rule-detail table.rule-table .rule-action-handle button.icon-ok:hover {
+  background: #05A0DB;
+}
+
+.security-group-rule-detail .rule-add-btn .btn,
+.security-group-rule-detail .rule-save-btn .btn {
+  padding-right: 15px;
+  padding-left: 15px;
+  color: #eee;
+  background-color: #28a9ee;
+}
+
+.security-group-rule-detail .rule-add-btn .btn:focus,
+.security-group-rule-detail .rule-save-btn .btn:focus {
+  outline: none;
+}
+
+.security-group-rule-detail .rule-add-btn .btn:hover,
+.security-group-rule-detail .rule-save-btn .btn:hover {
+  background-color: #05A0DB;
+}

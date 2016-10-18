@@ -1,0 +1,118 @@
+<div class='storage-area overview'>
+  <div class='overview-detail'>
+    <div class='health {{useFederator?"storage-item":"item"}}'>
+      <div class="container">
+        <div class="top-desc">
+          <div class="lead-title" ng-bind="note.health"></div>
+          <div class="item-status" ng-class="healthState"></div>
+        </div>
+        <div class='detail-content'>
+          <div class='detail-status' ng-class="healthState" ng-bind="healthStateText">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class='osd-node item' ng-if="!useFederator">
+      <div class="container">
+        <div class="top-desc">
+          <div class="lead-title" ng-bind="note.osd"></div>
+          <div class="item-status {{osd.error?'error':'normal'}}"></div>
+        </div>
+        <div class='detail-content'>
+          <div class="detail-status {{osd.error?'error':'normal'}}">
+            {{osd.error}}/{{osd.total}}
+          </div>
+          <div class='detail-desc'>
+            {{note.osdError}}&nbsp;/&nbsp;{{note.osdTotal}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class='mon-node item' ng-if="!useFederator">
+      <div class="container">
+        <div class="top-desc">
+          <div class="lead-title" ng-bind="note.mon"></div>
+          <div class="item-status {{mon.error?'error':'normal'}}"></div>
+        </div>
+        <div class='detail-content'>
+          <div class="detail-status {{mon.error?'error':'normal'}}">
+            {{mon.error}}/{{mon.total}}
+          </div>
+          <div class='detail-desc'>
+            {{note.monError}}&nbsp;/&nbsp;{{note.monTotal}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class='usage {{useFederator?"storage-item":"item"}}'>
+      <div class="container">
+        <div class="top-desc">
+          <div class="lead-title" ng-bind="note.usage"></div>
+          <div class="item-status {{usageWarn}}"></div>
+        </div>
+        <div class='detail-content'>
+          <div class="detailLoading" ng-if="loading">
+            <div class="logo-continer">
+            </div>
+          </div>
+          <div val="usageRatio" class="sectorDirective resource-usage">
+            <div class="sector-outer">
+              <div class="sector-inner">
+                <span>{{usageRatio}}</span>
+                <span class="sector-per-cent">%</span>
+              </div>
+              <svg><path class="{{usageWarn}}" /></svg>
+            </div>
+          </div>
+        </div>
+        <div class='detail-footer'>
+          <span ng-bind="usageUsed" class="desc"></span>
+          <span ng-bind="storage_usage.used"></span>
+          <span class="snash">/</span>
+          <span ng-bind="usageTotal" class="desc"></span>
+          <span ng-bind="storage_usage.total"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class='storage-area node-stats' ng-if="!useFederator">
+  <div class='title'>
+    <i class='node'></i>
+    {{storage_area.node_state}}
+  </div>
+  <div class='content'>
+    <div class='table-background'>
+      <div class="item" title="{{node.name}}" ng-repeat="node in nodeCounts">
+        <div class="node {{node.status}} {{node.status=='error'?'animated flash':''}}" ng-class="node.type"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class='storage-area storage-topology' ng-if="!useFederator">
+  <div class='title'>
+    <i class='topology'></i>
+    {{storage_area.storage_topology}}
+  </div>
+  <div id='ceph-topology'>
+  </div>
+</div>
+<div class='storage-area' ng-if="useFederator">
+  <div class='title'>
+    <i class='node'></i>
+    {{storage_area.storage_resource_pool}}
+  </div>
+  <div datatable="storagePoolOpts" class="pool_table"></div>
+</div>
+<div class="storage-fixed-logo" ng-if="useFederator">
+  <div class="storage-power-by">
+    Power By
+    <div class="storage-logo">
+      <a target="_blank" href="{{storageLink}}" />
+    </div>
+  </div>
+</div>

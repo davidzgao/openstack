@@ -1,0 +1,108 @@
+<div detail-tips
+  detail="image">
+</div>
+
+<div detail-stitcher key-set=detailKeySet source=image>
+</div>
+
+<div class='other_info detail_info'>
+    <div class='detail_title'>{{ note.detail.config }}
+      <div class="edit-btn-group">
+        <button ng-if="editing&&image&&!editDisabled" class='btn btn-enable'
+            ng-click="save()">
+            {{note.detail.save}}</button>
+        <button ng-if="editing&&image&&!editDisabled" class='btn btn-enable'
+            ng-click="cancel()">
+            {{note.detail.cancel}}</button>
+        <button class='btn btn-enable'
+                ng-if="!editing&&image&&!editDisabled"
+                ng-click="edit()">{{note.detail.edit}}</button>
+      </div>
+    </div>
+  <div class='detail_area'>
+    <ul>
+      <li ng-if="image.properties.os_type||editing">
+        <span class="title">{{note.detail.osType }}</span>
+        <span ng-if="!editing" class="value">{{image.properties.os_type}}</span>
+        <span ng-if="editing" class="value">
+          <select class="selectDirective" ng-model="modal.osType" val="osDefault"
+            ng-options="opt.value as opt.text group by opt.group for opt in osDefault"></select>
+        </span>
+      </li>
+      <li>
+        <span class="title">{{note.detail.min_ram }}(MB)</span>
+        <span ng-show="!editing" class="value">{{image.min_ram}}</span>
+        <span ng-show="editing" class="value">
+          <input type="text" ng-model="modal.minRam" />
+        </span>
+      </li>
+      <li>
+        <span class="title">{{note.detail.min_disk }}(GB)</span>
+        <span ng-show="!editing" class="value">{{image.min_disk}}</span>
+        <span ng-show="editing" class="value">
+          <input type="text" ng-model="modal.minDisk" />
+        </span>
+      </li>
+      <li>
+        <span class="title">{{note.detail.username }}</span>
+        <span ng-show="!editing" class="value">{{image.properties.username}}</span>
+        <span ng-show="editing" class="value">
+          <input type="text" ng-model="modal.username" />
+        </span>
+      </li>
+      <li>
+        <span class="title">{{note.detail.password }}</span>
+        <span ng-show="!editing" class="value">{{image.properties.password}}</span>
+        <span ng-show="editing" class="value">
+          <input type="text" ng-model="modal.password" />
+        </span>
+      </li>
+      <li>
+        <span class="title">{{note.detail.description }}</span>
+        <span ng-show="!editing" class="value">{{image.properties.description}}</span>
+        <span ng-show="editing" class="value">
+          <textarea type="text" ng-model="modal.description"></textarea>
+        </span>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class='other_info detail_info' ng-show="modal.showHigher">
+  <div class='detail_title'>
+    {{ note.detail.advanceConfig }}
+  </div>
+  <div class='detail_area'>
+    <div class="properties-empty" ng-show="!modal.properties">
+      {{note.detail.propertiesEmpty}}
+    </div>
+    <ul ng-if="!editing">
+      <li ng-repeat="(key, value) in modal.properties">
+        <span class="title">{{key}}</span>
+        <span class="value">{{value}}</span>
+      </li>
+    </ul>
+
+    <div ng-model="modal.properties" class="self-define-area">
+      <div class="define-container">
+        <div class="defined-fields" ng-show="editing">
+          <div class="item" ng-repeat="(key, value) in modal.properties">
+            <div class="item-key">{{key}}</div>:
+            <div class="item-value">&nbsp;{{value}}</div>
+            <button class="btn define-minus" ng-click="defineMinues(key)">&minus;</button>
+          </div>
+        </div>
+        <div class="define-field" ng-show="editing">
+          <input class="define-key" ng-model="modal.defineKey" ng-change="valid(modal.defineKey, true)"/>
+          <input class="define-value" ng-model="modal.defineValue" ng-change="valid(modal.defineValue)" />
+          <button class="btn define-add" ng-click="defineAdd()">&#43;</button>
+        </div>
+
+        <div ng-show="tips['self_define']" class="modal-tip">
+          <div>&lowast;{{tips['self_define']}}</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

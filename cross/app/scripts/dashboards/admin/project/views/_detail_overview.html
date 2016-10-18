@@ -1,0 +1,112 @@
+<div class='base_info detail_info'>
+  <div class='detail_title'>{{ detailItem.info }}
+      <div class="edit-btn-group">
+      <button ng-if="editing" class='btn btn-enable'
+          ng-click="save()">
+          {{detailItem.save}}</button>
+      <button ng-if="editing" class='btn btn-enable'
+          ng-click="cancel()">
+          {{detailItem.cancel}}</button>
+      <button class='btn'
+              ng-class="canEdit"
+              ng-if="!editing"
+              ng-click="edit()">{{detailItem.edit}}</button>
+      </div>
+  </div>
+  <div class='detail_area'>
+    <ul>
+      <li>
+        <span class="title">{{detailItem.item.name}}</span>
+        <span class="value"
+            ng-class="inEdit"> {{project_detail.name}}
+        </span>
+        <span class='edit-input' ng-class="inEdit">
+          <div class="modal-tip" ng-show="inputInValidate">
+              <div>{{inputTips}}</div>
+              <div class="tips-pointer">
+                <span class="tips-pointer-outer"></span>
+                <span class="tips-pointer-inner"></span>
+              </div>
+          </div>
+          <input ng-model="project_detail.name"
+            name="name"
+            ng-class="[validate, inEdit]"
+            value="{{project_detail.name}}"
+            ng-change="checkName()"
+          />
+        </span>
+      </li>
+      <li>
+        <span class="title">{{ detailItem.item.id }}</span>
+        <span class="value">{{project_detail.id}}</span>
+      </li>
+      <li>
+        <span class="title">{{ detailItem.item.enable }}</span>
+        <span class="value">
+          <span class="status" ng-class="project_detail.statusClass"></span>
+          {{project_detail.status}}</span>
+      </li>
+      <li style="height: auto;">
+        <span class="title">{{ detailItem.item.desc }}</span>
+        <span class="value wrap"
+              ng-class="inEdit">{{project_detail.desc}}</span>
+        <span class='edit-area'>
+          <textarea ng-class="inEdit"
+            ng-model="project_detail.description"
+          >{{project_detail.description}}</textarea>
+        </span>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class='other_info detail_info'>
+    <div class='detail_title'>{{ detailItem.quotaUsage }}</div>
+  <div class='detail_area'>
+    <ul>
+      <li>
+      <span class="title">{{detailItem.quotaItem.cpu}}</span>
+      <span class="value">{{novaQuota.cores.in_use}}/{{novaQuota.cores.limit}}</span>
+      </li>
+      <li>
+      <span class="title">{{detailItem.quotaItem.instance}}</span>
+      <span class="value">{{novaQuota.instances.in_use}}/{{novaQuota.instances.limit}}</span>
+      </li>
+      <li>
+      <span class="title">{{detailItem.quotaItem.memory}}</span>
+      <span class="value">{{novaQuota.ram.in_use | unitSwitch}}/{{novaQuota.ram.limit | unitSwitch: 'true'}}</span>
+      </li>
+      <li>
+      <span class="title">{{detailItem.quotaItem.floating}}</span>
+      <span class="value">{{novaQuota.floating_ips.in_use}}/{{novaQuota.floating_ips.limit}}</span>
+      </li>
+      <li>
+      <span class="title">{{detailItem.quotaItem.disk}}</span>
+      <span class="value">{{cinderQuota.volumes.in_use}}/{{cinderQuota.volumes.limit}}</span>
+      </li>
+      <li>
+      <span class="title">{{detailItem.quotaItem.disk_capacity}}</span>
+      <span class="value">{{cinderQuota.gigabytes.in_use}}/{{cinderQuota.gigabytes.limit}} GB</span>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class='other_info detail_info'>
+    <div class='detail_title'>{{ detailItem.memberInfo }}</div>
+  <div class='detail_area'>
+    <ul>
+      <li>
+      <span class="title">{{detailItem.userName}}</span>
+      <span class="memberValue">{{detailItem.emailAddress}}</span>
+      </li>
+      <li ng-repeat="member in project_members">
+        <span class="memberTitle">{{member.name}}</span>
+        <span class="value">{{member.email || detailItem.defaultEmail}}</span>
+      </li>
+      <li class='none-user' ng-if="project_members.length==0">
+        {{detailItem.memberNoneTips}}
+      </li>
+    </ul>
+  </div>
+</div>

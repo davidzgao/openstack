@@ -1,0 +1,67 @@
+/* Style of top nav bar */
+@import "variables.less";
+
+#top_bar {
+  @top_bar_height: 45px;
+  #user_info {
+    text-align: right;
+    ul {
+      li {
+        vertical-align: middle;
+        display: inline-block;
+        position: relative;
+        list-style: none;
+        color: white;
+        font-size: 12px;
+        &.cross-nav-user-select-region {
+          position: absolute;
+          left: 5px;
+          float: left;
+          padding-top: 8px;
+          width: 130px;
+          text-align: center;
+          cursor: pointer;
+          &.clicked {
+            color: #269BD8;
+            padding-top: 7px;
+            border: 1px solid #666666;
+            border-bottom: none;
+          }
+          &.hidden {
+            display: none;
+          }
+          .cross-region-list {
+            position: absolute;
+            border: 1px solid #666666;
+            padding-top: 8px;
+            border-top: none;
+            width: 130px;
+            left: -1px;
+            text-align: center;
+            background-color: #2D2C2C;
+            .region-item {
+              color: white;
+              line-height: 30px;
+              height: 30px;
+              cursor: pointer;
+              &:hover {
+                background-color: #269BD8;
+              }
+            }
+          }
+        }
+        &.cross-nav-user-select-dashboard {
+          float: left;
+          left: 135px;
+        }
+        &.cross-change-project {
+          width: 50px;
+          padding-top: 8px;
+          text-align: center;
+          float: left;
+          left: 135px;
+        }
+      }
+    }
+  }
+}

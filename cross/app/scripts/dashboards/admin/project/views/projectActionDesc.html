@@ -1,0 +1,24 @@
+<div class="quota-assign-tips">
+    <div class="tips-title">{{systemStatistic.title}}</div>
+    <table>
+        <tr class="resource_stat">
+          <td>{{systemStatistic.vcpus.name}}</td>
+          <td>{{systemStatistic.vcpus.value | onlyPos}}</td>
+        </tr>
+        <tr class="resource_stat">
+          <td>{{systemStatistic.ram.name}}</td>
+          <td>{{systemStatistic.ram.value | onlyPos}}
+              {{systemStatistic.ram.unit}}</td>
+        </tr>
+        <tr class="resource_stat">
+          <td>{{systemStatistic.disk.name}}</td>
+          <td>{{systemStatistic.disk.value | onlyPos}}
+              {{systemStatistic.disk.unit}}</td>
+        </tr>
+        <tr class="resource_stat">
+          <td>{{systemStatistic.floatings.name}}</td>
+          <td>{{systemStatistic.floatings.value | onlyPos}}</td>
+        </tr>
+    </table>
+    <div class="tips-note">{{systemStatistic.note}}</div>
+</div>

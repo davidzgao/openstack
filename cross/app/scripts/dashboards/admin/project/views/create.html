@@ -1,0 +1,205 @@
+<form method="post" action="" id="_modal_{{modal.slug}}"
+    autocomplete="off">
+  <div ng-show="modal.globalTip" class="modal-global-tip">{{modal.globalTip}}</div>
+  <div ng-if="!modal.single">
+    <div class="step-header">
+      <div class="step-header-empty"></div>
+      <div class="step-notes">
+        <div ng-if="modal.parallel" class="step-parallel">
+          <div class="step-tab {{$index==modal.stepIndex?'active':''}}"
+               ng-repeat="step in modal.steps"
+               ng-click="jumpStep(step.slug, $index)">
+            {{step.name}}
+          </div>
+        </div><!-- End of ng-if modal.parallel-->
+      </div>
+    </div><!-- end of step-header -->
+
+    <div class="fields-area">
+      <div class="modal-steps" style="margin-left: -{{modal.stepIndex * 500}}px;">
+        <div ng-repeat="step in modal.steps" style="visibility: {{modal.stepIndex<$index?'hidden':'visible'}}"
+             class="modal-step modal-step-count{{$index}}">
+          <div ng-if="step.slug=='member'">
+            <div class="project_memeber_container">
+              <div class="project_memebership">
+                <div class="header">
+                  <div class="left">
+                    <div class="fake_table fake_table_header">
+                      <span class="users_title">{{title.all_user}}</span>
+                      <input class="users_search" type='text'
+                        ng-model="search.all">
+                    </div>
+                  </div>
+                  <div class="right">
+                    <div class="fake_table fake_table_header">
+                      <span class="users_title">{{title.member}}</span>
+                      <input class="users_search" type='test'
+                        ng-model="search.member">
+                    </div>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+
+                <div class="left filterable">
+                  <div class="fake_table" id="available_users">
+                    <ul class="available-item">
+                      <li ng-repeat="item in all_user | filter:searchAllUser"
+                      ng-class="{last: $last, even: $even, odd: $odd}">
+                        <span>{{item.text}}</span>
+                        <a class="btn btn-primary add_right" ng-click="addToLeft(item.value)"></a>
+                      </li>
+                    </ul>
+                    <ul class="no_results" ng-show="no_available">
+                      <li class="last">{{title.no_available}}</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="right filterable">
+                  <div class="fake_table">
+                    <ul class="available-item">
+                      <li ng-repeat="item in userList | filter:searchMembers"
+                      ng-class="{last: $last, even: $even, odd: $odd}">
+                        <span>{{item.text}}</span>
+                        <a class="btn btn-primary add_left" ng-click="addToRight(item.value)"></a>
+                      </li>
+                    </ul>
+                    <ul class="no_results" ng-show="no_selected">
+                      <li class="last">{{title.no_user}}</li>
+                    </ul>
+
+                  </div>
+                </div>
+
+                <div class="clear">
+                </div>
+
+              </div>
+            </div>
+          <!-- end of member -->
+          </div>
+          <div ng-if="step.slug=='quota'">
+            <div class="project_quota_container">
+              <ul>
+                <li class="quota-item" ng-repeat="item in baseNovaQuotaSet">      <span class="quota-item-title">{{item.name}}
+                    <i ng-if="item.unit">({{item.unit}})</i></span>
+                    <slider2 ng-model="novaQuota[item.item]" min=0
+                            max="{{item.max}}"
+                            value={{item.current}}></slider2>
+                         <input class="slider-mate"
+                           type="number"
+                           ng-change="checkInput(item.item, novaQuota, $index, 'base')"
+                           name="{{item.item}}"
+                           max="{{item.max}}"
+                           ng-model="novaQuota[item.item]"
+                           value="{{item.current}}">
+                </li>
+                <li class="quota-item" ng-repeat="item in baseCinderQuotaSet">      <span class="quota-item-title">{{item.name}}
+                    <i ng-if="item.unit">({{item.unit}})</i></span>
+                    <slider2 ng-model="cinderQuota[item.item]" min=0
+                            max="{{item.max}}"
+                            value={{item.current}}></slider2>
+                         <input class="slider-mate"
+                           type="number"
+                           ng-change="checkInput(item.item, cinderQuota, $index, 'base')"
+                           min="0"
+                           name="item.item"
+                           max="{{item.max}}"
+                           ng-model="cinderQuota[item.item]"
+                           value="{{item.current}}">
+                </li>
+              </ul>
+              <div class="quota_advance_trigger">
+                <a ng-if="!showAdvance"
+                   ng-click="advTrigge()">{{advanceTriggerShow}}</a>
+                <a ng-if="showAdvance"
+                   ng-click="advTrigge()">{{advanceTriggerHide}}</a>
+              </div>
+              <ul ng-if="showAdvance">
+                <li ng-repeat="item in advanceNovaQuotaSet" class="quota-item">
+                  <span class="quota-item-title">{{item.name}}
+                    <i ng-if="item.unit">({{item.unit}})</i></span>
+                    <slider2 ng-model="novaQuota[item.item]" min=0
+                            max="{{item.max}}"
+                            value={{item.current}}></slider2>
+                    <input class="slider-mate"
+                           type="number"
+                           ng-change="checkInput(item.item, novaQuota, $index, 'advance')"
+                           min="0"
+                           name="{{item.item}}"
+                           max="{{item.max}}"
+                           ng-model="novaQuota[item.item]"
+                           value="{{item.current}}">
+                </li>
+                <li ng-repeat="item in advanceCinderQuotaSet" class="quota-item">
+                  <span class="quota-item-title">{{item.name}}
+                    <i ng-if="item.unit">({{item.unit}})</i></span>
+                    <slider2 ng-model="cinderQuota[item.item]" min=0
+                            max="{{item.max}}"
+                            value={{item.current}}></slider2>
+                    <input class="slider-mate"
+                           type="number"
+                           ng-change="checkInput(item.item, cinderQuota, $index, 'advance')"
+                           min="0"
+                           name="item.item"
+                           max="{{item.max}}"
+                           ng-model="cinderQuota[item.item]"
+                           value="{{item.current}}">
+                </li>
+              </ul>
+            </div>
+          <!-- end of quota -->
+          </div>
+          <div ng-if="step.slug=='base'"
+               ng-show="field.type!='hidden'"
+               class="field-{{field.slug}} field"
+               ng-repeat="field in step.fields">
+               <div class="field-label {{field.inLine?'field-next-line':''}}"><span ng-if="field.restrictions.required">* </span>{{field.label}}</div>
+            <div class="field-input" ng-if="field.tag == 'input'">
+              <div ng-if="field.type!='checkbox-list'">
+                <input ng-change="validator(field.slug, step.slug)"
+                       class="{{field.classes?field.classes:''}} {{tips[step.slug][field.slug]?'invalid':''}}"
+                       name="{{field.slug}}"
+                       ng-model="form[step.slug][field.slug]"
+                       type="{{field.type?field.type:'text'}}"
+                       ng-attr-placeholder="{{field.placeholder?field.placeholder:''}}"/>
+              </div>
+              <div ng-if="field.type=='checkbox-list'">
+                <div class="checkbox-list-field" ng-repeat="opt in field.default">
+                  <input ng-click="validator(field.slug, step.slug)"
+                         type="checkbox" checklist-model="form[step.slug][field.slug]"
+                         checklist-value="opt.value">{{opt.text}}
+                </div>
+              </div>
+            <!-- end of field.tag == 'input' -->
+            </div>
+            <div class="field-input" ng-if="field.tag == 'textarea'">
+              <textarea ng-change="validator(field.slug, step.slug)"  name="{{field.slug}}"
+                        class="{{field.classes?field.classes:''}} {{tips[step.slug][field.slug]?'invalid':''}}"
+                        ng-model="form[step.slug][field.slug]"
+                        ng-attr-placeholder="{{field.placeholder?field.placeholder:''}}">{{form[step.slug][field.slug]}}</textarea>
+            <!-- end of field.tag == 'textarea' -->
+            </div>
+            <div ng-show="tips[step.slug][field.slug]" class="modal-tip">
+              <div>&lowast; {{tips[step.slug][field.slug]}}</div>
+            </div>
+          <!-- end of field in step.fields -->
+          </div>
+        </div>
+        <div class="clear-float"></div>
+      </div>
+    </div><!-- end of fields-area -->
+
+    <div class="cross-modal-footer">
+      <button class="btn" name="cancel" ng-show="modal.parallel"
+              ng-click="close()">{{note.modal.cancel}}</button>
+      <button ng-show="modal.stepIndex&&!modal.parallel" name="stepPrevious" class="btn"
+              ng-click="stepPrevious()">{{note.modal.stepPrevious}}</button>
+      <button ng-show="modal.stepIndex<modal.steps.length-1&&!modal.parallel" class="btn"
+              ng-click="stepNext()">{{note.modal.stepNext}}</button>
+      <button  ng-show="modal.stepIndex==modal.steps.length-1||modal.parallel" class="btn"
+              name="submit" type="submit" ng-click="handle()">{{note.modal.save}}</button>
+    </div> <!-- end of cross-modal-footer -->
+
+  </div> <!-- end of ng-if = !modal.single -->
+</form>

@@ -1,0 +1,50 @@
+<div class="instance-create-desc">
+  <div class="desc-lead">{{note.desc.config}}</div>
+  <table class="create-config">
+    <tr>
+      <td>{{note.desc.image}}</td>
+      <td>{{form['image']['image'].name||note.empty}}</td>
+    </tr>
+    <tr>
+      <td>{{note.desc.vcpu}}</td>
+      <td>{{form['flavor']['vcpus']||note.empty}}</td>
+    </tr>
+    <tr>
+      <td>{{note.desc.ram}}</td>
+      <td>{{form['flavor']['ram']||note.empty}}</td>
+    </tr>
+    <tr>
+      <td>{{note.desc.disk}}</td>
+      <td>{{form['flavor']['disk']==0?note.diskDefault:form['flavor']['disk']||note.empty}}</td>
+    </tr>
+    <tr>
+      <td>{{note.desc.number}}</td>
+      <td>{{form['flavor']['number']||note.empty}}</td>
+    </tr>
+    <tr>
+      <td>{{note.desc.name}}</td>
+      <td>{{form['basic']['name']||note.empty}}</td>
+    </tr>
+  </table>
+
+  <div class="quota-usage" ng-show="quota">
+    <div class="desc-lead">{{note.desc.usage}}</div>
+    <div class="usage">
+      <div>{{note.desc.vcpu}}: {{quota.cores.usage}}% ({{quota.cores.used}}/{{quota.cores.total}})</div>
+      <div class="progress">
+        <div class="progress-bar {{quota.cores.usageStatus}}" style="width: {{quota.cores.usage}}%;">
+        </div>
+      </div>
+      <div>{{note.desc.ram}}: {{quota.ram.usage}}% ({{quota.ram.used}}/{{quota.ram.total}})</div>
+      <div class="progress">
+        <div class="progress-bar {{quota.ram.usageStatus}}" style="width: {{quota.ram.usage}}%;">
+        </div>
+      </div>
+      <div>{{note.desc.instance}}: {{quota.instance.usage}}% ({{quota.instance.used}}/{{quota.instance.total}})</div>
+      <div class="progress">
+        <div class="progress-bar" style="width: {{quota.instance.usage}}%;">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

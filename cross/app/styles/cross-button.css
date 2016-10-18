@@ -1,0 +1,967 @@
+/* Variables will be used in index page */
+
+/* Usage warning */
+
+/* Min width of cross app */
+
+/* Min height of cross app */
+
+/* Background of app */
+
+/* Left frame width of cross app */
+
+/* Left frame background of cross app */
+
+/* Top height of cross app */
+
+/* Left logo background of cross app */
+
+/* Top tool background of cross app */
+
+/* Left nav bar item background */
+
+/* Attr at data table */
+
+/* Style of button for action */
+
+/* left width of dashboard admin over view page */
+
+/* top height of dashboard admin over view page */
+
+/* Login container background-color */
+
+/* Login container width */
+
+/* Login container height */
+
+/* Login logo image */
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.action_group .btn {
+  margin: 0 10px 0 0;
+  font-size: 12px;
+  line-height: 20px;
+  vertical-align: middle;
+}
+
+.action_group .tabSearch {
+  position: absolute;
+  right: 20px;
+  display: inline-block;
+}
+
+.action_group .tabSearch .search {
+  padding: 5px 3px 5px 20px;
+  font-size: 12px;
+  line-height: 16px;
+  vertical-align: middle;
+  background: url('../images/action_search.png') no-repeat left center;
+  border: 1px solid #d0d0d0;
+  border-radius: 13px;
+  outline: none;
+  background-position-x: 5px;
+}
+
+.action_group .tabSearch .search:hover {
+  outline: none;
+}
+
+.action_group .tabSearch .search:focus {
+  border: 1px solid #28a9ee;
+}
+
+.btn {
+  padding-top: 6px;
+  padding-right: 15px;
+  padding-bottom: 6px;
+  padding-left: 8px;
+  border-radius: 2px;
+}
+
+.btn:active {
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shandow: none;
+}
+
+.btn:focus {
+  color: #ababab;
+  outline: none;
+}
+
+.btn:active:focus {
+  outline: none;
+}
+
+.btn.more {
+  padding-right: 8px;
+  padding-left: 5px;
+}
+
+.btn.more i {
+  display: inline-block;
+  float: left;
+  width: 15px;
+  height: 15px;
+  margin-top: 4px;
+  margin-right: 3px;
+  margin-left: 7px;
+  background: url('../images/action_more_hover.png') no-repeat;
+}
+
+.btn.more .caret {
+  margin-left: 15px;
+}
+
+.btn-disable {
+  color: #ababab;
+  cursor: default;
+  background: #e3e3e3;
+  border: none;
+  border-bottom: 1px solid #C2C2C2;
+}
+
+.btn-disable:hover {
+  color: #ababab;
+}
+
+.btn-disable.download i {
+  display: inline-block;
+  float: left;
+  width: 15px;
+  height: 15px;
+  margin-top: 4px;
+  margin-right: 2px;
+  margin-left: 7px;
+  background: url('../images/action_download_disabled.png') no-repeat;
+}
+
+.btn-disable.bind {
+  display: inline-block;
+  color: #ababab;
+}
+
+.btn-disable.bind i {
+  display: inline-block;
+  float: left;
+  width: 15px;
+  height: 15px;
+  margin-top: 3px;
+  margin-right: 2px;
+  margin-left: 8px;
+  background: url(../images/action_bindIp_disabled.png) no-repeat;
+}
+
+.btn-disable.bind:hover {
+  text-decoration: none;
+}
+
+.btn-disable.unbind {
+  display: inline-block;
+  color: #ababab;
+}
+
+.btn-disable.unbind i {
+  display: inline-block;
+  float: left;
+  width: 15px;
+  height: 15px;
+  margin-top: 3px;
+  margin-right: 2px;
+  margin-left: 8px;
+  background: url(../images/action_unbindIp_dis.png) no-repeat;
+}
+
+.btn-disable.unbind:hover {
+  text-decoration: none;
+}
+
+.btn-disable.attach {
+  display: inline-block;
+  color: #ababab;
+}
+
+.btn-disable.attach i {
+  display: inline-block;
+  float: left;
+  width: 15px;
+  height: 15px;
+  margin-top: 3px;
+  margin-right: 2px;
+  margin-left: 8px;
+  background: url(../images/action_attachvolume_disabled.png) no-repeat;
+}
+
+.btn-disable.attach:hover {
+  text-decoration: none;
+}
+
+.btn-disable.create a {
+  display: block;
+  color: #fff;
+}
+
+.btn-disable.create i {
+  display: inline-block;
+  float: left;
+  width: 15px;
+  height: 15px;
+  margin-top: 4px;
+  margin-right: 2px;
+  margin-left: 7px;
+  background: url('../images/action_create_disable.png') no-repeat;
+}
+
+.btn-disable.detach {
+  display: inline-block;
+  color: #ababab;
+}
+
+.btn-disable.detach i {
+  display: inline-block;
+  float: left;
+  width: 15px;
+  height: 15px;
+  margin-top: 3px;
+  margin-right: 2px;
+  margin-left: 8px;
+  background: url(../images/action_untachvolume_disabled.png) no-repeat;
+}
+
+.btn-disable.detach:hover {
+  text-decoration: none;
+}
+
+.btn-disable.del i {
+  display: inline-block;
+  float: left;
+  width: 15px;
+  height: 15px;
+  margin-top: 4px;
+  margin-right: 2px;
+  margin-left: 7px;
+  background: url('../images/action_delete.png') no-repeat;
+}
+
+.btn-disable.retry i {
+  display: inline-block;
+  float: left;
+  width: 15px;
+  height: 15px;
+  margin-top: 4px;
+  margin-right: 2px;
+  margin-left: 5px;
+  background: url('../images/retry_disable.png') no-repeat;
+}
+
+.btn-disable.snapshot {
+  display: inline-block;
+  color: #ababab;
+}
+
+.btn-disable.snapshot i {
+  display: inline-block;
+  float: left;
+  width: 15px;
+  height: 15px;
+  margin-top: 4px;
+  margin-right: 2px;
+  margin-left: 7px;
+  background: url('../images/action_back_disable.png') no-repeat;
+}
+
+.btn-disable.snapshot:hover {
+  text-decoration: none;
+}
+
+.btn-disable.vnc a {
+  display: inline-block;
+  color: #ababab;
+}
+
+.btn-disable.vnc a:hover {
+  text-decoration: none;
+}
+
+.btn-disable.vnc i {
+  display: inline-block;
+  float: left;
+  width: 15px;
+  height: 15px;
+  margin-top: 4px;
+  margin-right: 2px;
+  margin-left: 7px;
+  background: url('../images/action_vnc.png') no-repeat;
+}
+
+.btn-disable.topology a {
+  display: inline-block;
+  color: #ababab;
+}
+
+.btn-disable.topology a:hover {
+  text-decoration: none;
+}
+
+.btn-disable.topology i {
+  display: inline-block;
+  float: left;
+  width: 15px;
+  height: 15px;
+  margin-top: 4px;
+  margin-right: 2px;
+  margin-left: 7px;
+  background: url('../images/action_vnc.png') no-repeat;
+}
+
+.btn-disable.restore a {
+  display: inline-block;
+  color: #ababab;
+}
+
+.btn-disable.restore a:hover {
+  text-decoration: none;
+}
+
+.btn-disable.restore i {
+  display: inline-block;
+  float: left;
+  width: 15px;
+  height: 15px;
+  margin-top: 4px;
+  margin-right: 2px;
+  margin-left: 7px;
+  background: url('../images/action_restore.png') no-repeat;
+}
+
+.btn-disable.read i {
+  display: inline-block;
+  float: left;
+  width: 15px;
+  height: 15px;
+  margin-top: 4px;
+  margin-right: 2px;
+  margin-left: 7px;
+  background: url('../images/action_read_disable.png') no-repeat;
+}
+
+.btn-disable#assign-project a {
+  display: inline-block;
+  color: #ababab;
+}
+
+.btn-disable#assign-project a:hover {
+  text-decoration: none;
+}
+
+.btn-disable#assign-project i {
+  display: inline-block;
+  float: left;
+  width: 15px;
+  height: 15px;
+  margin-top: 4px;
+  margin-right: 2px;
+  margin-left: 7px;
+  background: url('../images/assign_project_disable.png') no-repeat;
+}
+
+.btn-enable {
+  color: #ffffff;
+  background: #28a9ee;
+  background-color: #28a9ee;
+  border: none;
+  border-bottom: 1px solid #1782C6;
+}
+
+.btn-enable.bind {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+}
+
+.btn-enable.bind i {
+  display: inline-block;
+  float: left;
+  width: 15px;
+  height: 15px;
+  margin-top: 2px;
+  margin-right: 5px;
+  margin-left: 4px;
+  background: url(../images/action_bindIp_hover.png) center no-repeat;
+}
+
+.btn-enable.unbind {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+}
+
+.btn-enable.unbind i {
+  display: inline-block;
+  float: left;
+  width: 15px;
+  height: 15px;
+  margin-top: 2px;
+  margin-right: 5px;
+  margin-left: 4px;
+  background: url(../images/action_unbindIp_hover.png) center no-repeat;
+}
+
+.btn-enable.detach {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+}
+
+.btn-enable.detach i {
+  display: inline-block;
+  float: left;
+  width: 15px;
+  height: 15px;
+  margin-top: 2px;
+  margin-right: 5px;
+  margin-left: 4px;
+  background: url(../images/action_removevolume_hover.png) center no-repeat;
+}
+
+.btn-enable.attach {
+  display: inline-block;
+  color: #fff;
+}
+
+.btn-enable.attach i {
+  display: inline-block;
+  float: left;
+  width: 15px;
+  height: 15px;
+  margin-top: 2px;
+  margin-right: 5px;
+  margin-left: 4px;
+  background: url(../images/action_attachvolume_hover.png) center no-repeat;
+}
+
+.btn-enable.snapshot {
+  display: inline-block;
+  color: #fff;
+}
+
+.btn-enable.snapshot i {
+  display: inline-block;
+  float: left;
+  width: 15px;
+  height: 15px;
+  margin: 3px;
+  margin-left: 6px;
+  background: url('../images/action_back.png') center no-repeat;
+}
+
+.btn-enable.create a {
+  display: block;
+  color: #fff;
+}
+
+.btn-enable.create i {
+  display: inline-block;
+  float: left;
+  width: 15px;
+  height: 15px;
+  margin-top: 4px;
+  margin-right: 2px;
+  margin-left: 7px;
+  background: url('../images/action_create_hover.png') no-repeat;
+}
+
+.btn-enable:hover {
+  color: #ffffff;
+  background: #28a9ee;
+  background-color: #05A0DB;
+  border-bottom: 1px solid #28a9ee;
+}
+
+.btn-enable:focus {
+  color: #ffffff;
+  outline: none;
+}
+
+.btn-enable.download {
+  background-color: #28a9ee;
+}
+
+.btn-enable.download i {
+  display: inline-block;
+  float: left;
+  width: 15px;
+  height: 15px;
+  margin-top: 4px;
+  margin-right: 2px;
+  margin-left: 7px;
+  background: url('../images/action_download.png') no-repeat;
+}
+
+.btn-enable.download:hover {
+  color: #ffffff;
+  background: #28a9ee;
+  background-color: #05A0DB;
+  border-bottom: 1px solid #28a9ee;
+}
+
+.btn-enable.del {
+  background-color: #e15a67;
+  border-bottom: 1px solid #B34852;
+}
+
+.btn-enable.del i {
+  display: inline-block;
+  float: left;
+  width: 15px;
+  height: 15px;
+  margin-top: 4px;
+  margin-right: 2px;
+  margin-left: 7px;
+  background: url('../images/action_delete_hover.png') no-repeat;
+}
+
+.btn-enable.del:hover {
+  background-color: #D25662;
+  border-bottom: 1px solid #D25662;
+}
+
+.btn-enable.retry i {
+  display: inline-block;
+  float: left;
+  width: 15px;
+  height: 15px;
+  margin-top: 4px;
+  margin-right: 2px;
+  margin-left: 5px;
+  background: url('../images/retry.png') no-repeat;
+}
+
+.btn-enable.vnc a {
+  color: white;
+}
+
+.btn-enable.vnc a:hover {
+  text-decoration: none;
+}
+
+.btn-enable.vnc i {
+  display: inline-block;
+  float: left;
+  width: 15px;
+  height: 15px;
+  margin-top: 4px;
+  margin-right: 2px;
+  margin-left: 7px;
+  background: url('../images/action_console_hover.png') no-repeat;
+}
+
+.btn-enable.topology a {
+  color: white;
+}
+
+.btn-enable.topology a:hover {
+  text-decoration: none;
+}
+
+.btn-enable.topology i {
+  display: inline-block;
+  float: left;
+  width: 15px;
+  height: 15px;
+  margin-top: 4px;
+  margin-right: 2px;
+  margin-left: 7px;
+  background: url('../images/action_console_hover.png') no-repeat;
+}
+
+.btn-enable.restore a {
+  color: white;
+}
+
+.btn-enable.restore a:hover {
+  text-decoration: none;
+}
+
+.btn-enable.restore i {
+  display: inline-block;
+  float: left;
+  width: 15px;
+  height: 15px;
+  margin-top: 4px;
+  margin-right: 2px;
+  margin-left: 7px;
+  background: url('../images/action_restore_hover.png') no-repeat;
+}
+
+.btn-enable.read i {
+  display: inline-block;
+  float: left;
+  width: 15px;
+  height: 15px;
+  margin-top: 4px;
+  margin-right: 2px;
+  margin-left: 7px;
+  background: url('../images/action_read_hover.png') no-repeat;
+}
+
+.btn-enable#assign-project i {
+  display: inline-block;
+  float: left;
+  width: 15px;
+  height: 15px;
+  margin-top: 4px;
+  margin-right: 2px;
+  margin-left: 7px;
+  background: url('../images/assign_project.png') no-repeat;
+}
+
+.btn-enable.fresh i {
+  display: inline-block;
+  float: left;
+  width: 15px;
+  height: 15px;
+  margin-top: 4px;
+  margin-right: 2px;
+  margin-left: 7px;
+  background: url('../images/action_fresh.png') no-repeat;
+}
+
+.btn-group.open .dropdown-toggle {
+  color: #ffffff;
+  background: #28a9ee;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.btn-group.open .dropdown-toggle.btn-default {
+  color: #ffffff;
+  background: #28a9ee;
+  background-color: #28a9ee;
+}
+
+.btn-group {
+  margin-right: 0;
+}
+
+.btn-group .dropdown-menu {
+  min-width: 124px;
+  padding: 0;
+  border: 1px solid #efefef;
+  border-top: 1px solid #29aaee;
+  border-radius: 0 0 2px 2px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.176);
+}
+
+.btn-group .dropdown-menu li {
+  display: block;
+  margin: 3px 0;
+  font-size: 12px;
+}
+
+.btn-group .dropdown-menu li.split-line {
+  height: 1px;
+  margin: 0 5px;
+  background: #ddd;
+}
+
+.btn-group .dropdown-menu li a {
+  display: block;
+  padding: 3px 10px 3px 7px;
+  line-height: 20px;
+  color: #269bd8;
+  cursor: pointer;
+}
+
+.btn-group .dropdown-menu li a.enabled i {
+  display: inline-block;
+  float: left;
+  width: 15px;
+  height: 15px;
+  margin-top: 3px;
+  margin-right: 3px;
+  margin-left: 4px;
+}
+
+.btn-group .dropdown-menu li a.enabled i.reboot {
+  background: url('../images/action_reboot.png') no-repeat left center;
+}
+
+.btn-group .dropdown-menu li a.enabled i.poweron {
+  background: url('../images/action_poweron.png') no-repeat left center;
+}
+
+.btn-group .dropdown-menu li a.enabled i.poweroff {
+  background: url('../images/action_poweroff.png') no-repeat left center;
+}
+
+.btn-group .dropdown-menu li a.enabled i.suspend {
+  background: url('../images/action_suspend.png') no-repeat left center;
+}
+
+.btn-group .dropdown-menu li a.enabled i.snapshot {
+  background: url('../images/action_snapshot.png') no-repeat left center;
+}
+
+.btn-group .dropdown-menu li a.enabled i.wakeup {
+  background: url('../images/action_wakeup.png') no-repeat left center;
+}
+
+.btn-group .dropdown-menu li a.enabled i.resize {
+  background: url('../images/action_resize.png') no-repeat left center;
+}
+
+.btn-group .dropdown-menu li a.enabled i.bindIp {
+  background: url('../images/action_bindIp.png') no-repeat left center;
+}
+
+.btn-group .dropdown-menu li a.enabled i.unbindIp {
+  background: url('../images/action_unbindIp.png') no-repeat left center;
+}
+
+.btn-group .dropdown-menu li a.enabled i.attachVolume {
+  background: url('../images/action_attachvolume.png') no-repeat left center;
+}
+
+.btn-group .dropdown-menu li a.enabled i.detachVolume {
+  background: url('../images/action_untachvolume.png') no-repeat left center;
+}
+
+.btn-group .dropdown-menu li a.enabled i.migrate {
+  background: url('../images/action_migrate.png') no-repeat left center;
+}
+
+.btn-group .dropdown-menu li a.enabled i.member {
+  background: url('../images/action_member.png') no-repeat left center;
+}
+
+.btn-group .dropdown-menu li a.enabled i.topoloty {
+  background: url('../images/action_topo.png') no-repeat left center;
+}
+
+.btn-group .dropdown-menu li a.enabled i.compute_nodes {
+  background: url('../images/action_node.png') no-repeat left center;
+}
+
+.btn-group .dropdown-menu li a.enabled i.quota {
+  background: url('../images/action_quota.png') no-repeat left center;
+}
+
+.btn-group .dropdown-menu li a.enabled i.open_gateway {
+  background: url('../images/action_opengateway.png') no-repeat left center;
+}
+
+.btn-group .dropdown-menu li a.enabled i.clear_gateway {
+  background: url('../images/action_cleargateway.png') no-repeat left center;
+}
+
+.btn-group .dropdown-menu li a.enabled i.add_interface {
+  background: url('../images/action_linksubnet.png') no-repeat left center;
+}
+
+.btn-group .dropdown-menu li a.enabled:hover {
+  color: white;
+  background: #28a9ee;
+}
+
+.btn-group .dropdown-menu li a.enabled:hover i.bindIp {
+  background: url('../images/action_bindIp_hover.png') no-repeat left center;
+}
+
+.btn-group .dropdown-menu li a.enabled:hover i.unbindIp {
+  background: url('../images/action_unbindIp_hover.png') no-repeat left center;
+}
+
+.btn-group .dropdown-menu li a.enabled:hover i.reboot {
+  background: url('../images/action_reboot_hover.png') no-repeat left center;
+}
+
+.btn-group .dropdown-menu li a.enabled:hover i.poweron {
+  background: url('../images/action_poweron_hover.png') no-repeat left center;
+}
+
+.btn-group .dropdown-menu li a.enabled:hover i.poweroff {
+  background: url('../images/action_poweroff_hover.png') no-repeat left center;
+}
+
+.btn-group .dropdown-menu li a.enabled:hover i.suspend {
+  background: url('../images/action_suspend_hover.png') no-repeat left center;
+}
+
+.btn-group .dropdown-menu li a.enabled:hover i.migrate {
+  background: url('../images/action_migrate_hover.png') no-repeat left center;
+}
+
+.btn-group .dropdown-menu li a.enabled:hover i.wakeup {
+  background: url('../images/action_wakeup_hover.png') no-repeat left center;
+}
+
+.btn-group .dropdown-menu li a.enabled:hover i.resize {
+  background: url('../images/action_resize_hover.png') no-repeat left center;
+}
+
+.btn-group .dropdown-menu li a.enabled:hover i.snapshot {
+  background: url('../images/action_snapshot_hover.png') no-repeat left center;
+}
+
+.btn-group .dropdown-menu li a.enabled:hover i.attachVolume {
+  background: url('../images/action_attachvolume_hover.png') no-repeat left center;
+}
+
+.btn-group .dropdown-menu li a.enabled:hover i.detachVolume {
+  background: url('../images/action_removevolume_hover.png') no-repeat left center;
+}
+
+.btn-group .dropdown-menu li a.enabled:hover i.member {
+  background: url('../images/action_member_hover.png') no-repeat left center;
+}
+
+.btn-group .dropdown-menu li a.enabled:hover i.topoloty {
+  background: url('../images/action_node_hover.png') no-repeat left center;
+}
+
+.btn-group .dropdown-menu li a.enabled:hover i.compute_nodes {
+  background: url('../images/action_topo_hover.png') no-repeat left center;
+}
+
+.btn-group .dropdown-menu li a.enabled:hover i.quota {
+  background: url('../images/action_quota_hover.png') no-repeat left center;
+}
+
+.btn-group .dropdown-menu li a.enabled:hover i.open_gateway {
+  background: url('../images/action_opengateway_hover.png') no-repeat left center;
+}
+
+.btn-group .dropdown-menu li a.enabled:hover i.clear_gateway {
+  background: url('../images/action_cleargateway_hover.png') no-repeat left center;
+}
+
+.btn-group .dropdown-menu li a.enabled:hover i.add_interface {
+  background: url('../images/action_linksubnet_hover.png') no-repeat left center;
+}
+
+.btn-group .dropdown-menu li a.disabled {
+  margin-right: 3px;
+  color: #ababab;
+  cursor: url(../images/NO.ico), auto;
+}
+
+.btn-group .dropdown-menu li a.disabled:hover {
+  background-color: #fff;
+}
+
+.btn-group .dropdown-menu li a.disabled i {
+  display: inline-block;
+  float: left;
+  width: 15px;
+  height: 15px;
+  margin-top: 3px;
+  margin-right: 3px;
+  margin-left: 4px;
+}
+
+.btn-group .dropdown-menu li a.disabled i.reboot {
+  background: url('../images/action_reboot_disabled.png') no-repeat left center;
+}
+
+.btn-group .dropdown-menu li a.disabled i.poweron {
+  background: url('../images/action_poweron_disabled.png') no-repeat left center;
+}
+
+.btn-group .dropdown-menu li a.disabled i.poweroff {
+  background: url('../images/action_shutdown_disabled.png') no-repeat left center;
+}
+
+.btn-group .dropdown-menu li a.disabled i.suspend {
+  background: url('../images/action_suspend_disabled.png') no-repeat left center;
+}
+
+.btn-group .dropdown-menu li a.disabled i.snapshot {
+  background: url('../images/action_snapshot_disabled.png') no-repeat left center;
+}
+
+.btn-group .dropdown-menu li a.disabled i.wakeup {
+  background: url('../images/action_wakeup_disabled.png') no-repeat left center;
+}
+
+.btn-group .dropdown-menu li a.disabled i.resize {
+  background: url('../images/action_resize_disabled.png') no-repeat left center;
+}
+
+.btn-group .dropdown-menu li a.disabled i.bindIp {
+  background: url('../images/action_bindIp_disabled.png') no-repeat left center;
+}
+
+.btn-group .dropdown-menu li a.disabled i.unbindIp {
+  background: url('../images/action_unbindIp_dis.png') no-repeat left center;
+}
+
+.btn-group .dropdown-menu li a.disabled i.attachVolume {
+  background: url('../images/action_attachvolume_disabled.png') no-repeat left center;
+}
+
+.btn-group .dropdown-menu li a.disabled i.detachVolume {
+  background: url('../images/action_untachvolume_disabled.png') no-repeat left center;
+}
+
+.btn-group .dropdown-menu li a.disabled i.migrate {
+  background: url('../images/action_migrate_disabled.png') no-repeat left center;
+}
+
+.btn-group .dropdown-menu li a.disabled i.member {
+  background: url('../images/action_member_disabled.png') no-repeat left center;
+}
+
+.btn-group .dropdown-menu li a.disabled i.topoloty {
+  background: url('../images/action_topo_disabled.png') no-repeat left center;
+}
+
+.btn-group .dropdown-menu li a.disabled i.compute_nodes {
+  background: url('../images/action_node_disabled.png') no-repeat left center;
+}
+
+.btn-group .dropdown-menu li a.disabled i.quota {
+  background: url('../images/action_quota_disabled.png') no-repeat left center;
+}
+
+.btn-group .dropdown-menu li a.disabled i.open_gateway {
+  background: url('../images/action_opengateway_disable.png') no-repeat left center;
+}
+
+.btn-group .dropdown-menu li a.disabled i.clear_gateway {
+  background: url('../images/action_cleargateway_disable.png') no-repeat left center;
+}
+
+.btn-group .dropdown-menu li a.disabled i.add_interface {
+  background: url('../images/action_linksubnet_disable.png') no-repeat left center;
+}
+
+.edit-btn-group {
+  position: absolute;
+  top: 0;
+  right: 20px;
+}
+
+.edit-btn-group .btn {
+  padding: 4px 8px;
+  margin: 0 5px;
+  font-size: 12px;
+  line-height: 20px;
+}

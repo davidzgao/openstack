@@ -1,0 +1,52 @@
+<div class="step-area">
+  <div class="field-network">
+    <div class="field-label-network" ng-bind="modal.steps[2].fields[0].label"></div>
+    <div class="field-network-list">
+      <div ng-repeat="net in modal.steps[2].fields[0].default" class="item {{net.isActive}}"
+           ng-bind="net.text" ng-click="selectNetwork($index)"></div>
+      <div ng-show="!modal.steps[2].fields[0].default.length&&!none_available_nets" ng-if="!use_vlan&&!useNeutron" class="item active"
+           ng-bind="note.modal.defaultNetwork"></div>
+      <div ng-show="!modal.steps[2].fields[0].default.length&&!none_available_nets" ng-if="use_vlan"
+          ng-repeat="net in defaultNets"
+          ng-click="selectVlanNet(net.id)"
+          class="item {{net.active}}">
+          {{net.label}} - {{net.cidr}}
+      </div>
+      <div ng-if="none_available_nets" class="item no-available-nets">{{tips.network.network}}</div>
+    </div>
+
+    <div class="field-label-assign field-label-left text-align-right" ng-bind="modal.steps[2].fields[1].label"></div>
+    <div class="image-source-lead field-assign">
+        <span ng-repeat="source in modal.steps[2].fields[1].default"
+            class="item {{source.selected?'active':''}}"
+            ng-click="ipAssignChange($index)"
+            ng-bind="source.name"
+            ng-show="source.available"></span>
+    </div>
+    <div class="field-ipassign-list" ng-if="ipAssignWay=='assign'">
+      <div ng-repeat="(network, subnets) in subnetMap"
+          ng-show="subnets.active"
+          ng-if="subnets.isSelected || !useNeutron"
+          class="fixed-ip-area">
+        <div class="field-network-lead"> {{subnets.name}}</div>
+        <div class="field-subnet-iprange"
+            ip-range=subnets.subnets
+            network=network
+            >
+        </div>
+      </div>
+      <div ng-if="noneSlectedFixedIp" class="field-error">{{noneFixedIPTips}}</div>
+    </div>
+    <div class="field-label-subnet" ng-bind="modal.steps[2].fields[2].label" ng-if="ipAssignWay=='auto'" ng-show="useNeutron"></div>
+    <div class="field-subnet-list" ng-if="ipAssignWay=='auto'" ng-show="use_neutron">
+      <div ng-repeat="(network, subnets) in subnetMap" class="item {{net.isActive}}"
+           ng-if="subnets.isSelected"
+           ><div class="subnet-name">{{subnets.name}}</div>
+           <div ng-repeat="subnet in subnets.subnets"
+             class="item {{subnet.isActive}}"
+             ng-click="selectSubnet(subnet)"
+             >{{subnet.name}}({{subnet.cidr}})</div>
+      </div>
+    </div>
+  </div>
+</div>

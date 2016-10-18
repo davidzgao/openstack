@@ -1,0 +1,70 @@
+<form method="post" action="" id="_modal_{{modal.slug}}" autocomplete="off">
+<div >
+  <div class="project_memeber_container">
+    <div class="project_memebership">
+      <div class="header">
+        <div class="left">
+          <div class="fake_table fake_table_header">
+              <span class="users_title">{{title.all_user}}</span>
+              <input class="users_search" type='text'
+                ng-model="search.all">
+          </div>
+        </div>
+        <div class="right">
+          <div class="fake_table fake_table_header">
+              <span class="users_title">{{title.member}}</span>
+              <input class="users_search" type='test'
+                ng-model="search.member">
+          </div>
+        </div>
+        <div class="clear"></div>
+      </div>
+
+      <div class="left filterable">
+        <div class="fake_table" id="available_users">
+          <ul class="available-item">
+            <li
+            ng-repeat="item in modal.fields[0].default | filter:searchAllUser"
+            ng-class="{last: $last, even: $even, odd: $odd}">
+              <span>{{item.text}}</span>
+              <a class="btn btn-primary add_right" ng-click="addToLeft(item.value)"></a>
+            </li>
+          </ul>
+          <ul class="no_results" ng-show="no_available">
+              <li class="last">{{tipsNoAvailableUsers}}</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="right filterable">
+        <div class="fake_table" id="available_users">
+          <ul class="available-item">
+            <li ng-repeat="item in modal.fields[1].default | filter:searchMembers"
+            ng-class="{last: $last, even: $even, odd: $odd}">
+              <span>{{item.text}}</span>
+              <a class="btn btn-primary add_left" ng-click="addToRight(item.value)"></a>
+            </li>
+          </ul>
+          <ul class="no_results" ng-show="no_selected">
+            <li class="last">{{tipsNoUsers}}</li>
+          </ul>
+
+        </div>
+      </div>
+
+      <div class="clear">
+      </div>
+
+    </div>
+  </div>
+
+  <div class="cross-modal-footer">
+    <button class="btn" name="cancel" ng-click="close()">
+      {{note.modal.cancel}}
+    </button>
+    <button class="btn" name="submit" type="submit" ng-click="update()">
+      {{note.modal.save}}
+    </button>
+  </div>
+</div>
+</form>

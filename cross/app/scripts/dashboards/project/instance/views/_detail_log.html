@@ -1,0 +1,14 @@
+<div class='log-area'>
+    <div class='log-query'>
+      <button ng-click="getFullLog()" class='btn btn-enable'>
+        {{queryAction}}
+      </button>
+    </div>
+    <div>
+      <div detail-tips
+        detail="log"
+        slug='instanceLog'>
+      </div>
+      <pre id='log-content'> {{log}}</pre>
+    </div>
+</div>

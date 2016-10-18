@@ -1,0 +1,24 @@
+<div class="cross-modal-header">
+  <div class="header-row">
+    <div class="title">{{note.title}}</div>
+    <div class="close" ng-click="cancel()">&times;</div>
+  </div>
+</div>
+<div class="cross-modal-body">
+    {{message}}
+    <div class="message-item" ng-repeat="item in messageItems" title="{{item}}">{{item}}</div>
+    <div ng-if="addition" class="modal_addition">
+      <div class='modal_addition_option option'>
+        <input type="checkbox" ng-model="addition_choice" ng-change="additionChange()" >
+      </div>
+      <div class='addition_desc option'>
+        <span>{{addition_message}}</span>
+      </div>
+      <div class='clear'>
+      </div>
+    </div>
+</div>
+<div class="cross-modal-footer">
+    <button class="btn" name="save" ng-click="ok()">{{ action }}</button>
+    <button class="btn" name="cancel" ng-click="cancel()">{{ cancelBtn }}</button>
+</div>

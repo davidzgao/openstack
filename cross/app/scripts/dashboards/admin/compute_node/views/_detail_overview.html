@@ -1,0 +1,92 @@
+<div class='base_info detail_info'>
+  <div class='detail_title'>{{ detailItem.info }}
+  </div>
+  <div class='detail_area'>
+    <ul>
+      <li>
+        <span class="title">{{detailItem.item.name}}</span>
+        <span class="value"> {{host_detail.hypervisor_hostname}}
+        </span>
+      </li>
+      <li>
+        <span class="title">{{ detailItem.item.id }}</span>
+        <span class="value">{{host_detail.id}}</span>
+      </li>
+      <li>
+        <span class="title">{{ detailItem.item.ip }}</span>
+        <span class="value wrap">{{host_detail.host_ip}}</span>
+      </li>
+      <li>
+        <span class="title">{{ detailItem.item.hypervisor_type }}</span>
+        <span class="value wrap">{{host_detail.hypervisor_type}}</span>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class='other_info detail_info'>
+    <div class='detail_title'>{{ detailItem.resourceInfo }}</div>
+  <div class='detail_area'>
+    <ul>
+      <li>
+        <span class="title">{{ detailItem.item.instances }}</span>
+        <span class="value wrap">{{host_detail.running_vms}}</span>
+      </li>
+      <li>
+        <span class="title">{{ detailItem.item.cpu_counts }}</span>
+        <span class="value wrap">{{host_detail.vcpus}}</span>
+      </li>
+      <li>
+        <span class="title">{{ detailItem.item.cpu_used }}</span>
+        <span class="value wrap">{{host_detail.vcpus_used}}</span>
+      </li>
+      <li>
+        <span class="title">{{ detailItem.item.mem_counts }}</span>
+        <span class="value wrap">{{host_detail.memory_mb}} MB</span>
+      </li>
+      <li>
+        <span class="title">{{ detailItem.item.mem_used }}</span>
+        <span class="value wrap">{{host_detail.memory_mb_used}} MB</span>
+      </li>
+      <li>
+        <span class="title">{{ detailItem.item.disk_counts }}</span>
+        <span class="value wrap">{{host_detail.local_gb}} GB</span>
+      </li>
+      <li>
+        <span class="title">{{ detailItem.item.disk_used }}</span>
+        <span class="value wrap">{{host_detail.local_gb_used}} GB</span>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class='other_info detail_info'>
+    <div class='detail_title'>{{ detailItem.cpu_info }}</div>
+  <div class='detail_area'>
+    <ul>
+      <li>
+        <span class="title">{{ detailItem.item.vendor }}</span>
+        <span class="value wrap">{{host_detail.cpu_info.vendor}}</span>
+      </li>
+      <li>
+        <span class="title">{{ detailItem.item.arch }}</span>
+        <span class="value wrap">{{host_detail.cpu_info.arch}}</span>
+      </li>
+      <li>
+        <span class="title">{{ detailItem.item.model }}</span>
+        <span class="value wrap">{{host_detail.cpu_info.model}}</span>
+      </li>
+      <li>
+        <span class="title">{{ detailItem.item.cores }}</span>
+        <span class="value wrap">{{host_detail.cpu_info.topology.cores}}</span>
+      </li>
+      <li>
+        <span class="title">{{ detailItem.item.sockets }}</span>
+        <span class="value wrap">{{host_detail.cpu_info.topology.sockets}}</span>
+      </li>
+      <li>
+        <span class="title">{{ detailItem.item.threads }}</span>
+        <span class="value wrap">{{host_detail.cpu_info.topology.threads}}</span>
+      </li>
+    </ul>
+  </div>
+</div>

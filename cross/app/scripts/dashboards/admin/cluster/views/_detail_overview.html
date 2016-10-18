@@ -1,0 +1,49 @@
+<div class='base_info detail_info'>
+  <div class='detail_title'>{{ detailItem.info }}
+      <div class="edit-btn-group" ng-if="currentId!=0">
+      <button ng-if="editing" class='btn btn-enable'
+          ng-click="save()">
+          {{detailItem.save}}</button>
+      <button ng-if="editing" class='btn btn-enable'
+          ng-click="cancel()">
+          {{detailItem.cancel}}</button>
+      <button class='btn'
+              ng-class="canEdit"
+              ng-if="!editing"
+              ng-click="edit()">{{detailItem.edit}}</button>
+      </div>
+  </div>
+  <div class='detail_area'>
+    <ul>
+      <li>
+        <span class="title">{{detailItem.item.name}}</span>
+        <span class="value"
+            ng-class="inEdit"> {{cluster_detail.name}}
+        </span>
+        <span class='edit-input' ng-class="inEdit">
+          <div class="modal-tip" ng-show="inputInValidate">
+              <div>{{inputTips}}</div>
+              <div class="tips-pointer">
+                <span class="tips-pointer-outer"></span>
+                <span class="tips-pointer-inner"></span>
+              </div>
+          </div>
+          <input ng-model="cluster_detail.name"
+            name="name"
+            ng-class="[validate, inEdit]"
+            value="{{cluster_detail.name}}"
+            ng-change="checkName()"
+          />
+        </span>
+      </li>
+      <li>
+        <span class="title">{{ detailItem.item.id }}</span>
+        <span class="value">{{cluster_detail.id}}</span>
+      </li>
+      <li>
+        <span class="title">{{ detailItem.item.instances }}</span>
+        <span class="value">{{ runningVMs }}</span>
+      </li>
+    </ul>
+  </div>
+</div>

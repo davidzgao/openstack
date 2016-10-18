@@ -1,0 +1,49 @@
+<div>
+  <div class='instance_tabs'>
+    <ul>
+      <li ng-repeat="tab in tabs"
+      ng-class="{active:isActiveTab(tab.template)}"
+      class="tab"
+      ng-click="onClickTab(tab)" ng-if="tab.enable">{{tab.title}}
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div id="mainView">
+  <div ng-include="currentTab"></div>
+</div>
+
+<script type="text/ng-template" id="unread.tpl.html">
+<div class='table-tab ui-view-container' ng-controller='admin.workflow_log.UnreadLogCtr'>
+    <div class='action_group'>
+      <button class='btn read' ng-class="readEnableClass"
+        cross-confirm='readLog()'
+        items=selectedItems
+        action-enable="{{readEnableClass}}"
+        tips={{readTips}}>
+        <i></i>
+        {{read}}
+      </button>
+      <button class='btn btn-enable fresh' ng-click='refresResource()'>
+          <i></i>{{refesh}}
+      </button>
+    </div>
+
+    <div datatable='logsOpts' class="alarm_logs_table"></div>
+
+  </div>
+</script>
+
+<script type="text/ng-template" id="read.tpl.html">
+<div class='table-tab ui-view-container' ng-controller='admin.workflow_log.ReadLogCtr'>
+    <div class='action_group'>
+      <button class='btn btn-enable fresh' ng-click='refresResource()'>
+          <i></i>{{refesh}}
+      </button>
+    </div>
+
+    <div datatable='logsOpts' class="alarm_logs_table"></div>
+
+  </div>
+</script>

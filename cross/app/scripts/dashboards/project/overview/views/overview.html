@@ -1,0 +1,173 @@
+<div class="cross-dashboards-project-overview">
+  <div class="overview-top">
+    <div class="system-usage">
+      <div class="resource-create">
+        <div class="resource-create-title system-lead">
+          <i class="create"></i>{{note.create.title}}</div>
+        <div class="resource-create-items">
+          <a class="resource-item create-instance"
+            ui-sref="project.overview.createInstance">
+            <span>{{note.create.create_instance}}</span>
+          </a>
+          <a class="resource-item create-volume"
+            ui-sref="project.overview.createVolume">
+            <span>{{note.create.create_volume}}</span>
+          </a>
+          <a class="resource-item create-floating"
+            ui-sref="project.overview.createFloating">
+            <span>{{note.create.create_floating}}</span>
+          </a>
+        </div>
+      </div>
+      <div class="system-lead">
+        <i class="usage"></i><span>{{note.usage.lead}}</span>
+      </div>
+      <div class="system-usage-main">
+        <div class="usage-item">
+          <div val="usage.instance" class="sectorDirective resource-usage">
+            <div class="sector-outer">
+              <div class="sector-inner">
+                <span class="{{usage.instanceState}}">{{usage.instanceUsed}}/</span><span class="normal">{{usage.instanceTotal}}</span>
+              </div>
+              <svg><path class="{{usage.instanceState}}" /></svg>
+            </div>
+          </div>
+          <div class="usage-item-detail">
+          </div>
+          <div class="usage-item-name">{{note.usage.instance}}({{note.unit.num}})</div>
+        </div>
+        <div class="usage-item">
+          <div val="usage.vcpu" class="sectorDirective resource-usage">
+            <div class="sector-outer">
+              <div class="sector-inner">
+                <span class="{{usage.vcpuState}}">{{usage.vcpuUsed}}/</span><span class="normal">{{usage.vcpuTotal}}</span>
+              </div>
+              <svg><path class="{{usage.vcpuState}}" /></svg>
+            </div>
+          </div>
+          <div class="usage-item-detail">
+          </div>
+          <div class="usage-item-name">{{note.usage.vcpu}}({{note.unit.core}})</div>
+        </div>
+
+        <div class="usage-item">
+          <div val="usage.ram" class="sectorDirective resource-usage">
+            <div class="sector-outer">
+              <div class="sector-inner">
+                <span class="{{usage.ramState}}">{{usage.ramUsed}}/</span><span class="normal">{{usage.ramTotal}}</span>
+              </div>
+              <svg><path class="{{usage.ramState}}" /></svg>
+            </div>
+          </div>
+          <div class="usage-item-detail">
+          </div>
+          <div class="usage-item-name">{{note.usage.ram}}({{note.unit.gb}})</div>
+        </div>
+        <div class="usage-item">
+          <div val="usage.volume" class="sectorDirective resource-usage">
+            <div class="sector-outer">
+              <div class="sector-inner">
+                <span class="{{usage.volumeState}}">{{usage.volumeUsed}}/</span><span class="normal">{{usage.volumeTotal}}</span>
+              </div>
+              <svg><path class="{{usage.volumeState}}" /></svg>
+            </div>
+          </div>
+          <div class="usage-item-detail">
+          </div>
+          <div class="usage-item-name">{{note.usage.volume}}({{note.unit.num}})</div>
+        </div>
+
+        <div class="usage-item">
+          <div val="usage.volumeCapacity" class="sectorDirective resource-usage">
+            <div class="sector-outer">
+              <div class="sector-inner">
+                <span class="{{usage.volumeCapacityState}}">{{usage.volumeCapacityUsed}}/</span><span class="normal">{{usage.volumeCapacityTotal}}</span>
+              </div>
+              <svg><path class="{{usage.volumeCapacityState}}" /></svg>
+            </div>
+          </div>
+          <div class="usage-item-detail">
+          </div>
+          <div class="usage-item-name">{{note.usage.volumeCapacity}}({{note.unit.gb}})</div>
+        </div>
+
+        <div class="usage-item">
+          <div val="usage.snapshot" class="sectorDirective resource-usage">
+            <div class="sector-outer">
+              <div class="sector-inner">
+                <span class="{{usage.snapshotState}}">{{usage.snapshotUsed}}/</span><span class="normal">{{usage.snapshotTotal}}</span>
+              </div>
+              <svg><path class="{{usage.snapshotState}}" /></svg>
+            </div>
+          </div>
+          <div class="usage-item-detail">
+          </div>
+          <div class="usage-item-name">{{note.usage.snapshot}}({{note.unit.num}})</div>
+        </div>
+        <div class="usage-item">
+          <div val="usage.floatingIP" class="sectorDirective resource-usage">
+            <div class="sector-outer">
+              <div class="sector-inner">
+                <span class="{{usage.floatingIPState}}">{{usage.floatingIPUsed}}/</span><span class="normal">{{usage.floatingIPTotal}}</span>
+              </div>
+              <svg><path class="{{usage.floatingIPState}}" /></svg>
+            </div>
+          </div>
+          <div class="usage-item-detail">
+          </div>
+          <div class="usage-item-name">{{note.usage.floatingIP}}({{note.unit.num}})</div>
+        </div>
+
+        <div class="usage-item">
+          <div val="usage.securityGroup" class="sectorDirective resource-usage">
+            <div class="sector-outer">
+              <div class="sector-inner">
+                <span class="{{usage.securityGroupState}}">{{usage.securityGroupUsed}}/</span><span class="normal">{{usage.securityGroupTotal}}</span>
+              </div>
+              <svg><path class="{{usage.securityGroupState}}" /></svg>
+            </div>
+          </div>
+          <div class="usage-item-detail">
+          </div>
+          <div class="usage-item-name">{{note.usage.securityGroup}}({{note.unit.num}})</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="split"></div>
+
+    <div class="recent-log">
+      <div class="system-lead">
+        <i class="log"></i><span>{{note.log.lead}}</span>
+        <div class="message-more">
+          <a ui-sref="project.operation_log">{{note.log.more}}&gt;</a>
+        </div>
+      </div>
+      <div class="system-log-main">
+        <div ng-repeat="log in logs" class="log-row">
+          <span class="log-lead {{$index==0?'first':''}}"><i></i></span>
+          <div class="message-item">
+            <div class="item-main">
+              <span class="log-content">{{log.action_msg}}</span>
+              <span class="{{log.state}} log-status"></span>
+            </div>
+            <div class="item-time">
+              <span class="log-time" title="{{log.user_name}}">{{note.log.operator}}: {{log.user_name | limitTo: 10}}</span>
+              <span class="log-time">{{log.generated|dateLocalize | date:"yyyy-MM-dd HH:mm"}}</span>
+            </div>
+          </div>
+        </div>
+        <div class="message-empty"
+          ng-if="logLoding"
+          >
+            <div class="datatable-loading cell-loading">
+              <div class='logo-continer'></div>
+              <div class='cricle-continer'></div>
+            </div>
+        </div>
+        <div class="message-empty"
+          ng-show="!logs.length && logLoding==false">&bull;&nbsp;{{note.log.empty}}</div>
+      </div>
+    </div>
+  </div>
+</div>

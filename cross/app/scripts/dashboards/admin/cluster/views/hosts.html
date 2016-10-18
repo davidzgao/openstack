@@ -1,0 +1,68 @@
+<form method="post" action="" id="_modal_{{modal.slug}}" autocomplete="off">
+  <div>
+
+    <div class="project_memeber_container">
+      <div class="project_memebership">
+        <div class="header">
+          <div class="left">
+            <div class="fake_table fake_table_header">
+                <span class="users_title">{{title.allComputes}}</span>
+            </div>
+          </div>
+          <div class="right">
+            <div class="fake_table fake_table_header">
+                <span class="users_title">{{title.computesInCluster}}</span>
+            </div>
+          </div>
+          <div class="clear"></div>
+        </div>
+
+        <div class="left filterable">
+          <div class="fake_table" id="available_hosts">
+            <ul class="available-item">
+              <li ng-repeat="item in availableHosts"
+              ng-class="{last: $last, even: $even, odd: $odd}">
+                <span>{{item.name}}</span>
+                <a class="btn btn-primary add_right" ng-click="addToRight(item.id)"></a>
+              </li>
+            </ul>
+            <ul class="no_results" ng-show="no_available">
+              <li class="last">{{title.noAvilable}}</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="right filterable">
+          <div class="fake_table">
+            <ul class="available-item">
+              <li ng-repeat="item in selectedHosts"
+              ng-class="{last: $last, even: $even, odd: $odd}">
+                <span>{{item.name}}</span>
+                <a class="btn btn-primary add_left" ng-click="addToLeft(item.id)"></a>
+              </li>
+            </ul>
+            <ul class="no_results" ng-show="no_selected">
+              <li class="last">{{title.noComputes}}</li>
+            </ul>
+
+          </div>
+        </div>
+
+        <div class="clear">
+        </div>
+
+      </div>
+    </div>
+
+    <div class="cross-modal-footer">
+      <button class="btn" name="cancel" ng-show="modal.parallel"
+              ng-click="close()">{{note.modal.cancel}}</button>
+      <button ng-show="modal.stepIndex&&!modal.parallel" name="stepPrevious" class="btn"
+              ng-click="stepPrevious()">{{note.modal.stepPrevious}}</button>
+      <button ng-show="modal.stepIndex<modal.steps.length-1&&!modal.parallel" class="btn"
+              ng-click="stepNext()">{{note.modal.stepNext}}</button>
+      <button  ng-show="modal.stepIndex==modal.steps.length-1||modal.parallel" class="btn"
+              name="submit" type="submit" ng-click="handle()">{{note.modal.save}}</button>
+    </div> <!-- end of cross-modal-footer -->
+  </div>
+</form>

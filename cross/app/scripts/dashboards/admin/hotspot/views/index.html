@@ -1,0 +1,96 @@
+<div class="os-hotspot">
+  <div class='common_page_tabs'>
+    <ul>
+      <li class="tab active">{{note.title}}</li>
+    </ul>
+  </div>
+
+  <div class="os-hotspot">
+    <div class="os-hotspot-map fixSize">
+      <div class="content-group">
+        <div class="title-area">{{clusters[selected].name}}{{note.map.title}}</div>
+        <div class="x-area">{{note.map.Xtitle}}(%)</div>
+        <div class="y-area">{{note.map.Ytitle}}(%)</div>
+      </div>
+      <div class="arrow-group">
+        <div class="coordinate-axis"></div>
+        <div class="arrow-up">
+          <span class="arrow-outer"></span>
+          <span class="arrow-inner"></span>
+        </div>
+        <div class="arrow-right">
+          <span class="arrow-outer"></span>
+          <span class="arrow-inner"></span>
+        </div>
+      </div>
+      <div class="vertical-graduation-group">
+        <div class="item" ng-repeat="n in getRange() track by $index">
+          <span ng-bind="(10-$index)*10" class="number"></span><span class="vertical-stick"></span>
+        </div>
+      </div>
+      <div class="horizon-graduation-group">
+        <div class="item" ng-repeat="n in getRange() track by $index">
+          <span ng-bind="($index+1)*10" class="number"></span><span class="horizon-stick"></span>
+        </div>
+      </div>
+      <div class="vertical-line-group">
+        <div class="vertical-line-cold"></div>
+        <div class="vertical-line-hot"></div>
+      </div>
+      <div class="horizon-line-group">
+        <div class="horizon-line-cold"></div>
+        <div class="horizon-line-hot"></div>
+      </div>
+      <div class="point-group">
+        <div class="point-item {{host['cpu_util'].level}} {{host['memory.usage'].level}} fixSize"
+             ng-mouseover="getPointDesc($event, $index)"
+             ng-mouseleave="hidePointDesc($index)" point-title="{{host.name}}"
+             ng-repeat="host in clusters[selected].hosts" fix-w="1" fix-h="1" point-index="{{$index}}"
+             ng-style="{left: host['cpu_util'].value+'%', top: (100-host['memory.usage'].value)+'%'}">
+          <div class="point-click" ng-click="choosePoint(host)"></div>
+          <div class="point-tip" ng-show="host.showTip">
+            <div class="item" ng-bind="host.name"></div>
+            <div class="tip-arrow">
+              <span class="arrow-outer"></span>
+              <span class="arrow-inner"></span>
+            </div>
+          </div>
+          <div class="points-list-near" ng-show="host.showNearPoints">
+            <div class="points-container-near">
+              <div class="items">
+                <div ng-repeat="cHost in host.cHosts"
+                     class="item" ng-click="choosePoint(clusters[selected].hosts[cHost.index])">
+                  <div class="{{cHost.classes}}"></div>
+                  <div class="content" ng-bind="cHost.name"></div>
+                </div>
+              </div>
+            </div>
+            <div class="tip-arrow">
+              <span class="arrow-outer"></span>
+              <span class="arrow-inner"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hotspot-map-selector">
+      <div class="to-left move-item" ng-class="move.leftDisabled" ng-click="toLeft()"></div>
+      <div class="to-right move-item" ng-class="move.rightDisabled" ng-click="toRight()"></div>
+      <div class="hotspot-small-container" id="_hotspot_small_container">
+        <div class="item" ng-repeat="cluster in clusters" ng-click="chooseCluster($index)"
+             ng-style="{'margin-left': $index?0:'-'+mapMarginLeft+'px'}">
+          <div class="hotspot-map-small">
+            <div class="point-group">
+              <div class="point-item {{host['cpu_util'].level}} {{host['memory.usage'].level}} fixSize"
+                   ng-repeat="host in cluster.hosts" fix-w="1" fix-h="1"
+                   ng-style="{left: host['cpu_util'].value+'%', top: (100-host['memory.usage'].value)+'%'}">
+              </div>
+            </div>
+          </div>
+          <div class="stuff" ng-if="$index==selected"></div>
+          <div class="hotspot-map-content" ng-bind="cluster.name"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
