@@ -1,0 +1,19 @@
+<div class="step-header-empty"></div>
+<div class="step-notes">
+  <table>
+    <tbody>
+      <tr>
+        <td ng-repeat="step in form.steps"
+          class="step-item {{$index==form.currentStep?'active':''}}"
+          ng-class="{true: 'invalidate'}[step.invalidate==true]">
+          <div class="step-inner">
+            <div class="step-lead-field">
+              <div class="step-note">{{step.title | i18n}}</div>
+              <div class="step-index">{{$index + 1}}</div>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

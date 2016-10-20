@@ -1,0 +1,281 @@
+/* Space out content a bit */
+
+/* Attr at data table */
+
+/* Style of button for action */
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.unicorn-dashboard-overview {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+}
+
+.unicorn-dashboard-overview .overview-item {
+  position: relative;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.unicorn-dashboard-overview .item-title {
+  position: relative;
+  height: 36px;
+  padding-left: 40px;
+  line-height: 36px;
+  background-position: 16px center;
+  background-repeat: no-repeat;
+}
+
+.unicorn-dashboard-overview .item-title .item-more {
+  float: right;
+  margin-right: 20px;
+}
+
+.unicorn-dashboard-overview .item-title .item-more a {
+  color: #888;
+  text-decoration: none;
+}
+
+.unicorn-dashboard-overview .item-title .item-more a:hover {
+  color: #666;
+}
+
+.unicorn-dashboard-overview .apply-quota {
+  position: relative;
+  float: right;
+  padding-right: 8px;
+  margin-top: -25px;
+  margin-right: 30px;
+  font-size: 12px;
+}
+
+.unicorn-dashboard-overview .service-list .item-title {
+  background-image: url(../images/dashboard/overview/services.png);
+}
+
+.unicorn-dashboard-overview .service-list .services {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.unicorn-dashboard-overview .service-list .services .item {
+  display: inline-block;
+  width: 200px;
+  height: 120px;
+  padding-top: 90px;
+  margin: 5px 3%;
+  color: #888;
+  text-decoration: none;
+  cursor: pointer;
+  background-position: center 25px;
+  background-repeat: no-repeat;
+  border: 1px solid #f0f0f0;
+}
+
+.unicorn-dashboard-overview .service-list .services .item:hover {
+  background-color: #e7f4f8;
+}
+
+.unicorn-dashboard-overview .service-list .services .item .content {
+  display: block;
+  height: 27px;
+  font-weight: 800px;
+}
+
+.unicorn-dashboard-overview .service-list .services .item.instance-applay {
+  background-image: url(../images/dashboard/overview/instance.png);
+}
+
+.unicorn-dashboard-overview .service-list .services .item.volume-applay {
+  background-image: url(../images/dashboard/overview/volume.png);
+}
+
+.unicorn-dashboard-overview .service-list .services .item.floatingIp-applay {
+  background-image: url(../images/dashboard/overview/floatingIp.png);
+}
+
+.unicorn-dashboard-overview .resource-quota {
+  margin-top: 10px;
+}
+
+.unicorn-dashboard-overview .resource-quota .item-title {
+  background-image: url(../images/dashboard/overview/quota.png);
+}
+
+.unicorn-dashboard-overview .recent {
+  margin-bottom: 10px;
+}
+
+.unicorn-dashboard-overview .recent .recent-operation {
+  float: left;
+  width: 50%;
+  margin-top: 10px;
+}
+
+.unicorn-dashboard-overview .recent .recent-operation .item-title {
+  background-image: url(../images/dashboard/overview/recentOp.png);
+}
+
+.unicorn-dashboard-overview .recent .recent-operation .logs {
+  margin: 0 10px;
+}
+
+.unicorn-dashboard-overview .recent .empty-item {
+  margin-top: 20px;
+  font-style: italic;
+  color: #aaa;
+  text-align: center;
+}
+
+.unicorn-dashboard-overview .recent .item {
+  position: relative;
+  height: 30px;
+  line-height: 30px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.unicorn-dashboard-overview .recent .item .content {
+  padding-right: 120px;
+  padding-left: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.unicorn-dashboard-overview .recent .item .time {
+  position: absolute;
+  top: 0;
+  right: 5px;
+  width: 120px;
+  text-align: right;
+}
+
+.unicorn-dashboard-overview .recent .middle-split {
+  position: absolute;
+  left: 50%;
+  width: 1px;
+  height: 100%;
+  background-color: #f0f0f0;
+}
+
+.unicorn-dashboard-overview .recent .recent-alarm {
+  float: right;
+  width: 50%;
+  margin-top: 10px;
+}
+
+.unicorn-dashboard-overview .recent .recent-alarm .item-title {
+  background-image: url(../images/dashboard/overview/alarm.png);
+}
+
+.unicorn-dashboard-overview .recent .recent-alarm .alarms {
+  margin: 0 10px;
+}
+
+.quota {
+  width: 100%;
+  margin-top: 30px;
+  overflow-x: auto;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.quota > .usage-item {
+  display: inline-block;
+  margin: 10px 3%;
+  text-align: center;
+}
+
+.quota > .usage-item > .resource-usage {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+}
+
+.quota > .usage-item > .resource-usage .sector-outer {
+  position: relative;
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  line-height: 50px;
+  text-align: center;
+  vertical-align: middle;
+  background-color: #dfdfdf;
+  border-radius: 50px;
+}
+
+.quota > .usage-item > .resource-usage .sector-inner {
+  position: absolute;
+  width: 84px;
+  height: 84px;
+  margin-top: 8px;
+  margin-left: 8px;
+  font-size: 12px;
+  text-align: center;
+  background-color: #ffffff;
+  border-radius: 42px;
+}
+
+.quota > .usage-item > .resource-usage .sector-inner > span {
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.quota > .usage-item > .resource-usage .sector-inner > span:first-child.ok {
+  font-size: 16px;
+  color: #269bd8;
+}
+
+.quota > .usage-item > .resource-usage .sector-inner > span:first-child.warn {
+  font-size: 16px;
+  color: red;
+}
+
+.quota > .usage-item > .resource-usage .sector-inner > span:last-child {
+  font-size: 12px;
+  color: #888;
+}
+
+.quota > .usage-item > .resource-usage svg {
+  width: 100%;
+  height: 100%;
+}
+
+.quota > .usage-item > .resource-usage svg path {
+  stroke-width: 0;
+  fill-opacity: 1;
+}
+
+.quota > .usage-item > .resource-usage svg path.ok {
+  fill: #269bd8;
+}
+
+.quota > .usage-item > .resource-usage svg path.warn {
+  stroke-width: 0;
+  fill: #f65e5e;
+  fill-opacity: 1;
+}
+
+.quota > .usage-item > .usage-item-name {
+  margin-top: 20px;
+  color: #555555;
+}

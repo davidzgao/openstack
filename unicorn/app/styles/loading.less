@@ -1,0 +1,113 @@
+/* animation for loading */
+@keyframes loading
+{
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@-ms-keyframes loading {
+  0% {
+    -ms-transform: rotate(0deg);
+  }
+  25% {
+    -ms-transform: rotate(90deg);
+  }
+  50% {
+    -ms-transform: rotate(180deg);
+  }
+  75% {
+    -ms-transform: rotate(270deg);
+  }
+  100% {
+    -ms-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes loading {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  25% {
+    -webkit-transform: rotate(90deg);
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+  }
+  75% {
+    -webkit-transform: rotate(270deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+.loading(@duration: 1s) {
+  animation-name: loading;
+  animation-duration: @duration;
+  animation-timing-function: linear;
+  animation-linearanimation-delay:0;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+
+  -moz-animation-name: loading;
+  -moz-animation-duration: 1s;
+  -moz-animation-timing-function: linear;
+  -moz-animation-delay: 0;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-play-state: running;
+
+  -webkit-animation-name: loading;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-delay: 0;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-play-state: running;
+
+  -ms-animation-name: loading;
+  -ms-animation-duration: 1s;
+  -ms-animation-timing-function: linear;
+  -ms-animation-delay: 0;
+  -ms-animation-iteration-count: infinite;
+  -ms-animation-play-state: running;
+}
+
+.detailLoading {
+  width: 100%;
+  height: 100%;
+  background: white;
+  position: absolute;
+  z-index: 5;
+  div {
+    top: 15px;
+    width: 35px;
+    height: 35px;
+    left: 46%;
+  }
+  .logo-continer {
+    position: absolute;
+    background: url(../images/login/loading.png) center no-repeat;
+    width: 32px;
+    height: 32px;
+    background-size: 32px;
+    .loading();
+  }
+  .cricle-continer {
+    position: absolute;
+    background-size: 14px;
+    width: 32px;
+    height: 32px;
+    background: url(../images/login/loading_image.png) center no-repeat;
+  }
+}

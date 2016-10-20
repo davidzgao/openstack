@@ -1,0 +1,53 @@
+.common_page_tabs {
+  height: 34px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  margin-left: 15px;
+  border-bottom: 1px solid #DDDDDD;
+}
+
+.common_page_tabs ul {
+  margin-bottom: 0;
+}
+
+.common_page_tabs li.tab {
+  float: left;
+  height: 34px;
+  padding: 0 10px 0px 10px;
+  margin-right: 16px;
+  line-height: 32px;
+  color: #888;
+  list-style: none;
+  cursor: pointer;
+}
+
+.common_page_tabs li.tab:hover {
+  color: #666;
+}
+
+.common_page_tabs li.tab.active {
+  line-height: 30px;
+  color: #000;
+  border-bottom: 1px solid #29aaee;
+}
+
+.common_page_tabs li.storage-tab {
+  padding: 0;
+}
+
+.common_page_tabs li.storage-tab a {
+  padding: 0 15px;
+  color: #696969;
+}
+
+.common_page_tabs li.storage-tab a:hover {
+  text-decoration: none;
+}
+
+.common_page_tabs li.storage-tab.active a {
+  color: #000;
+}
+
+.table-tab {
+  padding: 0 14px;
+}

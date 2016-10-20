@@ -1,0 +1,48 @@
+<form method="post" action="" id="_modal_{{modal.slug}}" class="modal-{{modal.slug}}" autocomplete="off">
+  <div ng-show="modal.globalTip" class="modal-global-tip">{{modal.globalTip}}</div>
+  <div ng-if="modal.single">
+    <div class="fields-area">
+      <div class="field-vcpu field">
+        <div class="field-label-left">{{modal.fields[0].label}}</div>
+        <div class="field-input">
+          <div class="field-vcpu-list">
+            <span class="item {{item.isActive}} {{item.isDisable}}" ng-click="vcpuClick(item)"
+                  ng-bind="item.value" ng-repeat="item in modal.fields[0].default"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="field-ram field">
+        <div class="field-label-left">{{modal.fields[1].label}}</div>
+        <div class="field-input">
+          <div class="field-ram-list">
+            <span class="item {{item.isActive}} {{item.isDisable}}" ng-click="ramClick(item)"
+                  ng-bind="item.value" ng-repeat="item in modal.fields[1].default"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="field-disk field">
+        <div class="field-label-left">{{modal.fields[2].label}}</div>
+        <div class="field-switch">
+          <span class="default-disk" ng-show="modal.isDiskDefault"
+                ng-bind="note.diskDefault"></span>
+          <span class="self-define-disk"
+                ng-click="diskChange()"
+                ng-bind="note.selfDefine"></span>
+        </div>
+        <div class="field-input" ng-show="!modal.isDiskDefault">
+          <div class="field-disk-list">
+            <span class="item {{item.isActive}}" ng-bind="item.value" ng-click="diskClick(item)"
+                  ng-repeat="item in modal.fields[2].default"></span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="unicorn-modal-footer">
+      <button class="btn" name="cancel" ng-click="close()">{{note.modal.cancel}}</button>
+      <button class="btn" name="submit" type="submit" ng-click="handle()">{{note.modal.save}}</button>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,129 @@
+<div detail-tips
+  detail="network_detail" ng-if="!is_subnet">
+</div>
+
+<div class='detail_info' ng-if="!is_subnet">
+  <div class="detail_title">{{detailItem.overview}}</div>
+  <div class="detail_area">
+    <ul>
+      <li>
+        <span class='title'>{{detailItem.name}}</span>
+        <span class='value'>{{network_detail.name}}</span>
+      </li>
+      <li>
+        <span class='title'>ID</span>
+        <span class='value'>{{network_detail.id}}</span>
+      </li>
+      <li>
+        <span class='title'>{{detailItem.status}}</span>
+        <span class='value'>{{network_detail.status | i18n}}</span>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class='detail_info' ng-if="!is_subnet">
+  <div class="detail_title">{{detailItem.subnets}}</div>
+  <div class="detail_area">
+    <table class="table_in_detail">
+      <thead>
+        <tr>
+          <th>{{subnetDetail.name}}</th>
+          <th>{{subnetDetail.cidr}}</th>
+          <th>{{subnetDetail.action}}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="subnet in network_detail.subnets">
+            <td>{{subnet.name}}</td>
+            <td>{{subnet.cidr}}</td>
+            <td>{{subnet.status}}</td>
+        </tr>
+        <tr ng-if="network_detail.subnets.length<=0">
+            <td>{{subnetDetail.is_null}}</td>
+            <td></td>
+            <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div detail-tips
+  detail="network_detail" ng-if="is_subnet">
+</div>
+
+<div class='detail_info' ng-if="is_subnet">
+  <div class="detail_title">{{detailItem.overview}}</div>
+  <div class="detail_area">
+    <ul>
+      <li>
+        <span class='title'>{{detailItem.name}}</span>
+        <span class='value'>{{network_detail.name}}</span>
+      </li>
+      <li>
+        <span class='title'>ID</span>
+        <span class='value'>{{network_detail.id}}</span>
+      </li>
+      <li>
+        <span class='title'>{{detailItem.network}}</span>
+        <span class='value'>{{network_detail.network.name}}</span>
+      </li>
+      <li>
+        <span class='title'>{{detailItem.gateway}}</span>
+        <span class='value'>{{network_detail.gateway_ip}}</span>
+      </li>
+      <li>
+        <span class='title'>{{detailItem.ip_version}}</span>
+        <span class='value'>IP v{{network_detail.ip_version}}</span>
+      </li>
+      <li>
+        <span class='title'>{{detailItem.cidr}}</span>
+        <span class='value'>{{network_detail.cidr}}</span>
+      </li>
+      <li>
+        <span class='title'>{{detailItem.pool}}</span>
+        <div ng-repeat="pool in network_detail.allocation_pools"
+        class="value-group">
+          <span class='value'>start:{{pool.start}} - end:{{pool.end}}</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class='detail_info' ng-if="is_subnet">
+  <div class="detail_title">{{detailItem.ports}}</div>
+  <div class="detail_area">
+    <table class="table_in_detail">
+      <thead>
+        <tr>
+          <th>{{subnetDetail.port_name}}</th>
+          <th>{{subnetDetail.ip_address}}</th>
+          <th>{{subnetDetail.mac_address}}</th>
+          <th>{{subnetDetail.instances}}</th>
+          <th>{{subnetDetail.status}}</th>
+          <th>{{subnetDetail.action}}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="port in network_detail.ports">
+            <td>{{port.name | parseNull}}</td>
+            <td>{{port.fixed_ips[0].ip_address | parseNull}}</td>
+            <td>{{port.mac_address | parseNull}}</td>
+            <td>{{port.mac_address | parseNull}}</td>
+            <td>{{port.status}}</td>
+            <td></td>
+        </tr>
+        <tr ng-if="network_detail.ports.length<=0">
+            <td>{{subnetDetail.is_null}}</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

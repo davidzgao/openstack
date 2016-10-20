@@ -1,0 +1,344 @@
+/* animation for loading */
+
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@-ms-keyframes loading {
+  0% {
+    -ms-transform: rotate(0deg);
+  }
+  25% {
+    -ms-transform: rotate(90deg);
+  }
+  50% {
+    -ms-transform: rotate(180deg);
+  }
+  75% {
+    -ms-transform: rotate(270deg);
+  }
+  100% {
+    -ms-transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes loading {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  25% {
+    -webkit-transform: rotate(90deg);
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+  }
+  75% {
+    -webkit-transform: rotate(270deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+.detailLoading {
+  position: absolute;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  background: white;
+}
+
+.detailLoading div {
+  top: 15px;
+  left: 46%;
+  width: 35px;
+  height: 35px;
+}
+
+.detailLoading .logo-continer {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  background: url(../images/login/loading.png) center no-repeat;
+  background-size: 32px;
+  -webkit-animation-delay: 0;
+     -moz-animation-delay: 0;
+      -ms-animation-delay: 0;
+  -webkit-animation-duration: 1s;
+     -moz-animation-duration: 1s;
+      -ms-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-iteration-count: infinite;
+     -moz-animation-iteration-count: infinite;
+      -ms-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-name: loading;
+     -moz-animation-name: loading;
+      -ms-animation-name: loading;
+          animation-name: loading;
+  -webkit-animation-play-state: running;
+     -moz-animation-play-state: running;
+      -ms-animation-play-state: running;
+          animation-play-state: running;
+  -webkit-animation-timing-function: linear;
+     -moz-animation-timing-function: linear;
+      -ms-animation-timing-function: linear;
+          animation-timing-function: linear;
+  animation-linearanimation-delay: 0;
+}
+
+.detailLoading .cricle-continer {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  background: url(../images/login/loading_image.png) center no-repeat;
+  background-size: 14px;
+}
+
+.register-main {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  min-width: 500px;
+  min-height: 600px;
+  background-color: #DEDDDD;
+}
+
+.register-main .register-success {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 500px;
+  padding: 15px 20px;
+  margin-top: -180px;
+  margin-left: -200px;
+}
+
+.register-main .register-success .success-title {
+  padding: 10px 10px 10px 35px;
+  font-size: 20px;
+  background: url(../images/login/register_success.png) no-repeat left center;
+}
+
+.register-main .register-success .failed-title {
+  padding: 10px 10px 10px 35px;
+  font-size: 20px;
+  background: url(../images/login/register_success.png) no-repeat left center;
+}
+
+.register-main .register-success .success-tips {
+  height: 100px;
+  font-size: 14px;
+}
+
+.register-main .register-success .success-tips p {
+  padding-left: 35px;
+}
+
+.register-main .register-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 500px;
+  padding: 15px 20px;
+  margin-top: -180px;
+  margin-left: -250px;
+  background-color: white;
+  border: 1px solid #DDDDDD;
+  border-radius: 5px;
+  box-shadow: 8px 6px 10px #AAAAAA;
+}
+
+.register-main .register-container .close-button {
+  position: absolute;
+  top: 10px;
+  right: 5px;
+  width: 25px;
+  height: 25px;
+  font-size: 20px;
+  line-height: 25px;
+  cursor: pointer;
+}
+
+.register-main .register-container .register-header {
+  font-size: 18px;
+}
+
+.register-main .register-container .register-field-area {
+  padding: 10px;
+}
+
+.register-main .register-container .register-field-area ul {
+  padding: 0;
+  margin: 0;
+}
+
+.register-main .register-container .register-field-area ul li {
+  list-style: none;
+}
+
+.register-main .register-container .register-field-area .register-field {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.register-main .register-container .register-field-area .register-field span {
+  display: inline-block;
+}
+
+.register-main .register-container .register-field-area .register-field .field-title {
+  width: 120px;
+  padding-right: 10px;
+  text-align: right;
+}
+
+.register-main .register-container .register-field-area .register-field .field-input input {
+  width: 246px;
+  padding: 8px 3px 8px 30px;
+  margin: 5px 0;
+  font-size: 12px;
+  line-height: 14px;
+  background-position: 8px center;
+  background-repeat: no-repeat;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+}
+
+.register-main .register-container .register-field-area .register-field .field-input input.username {
+  background-image: url(../images/login/username.png);
+}
+
+.register-main .register-container .register-field-area .register-field .field-input input.email {
+  background-image: url(../images/login/register_icon_email.png);
+}
+
+.register-main .register-container .register-field-area .register-field .field-input input.password {
+  background-image: url(../images/login/password.png);
+}
+
+.register-main .register-container .register-field-area .register-field .field-input input:focus {
+  border-color: #67B3DA;
+  outline: none;
+}
+
+.register-main .register-container .register-field-area .register-field .field-input input.invalid {
+  border-color: #E37984;
+}
+
+.register-main .register-container .register-field-area .register-field .field-status {
+  position: absolute;
+  top: 7px;
+  width: 30px;
+  height: 20px;
+  background-position: 5px bottom;
+  background-repeat: no-repeat;
+}
+
+.register-main .register-container .register-field-area .register-field .field-status.error {
+  background-image: url(../images/login/register_field_error.png);
+}
+
+.register-main .register-container .register-field-area .register-field .field-status.correct {
+  background-image: url(../images/login/register_field_success.png);
+}
+
+.register-main .register-container .register-field-area .register-field .register-submit {
+  width: 246px;
+  padding: 5px 0;
+  font-size: 14px;
+  font-weight: 800;
+  color: white;
+  text-align: center;
+  background-color: #1F90C8;
+  border: 1px solid #1190C8;
+  border-radius: 4px;
+}
+
+.register-main .register-container .register-field-area .register-field .register-submit:focus {
+  outline: none;
+}
+
+.register-main .register-container .register-field-area .register-status-area {
+  position: relative;
+  height: 35px;
+  padding-left: 120px;
+}
+
+.register-main .register-container .register-field-area .register-status-area .loading-area {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin-left: -95px;
+}
+
+.register-main .register-container .register-field-area .register-status-area .loading-area .login-loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  margin-top: -20px;
+  margin-left: -20px;
+  background: url(../images/login/loading.png) center no-repeat;
+  background-size: 80%;
+  -webkit-animation-delay: 0;
+     -moz-animation-delay: 0;
+      -ms-animation-delay: 0;
+  -webkit-animation-duration: 1s;
+     -moz-animation-duration: 1s;
+      -ms-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-iteration-count: infinite;
+     -moz-animation-iteration-count: infinite;
+      -ms-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-name: loading;
+     -moz-animation-name: loading;
+      -ms-animation-name: loading;
+          animation-name: loading;
+  -webkit-animation-play-state: running;
+     -moz-animation-play-state: running;
+      -ms-animation-play-state: running;
+          animation-play-state: running;
+  -webkit-animation-timing-function: linear;
+     -moz-animation-timing-function: linear;
+      -ms-animation-timing-function: linear;
+          animation-timing-function: linear;
+  animation-linearanimation-delay: 0;
+}
+
+.register-main .register-container .register-field-area .register-status-area .loading-area .login-loading-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  margin-top: -20px;
+  margin-left: -20px;
+  background: url(../images/login/loading_image.png) center no-repeat;
+  background-size: 40%;
+}
+
+.register-main .unicorn-copyright-area {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 30px;
+  background-color: #D0D0D0;
+  border-top: 1px solid #B1B1B1;
+}

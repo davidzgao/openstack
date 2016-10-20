@@ -1,0 +1,144 @@
+@LINE-COLOR: #F0F0F0;
+
+.statistic-query {
+  padding-top: 8px;
+  padding-bottom: 20px;
+  .ui-select {
+    width: 210px;
+    display: inline-block;
+  }
+  select {
+    width: 200px;
+    height: 30px;
+    background-color: white;
+    border-radius: 4px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url(../images/select-slide.png) no-repeat right center;
+    background-position: 180px 12px;
+    border: 1px solid #a4a4a4;
+    padding-left: 5px;
+    padding-right: 5px;
+    &:focus {
+      outline: none;
+      border-color: rgb(41, 170, 238);
+    }
+  }
+  .btn {
+    padding-top: 5px;
+    margin-left: 5px;
+    padding-left: 15px;
+    padding-bottom: 4px;
+  }
+}
+
+.usage-loading {
+  width: 100%;
+  height: 50px;
+  position: relative;
+}
+.usage-null {
+  width: 100%;
+  text-align: center;
+  font-style: italic;
+}
+
+.statistic {
+  margin-right: 20px;
+  .statistic-overview {
+    border: 1px solid @LINE-COLOR;
+    border-bottom: none;
+    padding: 3px;
+    position: relative;
+    height: 40px;
+    line-height: 34px;
+    &.active {
+      border-bottom: 1px solid @LINE-COLOR;
+    }
+    .statistic-project-name {
+      width: 120px;
+      display: inline-block;
+      text-align: left;
+      padding-left: 10px;
+    }
+    .statistic-item {
+      padding: 0px 5px;
+    }
+    .detail-button {
+      position: absolute;
+      right: 0px;
+      cursor: pointer;
+      width: 100%;
+      height: 35px;
+      i {
+        width: 20px;
+        height: 20px;
+        float: right;
+        display: inline-block;
+        margin-top: 12px;
+        margin-right: 15px;
+        background: url("../images/detail_show.png") no-repeat;
+      }
+      &.open {
+        i {
+          background: url("../images/detail_hide.png") no-repeat;
+        }
+      }
+    }
+    .export {
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      right: 70px;
+      top: 5px;
+      i {
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+        margin-top: 3px;
+        background: url("../images/export.png") no-repeat;
+      }
+    }
+  }
+  .statistic-detail {
+    border-left: 1px solid @LINE-COLOR;
+    border-right: 1px solid @LINE-COLOR;
+    padding: 3px;
+    min-height: 80px;
+  }
+  &.last {
+    .statistic-overview {
+      border-bottom: 1px solid @LINE-COLOR;
+    }
+    .statistic-detail {
+      border-bottom: 1px solid @LINE-COLOR;
+    }
+  }
+}
+
+@-moz-document url-prefix() {
+  .statistic .statistic-overview .export i {
+    background-position: 6px 0px;
+  }
+  .statistic-query {
+    height: 60px;
+    .btn {
+      margin-bottom: 25px;
+    }
+  }
+  .ui-select {
+    width: 200px;
+    display: inline-block;
+    margin: 0px 5px 0px 0px;
+    border: 1px solid #a1a1a1;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+    select {
+      width: 110%;
+      border: none !important;
+      background-position: right 30px center !important;
+    }
+  }
+}

@@ -1,0 +1,661 @@
+.slider.slider-horizontal .slider-track {
+  border-radius: 0;
+}
+
+.slider.slider-horizontal .slider-track .slider-selection {
+  background: #269BD8;
+  border-radius: 2px;
+}
+
+.slider.slider-horizontal .slider-track .slider-handle {
+  width: 10px;
+  height: 18px;
+  margin-top: -5px;
+  background: #B5B5B5;
+  opacity: 1;
+}
+
+.slider.slider-horizontal .slider-track .slider-handle.round {
+  border-radius: 4px;
+}
+
+.form-modal-view {
+  position: relative;
+}
+
+.form-modal-view .unicorn-modal-header .header-row {
+  height: 40px;
+  background: #323232;
+  border-radius: 0;
+}
+
+.form-modal-view .unicorn-modal-header .header-row .title {
+  display: inline-block;
+  max-width: 90%;
+  margin-top: 5px;
+  margin-left: 10px;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 30px;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.form-modal-view .unicorn-modal-header .header-row .close {
+  margin-top: 3px;
+  margin-right: 10px;
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 30px;
+  color: #fff;
+  text-align: center;
+  opacity: 1;
+}
+
+.form-modal-view .unicorn-modal-header .header-row .close:hover {
+  text-shadow: 0 0 20px #fff;
+  -webkit-transition: text-shadow 0.5s;
+       -o-transition: text-shadow 0.5s;
+          transition: text-shadow 0.5s;
+}
+
+.form-modal-view .form-area .step-header {
+  background: #EDF7FC;
+}
+
+.form-area {
+  float: left;
+  width: 500px;
+  border-right: 2px solid #E0E0E0;
+}
+
+.form-area .form-footer {
+  position: relative;
+  height: 55px;
+  background: #EDF7FC;
+  border-radius: 0 0 5px 5px;
+}
+
+.form-area .form-footer button {
+  position: absolute;
+  right: 50px;
+  width: 64px;
+  padding: 6px 3px;
+  margin-top: 15px;
+  font-size: 12px;
+  color: white;
+  vertical-align: middle;
+  border-bottom: 1px solid #AAAAAA;
+}
+
+.form-area .form-footer button[name="stepPrevious"] {
+  position: absolute;
+  right: auto;
+  left: 50px;
+}
+
+.form-summary {
+  float: left;
+  width: 350px;
+}
+
+.form-summary .summary-content {
+  width: 310px;
+  height: 390px;
+  max-height: 427px;
+  margin: 20px;
+  overflow-y: auto;
+  background: white;
+}
+
+.clear {
+  clear: both;
+}
+
+.steps-container {
+  position: relative;
+  width: 450px;
+  width: 100%;
+  max-height: 350px;
+  min-height: 80px;
+  padding: 0;
+  padding-top: 10px;
+  margin-bottom: 10px;
+  overflow-x: hidden;
+}
+
+.steps-container .form-steps {
+  width: 1000%;
+  overflow-x: hidden;
+  transition: margin-left 0.5s;
+}
+
+.steps-container .form-steps .form-step {
+  float: left;
+  width: 500px;
+  max-height: 300px;
+  min-height: 260px;
+  overflow-y: auto;
+}
+
+.steps-container .form-steps .form-step .form-fields .field-error-tips {
+  position: relative;
+  display: block;
+  height: 24px;
+  padding-right: 3px;
+  padding-left: 85px;
+  line-height: 24px;
+  color: #E43E3E;
+}
+
+.steps-container .form-steps .form-step .form-fields .standard-input {
+  margin: 15px 5px;
+}
+
+.steps-container .form-steps .form-step .form-fields .standard-input label {
+  width: 70px;
+  margin-right: 5px;
+  margin-bottom: 0;
+  text-align: right;
+  vertical-align: middle;
+}
+
+.steps-container .form-steps .form-step .form-fields .standard-input.textarea label {
+  float: left;
+  margin-top: 2px;
+}
+
+.steps-container .form-steps .form-step .form-fields .standard-input input {
+  width: 320px;
+  height: 32px;
+  margin-left: 5px;
+}
+
+.steps-container .form-steps .form-step .form-fields .standard-input input[disabled] {
+  cursor: not-allowed;
+}
+
+.steps-container .form-steps .form-step .form-fields .standard-input textarea {
+  width: 320px;
+  margin-left: 5px;
+}
+
+.steps-container .form-steps .form-step .form-fields .standard-input input[type='checkbox'] {
+  height: 15px;
+  margin-top: 0;
+}
+
+.steps-container .form-steps .form-step .form-fields .update-input {
+  position: relative;
+  margin: 15px 5px;
+}
+
+.steps-container .form-steps .form-step .form-fields .update-input .current-tip {
+  display: inline-block;
+  width: 155px;
+  padding-left: 10px;
+}
+
+.steps-container .form-steps .form-step .form-fields .update-input label {
+  width: 80px;
+  margin-right: 5px;
+  margin-bottom: 0;
+  text-align: right;
+  vertical-align: middle;
+}
+
+.steps-container .form-steps .form-step .form-fields .update-input input {
+  width: 160px;
+}
+
+.steps-container .form-steps .form-step .form-fields .field-custom-radio {
+  margin: 15px 5px 5px 5px;
+}
+
+.steps-container .form-steps .form-step .form-fields .field-custom-radio label {
+  width: 70px;
+  margin-right: 5px;
+  text-align: right;
+}
+
+.steps-container .form-steps .form-step .form-fields .field-custom-radio .radio-item {
+  display: inline-block;
+  padding: 5px 14px;
+  margin: 2px 10px;
+  font-size: 12px;
+  color: #747474;
+  cursor: pointer;
+  background: #EFEFEF;
+  border-radius: 16px;
+}
+
+.steps-container .form-steps .form-step .form-fields .field-custom-radio .radio-item:hover {
+  background: #DAD8D8;
+}
+
+.steps-container .form-steps .form-step .form-fields .field-custom-radio .radio-item.active {
+  color: white;
+  background: #69bfeb;
+}
+
+.steps-container .form-steps .form-step .form-fields .field-custom-radio .err_tips {
+  display: inline-block;
+  width: 200px;
+  height: 25px;
+  color: #E43E3E;
+}
+
+.steps-container .form-steps .form-step .form-fields .field-select-list {
+  padding: 5px 10px 5px 10px;
+}
+
+.steps-container .form-steps .form-step .form-fields .field-select-list .select-list-area {
+  width: 100%;
+  max-height: 250px;
+  padding-left: 30px;
+  overflow-y: auto;
+}
+
+.steps-container .form-steps .form-step .form-fields .field-select-list .list-item {
+  width: 98%;
+  height: 30px;
+  padding-left: 8%;
+  margin: 5px 0;
+  line-height: 30px;
+  color: #29AAEE;
+  list-style: none;
+  cursor: pointer;
+  background-color: #FFFFFF;
+  border: 1px solid #C5DEEB;
+  border-radius: 3px;
+}
+
+.steps-container .form-steps .form-step .form-fields .field-select-list .list-item:hover {
+  background-color: #E6F0F6;
+}
+
+.steps-container .form-steps .form-step .form-fields .field-select-list .list-item.active {
+  color: white;
+  background-color: #69bfeb;
+  border-color: #69bfeb;
+}
+
+.steps-container .form-steps .form-step .form-fields .field-select-list .list-item.list-null {
+  color: #E43E3E;
+}
+
+.steps-container .form-steps .form-step .form-fields .field_select_button label {
+  width: 70px;
+  margin-top: 12px;
+  margin-right: 5px;
+  text-align: right;
+}
+
+.steps-container .form-steps .form-step .form-fields .field_select_button .select-button-group {
+  width: 100%;
+  height: auto;
+  padding-left: 30px;
+}
+
+.steps-container .form-steps .form-step .form-fields .field_select_button .select-button-group ul {
+  margin: 0;
+}
+
+.steps-container .form-steps .form-step .form-fields .field_select_button .select-button-group .select-button {
+  display: inline-block;
+  float: left;
+  width: 17%;
+  height: 30px;
+  margin: 5px 5px;
+  line-height: 30px;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 1px solid #C5DEEB;
+  border-radius: 2px;
+}
+
+.steps-container .form-steps .form-step .form-fields .field_select_button .select-button-group .select-button.active {
+  color: white;
+  background-color: #69bfeb;
+  border: 1px solid #69bfeb;
+}
+
+.steps-container .form-steps .form-step .form-fields .field_select_button .select-button-group .select-button.false {
+  color: #949494;
+  cursor: not-allowed;
+  background-color: #E3E3E3;
+  border: 1px solid #E3E3E3;
+}
+
+.steps-container .form-steps .form-step .form-fields .field-slider {
+  margin: 10px 5px;
+}
+
+.steps-container .form-steps .form-step .form-fields .field-slider label {
+  width: 70px;
+  margin-right: 15px;
+  text-align: right;
+}
+
+.steps-container .form-steps .form-step .form-fields .field-slider .slider-input {
+  width: 70px;
+  margin-left: 16px;
+}
+
+.steps-container .form-steps .form-step .form-fields .field-duration {
+  position: relative;
+  margin: 10px 5px;
+}
+
+.steps-container .form-steps .form-step .form-fields .field-duration .return-select {
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  color: #29AAEE;
+  cursor: pointer;
+}
+
+.steps-container .form-steps .form-step .form-fields .field-duration .return-select:hover {
+  text-decoration: underline;
+}
+
+.steps-container .form-steps .form-step .form-fields .field-duration label {
+  width: 70px;
+  margin-right: 5px;
+  text-align: right;
+}
+
+.steps-container .form-steps .form-step .form-fields .field-duration .input-group {
+  left: 8px;
+}
+
+.steps-container .form-steps .form-step .form-fields .field-duration .input-group .form-control {
+  width: 226px;
+  height: 32px;
+  box-shadow: none;
+}
+
+.steps-container .form-steps .form-step .form-fields .field-duration .input-group .caret {
+  margin-left: 3px;
+}
+
+.steps-container .form-steps .form-step .form-fields .field-duration .input-group .unit-button {
+  width: 60px;
+}
+
+.steps-container .form-steps .form-step .form-fields .field-duration .input-group .unit-button:hover {
+  color: #333333;
+  background-color: white;
+}
+
+.steps-container .form-steps .form-step .form-fields .field-duration .input-group .unit-button:focus {
+  color: #333333;
+  background-color: white;
+}
+
+.steps-container .form-steps .form-step .form-fields .field-duration .input-group .input-group-btn {
+  width: auto;
+}
+
+.steps-container .form-steps .form-step .form-fields .field-duration .input-group .input-group-btn .btn-default {
+  padding-top: 4px;
+}
+
+.steps-container .form-steps .form-step .form-fields .field-duration .input-group .dropdown-menu {
+  left: -2px;
+  width: 60px;
+  min-width: 60px;
+  padding: 0;
+  margin: 0;
+}
+
+.steps-container .form-steps .form-step .form-fields .field-duration .input-group .dropdown-menu .unit-list {
+  width: 100%;
+  padding: 3px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.steps-container .form-steps .form-step .form-fields .field-duration .input-group .dropdown-menu .unit-list:hover {
+  color: white;
+  background: #29AAEE;
+}
+
+.steps-container .form-steps .form-step .form-fields .field-duration .input-group label {
+  width: auto;
+  height: 32px;
+  margin: 0;
+  line-height: 30px;
+  border: 1px solid #C9C9C9;
+}
+
+.steps-container .form-steps .form-step .form-fields .field-duration .custom-duration {
+  display: inline-block;
+  color: #29AAEE;
+  cursor: pointer;
+}
+
+.steps-container .form-steps .form-step .form-fields .field-duration .custom-duration:hover {
+  text-decoration: underline;
+}
+
+.steps-container .form-steps .form-step .form-fields .field-s-radio,
+.steps-container .form-steps .form-step .form-fields .field-duration {
+  margin: 10px 5px;
+}
+
+.steps-container .form-steps .form-step .form-fields .field-s-radio label,
+.steps-container .form-steps .form-step .form-fields .field-duration label {
+  float: left;
+  width: 70px;
+  margin-top: 8px;
+  margin-right: 5px;
+  text-align: right;
+}
+
+.steps-container .form-steps .form-step .form-fields .field-s-radio .item-group,
+.steps-container .form-steps .form-step .form-fields .field-duration .item-group {
+  display: inline-block;
+  width: 390px;
+  height: 34px;
+  margin-left: 9px;
+}
+
+.steps-container .form-steps .form-step .form-fields .field-s-radio .radio-item,
+.steps-container .form-steps .form-step .form-fields .field-duration .radio-item {
+  display: inline-block;
+  padding: 5px 14px;
+  margin: 2px 4px;
+  font-size: 12px;
+  color: #747474;
+  cursor: pointer;
+  background: #EFEFEF;
+  border-radius: 16px;
+}
+
+.steps-container .form-steps .form-step .form-fields .field-s-radio .radio-item:hover,
+.steps-container .form-steps .form-step .form-fields .field-duration .radio-item:hover {
+  background: #DAD8D8;
+}
+
+.steps-container .form-steps .form-step .form-fields .field-s-radio .radio-item.active,
+.steps-container .form-steps .form-step .form-fields .field-duration .radio-item.active {
+  color: white;
+  background: #69bfeb;
+}
+
+.steps-container .form-steps .form-step .form-fields .ip-input-area {
+  width: 350px;
+  margin-left: 75px;
+}
+
+.steps-container .form-steps .form-step .form-fields .ip-input-area .ip-select {
+  position: relative;
+  float: left;
+  width: 340px;
+  max-height: 150px;
+  padding-left: 10px;
+}
+
+.steps-container .form-steps .form-step .form-fields .ip-input-area .ip-select .ip-error-tip {
+  color: #E36F6F;
+}
+
+.steps-container .form-steps .form-step .form-fields .ip-input-area .ip-select .ip-select-area {
+  position: relative;
+}
+
+.steps-container .form-steps .form-step .form-fields .ip-input-area .ip-select .ip-select-area .ip-input {
+  padding: 3px;
+}
+
+.steps-container .form-steps .form-step .form-fields .ip-input-area .ip-select .ip-select-area .ip-input.selected {
+  border: 1px solid #29AAEE;
+}
+
+.steps-container .form-steps .form-step .form-fields .ip-input-area .ip-select .ip-select-area .ip-input.selected.invalid {
+  border: 1px solid #E36F6F;
+}
+
+.steps-container .form-steps .form-step .form-fields .ip-input-area .ip-select .ip-select-area .ip-input.selected.valid {
+  background-color: #29AAEE;
+}
+
+.steps-container .form-steps .form-step .form-fields .ip-input-area .ip-select .ip-select-area .select-cancel {
+  position: absolute;
+  top: 10px;
+  right: 40px;
+  width: 25px;
+  height: 25px;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 25px;
+  cursor: pointer;
+}
+
+.steps-container .form-steps .form-step .form-fields .ip-input-area .ip-select .ip-select-area .select-cancel:hover {
+  text-shadow: 0 0 20px #000;
+  transition: text-shadow 0.5s;
+}
+
+.steps-container .form-steps .form-step .form-fields .ip-input-area .invalidate-tips {
+  color: #E36F6F;
+}
+
+.steps-container .form-steps .form-step .form-fields .field-complex-select .select-list-area .list-item.active .btn-group a {
+  color: #EEEEEE;
+}
+
+.steps-container .form-steps .form-step .form-fields .field-complex-select .select-list-area .list-item.active .btn-group a:hover {
+  text-decoration: none;
+}
+
+.steps-container .form-steps .form-step .form-fields .field-complex-select .select-list-area .list-item .btn-group a {
+  margin-left: 5px;
+}
+
+.steps-container .form-steps .form-step .form-fields .field-complex-select .select-list-area .list-item .btn-group a:hover {
+  text-decoration: none;
+}
+
+.steps-container .form-steps .form-step .form-fields .field-complex-select .select-list-area .list-item .btn-group.open .dropdown-toggle {
+  color: #EEEEEE;
+  background: #29AAEE;
+}
+
+.steps-container .form-steps .form-step .form-fields .field-complex-select .select-list-area .list-item .btn-group.open .dropdown-menu {
+  width: 160px;
+  background-color: #FFFFFF;
+}
+
+.steps-container .form-steps .form-step .form-fields .field-complex-select .select-list-area .list-item .btn-group.open .dropdown-menu li {
+  height: 22px;
+  padding-left: 3px;
+  line-height: 22px;
+  color: #29AAEE;
+}
+
+.steps-container .form-steps .form-step .form-fields .field-complex-select .select-list-area .list-item .btn-group.open .dropdown-menu li:hover {
+  background-color: #E6F0F6;
+}
+
+.steps-container .form-steps .form-step .form-fields .field-complex-select .select-list-area .list-item .btn-group.open .dropdown-menu li.selected {
+  color: #EEEEEE;
+  background-color: #29AAEE;
+}
+
+.steps-container .form-steps .form-step .form-fields .field-muti-select label,
+.steps-container .form-steps .form-step .form-fields .field-complex-select label {
+  float: left;
+  width: 70px;
+  margin-top: 12px;
+  margin-right: 5px;
+  text-align: right;
+}
+
+.steps-container .form-steps .form-step .form-fields .field-muti-select .select-list-area,
+.steps-container .form-steps .form-step .form-fields .field-complex-select .select-list-area {
+  float: left;
+  width: 340px;
+  max-height: 250px;
+  min-height: 135px;
+  padding-left: 10px;
+  overflow-y: auto;
+}
+
+.steps-container .form-steps .form-step .form-fields .field-muti-select .select-list-area .list-item,
+.steps-container .form-steps .form-step .form-fields .field-complex-select .select-list-area .list-item {
+  width: 98%;
+  height: 30px;
+  padding-left: 5%;
+  margin: 5px 0;
+  line-height: 30px;
+  color: #29AAEE;
+  list-style: none;
+  cursor: pointer;
+  background-color: white;
+  border: 1px solid #C5DEEB;
+  border-radius: 3px;
+}
+
+.steps-container .form-steps .form-step .form-fields .field-muti-select .select-list-area .list-item:hover,
+.steps-container .form-steps .form-step .form-fields .field-complex-select .select-list-area .list-item:hover {
+  background-color: #E6F0F6;
+}
+
+.steps-container .form-steps .form-step .form-fields .field-muti-select .select-list-area .list-item.active,
+.steps-container .form-steps .form-step .form-fields .field-complex-select .select-list-area .list-item.active {
+  color: #EEEEEE;
+  background-color: #29AAEE;
+  border-color: #29AAEE;
+}
+
+.steps-container .form-steps .form-step .form-fields .field-muti-select .select-list-area .list-item.list-null,
+.steps-container .form-steps .form-step .form-fields .field-complex-select .select-list-area .list-item.list-null {
+  color: #E43E3E;
+}
+
+.steps-container .form-steps .form-step .form-fields .field-muti-select .clear,
+.steps-container .form-steps .form-step .form-fields .field-complex-select .clear {
+  clear: both;
+}
+
+.steps-container .form-steps .form-step .form-fields .field-muti-select .error-tips,
+.steps-container .form-steps .form-step .form-fields .field-complex-select .error-tips {
+  width: 100%;
+  padding-left: 110px;
+  color: #E43E3E;
+}
+
+.form-flat-view .form-step-summ {
+  padding-bottom: 5px;
+  margin-left: 18px;
+  font-size: 14px;
+  border-bottom: 1px solid #F4F5F6;
+}
+
+.form-warning {
+  margin: 5px 7% 5px;
+  color: red;
+}

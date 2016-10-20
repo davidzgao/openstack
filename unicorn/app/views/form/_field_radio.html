@@ -1,0 +1,12 @@
+<div class="field-custom-radio">
+  <label>{{field.label | i18n}}</label>
+  <span ng-repeat="item in sources"
+    ng-show="item.available"
+    ng-click="switchRatio(item.value, $index)"
+    class="radio-item"
+    ng-class="{true: 'active'}[field.value==item.value]">
+    {{item.name | i18n}}
+  </span>
+  <div ng-if="field.invalidate" class="err_tips">
+      {{field.error_tips}}</div>
+</div>

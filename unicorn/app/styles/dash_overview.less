@@ -1,0 +1,259 @@
+/* Space out content a bit */
+@import "variables.less";
+
+.unicorn-dashboard-overview {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+
+  .overview-item {
+    position: relative;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .item-title {
+    padding-left: 40px;
+    height: 36px;
+    line-height: 36px;
+    background-position: 16px center;
+    background-repeat: no-repeat;
+    position: relative;
+
+    .item-more {
+      float: right;
+      margin-right: 20px;
+
+      a {
+        color: #888;
+        text-decoration: none;
+
+        &:hover {
+          color: #666;
+        }
+      }
+    }
+  }
+
+  .apply-quota {
+    float: right;
+    font-size: 12px;
+    margin-top: -25px;
+    margin-right: 30px;
+    padding-right: 8px;
+    position: relative;
+  }
+
+  .service-list {
+    .item-title {
+      background-image: url(../images/dashboard/overview/services.png);
+    }
+
+    .services {
+      text-align: center;
+      margin-top: 30px;
+
+      .item {
+        display: inline-block;
+        text-decoration: none;
+        color: #888;
+        margin: 5px 3%;
+        width: 200px;
+        height: 120px;
+        padding-top: 90px;
+        border: 1px solid #f0f0f0;
+        cursor: pointer;
+        background-position: center 25px;
+        background-repeat: no-repeat;
+
+        &:hover {
+          background-color: #e7f4f8;
+        }
+
+        .content {
+          display: block;
+          height: 27px;
+          font-weight: 800px;
+        }
+
+        &.instance-applay {
+          background-image: url(../images/dashboard/overview/instance.png);
+        }
+
+        &.volume-applay {
+          background-image: url(../images/dashboard/overview/volume.png);
+        }
+
+        &.floatingIp-applay {
+          background-image: url(../images/dashboard/overview/floatingIp.png);
+        }
+      }
+    }
+  }
+
+  .resource-quota {
+    margin-top: 10px;
+    .item-title {
+      background-image: url(../images/dashboard/overview/quota.png);
+    }
+  }
+
+  .recent {
+    margin-bottom: 10px;
+
+    .recent-operation {
+      margin-top: 10px;
+      width: 50%;
+      float: left;
+
+      .item-title {
+        background-image: url(../images/dashboard/overview/recentOp.png);
+      }
+
+      .logs {
+        margin: 0 10px;
+      }
+    }
+
+    .empty-item {
+      margin-top: 20px;
+      text-align: center;
+      color: #aaa;
+      font-style: italic;
+    }
+
+    .item {
+      position: relative;
+      border-bottom: 1px solid #f0f0f0;
+      height: 30px;
+      line-height: 30px;
+
+      .content {
+        padding-left: 10px;
+        padding-right: 120px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .time {
+        position: absolute;
+        top: 0;
+        right: 5px;
+        width: 120px;
+        text-align: right;
+      }
+    }
+
+    .middle-split {
+      position: absolute;
+      left: 50%;
+      width: 1px;
+      background-color: #f0f0f0;
+      height: 100%;
+    }
+
+    .recent-alarm {
+      margin-top: 10px;
+      width: 50%;
+      float: right;
+
+      .item-title {
+        background-image: url(../images/dashboard/overview/alarm.png);
+      }
+
+      .alarms {
+        margin: 0 10px;
+      }
+    }
+  }
+}
+
+.quota {
+  margin-top: 30px;
+  width: 100%;
+  overflow-x: auto;
+  text-align: center;
+  white-space:nowrap;
+
+  & > .usage-item {
+    text-align: center;
+    display: inline-block;
+    margin: 10px 3%;
+  }
+
+  & > .usage-item > .resource-usage {
+    height: 100px;
+    width: 100px;
+    display: inline-block;
+    line-height: 100px;
+    text-align: center;
+  }
+
+  & > .usage-item > .resource-usage .sector-outer {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    background-color: #dfdfdf;
+    text-align: center;
+    line-height: 50px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  & > .usage-item > .resource-usage .sector-inner {
+    width: 84px;
+    height: 84px;
+    border-radius: 42px;
+    background-color: #ffffff;
+    position: absolute;
+    margin-top: 8px;
+    margin-left: 8px;
+    text-align: center;
+    font-size: 12px;
+
+    & >span {
+      display: inline-block;
+      margin-top: 20px;
+    }
+
+    & >span:first-child.ok {
+      font-size: 16px;
+      color: #269bd8;
+    }
+    & >span:first-child.warn {
+      font-size: 16px;
+      color: red;
+    }
+    & >span:last-child {
+      font-size: 12px;
+      color: #888;
+    }
+  }
+
+  & > .usage-item > .resource-usage svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  & > .usage-item > .resource-usage svg path {
+    stroke-width: 0;
+    fill-opacity: 1;
+  }
+
+  & > .usage-item > .resource-usage svg path.ok {
+    fill: #269bd8;
+  }
+
+  & > .usage-item > .resource-usage svg path.warn {
+    stroke-width: 0;
+    fill: #f65e5e;
+    fill-opacity: 1;
+  }
+
+  & > .usage-item > .usage-item-name {
+    margin-top: 20px;
+    color: #555555;
+  }
+}

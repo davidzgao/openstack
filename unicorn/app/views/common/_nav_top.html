@@ -1,0 +1,78 @@
+<div class="top-bar-navigator">
+  <div class="navigator-tools">
+    <div class="unicorn-nav-user-select-region {{multiRegion}}"
+      ng-class="{true: 'clicked'}[showRegions]"
+      tabindex="1"
+      ng-click="selectRegion()"
+      ng-blur="regionBlur()"
+      >
+      <a title="{{currentRegion.name}}">
+        {{currentRegion.name|limit: 5}}
+      </a>
+    <div class="unicorn-region-list" ng-show="showRegions">
+      <div ng-repeat="region in otherRegions"
+        class="region-item"
+        ng-click="switchRegion(region.name)">
+        {{region.name}}
+      </div>
+    </div>
+    </div>
+
+    <div ng-blur="dashboardBlur()"
+      class="unicorn-nav-user-select-dashboard {{showSelect?'active':''}}" tabindex="2">
+      <div title="{{selectedDashboard}}" ng-click="selectDashboard()" class="unicorn-current-dashboard">{{currentProject|limit: 8}}</div>
+      <div class="unicorn-dashboard-list" ng-show="showSelect">
+        <div class="recent">
+          <div ng-repeat="pro in dash.recProjects" title="{{pro.name}}"
+               class="item {{pro.isActive?'active':''}}"
+               ng-click="selectedProject(pro.id, pro.name)">
+            <div class="field">{{pro.name|limit: 15}}</div>
+          </div>
+        </div>
+        <div class="project-more" ng-if="enoughProjects">
+          <div class="more" ng-click="dashMouseEnter(slug)">&lt;&lt;&nbsp;{{note.more}}</div>
+          <div class="unicorn-dash-project" ng-show="dash.show">
+            <div class="all-projects">
+              <div class="tool-search">
+                <input class="search-input"
+                       ng-focus="inputFocus()"
+                       ng-blur="inputBlur()"
+                       ng-change="searchProjects()" ng-model="dash.search" />
+              </div>
+              <div class="project-list">
+                <div ng-repeat="pro in dash.projects" title="{{pro.name}}"
+                     class="item {{pro.isActive?'active':''}}"
+                     ng-show="pro.isShow"
+                     ng-click="selectedProject(pro.id, pro.name)">
+                  <div class="field">{{pro.name}}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div ng-blur="userSettingBlur()" ng-click="userSetting.list()"
+      class="user" tabindex="3">
+        <div class="content" ng-bind="user.name">
+        </div>
+        <div class="user-info-list" ng-show="userSetting.show">
+          <div class="info-item">
+            <div ng-click="showUserInfo()"
+              class="user-setting">{{userSetting.info}}</div>
+          </div>
+        </div>
+    </div>
+    <div class="guide"><a target="_blank" href="../../manual/guide.html">{{guide}}</a></div>
+    <div class="user-logout"
+         action-enable="true"
+         allow-empty-items="true"
+         submit-confirm-action="{{note.logout}}"
+         submit-confirm="logout()" > </div>
+  </div>
+ <div class="loading-change-dashboard" ng-show="showLoading">
+   <div class="backend"></div>
+   <div class="http-loader"></div>
+   <div class="http-loader__wrapper"></div>
+ </div>
+</div>

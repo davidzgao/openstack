@@ -1,0 +1,7 @@
+<div class='detail_tab'>
+    <ul>
+        <li ng-repeat='tab in detail_tabs' ng-class=tab.active ng-if=tab.available><a ui-sref='{{tab.url}}'>{{tab.name}}</a></li>
+  </ul>
+</div>
+<div ui-view class="detail_continer"></div>
+<div ng-click='panel_close()' class='close-detail'>&times</div>

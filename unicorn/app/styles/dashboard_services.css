@@ -1,0 +1,49 @@
+.service-list-panel {
+  padding: 10px 30px;
+}
+
+.service-list-panel .service-item {
+  position: relative;
+  float: left;
+  width: 160px;
+  height: 120px;
+  text-align: center;
+  list-style: none;
+  cursor: pointer;
+}
+
+.service-list-panel .service-item .item-image {
+  width: 100%;
+  height: 100px;
+  background: url(../images/dashboard/overview/app.png) no-repeat;
+  background-position: 50%;
+}
+
+.service-list-panel .service-item .item-image.create_instance {
+  background: url(../images/dashboard/overview/instance.png) no-repeat;
+  background-position: 50%;
+}
+
+.service-list-panel .service-item .item-image.create_volume {
+  background: url(../images/dashboard/overview/volume.png) no-repeat;
+  background-position: 50%;
+}
+
+.service-list-panel .service-item .item-image.create_floating_ip {
+  background: url(../images/dashboard/overview/floatingIp.png) no-repeat;
+  background-position: 50%;
+}
+
+.service-list-panel .service-item .item-image.quota_request {
+  background: url(../images/dashboard/overview/quota_apply.png) no-repeat;
+  background-position: 50%;
+}
+
+.service-list-panel .service-item .item-image.instance_due_time_extend {
+  background: url(../images/dashboard/overview/pre_long.png) no-repeat;
+  background-position: 50%;
+}
+
+.service-list-panel .clear {
+  clear: both;
+}

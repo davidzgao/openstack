@@ -1,0 +1,17 @@
+<div class="unicorn-dashboard-log ui-view-container">
+    <div class="statistic-query">
+      <div class='ui-select'>
+      <select ng-model="query.year"
+        ng-options="year for year in yearList">
+      </select>
+      </div>
+      <div class='ui-select'>
+      <select ng-model="query.month"
+        ng-options="month.index as month.name for month in monthNames">
+      </select>
+      </div>
+      <button class='btn btn-enable query'
+        ng-click="queryLogs()">{{note.query}}</button>
+    </div>
+  <div datatable='logOpts'></div>
+</div>

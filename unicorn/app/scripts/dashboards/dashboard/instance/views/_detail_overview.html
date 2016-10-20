@@ -1,0 +1,89 @@
+<div detail-tips
+  detail="server_detail">
+</div>
+<div class='base_info detail_info'>
+  <div class='detail_title'>{{ detailItem.info }}</div>
+  <div class='detail_area'>
+    <ul>
+      <li>
+        <span class="title">{{detailItem.item.name}}</span>
+        <span class="value"> {{server_detail.name}}</span>
+      </li>
+      <li>
+        <span class="title">{{ detailItem.item.id }}</span>
+        <span class="value">{{server_detail.id}}</span>
+      </li>
+      <li>
+        <span class="title">{{ detailItem.item.status }}</span>
+        <span class="value">
+          <span class="status" ng-class="server_detail.statusClass"></span>
+          {{server_detail.status}}</span>
+      </li>
+      <li ng-if="server_detail.image_name">
+        <span class="title">{{ detailItem.item.image }}</span>
+        <span class="value" dynamic="server_detail.imageName"></span>
+      </li>
+      <li ng-if="!server_detail.image_name">
+        <span class="title">{{ detailItem.item.image }}</span>
+        <span class="value">{{server_detail.imageName}}</span>
+      </li>
+      <li>
+        <span class="title">{{ detailItem.item.create_at }}</span>
+        <span class="value">{{server_detail.created | dateLocalize | date: "yyyy-MM-dd HH:mm"}}</span>
+      </li>
+      <li>
+        <span class="title">{{ detailItem.item.fixed }}</span>
+        <span class="value">
+          <span class='ip-list' ng-repeat='ip in server_detail.fixed'>{{ip}}</span>
+        </span>
+      </li>
+      <li>
+        <span class="title">{{ detailItem.item.floating }}</span>
+        <span class="value">
+          <span class='ip-list' ng-repeat='ip in server_detail.floating'>{{ip}}</span>
+          <span class='ip-list' ng-if="server_detail.floating.length==0">{{detailItem.noneFloating}}</span>
+        </span>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class='other_info detail_info'>
+    <div class='detail_title'>{{ detailItem.flavorInfo }}</div>
+  <div class='detail_area'>
+    <ul>
+      <li>
+        <span class="title">{{detailItem.flavorItem.cpu}}</span>
+        <span class="value"> {{server_detail.vcpus}}</span>
+      </li>
+      <li>
+        <span class="title">{{ detailItem.flavorItem.ram }}</span>
+        <span class="value">{{server_detail.ram | unitSwitch}} GB</span>
+      </li>
+      <li>
+        <span class="title">{{ detailItem.flavorItem.disk }}</span>
+        <span class="value">{{server_detail.disk}}</span>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class='other_info detail_info'>
+    <div class='detail_title'>{{ detailItem.volumeInfo }}</div>
+  <div class='detail_area'>
+    <ul ng-if="server_detail.volumes.length>0">
+      <li>
+        <span class="title">{{ detailItem.volume }}</span>
+        <span class="value">{{ detailItem.attachTo }}</span>
+      </li>
+      <li ng-repeat="vol in server_detail.volumes">
+        <span class="title">
+          <a ui-sref="dashboard.volume.volumeId.overview({volumeId:vol.volume_id})">{{vol.volume_name||vol.volume_id}}</a>
+        </span>
+        <span class="value"> {{vol.device}}</span>
+      </li>
+    </ul>
+    <div ng-if="server_detail.volumes.length==0"
+      class="null-tips-in-detail">{{detailItem.noneVolume}}</div>
+  </div>
+</div>

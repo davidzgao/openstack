@@ -1,0 +1,188 @@
+@import "loading.less";
+
+.register-main {
+  background-color: #DEDDDD;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  min-width: 500px;
+  min-height: 600px;
+  .register-success {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    padding: 15px 20px;
+    margin-left: -200px;
+    margin-top: -180px;
+    .success-title {
+      font-size: 20px;
+      padding: 10px 10px 10px 35px;
+      background: url(../images/login/register_success.png) no-repeat left center;
+    }
+    .failed-title {
+      font-size: 20px;
+      padding: 10px 10px 10px 35px;
+      background: url(../images/login/register_success.png) no-repeat left center;
+    }
+    .success-tips {
+      font-size: 14px;
+      height: 100px;
+      p {
+        padding-left: 35px;
+      }
+    }
+  }
+  .register-container {
+    position: absolute;
+    background-color: white;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    border: 1px solid #DDDDDD;
+    border-radius: 5px;
+    box-shadow: 8px 6px 10px #AAAAAA;
+    padding: 15px 20px;
+    margin-left: -250px;
+    margin-top: -180px;
+    .close-button {
+      position: absolute;
+      right: 5px;
+      top: 10px;
+      font-size: 20px;
+      width: 25px;
+      height: 25px;
+      cursor: pointer;
+      line-height: 25px;
+    }
+    .register-header {
+      font-size: 18px;
+    }
+    .register-field-area {
+      padding: 10px;
+      ul {
+        padding: 0px;
+        margin: 0px;
+        li {
+          list-style: none;
+        }
+      }
+      .register-field {
+        height: auto;
+        width: 100%;
+        position: relative;
+        span {
+          display: inline-block;
+        }
+        .field-title {
+          width: 120px;
+          text-align: right;
+          padding-right: 10px;
+        }
+        .field-input {
+          input {
+            width: 246px;
+            padding: 8px 3px 8px 30px;
+            margin: 5px 0;
+            font-size: 12px;
+            line-height: 14px;
+            background-position: 8px center;
+            background-repeat: no-repeat;
+            border: 1px solid rgb(221, 221, 221);
+            border-radius: 4px;
+            &.username {
+              background-image: url(../images/login/username.png);
+            }
+            &.email {
+              background-image: url(../images/login/register_icon_email.png);
+            }
+            &.password {
+              background-image: url(../images/login/password.png);
+            }
+            &:focus {
+              border-color: #67B3DA;
+              outline: none;
+            }
+            &.invalid {
+              border-color: #E37984;
+            }
+          }
+        }
+        .field-status {
+          width: 30px;
+          height: 20px;
+          position: absolute;
+          top: 7px;
+          background-position: 5px bottom;
+          background-repeat: no-repeat;
+          &.error {
+            background-image: url(../images/login/register_field_error.png);
+          }
+          &.correct {
+            background-image: url(../images/login/register_field_success.png);
+          }
+
+        }
+        .register-submit {
+           width: 246px;
+           padding: 5px 0px;
+           font-size: 14px;
+           font-weight: 800;
+           color: white;
+           text-align: center;
+           background-color: #1F90C8;
+           border: 1px solid #1190C8;
+           border-radius: 4px;
+           &:focus {
+             outline: none;
+           }
+        }
+      }
+      .register-status-area {
+        height: 35px;
+        padding-left: 120px;
+        position: relative;
+          .loading-area {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          margin-left: -95px;
+
+          .login-loading {
+            position: absolute;
+            left: 50%;
+            margin-left: -20px;
+            top: 50%;
+            margin-top: -20px;
+            width: 40px;
+            height: 40px;
+            background-size: 80%;
+            background: url(../images/login/loading.png) center no-repeat;
+            .loading();
+          }
+
+          .login-loading-image {
+            position: absolute;
+            top: 50%;
+            margin-top: -20px;
+            left: 50%;
+            margin-left: -20px;
+            width: 40px;
+            height: 40px;
+            background-size: 40%;
+            background: url(../images/login/loading_image.png) center no-repeat;
+          }
+        }
+      }
+    }
+  }
+
+  .unicorn-copyright-area {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 30px;
+    background-color: #D0D0D0;
+    border-top: 1px solid #B1B1B1;
+  }
+}

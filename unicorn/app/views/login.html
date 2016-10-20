@@ -1,0 +1,42 @@
+<div class="unicorn-before-login">
+  <desktop-token></desktop-token>
+  <div class="unicorn-login-main">
+    <form method='post' action='' form-autofill-fix ng-submit="login()">
+      <div class="logo-area">
+        <div class="platform-area" ng-bind="note.platform"></div>
+      </div>
+      <div class="input-area">
+        <div class="input-username">
+          <input ng-model="auth.username.text"
+                 type="text"
+                 maxlength="18"
+                 ng-class="auth.username.invalid"
+                 class="input-username-field input-field" />
+        </div>
+        <div class="input-password">
+          <input ng-model="auth.password.text"
+                 maxlength="18"
+                 type="password"
+                 ng-class="auth.password.invalid"
+                 class="input-password-field input-field" />
+        </div>
+        <div class="submit-area">
+          <button class="input-submit" ng-disabled="disableLogin"
+              type="submit"></button>
+          <div class="loading-area" ng-show="showLoading">
+            <div class="login-loading"></div>
+            <div class="login-loading-image"></div>
+          </div>
+        </div>
+      </div>
+      <div class="bottom-link-area">
+        <a class="item-link first" ng-bind="note.forgetPass" ui-sref="retrievepassword"></a>
+        &nbsp;&nbsp;<a class="item-link" ng-bind="note.register" ui-sref="register"></a>
+      </div>
+      <div class="submit-loading-area">
+        <div ng-show="auth.username.invalid || auth.password.invalid" class="submit-invalid">* {{validator.note}}</div>
+      </div>
+    </form>
+  </div>
+  <div class="unicorn-copyright-area"></div>
+</div>

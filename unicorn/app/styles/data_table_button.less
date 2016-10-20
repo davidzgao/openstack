@@ -1,0 +1,505 @@
+@import "variables.less";
+
+.action_group {
+  margin: 16px 0;
+  .btn {
+    line-height: 20px;
+    vertical-align: middle;
+    font-size: 12px;
+    margin: 0px 10px 0 0;
+    i {
+      width: 15px;
+      height: 15px;
+      display: inline-block;
+      float: left;
+      margin-top: 3px;
+      margin-left: 7px;
+      margin-right: 5px;
+    }
+  }
+
+  .tabSearch {
+    display: inline-block;
+    position: absolute;
+    right: 20px;
+    .search {
+      border-radius: 13px;
+      font-size: 12px;
+      line-height: 16px;
+      vertical-align: middle;
+      padding: 5px 3px 5px 20px;
+      border: 1px solid #d0d0d0;
+      outline: none;
+      background: url('../images/actions/action_search.png') no-repeat left center;
+      background-position-x: 5px;
+
+      &:focus {
+        border-color: #28a9ee;
+        outline: none;
+      }
+    }
+  }
+
+  .search-option {
+    position: absolute;
+    right: 20px;
+    top: 16px;
+
+    .search {
+      border-radius: 13px;
+      font-size: 12px;
+      line-height: 16px;
+      vertical-align: middle;
+      padding: 5px 3px 5px 20px;
+      border: 1px solid #d0d0d0;
+      outline: none;
+
+      &:hover {
+        outline: none;
+      }
+    }
+  }
+}
+
+.btn {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 8px;
+  padding-right: 15px;
+  &:active {
+    -webkit-box-shadow: none;
+    box-shandow: none;
+    outline: none;
+  }
+  &:focus {
+    outline: none;
+    color: @BUTTON_DISABLED_TEXT_COLOR;
+  }
+  &:active:focus {
+    outline: none;
+  }
+
+  &.more {
+    padding-left: 15px;
+    i{
+      width: 15px;
+      height: 15px;
+      display: inline-block;
+      float: left;
+      margin-top: 4px;
+      margin-left: 7px;
+      margin-right: 3px;
+      background: url('../images/action_more_hover.png') no-repeat;
+    }
+  }
+}
+
+.btn-disable {
+  background: @BUTTON_DISABLED_BG;
+  color: @BUTTON_DISABLED_TEXT_COLOR;
+  cursor: not-allowed;
+  border: none;
+  &:hover {
+    color: @BUTTON_DISABLED_TEXT_COLOR;
+  }
+  &.download {
+    i{
+      background: url('../images/action_download_disabled.png') no-repeat;
+    }
+  }
+  &.del {
+    i{
+      background: url(../images/actions/action_delete_disable.png) no-repeat;
+    }
+  }
+  &.bind {
+    display: inline-block;
+    color: @BUTTON_DISABLED_TEXT_COLOR;
+    i{
+      background: url(../images/actions/action_bind_disable.png) no-repeat;
+    }
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  &.unbind {
+    display: inline-block;
+    color: @BUTTON_DISABLED_TEXT_COLOR;
+    i{
+      background: url(../images/actions/action_unbind_disable.png) no-repeat;
+    }
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  &.attach {
+    display: inline-block;
+    color: @BUTTON_DISABLED_TEXT_COLOR;
+    i{
+      background: url(../images/actions/action_attach_disable.png) no-repeat;
+    }
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  &.detach {
+    display: inline-block;
+    color: @BUTTON_DISABLED_TEXT_COLOR;
+    i{
+      background: url(../images/actions/action_detach_disable.png) no-repeat;
+    }
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  &.poweron {
+    display: inline-block;
+    color: @BUTTON_DISABLED_TEXT_COLOR;
+    i{
+      background: url('../images/actions/action_instance_poweron_dis.png') no-repeat;
+    }
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  &.poweroff {
+    display: inline-block;
+    color: @BUTTON_DISABLED_TEXT_COLOR;
+    i{
+      background: url('../images/actions/action_instance_poweroff_dis.png') no-repeat;
+    }
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  &.edit {
+    display: inline-block;
+    color: @BUTTON_DISABLED_TEXT_COLOR;
+    i{
+      margin-top: 4px;
+      background: url('../images/actions/action_edit_disable.png') no-repeat;
+    }
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  &.vnc {
+    a {
+      display: inline-block;
+      color: @BUTTON_DISABLED_TEXT_COLOR;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+    i{
+      background: url('../images/action_vnc.png') no-repeat;
+    }
+  }
+  &.read {
+    i{
+      background: url('../images/action_read_disable.png') no-repeat;
+    }
+  }
+  &.restore {
+    i{
+      background: url('../images/actions/action_restore.png') no-repeat;
+    }
+  }
+}
+
+.btn-enable {
+  background: @BUTTON_ENABLED_BG;
+  background-color: @BUTTON_ENABLED_BG;
+  color: @BUTTON_ENABLED_TEXT_COLOR;
+  border: none;
+
+  &.addFloatingIp, &.bind {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    i{
+      background: url(../images/actions/action_bind_enable.png) center no-repeat;
+    }
+  }
+  &.removeFloatingIp, &.unbind {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    i{
+      background: url(../images/actions/action_unbind_enable.png) center no-repeat;
+    }
+  }
+  &.detach {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    i{
+      background: url(../images/actions/action_detach_enable.png) center no-repeat;
+    }
+  }
+
+  &.attach {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    i{
+      background: url(../images/actions/action_attach_enable.png) center no-repeat;
+    }
+  }
+
+  &.snapshot {
+    padding-left: 5px;
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    i{
+      background: url('../images/action_back.png') center no-repeat;
+    }
+  }
+
+  &.create {
+    padding-left: 5px;
+    a {
+      display: block;
+      text-decoration: none;
+      color: #fff;
+    }
+    i{
+      background: url(../images/actions/action_apply_enable.png) no-repeat;
+    }
+  }
+  &.prolong_time {
+    padding-left: 5px;
+    a {
+      display: block;
+      text-decoration: none;
+      color: #fff;
+    }
+    i{
+      background: url(../images/actions/action_extend_time.png) no-repeat;
+    }
+  }
+  &.edit {
+    a {
+      display: block;
+      text-decoration: none;
+      color: #fff;
+    }
+    i{
+      margin-top: 4px;
+      background: url(../images/actions/action_edit.png) no-repeat;
+    }
+  }
+  &:hover {
+    background-color: @BUTTON_HOVER_BG;
+    color: @BUTTON_ENABLED_TEXT_COLOR;
+  }
+  &:focus {
+    outline: none;
+    color: @BUTTON_ENABLED_TEXT_COLOR;
+  }
+  &.download {
+    padding-left: 5px;
+    background-color: @BUTTON_ENABLED_BG;
+    i{
+      background: url('../images/action_download.png') no-repeat;
+    }
+    &:hover {
+      background-color: @BUTTON_HOVER_BG;
+      color: @BUTTON_ENABLED_TEXT_COLOR;
+    }
+  }
+  &.del {
+    background-color: @BUTTON_DANGER_BG;
+    i {
+      background: url(../images/actions/action_delete_enable.png) no-repeat;
+    }
+    &:hover {
+      background-color: #D25662;
+    }
+  }
+  &.restore {
+    i {
+      background: url('../images/actions/action_restore_hover.png') no-repeat;
+    }
+  }
+  &.poweron {
+    i{
+      background: url('../images/actions/action_instance_poweron.png') no-repeat;
+    }
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  &.poweroff {
+    i{
+      background: url('../images/actions/action_instance_poweroff.png') no-repeat;
+    }
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  &.read {
+    i{
+      background: url('../images/action_read_hover.png') no-repeat;
+    }
+  }
+  &.fresh {
+    i{
+      background: url(../images/actions/action_refresh.png) no-repeat;
+    }
+  }
+}
+
+.btn-group.open .dropdown-toggle {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  background: @BUTTON_ENABLED_BG;
+  color: @BUTTON_ENABLED_TEXT_COLOR;
+}
+
+.btn-group.open .dropdown-toggle.btn-default {
+  background: @BUTTON_ENABLED_BG;
+  background-color: @BUTTON_ENABLED_BG;
+  color: @BUTTON_ENABLED_TEXT_COLOR;
+}
+
+.btn-group {
+   margin-right: 0px;
+   .caret {
+     margin-left: 5px;
+     margin-right: 3px;
+   }
+   open .dropdown-toggle {
+   }
+  .dropdown-menu {
+    border-radius: 0;
+    padding: 0;
+    min-width: 104px;
+    background-color: #515151;
+    li {
+      font-size: 12px;
+      display: block;
+      &.split-line {
+        height: 1px;
+        background: #C9C9C9;
+      }
+      a {
+        line-height: 20px;
+        display: block;
+        padding: 3px 10px 3px 7px;
+        cursor: pointer;
+        &.enable {
+          color: #FFFFFF;
+          &:hover {
+            color: #FFFFFF;
+            background-color: #070707;
+          }
+          i {
+            width: 15px;
+            height: 15px;
+            margin-top: 2px;
+            margin-right: 3px;
+            margin-left: 4px;
+            display: inline-block;
+            float: left;
+            &.reboot {
+              background: url('../images/actions/action_instance_reboot.png') no-repeat left center;
+            }
+            &.snapshot {
+              background: url('../images/actions/action_instance_snapshot.png') no-repeat left center;
+            }
+            &.resize {
+              background: url('../images/actions/action_instance_resize.png') no-repeat left center;
+            }
+            &.addFloatingIp {
+              background: url('../images/actions/action_instance_addfloating.png') no-repeat left center;
+            }
+            &.removeFloatingIp {
+              background: url('../images/actions/action_instance_removefloating.png') no-repeat left center;
+            }
+            &.attach_volume {
+              background: url('../images/actions/action_instance_addvolume.png') no-repeat left center;
+            }
+            &.detach_volume {
+              background: url('../images/actions/action_instance_removevolume.png') no-repeat left center;
+            }
+            &.delete {
+              background: url('../images/actions/action_delete.png') no-repeat left center;
+            }
+            &.open_gateway {
+              background: url('../images/actions/opengateway.png') no-repeat left center;
+            }
+            &.clear_gateway {
+              background: url('../images/actions/closegateway.png') no-repeat left center;
+            }
+            &.add_interface {
+              background: url('../images/actions/connect.png') no-repeat left center;
+            }
+          }
+        }
+        &.disabled {
+          color: @BUTTON_DISABLED_TEXT_COLOR;
+          cursor: not-allowed;
+          &:hover {
+            background-color: #515151;
+          }
+          i {
+            width: 15px;
+            height: 15px;
+            margin-top: 2px;
+            margin-right: 3px;
+            margin-left: 4px;
+            display: inline-block;
+            float: left;
+            &.reboot {
+              background: url('../images/actions/action_instance_reboot_dis.png') no-repeat left center;
+            }
+            &.snapshot {
+              background: url('../images/actions/action_instance_snapshot_dis.png') no-repeat left center;
+            }
+            &.resize {
+              background: url('../images/actions/action_instance_resize_dis.png') no-repeat left center;
+            }
+            &.addFloatingIp {
+              background: url('../images/actions/action_instance_addfloating_dis.png') no-repeat left center;
+            }
+            &.removeFloatingIp {
+              background: url('../images/actions/action_instance_removefloating_dis.png') no-repeat left center;
+            }
+            &.attach_volume {
+              background: url('../images/actions/action_instance_addvolume_dis.png') no-repeat left center;
+            }
+            &.detach_volume {
+              background: url('../images/actions/action_instance_removevolume_dis.png') no-repeat left center;
+            }
+            &.delete {
+              background: url('../images/actions/action_delete_dis.png') no-repeat left center;
+            }
+            &.open_gateway {
+              background: url('../images/actions/opengateway_disable.png') no-repeat left center;
+            }
+            &.clear_gateway {
+              background: url('../images/actions/closegateway_disable.png') no-repeat left center;
+            }
+            &.add_interface {
+              background: url('../images/actions/connect_disable.png') no-repeat left center;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.edit-btn-group {
+  position: absolute;
+  right: 20px;
+  top: 0px;
+  .btn {
+    margin: 0px 5px;
+    line-height: 20px;
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+}

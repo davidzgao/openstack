@@ -1,0 +1,37 @@
+<div class="unicorn-dashboard-feedback">
+  <div class='common_page_tabs'>
+    <ul>
+      <li ng-repeat="tab in tabs"
+        ng-class="{active:isActiveTab(tab.template)}"
+        class="tab"
+        ng-click="onClickTab(tab)" ng-if="tab.enable">{{tab.title}}</li>
+    </ul>
+  </div>
+
+  <div ng-include="currentTab"></div>
+
+  <script type="text/ng-template" id="untreated.feedback.html">
+    <div class="table-tab ui-view-container" ng-controller='dashboard.feedback.untreatedCtr'>
+      <div class='action_group' action-button buttons="actionButtons"
+        items="selectedItems">
+      </div>
+      <div datatable='untreatedFeedbackOpts' class='instances-table'></div>
+    </div>
+  </script>
+  <script type="text/ng-template" id="processing.feedback.html">
+    <div class="table-tab" ng-controller='dashboard.feedback.processingCtr'>
+      <div class='action_group' action-button buttons="actionButtons"
+        items="selectedItems">
+      </div>
+      <div datatable='processingFeedbackOpts' class='instances-table'></div>
+    </div>
+  </script>
+  <script type="text/ng-template" id="closed.feedback.html">
+    <div class="table-tab" ng-controller='dashboard.feedback.closedCtr'>
+      <div class='action_group' action-button buttons="actionButtons"
+        items="selectedItems">
+      </div>
+      <div datatable='closedFeedbackOpts' class='instances-table'></div>
+    </div>
+  </script>
+</div>

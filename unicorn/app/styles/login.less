@@ -1,0 +1,184 @@
+@import "loading.less";
+
+.unicorn-before-login {
+  position: absolute;
+  background: url(../images/login/back.png) center no-repeat;
+  background-size: 100%;
+  width: 100%;
+  height: 100%;
+  min-height: 600px;
+  min-width: 500px;
+
+  .unicorn-copyright-area {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 30px;
+  }
+
+  .unicorn-login-main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -225px;
+    margin-top: -160px;
+    width: 450px;
+    background: rgba(0, 0, 0, .2);
+    box-shadow: 0 0 1px #888;
+    border-radius: 3px;
+
+    .logo-area {
+      height: 120px;
+      width: 100%;
+      background: url(../images/login/logo.png) 28% center no-repeat;
+    }
+
+    .platform-area {
+      width: 78%;
+      text-align: right;
+      height: 120px;
+      letter-spacing: 2px;
+      line-height: 130px;
+      font-size: 16px;
+      color: #aaa;
+    }
+
+    .input-area {
+      position: relative;
+      text-align: center;
+      width: 70%;
+      margin: 0 auto;
+      border-radius: 3px;
+      background-color: rgba(0, 0, 0, .3);
+
+      .input-field {
+        font-size: 14px;
+        line-height: 14px;
+        width: 86%;
+        padding: 12px 3px 12px 24px;
+        margin: 0 0;
+        border: 0;
+        background-color: transparent;
+        background-repeat: no-repeat;
+        background-position: 2px center;
+
+        &:focus {
+          outline: none;
+
+          &.input-username-field {
+            background-image: url(../images/login/username-hover.png);
+          }
+
+          &.input-password-field {
+            background-image: url(../images/login/password-hover.png);
+          }
+        }
+
+        &.invalid {
+          border-color: #e37984;
+        }
+
+        &.input-username-field {
+          border-bottom: 1px solid rgba(100, 100, 100, .5);
+          background-image: url(../images/login/username.png);
+        }
+
+        &.input-password-field {
+          background-image: url(../images/login/password.png);
+        }
+      }
+    }
+    .submit-loading-area {
+      width: 60%;
+      margin-left: 7%;
+      margin-top: -30px;
+      position: relative;
+      height: 70px;
+
+      .submit-invalid {
+        margin-left: 50px;
+        text-align: left;
+        color: #e37984;
+        height: 27px;
+        line-height: 27px;
+      }
+    }
+
+    .submit-area {
+      position: absolute;
+      text-align: center;
+      width: 24px;
+      height: 48px;
+      border: 4px solid rgba(0, 0, 0, .32);
+      border-right: 0;
+      background-color: rgba(100, 100, 100, .92);
+      right: 0;
+      top: 16px;
+      border-radius: 24px 0 0 24px;
+
+      .input-submit {
+        width: 100%;
+        height: 100%;
+        color: #fff;
+        border: 0;
+        width: 40px;
+        height: 40px;
+        border-radius: 20px;
+        background-color: rgba(39, 128, 176, 1);
+        background-image: url(../images/login/login-back.png);
+        background-repeat: no-repeat;
+        background-position: center;
+
+        &:focus {
+          outline: none;
+        }
+
+        &[disabled] {
+          background-color: #dedede;
+          color: #888;
+          border: 1px solid #dedede;
+        }
+      }
+
+      .loading-area {
+        top: 0;
+        position: absolute;
+
+        .login-loading {
+          width: 40px;;
+          height: 40px;
+          background: url(../images/login/loading.png) center no-repeat;
+          background-size: 100%;
+          .loading();
+        }
+
+        .login-loading-image {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 40px;
+          height: 40px;
+          background-size: 40%;
+          background: url(../images/login/loading_image.png) center no-repeat;
+        }
+      }
+    }
+
+    .bottom-link-area {
+      width: 70%;
+      text-align: right;
+      margin: 8px auto;
+
+      .item-link {
+        text-decoration: none;
+        cursor: pointer;
+        color: #888;
+        font-size: 12px;
+
+        &:hover {
+          color: #aaa;
+        }
+      }
+    }
+  }
+}

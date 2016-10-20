@@ -1,0 +1,47 @@
+.common_page_tabs {
+  margin-top: 10px;
+  margin-left: 15px;
+  height: 34px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid #DDDDDD;
+  ul {
+    margin-bottom: 0px;
+  }
+  li.tab {
+    list-style: none;
+    float: left;
+    height: 34px;
+    line-height: 32px;
+    padding: 0px 10px 0px 10px;
+    margin-right: 16px;
+    color: #888;
+    cursor: pointer;
+    &:hover {
+      color: #666;
+    }
+    &.active {
+      line-height: 30px;
+      border-bottom: 1px solid #29aaee;
+      color: #000;
+    }
+  }
+  li.storage-tab {
+    padding: 0px;
+    a {
+      padding: 0px 15px;
+      color: #696969;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+    &.active {
+      a {
+        color: #000;
+      }
+    }
+  }
+}
+
+.table-tab {
+  padding: 0px 14px;
+}

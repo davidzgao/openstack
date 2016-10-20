@@ -1,0 +1,34 @@
+<div>
+  <div class='common_page_tabs'>
+    <ul>
+      <li ng-repeat="tab in tabs"
+        ng-class="{active:isActiveTab(tab.template)}"
+        class="tab"
+        ng-click="onClickTab(tab)" ng-if="tab.enable">{{tab.title}}</li>
+    </ul>
+  </div>
+
+  <div ng-include="currentTab"></div>
+
+  <script type="text/ng-template" id="unread.tpl.html">
+    <div class='table-tab' ng-controller='dashboard.workflow_log.UnreadLogCtr'>
+        <div class='action_group' action-button buttons="actionButtons"
+          items="selectedItems">
+        </div>
+
+      <div datatable='unreadLogOpts' class="instances-table"></div>
+
+    </div>
+  </script>
+
+  <script type="text/ng-template" id="read.tpl.html">
+    <div class='table-tab' ng-controller='dashboard.workflow_log.ReadLogCtr'>
+        <div class='action_group' action-button buttons="actionButtons"
+          items="selectedItems">
+        </div>
+
+      <div datatable='readLogOpts' class="instances-table"></div>
+
+    </div>
+  </script>
+</div>

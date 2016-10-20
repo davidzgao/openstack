@@ -1,0 +1,56 @@
+<div class="unicorn-dashboard-pricelist">
+  <div class="table-tab" ng-controller='dashboard.pricelist.instanceCtr'>
+    <div class="statistic-query">
+      <div class="ui-select">
+      <select ng-model="query.year"
+        ng-change="yearUpdate()"
+        ng-options="year for year in yearList">
+        <option style="display:none" value=""></option>
+      </select>
+      </div>
+      <div class='ui-select'>
+      <select ng-model="query.month"
+        ng-options="month as month.name for month in monthNames">
+        <option style="display:none" value=""></option>
+      </select>
+      </div>
+      <button class='btn btn-enable query'
+        ng-click="itemSearch()">{{note.query}}</button>
+      <button class='btn btn-enable'
+        ng-click="itemExport()">{{note.export}}</button>
+    </div>
+    <h5 class='metering_h5'>
+      <span class="statistic-total-time">
+        {{note.totalTime}} : {{userTotal.total_time }}</span>
+      <span class="statistic-total-price">
+        {{note.totalPrice}} : {{userTotal.total_price}}</span>
+    </h5>
+    <div style="display: none"
+      id="user_{{userId}}_statistic">
+      <table>
+        <tr>
+          <td>
+            {{note.userName}} ：{{userName}}
+          </td>
+          <td>
+            {{note.totalTime}} : {{userTotal.total_time }}
+          </td>
+          <td>
+            {{note.totalPrice}} : {{userTotal.total_price }}
+          </td>
+          <td>
+            {{note.searchTime}} : {{queryDate}}
+          </td>
+        </tr>
+        <tr>
+          <td ng-repeat="col in columnDefs">{{col.displayName}}</td>
+        </tr>
+        <tr ng-repeat="server in instanceData">
+          <!--<td ng-repeat="column in columnDefs">{{server[column.field]}}</td>-->
+          <td>{{server.resource_name}}</td><td>{{server.vcpus}}</td><td>{{server.memory_mb |unitSwitch}}</td><td>{{server.disk_gb}}</td><td>{{server.run_time | fixed}}</td><td>{{server.run_price | fixed}}</td>
+        </tr>
+      </table>
+    </div>
+    <div datatable='instancePriceOpts' class='instances-table'></div>
+  </div>
+</div>

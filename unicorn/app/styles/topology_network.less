@@ -1,0 +1,189 @@
+.network-topology-view {
+  position: relative;
+  padding-right: 10px;
+
+  .topology-root {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: url(../images/topology/root.png) center bottom no-repeat;
+  }
+
+  .topology-detail-cont {
+    display: none;
+    padding: 8px;
+    z-index: 1001;
+    position: absolute;
+    background-color: #fff;
+    width: 160px;
+    bottom: 100%;
+    left: 50%;
+    margin-bottom: 5px;
+    margin-left: -80px;
+    border: 1px solid #ddd;
+    box-shadow: 0px 0px 3px #ccc;
+    text-align: left;
+
+    .item-title {
+      font-size: 12px;
+      height: 24px;
+      line-height: 24px;
+      vertical-align: middle;
+      color: #888;
+    }
+
+    .item-value {
+      font-size: 12px;
+      color: #666;
+      height: 24px;
+      line-height: 24px;
+      vertical-align: middle;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+
+    .status-ACTIVE {
+      display: inline-block;
+      height: 20px;
+      width: 20px;
+      background: url(../images/status_active.png) center no-repeat;
+    }
+
+    .topology-detail-wrap {
+      position: absolute;
+      left: 50%;
+      margin-left: -10px;
+      bottom: 0;
+      margin-bottom: -20px;
+      width: 20px;
+      height: 20px;
+
+      .wrap-outer {
+        width: 0;
+        height: 0;
+        border: 10px solid #ddd;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+      }
+
+      .wrap-inner {
+        position: absolute;
+        width: 0;
+        height: 0;
+        left: 2px;
+        top: 0;
+        border: 8px solid #fff;
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-bottom: 8px solid transparent;
+      }
+    }
+  }
+
+  .topology-network {
+    position: relative;
+    padding: 5px;
+
+    .topology-network-back {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.3;
+      filter: alpha(opacity=30);
+    }
+
+    .topology-network-title {
+      position: relative;
+      height: 20px;
+      z-index: 1000;
+    }
+
+    .topology-router {
+      text-align: center;
+      position: absolute;
+      border: 1px solid #a5d8fb;
+      cursor: pointer;
+      background: #fff url(../images/topology/router.png) center 10px no-repeat;
+
+      .topology-router-title {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        width: 100%;
+        margin-top: 36px;
+      }
+
+      &:hover {
+        .topology-detail-cont {
+          display: block;
+        }
+      }
+    }
+
+    .topology-server {
+      text-align: center;
+      position: absolute;
+      border: 1px solid #d9d9d9;
+      cursor: pointer;
+      background: url(../images/topology/server.png) center 10px no-repeat;
+
+      .topology-server-title {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        margin-top: 36px;
+        width: 100%;
+      }
+
+      &:hover {
+        .topology-detail-cont {
+          display: block;
+        }
+      }
+    }
+  }
+  .topology-network-subnet {
+
+    .subnet-back {
+      position: relative;
+      margin-top: 5px;
+      margin-buttom: 5px;
+      color: #fff;
+    }
+  }
+
+  .topology-port {
+    position: absolute;
+
+    .topology-port-title {
+      position: absolute;
+      margin-top: 18px;
+      font-size: 10px;
+      color: #999;
+      transform-origin: 15px 0;
+      -moz-transform: rotate(90deg);
+      -o-transform: rotate(90deg);
+      -webkit-transform: rotate(90deg);
+      webkit-transform: rotate(90deg);
+    }
+
+    .topology-port-buttom {
+      position: absolute;
+      left: -50%;
+      bottom: 0;
+      width: 200%;
+      height: 2px;
+    }
+
+    .topology-port-top {
+      top: 0;
+      left: -50%;
+      position: absolute;
+      width: 200%;
+      height: 3px;
+    }
+  }
+}

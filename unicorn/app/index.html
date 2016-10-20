@@ -1,0 +1,184 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title ng-bind=title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/animate.css/animate.css" />
+    <link rel="stylesheet" href="bower_components/toastr/toastr.css" />
+    <link rel="stylesheet" href="bower_components/seiyria-bootstrap-slider/dist/css/bootstrap-slider.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/toastr.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/login.css">
+    <link rel="stylesheet" href="styles/register.css">
+    <link rel="stylesheet" href="styles/form.css">
+    <link rel="stylesheet" href="styles/data_table.css">
+    <link rel="stylesheet" href="styles/data_tab.css">
+    <link rel="stylesheet" href="styles/detail_panel.css">
+    <link rel="stylesheet" href="styles/dash_overview.css">
+    <link rel="stylesheet" href="styles/dash_secGroups.css">
+    <link rel="stylesheet" href="styles/dashboard_instance.css">
+    <link rel="stylesheet" href="styles/dashboard_services.css">
+    <link rel="stylesheet" href="styles/dashboard_gridtable.css">
+    <link rel="stylesheet" href="styles/userinfo.css">
+    <link rel="stylesheet" href="styles/ip_input.css">
+    <link rel="stylesheet" href="styles/statistic.css">
+    <link rel="stylesheet" href="styles/topology_network.css">
+    <!-- endbuild -->
+  </head>
+  <body>
+    <!-- loading ui -->
+    <div class="unicorn-pre-loading" id="_unicorn_pre_loading">
+    </div>
+
+    <!-- browser check ui -->
+    <div class="unicorn-browser-check"
+         id="_unicorn_browser_check">
+      <div class="notice-lead"></div>
+      <div class="browser-list"></div>
+    </div>
+
+    <!-- app main ui -->
+    <div id="_unicorn_app_main" class="unicorn-app-main" ui-view></div>
+
+    <script src="setting/settings.jsonp"></script>
+    <!-- build:js({.tmp,app}) scripts/browser.js -->
+    <script src="scripts/common/browser.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/toastr/toastr.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/sockjs/sockjs.js"></script>
+    <script src="bower_components/highcharts/highcharts.js"></script>
+    <script src="bower_components/highcharts/highcharts-more.js"></script>
+    <script src="bower_components/highcharts/modules/exporting.js"></script>
+    <script src="bower_components/seiyria-bootstrap-slider/js/bootstrap-slider.js"></script>
+    <script src="bower_components/angular-bootstrap-slider/slider.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/common/base.js"></script>
+    <script src="scripts/common/message.js"></script>
+    <script src="scripts/common/register.js"></script>
+    <script src="scripts/common/topology.js"></script>
+    <script src="scripts/common/utils.js"></script>
+    <script src="scripts/common/api/base.js"></script>
+    <script src="scripts/common/api/nova.js"></script>
+    <script src="scripts/common/api/network.js"></script>
+    <script src="scripts/common/api/ceilometer.js"></script>
+    <script src="scripts/common/modal.js"></script>
+    <script src="scripts/forms/forms.js"></script>
+    <script src="scripts/forms/services.js"></script>
+    <script src="scripts/forms/directives.js"></script>
+    <script src="scripts/common/tableView.js"></script>
+    <script src="scripts/common/FileSaver.js"></script>
+    <!-- endbuild -->
+    <!-- build:js({.tmp,app}) scripts/dashboards.js -->
+    <script src="scripts/services.js"></script>
+    <script src="scripts/gossip.js"></script>
+    <script src="scripts/filters.js"></script>
+    <script src="scripts/directives.js"></script>
+    <script src="scripts/monitor.js"></script>
+    <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/modal.js"></script>
+    <script src="scripts/table.js"></script>
+    <script src="scripts/detail.js"></script>
+    <script src="scripts/controllers/login.js"></script>
+    <script src="scripts/controllers/register.js"></script>
+    <script src="scripts/controllers/retrieve.js"></script>
+    <script src="scripts/controllers/reset.js"></script>
+    <script src="scripts/dashboards/menu/app.js"></script>
+    <script src="scripts/dashboards/menu/controllers/navbar.js"></script>
+    <script src="scripts/dashboards/dashboard/app.js"></script>
+    <script src="scripts/dashboards/dashboard/overview/app.js"></script>
+    <script src="scripts/dashboards/dashboard/overview/controllers/index.js"></script>
+    <script src="scripts/dashboards/dashboard/instance/app.js"></script>
+    <script src="scripts/dashboards/dashboard/instance/controllers/index.js"></script>
+    <script src="scripts/dashboards/dashboard/instance/controllers/detail.js"></script>
+    <script src="scripts/dashboards/dashboard/instance/controllers/instanceActions.js"></script>
+    <script src="scripts/dashboards/dashboard/instance/controllers/log.js"></script>
+    <script src="scripts/dashboards/dashboard/instance/controllers/console.js"></script>
+    <script src="scripts/dashboards/dashboard/instance/controllers/monitor.js"></script>
+    <script src="scripts/dashboards/dashboard/instance/controllers/topology.js"></script>
+    <script src="scripts/dashboards/dashboard/volume/app.js"></script>
+    <script src="scripts/dashboards/dashboard/volume/controllers/index.js"></script>
+    <script src="scripts/dashboards/dashboard/volume/controllers/detail.js"></script>
+    <script src="scripts/dashboards/dashboard/volume/controllers/volumeAction.js"></script>
+    <script src="scripts/dashboards/dashboard/floatingIp/app.js"></script>
+    <script src="scripts/dashboards/dashboard/floatingIp/controllers/index.js"></script>
+    <script src="scripts/dashboards/dashboard/floatingIp/controllers/floatingIpAction.js"></script>
+    <script src="scripts/dashboards/dashboard/snapshot/app.js"></script>
+    <script src="scripts/dashboards/dashboard/snapshot/controllers/index.js"></script>
+    <script src="scripts/dashboards/dashboard/snapshot/controllers/instanceDetail.js"></script>
+    <script src="scripts/dashboards/dashboard/security_group/app.js"></script>
+    <script src="scripts/dashboards/dashboard/security_group/controllers/index.js"></script>
+    <script src="scripts/dashboards/dashboard/security_group/controllers/create.js"></script>
+    <script src="scripts/dashboards/dashboard/security_group/controllers/detail.js"></script>
+    <script src="scripts/dashboards/dashboard/keypair/app.js"></script>
+    <script src="scripts/dashboards/dashboard/keypair/controllers/index.js"></script>
+    <script src="scripts/dashboards/dashboard/keypair/controllers/create.js"></script>
+    <script src="scripts/dashboards/dashboard/application/app.js"></script>
+    <script src="scripts/dashboards/dashboard/application/controllers/index.js"></script>
+    <script src="scripts/dashboards/dashboard/application/controllers/detail.js"></script>
+    <script src="scripts/dashboards/dashboard/services/app.js"></script>
+    <script src="scripts/dashboards/dashboard/services/controllers/index.js"></script>
+    <script src="scripts/dashboards/dashboard/feedback/app.js"></script>
+    <script src="scripts/dashboards/dashboard/feedback/controllers/index.js"></script>
+    <script src="scripts/dashboards/dashboard/feedback/controllers/detail.js"></script>
+    <script src="scripts/dashboards/dashboard/feedback/controllers/create.js"></script>
+    <script src="scripts/dashboards/dashboard/log/app.js"></script>
+    <script src="scripts/dashboards/dashboard/log/controllers/index.js"></script>
+    <script src="scripts/dashboards/dashboard/workflow_log/app.js"></script>
+    <script src="scripts/dashboards/dashboard/workflow_log/controllers/index.js"></script>
+    <script src="scripts/dashboards/dashboard/workflow_log/controllers/read.js"></script>
+    <script src="scripts/dashboards/dashboard/workflow_log/controllers/unread.js"></script>
+    <script src="scripts/dashboards/dashboard/routers/app.js"></script>
+    <script src="scripts/dashboards/dashboard/routers/controllers/index.js"></script>
+    <script src="scripts/dashboards/dashboard/routers/controllers/detail.js"></script>
+    <script src="scripts/dashboards/dashboard/routers/controllers/create.js"></script>
+    <script src="scripts/dashboards/dashboard/networks/app.js"></script>
+    <script src="scripts/dashboards/dashboard/routers/app.js"></script>
+    <script src="scripts/dashboards/dashboard/routers/controllers/index.js"></script>
+    <script src="scripts/dashboards/dashboard/routers/controllers/detail.js"></script>
+    <script src="scripts/dashboards/dashboard/routers/controllers/create.js"></script>
+    <script src="scripts/dashboards/dashboard/networks/app.js"></script>
+    <script src="scripts/dashboards/dashboard/networks/controllers/index.js"></script>
+    <script src="scripts/dashboards/dashboard/networks/controllers/detail.js"></script>
+    <script src="scripts/dashboards/dashboard/networks/controllers/create.js"></script>
+    <script src="scripts/dashboards/dashboard/ports/app.js"></script>
+    <script src="scripts/dashboards/dashboard/ports/controllers/index.js"></script>
+    <script src="scripts/dashboards/dashboard/ports/controllers/detail.js"></script>
+    <script src="scripts/dashboards/dashboard/ports/controllers/create.js"></script>
+    <script src="scripts/dashboards/dashboard/lbaas/app.js"></script>
+    <script src="scripts/dashboards/dashboard/lbaas/controllers/index.js"></script>
+    <script src="scripts/dashboards/dashboard/lbaas/controllers/detail.js"></script>
+    <script src="scripts/dashboards/dashboard/lbaas/controllers/create.js"></script>
+    <script src="scripts/dashboards/dashboard/net_topology/app.js"></script>
+    <script src="scripts/dashboards/dashboard/net_topology/controllers/index.js"></script>
+    <script src="scripts/dashboards/dashboard/pricelist/app.js"></script>
+    <script src="scripts/dashboards/dashboard/pricelist/controllers/index.js"></script>
+    <script src="scripts/dashboards/dashboard/pricelist/controllers/instanceDetail.js"></script>
+    <script src="scripts/app.js"></script>
+    <!-- endbuild -->
+</body>
+</html>

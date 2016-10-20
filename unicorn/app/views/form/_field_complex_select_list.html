@@ -1,0 +1,31 @@
+<div class="field-complex-select">
+  <label>{{field.label | i18n}}</label>
+  <div class="select-list-area">
+    <ul>
+      <li class="list-item" ng-repeat="item in field.source"
+        ng-click="selectedChange(item.id)"
+        ng-class="{true: 'active'}[item.selected]">
+        {{item.name || item.label || item.id}}
+        <div class="btn-group" role="group">
+        <a class="dropdown-toggle" data-toggle="dropdown">
+            {{item.selectedSubItem.name}}-{{item.selectedSubItem.cidr}}
+            <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+            <li ng-repeat='sub in item.subnets'
+              ng-class="{true: 'selected'}[sub.selected]"
+              ng-click="subSelected(item, sub.id)">
+            {{sub.name}}-{{sub.cidr}}</li>
+        </ul>
+        </div>
+      </li>
+      <li class="list-item list-null"
+        ng-if="field.source.length==0">
+        {{tips.noSource}}
+      </li>
+    </ul>
+  </div>
+  <div class="clear"></div>
+  <div ng-if="field.invalidate"
+    class="error-tips">{{field.error_tips}}</div>
+</div>

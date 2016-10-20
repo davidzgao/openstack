@@ -1,0 +1,5 @@
+[gerrit]
+host=200.21.0.30
+port=29418
+project=openstack/unicorn.git
+defaultbranch=stable/juno

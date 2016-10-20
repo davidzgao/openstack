@@ -1,0 +1,29 @@
+<div class='base_info detail_info'>
+  <div class='detail_title'>{{ detailItem.info }}
+  </div>
+  <div class='detail_area'>
+    <ul>
+      <li>
+        <span class="title">{{detailItem.item.type}}</span>
+        <span class="value">{{apply_detail.request_type_name}}
+        </span>
+      </li>
+      <li>
+        <span class="title">{{ detailItem.item.id }}</span>
+        <span class="value">{{apply_detail.id}}</span>
+      </li>
+      <li>
+        <span class="title">{{ detailItem.item.create_at }}</span>
+        <span class="value">{{apply_detail.created_at | dateLocalize | date:"yyyy-MM-dd HH:mm"}}</span>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class='other_info detail_info'>
+    <div class='detail_title'>{{ detailItem.apply_content }}</div>
+  <div class='detail_area'>
+    <div form-view form-options=formOptions
+        target=currentTarget></div>
+  </div>
+</div>

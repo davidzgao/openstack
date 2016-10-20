@@ -1,0 +1,64 @@
+<div class="user-info-base-tab">
+  <div class="user-info-title">{{userInfo}}</div>
+  <div class="edit-btn-group">
+    <button ng-if="editing" class="btn btn-enable"
+      ng-click="save()">
+      {{action.save}}</button>
+    <button ng-if="editing" class='btn btn-enable'
+      ng-click="cancel()"
+    >{{action.cancel}}</button>
+    <button class="btn btn-enable"
+      ng-if="!editing" ng-click="edit()">
+      {{action.edit}}</button>
+  </div>
+
+  <div class='user-info-area'>
+    <ul>
+      <li class="info-item">
+        <span class="title">{{infoLabels.username}}</span>
+        <span class="value"
+          ng-class="inEdit">{{user.name}}</span>
+        <span class='edit-input' ng-class="inEdit">
+          <div class="modal-tip" ng-show="validateInfo.nameInva">
+            <div>{{validateInfo.nameTips}}</div>
+            <div class="tips-pointer">
+              <span class="tips-pointer-outer"></span>
+              <span class="tips-pointer-inner"></span>
+            </div>
+          </div>
+          <input ng-model="tmp.username"
+            name="name"
+            ng-class="[inEdit, usernameValidate]"
+            value="{{tmp.username}}"
+            ng-change="checkName()" />
+        </span>
+      </li>
+      <li class='info-item'>
+        <span class="title">{{infoLabels.email}}</span>
+        <span class="value"
+          ng-class="inEdit">{{user.emailDisplay}}</span>
+        <span class='edit-input' ng-class="inEdit">
+          <div class="modal-tip" ng-show="validateInfo.emailInva">
+            <div>{{validateInfo.emailTips}}</div>
+            <div class="tips-pointer">
+              <span class="tips-pointer-outer"></span>
+              <span class="tips-pointer-inner"></span>
+            </div>
+          </div>
+          <input ng-model="tmp.email"
+            name="email"
+            ng-class="[inEdit, emailValidate]"
+            value="{{tmp.email}}"
+            ng-change="checkEmail()" />
+        </span>
+      </li>
+      <li class='info-item'>
+        <span class="title">{{infoLabels.password}}</span>
+        <span class="value">
+          <a dynamic=changePasswordButton></a>
+        </span>
+      </li>
+    </ul>
+  </div>
+
+</div>

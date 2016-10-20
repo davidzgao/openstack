@@ -1,0 +1,62 @@
+<div detail-tips
+  detail="port_detail">
+</div>
+
+<div class='detail_info'>
+  <div class="detail_title">{{detailItem.overview}}</div>
+  <div class="detail_area">
+    <ul>
+      <li>
+        <span class='title'>{{detailItem.name}}</span>
+        <span class='value'>{{port_detail.name}}</span>
+      </li>
+      <li>
+        <span class='title'>ID</span>
+        <span class='value'>{{port_detail.id}}</span>
+      </li>
+      <li>
+        <span class='title'>{{detailItem.status}}</span>
+        <span class='value'>{{port_detail.status}}</span>
+      </li>
+      <li>
+        <span class='title'>{{detailItem.rel_server}}</span>
+        <span class='value'>
+            <span ng-repeat="server in port_detail.rel_servers">
+                {{server.name}}
+            </span>
+            <span ng-if="port_detail.rel_servers.length==0">
+                {{null | parseNull}}
+            </span></span>
+      </li>
+      <li>
+        <span class='title'>{{detailItem.fixedip}}</span>
+        <span class='value'>
+            <span ng-repeat="ip in port_detail.fixed_ips">
+                {{ip.ip_address}}
+            </span></span>
+      </li>
+      <li>
+        <span class='title'>{{detailItem.mac}}</span>
+        <span class='value'>{{port_detail.mac_address}}</span>
+      </li>
+      <li>
+        <span class='title'>{{detailItem.subnet}}</span>
+        <span class='value'>
+            <span ng-repeat="ip in port_detail.fixed_ips">
+                {{ip.subnet.name}}
+            </span></span>
+      </li>
+      <li>
+        <span class='title'>{{detailItem.ip_addr}}</span>
+        <span class='value'>{{port_detail.floating | parseNull}}</span>
+      </li>
+      <li>
+        <span class='title'>{{detailItem.sec}}</span>
+        <span class='value'>
+            <span ng-repeat="sec in port_detail.secs">
+                {{sec.name}}
+            </span></span>
+      </li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,165 @@
+<div detail-tips
+  detail="rules">
+</div>
+<div class="security-group-rule-detail">
+  <div class='base_info detail_info'>
+    <div class='action_group'>
+      <div class="security-group-lead" ng-bind="note.securityGroupRule"></div>
+    </div>
+    <table class="rule-table" ng-if="mode=='default'">
+      <thead>
+        <tr class="header-lead">
+          <td ng-bind="note.header.protocol"></td>
+          <td ng-bind="note.header.port"></td>
+          <td ng-bind="note.header.range"></td>
+          <td ng-bind="note.header.action"></td>
+        </tr>
+      </thead>
+      <tbody ng-show="rule_table_show">
+        <tr class="body" ng-repeat="rule in rules">
+          <td>{{rule.ip_protocol}}</td>
+          <td>
+              <span ng-show="rule.from_port!=rule.to_port">{{rule.from_port}}-{{rule.to_port}}</span>
+              <span ng-show="rule.from_port==rule.to_port">{{rule.from_port}}</span>
+          </td>
+          <td>{{rule.ip_range.cidr}}(CIDR)</td>
+          <td>
+            <div class="rule-action-handle">
+              <button class='icon-remove'
+                submit-confirm='deleteRule(rule)'
+                slug='{{note.slug}}'
+                action-enable="btn-enable"
+                items="[rule]" submit-confirm-action="{{note.action.delete}}"></button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr class="rule-row-add" ng-show="add_new_rule">
+          <td>
+            <div class="rule-protocol">
+              <select ng-model="rule_val.protocol"
+                      class="selectDirective"
+                      val="protocols"
+                      ng-options="pro.value as pro.text group by pro.group for pro in protocols">
+              </select>
+            </div>
+          </td>
+          <td>
+            <div class="rule-port">
+              <input ng-model="rule_val.port" class="{{rule_port_invalid}}"
+                     placeholder='{{rule_port_placeholder}}'
+                     ng-change="validInput(port)"
+                     title='{{note.title.port}}'/>
+            </div>
+          </td>
+          <td>
+            <div class="rule-ip-range">
+              <input ng-model="rule_val.ip"
+                     ng-change="validInput('ip')"
+                     class="{{rule_ip_invalid}}"
+                     placeholder='{{rule_ip_placeholder}}'
+                     title='{{note.title.ip}}' />
+            </div>
+          </td>
+          <td>
+            <div class="rule-action-handle">
+              <button ng-click="deleteAddRule()" class="icon-remove"></button>
+            </div>
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+    <!-- in-out mode  -->
+    <table class="rule-table rule-in-out" ng-if="mode=='in-out'">
+      <thead>
+        <tr class="header-lead">
+          <td ng-bind="note.header.direction"></td>
+          <td ng-bind="note.header.protocol"></td>
+          <td ng-bind="note.header.range"></td>
+          <td ng-bind="note.header.remote"></td>
+          <td ng-bind="note.header.action"></td>
+        </tr>
+      </thead>
+      <tbody ng-show="rule_table_show">
+        <tr class="body" ng-repeat="rule in rules">
+          <td>{{rule.direction | i18n}}</td>
+          <td>{{rule.protocol}}</td>
+          <td>
+            <span ng-show="rule.port_range_max!=rule.port_range_min">
+              {{rule.port_range_min}}-{{rule.port_range_max}}
+            </span>
+            <span ng-show="rule.port_range_max==rule.port_range_min">
+              {{rule.port_range_max}}
+            </span>
+          </td>
+          <td>{{rule.remote_ip_prefix}}</td>
+          <td>
+            <div class="rule-action-handle">
+              <button class='icon-remove'
+                submit-confirm='deleteRule(rule)'
+                slug='{{note.slug}}'
+                action-enable="btn-enable"
+                items="[rule]" submit-confirm-action="{{note.action.delete}}">&times;</button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr class="rule-row-add" ng-show="add_new_rule">
+          <td>
+            <div class="rule-direction">
+              <select ng-model="rule_val.direction"
+                      class="selectDirective"
+                      val="directions"
+                      ng-options="pro.value as pro.text group by pro.group for pro in directions">
+              </select>
+            </div>
+          </td>
+          <td>
+            <div class="rule-protocol">
+              <select ng-model="rule_val.protocol"
+                      class="selectDirective"
+                      val="protocols"
+                      ng-options="pro.value as pro.text group by pro.group for pro in protocols">
+              </select>
+            </div>
+          </td>
+          <td>
+            <div class="rule-port">
+              <input ng-model="rule_val.port" class="{{rule_port_invalid}}"
+                     placeholder='{{rule_port_placeholder}}'
+                     ng-change="validInput(port)"
+                     title='{{note.title.port}}'/>
+            </div>
+          </td>
+          <td>
+            <div class="rule-ip-range">
+              <input ng-model="rule_val.ip"
+                     ng-change="validInput('ip')"
+                     class="{{rule_ip_invalid}}"
+                     placeholder='{{rule_ip_placeholder}}'
+                     title='{{note.title.ip}}' />
+            </div>
+          </td>
+          <td>
+            <div class="rule-action-handle">
+              <button ng-click="deleteAddRule()" class="icon-remove">&times;</button>
+            </div>
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+    <div class="rule-add-btn" ng-show="!add_new_rule">
+      <span class="btn" ng-click="addRow()" ng-bind="note.action.add"></span>
+    </div>
+
+    <div class="rule-save-btn" ng-show="add_new_rule">
+      <span ng-click="saveAddRule()" class="btn" ng-bind="note.action.save"></span>
+    </div>
+
+    <ul class="rule-example" ng-show="add_new_rule">
+      <li class="btn" ng-click="selectExample($event)" ng-repeat="port_item in port_group" key="{{port_item.value}}">{{port_item.name}}</li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+<div class="field-slider">
+  <label>{{field.label | i18n}}</label>
+  <slider2 ng-model=field.value min=0 max=100
+          value={{field.value}}></slider2>
+  <input class="slider-input slider-mate"
+         type="number"
+         ng-blur="checkInput(item.item, cinderQuota, $index, 'base')"
+         ng-model=field.value
+         value="{{field.value}}">
+</div>

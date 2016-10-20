@@ -1,0 +1,64 @@
+<div detail-tips
+  detail="router_detail">
+</div>
+
+<div class='detail_info'>
+  <div class="detail_title">{{detailItem.overview}}</div>
+  <div class="detail_area">
+    <ul>
+      <li>
+        <span class='title'>{{detailItem.name}}</span>
+        <span class='value'>{{router_detail.name}}</span>
+      </li>
+      <li>
+        <span class='title'>ID</span>
+        <span class='value'>{{router_detail.id}}</span>
+      </li>
+      <li>
+        <span class='title'>{{detailItem.status}}</span>
+        <span class='value'>{{router_detail.status}}</span>
+      </li>
+      <li>
+        <span class='title'>{{detailItem.gateway}}</span>
+        <span class='value'>{{router_detail.external_network}}</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="detail_title">{{"Connected Subnets" | i18n}}</div>
+  <div class="detail_area">
+    <table class="table_in_detail">
+      <thead>
+        <tr>
+          <th>{{subnetDetail.sub_name}}</th>
+          <th>{{subnetDetail.ip_address}}</th>
+          <th>{{subnetDetail.net_name}}</th>
+          <th>{{subnetDetail.action}}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="sub in conSubs">
+          <td><a href="/#/dashboard/networks/{{sub.id}}/overview?tab=subnet">{{sub.name | parseNull}}</a></td>
+          <td>{{sub.router_ip | parseNull}}</td>
+          <td><a href="/#/dashboard/networks/{{sub.network_id}}/overview">{{sub.network_name | parseNull}}</a></td>
+          <td><a class="btn action-detailtable remove"
+
+                  action-enable="true"
+                  allow-empty-items="true"
+                  submit-confirm-action={{subnetDetail.detach}}
+                  submit-confirm="detachNet(sub.id)"
+                  tips={{subnetDetail.detach_tips}}
+                  slug={{sub.name}} title={{subnetDetail.detach}}>
+              </a>
+          </td>
+        </tr>
+        <tr ng-if="conSubs.length==0">
+            <td>{{subnetDetail.is_null}}</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

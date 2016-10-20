@@ -1,0 +1,68 @@
+<form method="post" action="" id="_modal_{{modal.slug}}"
+      class="modal-{{modal.slug}}" autocomplete="off" enctype="{{modal.containFile?'multipart/form-data':''}}">
+  <div ng-show="modal.globalTip" class="modal-global-tip">{{modal.globalTip}}</div>
+  <div ng-if="modal.single">
+    <div class="fields-area">
+      <div class="field-warning" ng-if="form['warningFlag']">{{form.warningInfo}}</div>
+      <div ng-if="field.type!='hidden'" class="field-{{field.slug}} field" ng-repeat="field in modal.fields">
+        <div class="field-label {{field.inLine?'field-next-line':''}}">{{field.label}}</div>
+          <div ng-if="field.tag=='mulit-select'" class="field-mulit-select
+             {{field.classes?field.classes:''}} {{tips[field.slug]?'invalid':''}}">
+               <div ng-repeat="vol in volumes" class="field-select-area">
+                 <div class="field-value field-select-item {{vol.selected==true?'active':''}} {{vol.bootable=='true'?'field-value-disable':''}}" ng-click="volumeClick(vol)">{{vol.display_name}}</div>
+               </div>
+           </div>
+        <div ng-if="field.slug=='cron_table'" class="backup_cron field-input">
+          <input type="hidden" ng-model="form[field.slug]" id="instance_backup_cron" />
+          <div target="instance_backup_cron" class="cronDriective"></div>
+        </div>
+        <div ng-if="field.slug!='cron_table'&&field.tag=='input'" class="field-input">
+          <div ng-if="field.type!='checkbox-list'&&field.type!='file'&&field.slug!='cron_table'">
+            <input ng-change="validator(field.slug)"
+                   class="{{field.classes?field.classes:''}} {{tips[field.slug]?'invalid':''}}"
+                   name="{{field.slug}}" ng-model="form[field.slug]"
+                   type="{{field.type?field.type:'text'}}"
+                   ng-attr-placeholder="{{field.placeholder?field.placeholder:''}}"/>
+          </div>
+          <div ng-if="field.type!='checkbox-list'&&field.type=='file'">
+            <input ng-change="validator(field.slug)"
+                   class="{{field.classes?field.classes:''}} {{tips[field.slug]?'invalid':''}}"
+                   name="{{field.slug}}" ng-model="form[field.slug]"
+                   type="file"
+                   ng-attr-placeholder="{{field.placeholder?field.placeholder:''}}"/>
+          </div>
+          <div ng-if="field.type=='checkbox-list'">
+            <div class="checkbox-list-field" ng-repeat="opt in field.default">
+              <input ng-click="validator(field.slug)"
+                     type="checkbox" checklist-model="form[field.slug]"
+                     checklist-value="opt.value">{{opt.text}}
+            </div>
+          </div>
+        </div>
+        <div class="field-input" ng-if="field.tag == 'textarea'">
+          <textarea ng-change="validator(field.slug)" name="{{field.slug}}"
+                    class="{{field.classes?field.classes:''}} {{tips[field.slug]?'invalid':''}}"
+                    ng-model="form[field.slug]"
+                    ng-attr-placeholder="{{field.placeholder?field.placeholder:''}}"></textarea>
+        </div>
+        <div class="field-input" ng-if="field.tag == 'select'">
+          <select ng-change="validator(field.slug)" name="{{field.slug}}"
+                  class="selectDirective {{field.classes?field.classes:''}} {{tips[field.slug]?'invalid':''}}"
+                  ng-attr-placeholder="{{field.placeholder?field.placeholder:''}}"
+                  ng-model="form[field.slug]" val="field.default"
+                  ng-options="opt.value as opt.text group by opt.group for opt in field.default">
+          </select>
+        </div>
+        <div ng-show="tips[field.slug]" class="modal-tip">
+          <div>{{tips[field.slug]}}</div>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+
+    <div class="unicorn-modal-footer">
+      <button class="btn" name="cancel" ng-click="close()">{{note.modal.cancel}}</button>
+      <button class="btn" name="submit" type="submit" ng-click="handle()">{{note.modal.save}}</button>
+    </div>
+  </div>
+</form>

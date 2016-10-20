@@ -1,0 +1,21 @@
+<div class="field-select-list">
+  <label ng-if="field.label=='Performance Type'">{{field.label | i18n}}</label>
+  <div class="select-list-area" ng-if="editable">
+    <ul>
+      <li class="list-item" ng-repeat="item in field.source"
+        ng-click="selectedChange(item.id)"
+        ng-class="{true: 'active'}[item.active]">
+        {{item.name || item.id}}
+      </li>
+      <li class="list-item list-null"
+        ng-if="field.source.length==0">
+        {{tips.noSource}}
+      </li>
+    </ul>
+  </div>
+  <div ng-if="!editable" class="select-list-area">
+    <li class="active list-item">
+      {{field.value}}
+    </li>
+  </div>
+</div>

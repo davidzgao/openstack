@@ -1,0 +1,641 @@
+/* Space out content a bit */
+@import "variables.less";
+@import "scroll_bar.less";
+@import "loading.less";
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Microsoft Yahei",Tahoma,Helvetica,Arial,sans-serif;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 12px;
+  color: #666;
+  font-weight: normal;
+  overflow: hidden;
+}
+
+.clear-float {
+  clear: both;
+}
+
+a:focus {
+  outline: none;
+}
+
+.unicorn-app-main {
+}
+
+.unicorn-pre-loading {
+  background: #2d2b32 url(../images/loading.gif) center no-repeat;
+  position: absolute;
+  z-index: 9999999;
+  width: 100%;
+  height: 100%;
+}
+
+.http-loader__wrapper {
+  position: absolute;
+  left: 50%;
+  margin-left: -20px;
+  top: 50%;
+  margin-top: -20px;
+  width: 40px;
+  height: 40px;
+  background-size: 100%;
+  background: url(../images/login/loading.png) center no-repeat;
+  .loading();
+}
+
+.http-loader {
+  position: absolute;
+  top: 50%;
+  margin-top: -20px;
+  left: 50%;
+  margin-left: -20px;
+  width: 40px;
+  height: 40px;
+  background-size: 40%;
+  background: url(../images/login/loading_image.png) center no-repeat;
+}
+
+.unicorn-browser-check {
+  display: none;
+  position: absolute;
+  width: 720px;
+  height: 300px;
+  top: 40%;
+  left: 50%;
+  margin-left: -360px;
+  margin-top: -100px;
+  text-align: center;
+
+  .notice-lead {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    background: url(../images/browser/alert.png) left top no-repeat;
+    padding-left: 48px;
+    font-size: 27px;
+    line-height: 30px;
+    height: 140px;
+  }
+
+  .browser-list {
+    text-align: center;
+    .item {
+      height: 120px;
+      line-height: 220px;
+      font-size: 20px;
+      color: #666;
+      display: inline-block;
+      *display: inline;
+      *zoom: 1;
+      _display: inline;
+      _zoom: 1;
+      width: 18%;
+      margin-left: 2%;
+      margin-right: 2%;
+      _width: 160px;
+      _margin-left: 10px;
+      _margin-right: 10px;
+      text-align: center;
+      background-repeat: no-repeat;
+      background-position: center top;
+      cursor: pointer;
+
+      &.browser_firefox {
+        background-image: url(../images/browser/firefox.png);
+      }
+
+      &.browser_chrome {
+        background-image: url(../images/browser/chrome.png);
+      }
+
+      &.browser_ie {
+        background-image: url(../images/browser/ie.png);
+      }
+
+      &.browser_safari {
+        background-image: url(../images/browser/safari.png);
+      }
+    }
+  }
+}
+
+.unicorn-index {
+  width: 100%;
+  min-width: @APP_MIN_WIDTH;
+  height: 100%;
+  background: @APP_BACKGROUND;
+  over-flow: auto;
+
+  & > .unicorn-frame-left {
+    position: absolute;
+    height: 100%;
+    width: @APP_FRAME_LEFT_WIDTH;
+    background: @APP_FRAME_LEFT_BACKGROUND;
+
+    & > .unicorn-tool-nav-logo {
+      background: @APP_FRAME_LEFT_LOGO_BACKGROUND;
+      height: @APP_LOGO_HEIGHT;
+
+      & > a {
+        position: absolute;
+        color: transparent;
+        width: 200px;
+        height: inherit;
+      }
+    }
+
+    & > .unicorn-tool-nav {
+      border-top: 1px solid #474747;
+      overflow-x: hidden;
+      overflow-y: auto;
+
+      & > .unicorn-tool-nav-bar {
+        padding: 0;
+        list-style: none;
+        margin: 5px 0 5px 0;
+      }
+
+      .unicorn-tool-nav-bar {
+        .panel-group {
+          margin-top: 0px;
+          margin-bottom: 0px;
+
+          .panel-default {
+            border: none;
+            border-radius: 0px;
+            & > .panel-heading {
+              background-color: @APP_FRAME_LEFT_BACKGROUND;
+              color: white;
+              height: 40px;
+              font-size: 14px;
+              font-weight: normal;
+              line-height: 40px;
+              cursor: pointer;
+              border: none;
+              padding: 0px;
+              margin-top: 8px;
+              padding-left: 30px;
+              border-top-left-radius: 0px;
+              border-top-right-radius: 0px;
+              .unicorn-nav-single-heading {
+                margin-left: -30px;
+                padding-left: 30px;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                height: 30px;
+                padding-top: 2px;
+                margin-top: -5px;
+                &.active {
+                  background-color: @APP_LEFT_NAV_ITEM_ACTIVE_COLOR;
+                }
+              }
+              .panel-title {
+                a {
+                  font-size: 14px;
+                  text-decoration: none;
+                  padding: 10px 0px 15px 0px;
+                  display: block;
+                  position: relative;
+                  &.unicorn-nav-single-panel {
+                    display: inline-block;
+                    padding-top: 5px;
+                    width: 110px;
+                    color: white;
+                  }
+                }
+              }
+            }
+            & > .panel-collapse {
+              .panel-body {
+                border: none;
+                padding: 0px;
+              }
+            }
+          }
+          .panel {
+            background: @APP_FRAME_LEFT_BACKGROUND;
+            margin-top: 0px;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+          }
+        }
+      }
+
+      .unicorn-tool-nav-bar .nav-title-item > a {
+        height: 28px;
+        display: block;
+        line-height: 28px;
+        padding-left: 40px;
+        margin: 6px 0 6px 0;
+        cursor: pointer;
+        text-decoration: none;
+        .unicornLeftNavItemFont();
+        &.active {
+          background-color: @APP_LEFT_NAV_ITEM_ACTIVE_COLOR;
+          &:hover {
+            background-color: @APP_LEFT_NAV_ITEM_ACTIVE_COLOR;
+          }
+        }
+        &:hover {
+          background-color: @APP_LEFT_NAV_ITEM_HOVER_COLOR;
+        }
+        i {
+          display: inline-block;
+          width: 20px;
+          height: 20px;
+          margin-right: 5px;
+          vertical-align: middle;
+          &.accordion-tip {
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            right: 15px;
+            top: 16px;
+            margin: 0px;
+          }
+        }
+        @import "nav_lead.less";
+      }
+    }
+  }
+
+  & > .unicorn-frame-main {
+    margin-left: @APP_FRAME_LEFT_WIDTH;
+    height: 100%;
+    position: relative;
+
+    & > .unicorn-frame-main-top-tool {
+      height: 36px;
+      .loading-change-dashboard {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1000;
+        .backend {
+          width: 100%;
+          height: 100%;
+          opacity: 0.3;
+          filter: alpha(opacity=30);
+          background-color: #000;
+        }
+        .http-loader__wrapper {
+          top: 40%;
+        }
+        .http-loader {
+          top: 40%;
+        }
+      }
+
+      .top-bar-navigator {
+        height: @APP_TOP_HEIGHT;
+        border-top: 3px solid #2392c8;
+        border-bottom: 1px solid #efefef;
+        background-color: #f9f9f9;
+
+        .navigator-tools {
+          text-align: right;
+
+          .guide {
+            position: relative;
+            cursor: pointer;
+            text-align: left;
+            padding-left: 24px;
+            vertical-align: middle;
+            display: inline-block;
+            max-width: 100px;
+            white-space: nowrap;
+            height: @APP_TOP_HEIGHT - 3;
+            line-height: @APP_TOP_HEIGHT - 3;
+
+            &:focus {
+              outline: none;
+            }
+
+            a:link {
+              text-decoration: none;
+              color: #666666;
+            }
+            a:visited {
+              color: #666666;
+            }
+          }
+
+          .user {
+            position: relative;
+            cursor: pointer;
+            text-align: left;
+            padding-left: 24px;
+            vertical-align: middle;
+            display: inline-block;
+            max-width: 100px;
+            white-space: nowrap;
+            height: @APP_TOP_HEIGHT - 3;
+            line-height: @APP_TOP_HEIGHT - 3;
+            background: url(../images/user.png) 3px center no-repeat;
+            &:focus {
+              outline: none;
+            }
+
+            .user-info-list {
+              position: absolute;
+              right: 0;
+              z-index: 1000;
+              width: 140px;
+              text-align: center;
+              background-color: #F9F9F9;
+              border: 1px solid #DEDEDE;
+              border-top: 0;
+              .info-item {
+                height: 24px;
+                margin: 4px 0 4px 0;
+                line-height: 24px;
+                color: #666666;
+                text-align: center;
+                cursor: pointer;
+                .user-setting {
+                  &:hover {
+                    background-color: #2392C8;
+                    color: #EFEFEF;
+                  }
+                }
+              }
+            }
+          }
+
+          .unicorn-nav-user-select-region {
+            position: absolute;
+            display: inline-block;
+            right: 345px;
+            max-width: 50px;
+            top: @APP_TOP_HEIGHT - 24;
+            text-align: center;
+
+            &.hidden {
+              display: none;
+            }
+
+            &:focus {
+              color: #2392c8;
+              outline: none;
+            }
+            &:hover {
+              cursor: pointer;
+            }
+            .unicorn-region-list {
+              position: relative;
+              border: 1px solid #EFEFEF;
+              border-top: none;
+              width: 130px;
+              right: 35px;
+              top: 8px;
+              text-align: center;
+              background-color: #F9F9F9;
+              z-index: 1;
+
+              .region-item {
+                position: relative;
+                color: #666;
+                line-height: 30px;
+                &:hover {
+                  cursor: pointer;
+                  color: #EFEFEF;
+                  background-color: #2392C8;
+                }
+              }
+            }
+
+          }
+
+          .unicorn-nav-user-select-dashboard {
+            vertical-align: middle;
+            display: inline-block;
+            margin-right: 20px;
+            height: @APP_TOP_HEIGHT - 3;
+            line-height: @APP_TOP_HEIGHT - 3;
+            position: relative;
+
+            &:focus {
+              outline: none;
+
+              & > .unicorn-current-dashboard {
+                color: #2392c8;
+                background: url(../images/switch_on.png) left no-repeat;
+              }
+            }
+
+            & > .unicorn-current-dashboard {
+              padding-left: 24px;
+              max-width: 100px;
+              overflow: hidden;
+              white-space: nowrap;
+              z-index: 102;
+              cursor: pointer;
+              height: 100%;
+              width: 100%;
+              background: url(../images/switch.png) left no-repeat;
+            }
+
+            .unicorn-dashboard-list {
+              position: absolute;
+              background-color: #f9f9f9;
+              border: 1px solid #efefef;
+              border-top: 0;
+              width: 140px;
+              text-align: center;
+              z-index: 1000;
+              right: 0;
+            }
+
+            .unicorn-dashboard-list .recent .item {
+              text-align: center;
+              line-height: 24px;
+              height: 24px;
+              margin: 4px 0 4px 0;
+              color: #666;
+              cursor: pointer;
+
+              &:hover {
+                background-color: #2392c8;
+                color: #efefef;
+              }
+              &.active {
+                color: #2392c8;
+                &:hover {
+                  background-color: #2392c8;
+                  color: #efefef;
+                }
+              }
+
+              .lead-slide {
+                position: absolute;
+                font-size: 12px;
+                left: 10px;
+                transform: scale(0.875);
+              }
+            }
+
+            .unicorn-dash-project {
+              width: 240px;
+              left: -240px;
+              bottom: -1px;
+              position: absolute;
+              background: #f9f9f9;
+              border: 1px solid #efefef;
+              cursor: default;
+              text-align: center;
+
+              .search-input {
+                margin: 5px 8px;
+                vertical-align: middle;
+                border-radius: 11px;
+                line-height: 14px;
+                height: 26px;
+                width: 120px;
+                border: 1px solid #ddd;
+                background: #fff url(../images/search.png) 4px 7px no-repeat;
+                padding: 0 14px 0 18px;
+                color: #666;
+
+                &:focus {
+                  outline: none;
+                  border-color: #29aaee;
+                }
+              }
+
+              .tool-search {
+                text-align: right;
+              }
+
+              .project-list {
+                height: 120px;
+                overflow-y: auto;
+                margin-bottom: 5px;
+              }
+
+              .item {
+                display: inline-block;
+                width: 100px;
+                margin: 0 3px;
+                position: relative;
+                text-align: left;
+                cursor: pointer;
+                color: #aaa;
+                line-height: 14px;
+                &:hover {
+                  color: #666;
+
+                  &.active {
+                    color: #888;
+                  }
+                }
+
+                &.active {
+                  color: #2392c8;
+                  &:hover {
+                    color: #2392c8;
+
+                    &.active {
+                      color: #2392c8;
+                    }
+                  }
+                }
+
+                .field {
+                  width: 95%;
+                  padding: 0 3px;
+                  overflow: hidden;
+                  white-space:nowrap;
+                }
+
+                .project-selected {
+                  position: absolute;
+                  width: 19px;
+                  height: 19px;
+                  background: url(../images/status_active.png) center no-repeat;
+                  border: 2px solid #fff;
+                  border-radius: 9px;
+                  right: -8px;
+                  top: -8px;
+                }
+              }
+            }
+
+            .project-selected {
+              position: absolute;
+              width: 19px;
+              height: 19px;
+              background: url(../images/status_active.png) center no-repeat;
+              border-radius: 9px;
+              right: 5px;
+              top: 3px;
+            }
+
+            .project-more {
+              cursor: pointer;
+              color: #888;
+
+              &:hover {
+                color: #666;
+              }
+            }
+          }
+
+          .user-logout {
+            vertical-align: middle;
+            display: inline-block;
+            height: @APP_TOP_HEIGHT - 3;
+            width: 30px;
+            cursor: pointer;
+            background: url(../images/logout.png) center no-repeat;
+            margin: 0 20px;
+          }
+        }
+      }
+    }
+
+    .unicorn-frame-main-center {
+      position: relative;
+      overflow-x: hidden;
+      overflow-y: auto;
+
+      > div {
+        margin-bottom: 25px;
+      }
+
+      .ui-view-container {
+        padding: 0 20px;
+      }
+
+      .unicorn-global-loading {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        width: 100%;
+        height: 100%;
+        .backend {
+          width: 100%;
+          height: 100%;
+          background-color: black;
+          opacity: 0.3;
+        }
+      }
+    }
+  }
+}
+
+@import "modal.less";
+@import "select.less";
+@import "data_table.less";
+@import "data_table_button.less";

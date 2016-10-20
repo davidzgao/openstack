@@ -1,0 +1,600 @@
+/* Modal style css. */
+
+.modal-dialog {
+  width: 450px;
+  min-width: 300px;
+  margin: 6% auto 0;
+}
+
+.modal-dialog .modal-loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999999;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.modal-dialog .modal-loading .backend {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  border-radius: 3px;
+  opacity: .2;
+}
+
+.modal-dialog .modal-content {
+  border: 0;
+  border-radius: 0;
+}
+
+.modal-dialog > .modal-content > .unicorn-modal-header > .header-row {
+  height: 40px;
+  background: #323232;
+  border-radius: 0;
+}
+
+.modal-dialog > .modal-content > .unicorn-modal-header > .header-row > .title {
+  display: inline-block;
+  max-width: 90%;
+  margin-top: 5px;
+  margin-left: 10px;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 30px;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.modal-dialog > .modal-content > .unicorn-modal-header > .header-row > .close {
+  margin-top: 3px;
+  margin-right: 10px;
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 30px;
+  color: #fff;
+  text-align: center;
+  opacity: 1;
+}
+
+.modal-dialog > .modal-content > .unicorn-modal-header > .header-row > .close:hover {
+  text-shadow: 0 0 20px #fff;
+  -webkit-transition: text-shadow 0.5s;
+       -o-transition: text-shadow 0.5s;
+          transition: text-shadow 0.5s;
+}
+
+.modal-dialog .unicorn-modal-body {
+  padding: 30px 30px;
+  padding-bottom: 15px;
+  font-size: 14px;
+}
+
+.modal-dialog .unicorn-modal-footer {
+  position: relative;
+  height: 55px;
+  background: #f6f7f7;
+  border-radius: 0 0 5px 5px;
+}
+
+.modal-dialog .unicorn-modal-footer button {
+  position: absolute;
+  right: 50px;
+  width: 64px;
+  padding: 6px 3px;
+  margin-top: 15px;
+  font-size: 12px;
+  color: #fff;
+  vertical-align: middle;
+  background-color: #515151;
+}
+
+.modal-dialog .unicorn-modal-footer button:hover {
+  background-color: #363636;
+}
+
+.modal-dialog .unicorn-modal-footer button[name="stepPrevious"] {
+  position: absolute;
+  right: auto;
+  left: 50px;
+}
+
+.modal-dialog .unicorn-modal-footer button[name="cancel"] {
+  right: 140px;
+  color: #aaa;
+  background-color: #e7e7e7;
+}
+
+.modal-dialog .unicorn-modal-footer button:focus {
+  outline: none;
+}
+
+.modal-dialog > .modal-content > .unicorn-modal-center {
+  width: 450px;
+}
+
+.modal-dialog form > div > .step-header {
+  background: #f6f7f7;
+}
+
+.modal-dialog form > div > .step-header > .step-header-empty {
+  height: 30px;
+}
+
+.modal-dialog form > div > .step-header > .step-notes {
+  height: 20px;
+  padding-right: 60px;
+  padding-left: 60px;
+  font-size: 14px;
+}
+
+.modal-dialog form > div > .step-header > .step-notes .step-parallel {
+  position: absolute;
+  margin-top: -20px;
+  margin-left: -50px;
+}
+
+.modal-dialog form > div > .step-header > .step-notes .step-parallel > .step-tab {
+  display: inline-block;
+  width: 90px;
+  height: 40px;
+  margin: 0 2px;
+  line-height: 40px;
+  color: #aaa;
+  text-align: center;
+  cursor: pointer;
+  background-color: #e6e6e6;
+  border-radius: 8px 8px 0 0;
+}
+
+.modal-dialog form > div > .step-header > .step-notes .step-parallel > .step-tab.active {
+  line-height: 40px;
+  color: #888;
+  background-color: #fff;
+}
+
+.modal-dialog form > div > .step-header > .step-notes .step-parallel > .step-tab.invalid {
+  color: #e43e3e;
+}
+
+.modal-dialog form > div > .step-header > .step-notes > table {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.modal-dialog form > div > .step-header > .step-notes > table tr > .step-item {
+  height: 2px;
+  background: #c9c9c9;
+  border: 1px solid #c9c9c9;
+}
+
+.modal-dialog form > div > .step-header > .step-notes > table tr > .step-item > .step-inner {
+  position: relative;
+}
+
+.modal-dialog form > div > .step-header > .step-notes > table tr > .step-item:first-child {
+  width: 1px;
+}
+
+.modal-dialog form > div > .step-header > .step-notes > table tr > .step-item.active > .step-inner > .step-lead-field > .step-index {
+  background: #29aaee;
+}
+
+.modal-dialog form > div > .step-header > .step-notes > table tr > .step-item.active > .step-inner > .step-lead-field > .step-note {
+  color: #29aaee;
+}
+
+.modal-dialog form > div > .step-header > .step-notes > table tr > .step-item > .step-inner > .step-lead-field {
+  position: absolute;
+  right: -50px;
+  z-index: 1;
+  display: inline-block;
+  width: 100px;
+  margin-top: -35px;
+  text-align: center;
+}
+
+.modal-dialog form > div > .step-header > .step-notes > table tr > .step-item > .step-inner > .step-lead-field > .step-note {
+  color: #666;
+}
+
+.modal-dialog form > div > .step-header > .step-notes > table tr > .step-item > .step-inner > .step-lead-field > .step-index {
+  position: absolute;
+  top: 25px;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin-left: -11px;
+  font-size: 11px;
+  line-height: 14px;
+  color: #fff;
+  text-align: center;
+  background: #d9d9d9;
+  border: 3px solid #d9d9d9;
+  border-radius: 10px;
+}
+
+.modal-dialog form > div > .fields-area {
+  position: relative;
+  width: 100%;
+  padding: 0;
+  padding-top: 10px;
+  margin-bottom: 10px;
+  overflow-x: hidden;
+}
+
+.modal-dialog form > div > .fields-area .field-warning {
+  margin: 10px 14% 0;
+  color: red;
+}
+
+.modal-dialog form > div > .fields-area .field {
+  margin: 10px 10px;
+}
+
+.modal-dialog form > div > .fields-area .field > .field-label {
+  display: inline-block;
+  width: 100px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-right: 10px;
+  font-size: 12px;
+  font-weight: normal;
+  text-align: right;
+  vertical-align: top;
+}
+
+.modal-dialog form > div > .fields-area .field > .field-label.field-next-line {
+  display: block;
+}
+
+.modal-dialog form > div > .fields-area > .modal-steps > .modal-step > .note {
+  color: #2486b7;
+  text-align: center;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.modal-dialog form > div > .fields-area .field-mulit-select {
+  display: inline-block;
+  max-height: 120px;
+  margin: 0;
+  overflow-y: auto;
+  vertical-align: top;
+}
+
+.modal-dialog form > div > .fields-area .field-mulit-select.invalid {
+  padding: 3px;
+  border: 1px solid #e36f6f;
+  border-radius: 3px;
+}
+
+.modal-dialog form > div > .fields-area .field-mulit-select .field-select-area {
+  max-width: 300px;
+  max-height: 100px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.modal-dialog form > div > .fields-area .field-mulit-select .field-select-area > .field-value {
+  display: inline-block;
+}
+
+.modal-dialog form > div > .fields-area .field-mulit-select .field-select-area > .field-value-disable {
+  cursor: not-allowed;
+}
+
+.modal-dialog form > div > .fields-area .field-mulit-select .field-select-item {
+  display: inline-block;
+  width: 300px;
+  height: 30px;
+  padding-left: 8%;
+  margin: 5px 0;
+  line-height: 30px;
+  color: #29AAEE;
+  cursor: pointer;
+  background-color: #FFFFFF;
+  border: 1px solid #C5DEEB;
+  border-radius: 3px;
+}
+
+.modal-dialog form > div > .fields-area .field-mulit-select .active {
+  color: white;
+  background-color: #69BFEB;
+  border-color: #69BFEB;
+}
+
+.modal-dialog form > div > .fields-area .field-mulit-select .field-select-area::-webkit-scrollbar-thumb {
+  background: #666;
+}
+
+.modal-dialog form > div > .fields-area .field .field-input {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.modal-dialog form > div > .fields-area .field .field-input.ip {
+  line-height: normal;
+}
+
+.modal-dialog form > div > .fields-area .field .field-input.ip .ip-checkbox {
+  position: relative;
+  padding-top: 8px;
+  padding-left: 6px;
+  margin-bottom: 3px;
+  border: 1px solid #C5DEEB;
+  border-radius: 2px;
+}
+
+.modal-dialog form > div > .fields-area .field .field-input.ip .ip-checkbox.selected {
+  background-color: #29AAEE;
+  border-color: #29AAEE;
+}
+
+.modal-dialog form > div > .fields-area .field .field-input.ip .ip-checkbox.selected.invalid {
+  background-color: white;
+  border-color: #E43E3E;
+}
+
+.modal-dialog form > div > .fields-area .field .field-input > .credential-switch {
+  display: inline-block;
+  padding: 3px 6px;
+  color: #888;
+  vertical-align: middle;
+  cursor: pointer;
+  background: #dddddd;
+}
+
+.modal-dialog form > div > .fields-area .field .field-input > .credential-switch.active {
+  color: #fff;
+  background: #29aaee;
+}
+
+.modal-dialog form > div > .fields-area .field .field-input > .credential-switch.active:hover {
+  background: #29aaee;
+}
+
+.modal-dialog form > div > .fields-area .field .field-input > .credential-switch:hover {
+  color: #fff;
+  background: #68c4f2;
+}
+
+.modal-dialog .modal-tip {
+  position: relative;
+  height: 24px;
+  padding-right: 3px;
+  padding-left: 120px;
+  line-height: 24px;
+  color: #e43e3e;
+}
+
+.modal-dialog .modal-tip > .tips-pointer {
+  position: absolute;
+  top: 22px;
+  left: 20px;
+  width: 12px;
+  height: 12px;
+}
+
+.modal-dialog .modal-tip > .tips-pointer > .tips-pointer-outer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border: 5px solid transparent;
+  border-top: 5px solid #e36f6f;
+  border-left: 5px solid #e36f6f;
+  border-radius: 0 0 2px 2px;
+}
+
+.modal-dialog .modal-tip > .tips-pointer > .tips-pointer-inner {
+  position: absolute;
+  top: 0;
+  left: 1px;
+  width: 0;
+  height: 0;
+  border: 4px solid transparent;
+  border-top: 4px solid #fff;
+  border-left: 4px solid #fff;
+  border-radius: 0 0 1px 1px;
+}
+
+.modal-dialog form textarea {
+  resize: none;
+}
+
+.modal-dialog .fields-area .field-input .checkbox-list-field {
+  display: inline-block;
+  margin-right: 10px;
+  line-height: 27px;
+}
+
+.modal-dialog form input,
+.modal-dialog form textarea,
+.modal-dialog form select {
+  width: 240px;
+  padding: 5px 3px;
+  font-size: 12px;
+  vertical-align: middle;
+  background-color: #fff;
+  border: 1px solid #c9c9c9;
+  border-radius: 3px;
+}
+
+.modal-dialog form input:hover,
+.modal-dialog form textarea:hover,
+.modal-dialog form select:hover,
+.modal-dialog form input:focus,
+.modal-dialog form textarea:focus,
+.modal-dialog form select:focus {
+  outline: none;
+}
+
+.modal-dialog form input:focus,
+.modal-dialog form textarea:focus,
+.modal-dialog form select:focus {
+  border-color: #29aaee;
+}
+
+.modal-dialog form input > .clear-float,
+.modal-dialog form textarea > .clear-float,
+.modal-dialog form select > .clear-float {
+  clear: both;
+}
+
+.modal-dialog form input[type="checkbox"],
+.modal-dialog form textarea[type="checkbox"],
+.modal-dialog form select[type="checkbox"] {
+  width: 20px;
+  padding: 0;
+  margin: 0;
+  margin-top: 4px;
+}
+
+.modal-dialog form input.invalid,
+.modal-dialog form textarea.invalid,
+.modal-dialog form select.invalid {
+  border-color: #e36f6f;
+}
+
+.modal-dialog form > div > .fields-area .modal-steps {
+  width: 1000%;
+  overflow-x: hidden;
+  -webkit-transition: margin-left 0.5s;
+       -o-transition: margin-left 0.5s;
+          transition: margin-left 0.5s;
+}
+
+.modal-dialog form > div > .fields-area .modal-step {
+  float: left;
+  width: 450px;
+}
+
+.modal {
+  position: absolute;
+}
+
+.modal form > div > .fields-area .modal-step {
+  max-height: 300px;
+  margin-right: -2px;
+  overflow-y: auto;
+}
+
+.modal.form-window > .modal-dialog {
+  width: 500px;
+}
+
+.modal.window-larger form > div > .fields-area .modal-step {
+  max-height: 360px;
+  min-height: 350px;
+  margin-right: -2px;
+  overflow-y: auto;
+}
+
+.modal.window-larger > .modal-dialog {
+  width: 850px;
+}
+
+.modal.window-larger > .modal-dialog .modal-content {
+  background: #e6e6e6;
+}
+
+.modal.window-larger > .modal-dialog .unicorn-modal-center {
+  float: left;
+  background: #fff;
+  border-right: 2px solid #e0e0e0;
+}
+
+.modal.window-larger > .modal-dialog .unicorn-modal-des {
+  float: left;
+  width: 395px;
+}
+
+.modal.window-larger > .modal-dialog .clear-float {
+  clear: both;
+}
+
+.member_box {
+  padding: 3px 5px;
+  padding-left: 15px;
+}
+
+.box-title {
+  height: 20px;
+  font-size: 16px;
+}
+
+.selected_box,
+.option_box {
+  margin-bottom: 5px;
+}
+
+.selected_box .tbody_area,
+.option_box .tbody_area {
+  max-height: 100px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.selected_box .datatable,
+.option_box .datatable {
+  max-height: 100px;
+  margin-top: 25px;
+}
+
+.table_in_form {
+  width: 100%;
+  table-layout: fixed;
+}
+
+.table_in_form .btn-primary {
+  padding: 0 6px;
+  background-color: #29AAEE;
+  border-color: #29AAEE;
+}
+
+.table_in_form .btn-primary:hover {
+  background-color: #05A0DB;
+  border-color: #05A0DB;
+}
+
+.table_in_form thead tr th .title {
+  position: absolute;
+  top: -20px;
+  display: block;
+}
+
+.table_in_form tbody tr {
+  height: 30px;
+}
+
+.table_in_form tbody tr:hover {
+  background: #F9F9F9;
+}
+
+.table_in_form td {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.table_in_form .edit-in-cell {
+  width: 80px;
+  height: 25px;
+  padding: 5px;
+  line-height: 14px;
+  border: 1px solid #C9C9C9;
+  border-radius: 3px;
+  outline: none;
+}
+
+.table_in_form .edit-in-cell:focus {
+  border-color: #29AAEE;
+}
+
+.selected_box .btn-primary {
+  padding: 1px 8px;
+}

@@ -1,0 +1,13 @@
+<div class="update-input">
+    <label>{{field.label | i18n}}</label>
+    <span class="current-tip">
+        {{currentValue}}: {{field.source}} {{unit}}</span>
+    <input type='text'
+      ng-attr-placeholder={{placeholder}}
+      ng-model="field.value"
+      ng-class="{true: 'invalid'}[field.invalidate]"
+      ng-disabled="!field.editable"
+      ng-change="validator(field, $index)" />
+    <span ng-show="field.invalidate"
+      class="field-error-tips">{{field.error_tips}}</span>
+</div>

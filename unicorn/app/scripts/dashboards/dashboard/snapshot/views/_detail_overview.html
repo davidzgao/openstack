@@ -1,0 +1,101 @@
+<div detail-tips
+    detail="image">
+</div>
+<div detail-stitcher key-set=detailKeySet source=image>
+</div>
+
+  <div class='other_info detail_info'>
+      <div class='detail_title'>{{ note.detail.config }}</div>
+    <div class='detail_area'>
+      <ul>
+        <li ng-if="image.properties.os_type||editing">
+          <span class="title">{{note.detail.osType }}</span>
+          <span ng-if="!editing" class="value">{{image.properties.os_type}}</span>
+          <span ng-if="editing" class="value">
+            <select class="selectDirective" ng-model="modal.osType" val="osDefault"
+              ng-options="opt.value as opt.text group by opt.group for opt in osDefault"></select>
+          </span>
+        </li>
+        <li>
+          <span class="title">{{note.detail.min_ram }}</span>
+          <span ng-show="!editing" class="value">{{image.min_ram}}</span>
+          <span ng-show="editing" class="value">
+            <input type="text" ng-model="modal.minRam" />
+          </span>
+        </li>
+        <li>
+          <span class="title">{{note.detail.min_disk }}</span>
+          <span ng-show="!editing" class="value">{{image.min_disk}}</span>
+          <span ng-show="editing" class="value">
+            <input type="text" ng-model="modal.minDisk" />
+          </span>
+        </li>
+        <li ng-if="image.properties.username||editing">
+          <span class="title">{{note.detail.username }}</span>
+          <span ng-show="!editing" class="value">{{image.properties.username}}</span>
+          <span ng-show="editing" class="value">
+            <input type="text" ng-model="modal.username" />
+          </span>
+        </li>
+        <li ng-if="image.properties.password||editing">
+          <span class="title">{{note.detail.password }}</span>
+          <span ng-show="!editing" class="value">{{image.properties.password}}</span>
+          <span ng-show="editing" class="value">
+            <input type="text" ng-model="modal.password" />
+          </span>
+        </li>
+        <li ng-if="image.properties.description||editing">
+          <span class="title">{{note.detail.description }}</span>
+          <span ng-show="!editing" class="value">{{image.properties.description}}</span>
+          <span ng-show="editing" class="value">
+            <textarea type="text" ng-model="modal.description"></textarea>
+          </span>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class='other_info detail_info' ng-show="modal.showHigher">
+    <div class='detail_title'>
+      {{ note.detail.advanceConfig }}
+      <div class="edit-btn-group" ng-show="editing">
+        <button ng-show="!addPro&&image" class='btn btn-enable'
+          ng-click="addPro=true">
+          {{note.detail.add}}</button>
+        <button ng-show="addPro&&image" class='btn btn-enable'
+          ng-click="addPro=false">
+          {{note.detail.cancel}}</button>
+      </div>
+    </div>
+    <div class='detail_area'>
+      <div class="properties-empty" ng-show="!modal.showExtpro">
+        {{note.detail.propertiesEmpty}}
+      </div>
+      <ul ng-if="modal.showExtpro">
+        <li ng-repeat="(key, value) in modal.extProperties">
+          <span class="title">{{key}}</span>
+          <span ng-if="!editing" class="value">{{value}}</span>
+          <span ng-if="editing" class="value">
+            <input type="text" ng-model="modal.extProperties[key]" />
+          </span>
+        </li>
+      </ul>
+
+      <div ng-model="modal.properties" class="self-define-area">
+        <div class="define-container">
+          <div class="defined-fields">
+            <div class="item" ng-repeat="(key, value) in modal.properties">
+              <div class="item-key">{{key}}</div>:
+              <div class="item-value">{{value}}</div>
+              <button class="btn define-minus" ng-click="defineMinues(key)">&minus;</button>
+            </div>
+          </div>
+          <div class="define-field" ng-show="addPro">
+            <input class="define-key" ng-model="modal.defineKey" ng-change="valid(modal.defineKey, true)"/>
+            <input class="define-value" ng-model="modal.defineValue" ng-change="valid(modal.defineValue)" />
+            <button class="btn define-add" ng-click="defineAdd()">&#43;</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>

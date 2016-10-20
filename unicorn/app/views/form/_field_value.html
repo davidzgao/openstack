@@ -1,0 +1,16 @@
+<span>
+  <span ng-if="fieldValue.tag != 'multi-select' && fieldValue.tag != 'complex_select'">
+    {{fieldValue.display_value | i18n}}</span>
+  <span ng-if="fieldValue.tag == 'multi-select'"
+    ng-repeat="value in fieldValue.values"
+    style="margin-right: 9px">
+    {{value}}
+  </span>
+  <span ng-if="fieldValue.tag == 'complex_select'"
+      ng-repeat="value in fieldValue.values"
+      style="margin-right: 9px">
+      <span ng-repeat="(itemK, itemV) in value"
+          style="margin-right: 5px">
+          {{itemK | i18n}}: {{itemV}}</span>
+  </span>
+</span>

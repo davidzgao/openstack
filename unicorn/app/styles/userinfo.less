@@ -1,0 +1,172 @@
+.user-info-base-tab {
+  position: relative;
+  width: 500px;
+  height: auto;
+  margin-left: 50px;
+  padding-top: 40px;
+  font-size: 14px;
+
+  .user-info-title {
+    position: absolute;
+    top: 10px;
+    font-size: 16px;
+  }
+  .edit-btn-group {
+    top: 5px;
+  }
+
+  .user-info-area {
+    .info-item {
+      width: 100%;
+      display: inline-block;
+      height: 40px;
+      .title {
+        width: 20%;
+        text-align: right;
+        display: inline-block;
+      }
+      .value {
+        width: 70%;
+        padding-left: 20px;
+        display: inline-block;
+        a {
+          &:hover {
+            text-decoration: none;
+          }
+        }
+        &.editing {
+          display: none;
+        }
+      }
+      .edit-input {
+        width: 70%;
+        padding-left: 20px;
+        &.fixed {
+          display: none;
+        }
+      }
+    }
+
+    .modal-tip {
+      position: absolute;
+      margin-left: 180px;
+      background: #fff;
+      margin-top: -50px;
+      border: 1px solid #e36f6f;
+      height: 24px;
+      padding-left: 3px;
+      padding-right: 3px;
+      border-radius: 5px;
+      box-shadow: 2px 0 5px #aaa;
+
+      & > .tips-pointer {
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        left: 20px;
+        top: 22px;
+
+        & > .tips-pointer-outer {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 0px;
+          height: 0px;
+          border: 5px solid transparent;
+          border-left: 5px solid #e36f6f;
+          border-top: 5px solid #e36f6f;
+          border-radius: 0 0 2px 2px;
+        }
+
+        & > .tips-pointer-inner {
+          position: absolute;
+          top: 0px;
+          left: 1px;
+          width: 0px;
+          height: 0px;
+          border: 4px solid transparent;
+          border-left: 4px solid #fff;
+          border-top: 4px solid #fff;
+          border-radius: 0 0 1px 1px;
+        }
+      }
+      &.tip-right {
+        position: absolute;
+        margin-left: 100px;
+        background: #fff;
+        margin-top: 27px;
+        border: 1px solid #e36f6f;
+        height: 24px;
+        padding-left: 3px;
+        padding-right: 3px;
+        border-radius: 5px;
+        box-shadow: 2px 0 5px #aaa;
+        & > .tips-pointer {
+          position: absolute;
+          width: 12px;
+          height: 12px;
+          left: 40px;
+          top: -10px;
+
+        & > .tips-pointer-outer {
+            position: absolute;
+            top: 1px;
+            left: 0;
+            width: 0px;
+            height: 0px;
+            border: 5px solid transparent;
+            border-left: 5px solid #e36f6f;
+            border-bottom: 5px solid #e36f6f;
+            border-radius: 0 0 2px 2px;
+          }
+
+          & > .tips-pointer-inner {
+            position: absolute;
+            top: 3px;
+            left: 1px;
+            width: 0px;
+            height: 0px;
+            border: 4px solid transparent;
+            border-left: 4px solid #fff;
+            border-bottom: 4px solid #fff;
+            border-radius: 0 0 1px 1px;
+          }
+        }
+      }
+    }
+
+    input, textarea {
+      width: 240px;
+      border: 1px solid #c9c9c9;
+      border-radius: 3px;
+      padding-left: 5px;
+      font-size: 14px;
+      vertical-align: middle;
+      background: #fff;
+
+      &.wrap-select-input {
+        border: 0;
+      }
+
+      &.define-key, &.define-value {
+        width: 180px;
+        margin-left: 10px;
+      }
+
+      &:hover, &:focus {
+        outline: none;
+      }
+
+      &:focus {
+        border-color: #29aaee;
+      }
+      &.ng-invalid {
+        border-color: #E36F6F;
+      }
+    }
+  }
+
+  .user-change-pass {
+    margin-left: 110px;
+  }
+}

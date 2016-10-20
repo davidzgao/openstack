@@ -1,0 +1,37 @@
+<form method="post" action="" class="modal-{{modal.slug}}" id="_modal_{{modal.slug}}" autocomplete="off">
+  <div ng-show="modal.globalTip" class="modal-global-tip">{{modal.globalTip}}</div>
+  <div ng-if="modal.single">
+    <div class="fields-area">
+      <div class="field-{{modal.fields[0].slug}} field">
+        <div class="field-label">{{modal.fields[0].label}}</div>
+        <div class="field-input">
+          <div>
+            <input ng-change="validator('name')"
+                   class="{{tips['name']?'invalid':''}}"
+                   name="{{modal.fields[0].slug}}" ng-model="form['name']"
+                   type="text"/>
+          </div>
+        </div>
+        <div ng-show="tips['name']" class="modal-tip">
+          <div>{{tips['name']}}</div>
+        </div>
+      </div>
+      <div class="import-public-key" ng-bind="note.import" ng-click="importKey()"></div>
+      <div class="field-{{modal.fields[0].slug}} field" ng-show="modal.importKey">
+        <div class="field-label">{{modal.fields[1].label}}</div>
+        <div class="field-input">
+          <textarea ng-change="validator('public_key')" name="public_key"
+                    class="{{tips['public_key']?'invalid':''}}"
+                    ng-model="form['public_key']"></textarea>
+        </div>
+        <div ng-show="tips['public_key']" class="modal-tip">
+          <div>{{tips['name']}}</div>
+        </div>
+      </div>
+    </div>
+    <div class="unicorn-modal-footer">
+      <button class="btn" name="cancel" ng-click="close()">{{note.modal.cancel}}</button>
+      <button class="btn" name="submit" type="submit" ng-click="handle()">{{note.modal.save}}</button>
+    </div>
+  </div>
+</form>

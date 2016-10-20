@@ -1,0 +1,604 @@
+/* Attr at data table */
+
+/* Style of button for action */
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.action_group {
+  margin: 16px 0;
+}
+
+.action_group .btn {
+  margin: 0 10px 0 0;
+  font-size: 12px;
+  line-height: 20px;
+  vertical-align: middle;
+}
+
+.action_group .btn i {
+  display: inline-block;
+  float: left;
+  width: 15px;
+  height: 15px;
+  margin-top: 3px;
+  margin-right: 5px;
+  margin-left: 7px;
+}
+
+.action_group .tabSearch {
+  position: absolute;
+  right: 20px;
+  display: inline-block;
+}
+
+.action_group .tabSearch .search {
+  padding: 5px 3px 5px 20px;
+  font-size: 12px;
+  line-height: 16px;
+  vertical-align: middle;
+  background: url('../images/actions/action_search.png') no-repeat left center;
+  border: 1px solid #d0d0d0;
+  border-radius: 13px;
+  outline: none;
+  background-position-x: 5px;
+}
+
+.action_group .tabSearch .search:focus {
+  border-color: #28a9ee;
+  outline: none;
+}
+
+.action_group .search-option {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+}
+
+.action_group .search-option .search {
+  padding: 5px 3px 5px 20px;
+  font-size: 12px;
+  line-height: 16px;
+  vertical-align: middle;
+  border: 1px solid #d0d0d0;
+  border-radius: 13px;
+  outline: none;
+}
+
+.action_group .search-option .search:hover {
+  outline: none;
+}
+
+.btn {
+  padding-top: 6px;
+  padding-right: 15px;
+  padding-bottom: 6px;
+  padding-left: 8px;
+}
+
+.btn:active {
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shandow: none;
+}
+
+.btn:focus {
+  color: #989898;
+  outline: none;
+}
+
+.btn:active:focus {
+  outline: none;
+}
+
+.btn.more {
+  padding-left: 15px;
+}
+
+.btn.more i {
+  display: inline-block;
+  float: left;
+  width: 15px;
+  height: 15px;
+  margin-top: 4px;
+  margin-right: 3px;
+  margin-left: 7px;
+  background: url('../images/action_more_hover.png') no-repeat;
+}
+
+.btn-disable {
+  color: #989898;
+  cursor: not-allowed;
+  background: #e7e7e7;
+  border: none;
+}
+
+.btn-disable:hover {
+  color: #989898;
+}
+
+.btn-disable.download i {
+  background: url('../images/action_download_disabled.png') no-repeat;
+}
+
+.btn-disable.del i {
+  background: url(../images/actions/action_delete_disable.png) no-repeat;
+}
+
+.btn-disable.bind {
+  display: inline-block;
+  color: #989898;
+}
+
+.btn-disable.bind i {
+  background: url(../images/actions/action_bind_disable.png) no-repeat;
+}
+
+.btn-disable.bind:hover {
+  text-decoration: none;
+}
+
+.btn-disable.unbind {
+  display: inline-block;
+  color: #989898;
+}
+
+.btn-disable.unbind i {
+  background: url(../images/actions/action_unbind_disable.png) no-repeat;
+}
+
+.btn-disable.unbind:hover {
+  text-decoration: none;
+}
+
+.btn-disable.attach {
+  display: inline-block;
+  color: #989898;
+}
+
+.btn-disable.attach i {
+  background: url(../images/actions/action_attach_disable.png) no-repeat;
+}
+
+.btn-disable.attach:hover {
+  text-decoration: none;
+}
+
+.btn-disable.detach {
+  display: inline-block;
+  color: #989898;
+}
+
+.btn-disable.detach i {
+  background: url(../images/actions/action_detach_disable.png) no-repeat;
+}
+
+.btn-disable.detach:hover {
+  text-decoration: none;
+}
+
+.btn-disable.poweron {
+  display: inline-block;
+  color: #989898;
+}
+
+.btn-disable.poweron i {
+  background: url('../images/actions/action_instance_poweron_dis.png') no-repeat;
+}
+
+.btn-disable.poweron:hover {
+  text-decoration: none;
+}
+
+.btn-disable.poweroff {
+  display: inline-block;
+  color: #989898;
+}
+
+.btn-disable.poweroff i {
+  background: url('../images/actions/action_instance_poweroff_dis.png') no-repeat;
+}
+
+.btn-disable.poweroff:hover {
+  text-decoration: none;
+}
+
+.btn-disable.edit {
+  display: inline-block;
+  color: #989898;
+}
+
+.btn-disable.edit i {
+  margin-top: 4px;
+  background: url('../images/actions/action_edit_disable.png') no-repeat;
+}
+
+.btn-disable.edit:hover {
+  text-decoration: none;
+}
+
+.btn-disable.vnc a {
+  display: inline-block;
+  color: #989898;
+}
+
+.btn-disable.vnc a:hover {
+  text-decoration: none;
+}
+
+.btn-disable.vnc i {
+  background: url('../images/action_vnc.png') no-repeat;
+}
+
+.btn-disable.read i {
+  background: url('../images/action_read_disable.png') no-repeat;
+}
+
+.btn-disable.restore i {
+  background: url('../images/actions/action_restore.png') no-repeat;
+}
+
+.btn-enable {
+  color: #ffffff;
+  background: #515151;
+  background-color: #515151;
+  border: none;
+}
+
+.btn-enable.addFloatingIp,
+.btn-enable.bind {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+}
+
+.btn-enable.addFloatingIp i,
+.btn-enable.bind i {
+  background: url(../images/actions/action_bind_enable.png) center no-repeat;
+}
+
+.btn-enable.removeFloatingIp,
+.btn-enable.unbind {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+}
+
+.btn-enable.removeFloatingIp i,
+.btn-enable.unbind i {
+  background: url(../images/actions/action_unbind_enable.png) center no-repeat;
+}
+
+.btn-enable.detach {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+}
+
+.btn-enable.detach i {
+  background: url(../images/actions/action_detach_enable.png) center no-repeat;
+}
+
+.btn-enable.attach {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+}
+
+.btn-enable.attach i {
+  background: url(../images/actions/action_attach_enable.png) center no-repeat;
+}
+
+.btn-enable.snapshot {
+  display: inline-block;
+  padding-left: 5px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.btn-enable.snapshot i {
+  background: url('../images/action_back.png') center no-repeat;
+}
+
+.btn-enable.create {
+  padding-left: 5px;
+}
+
+.btn-enable.create a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+}
+
+.btn-enable.create i {
+  background: url(../images/actions/action_apply_enable.png) no-repeat;
+}
+
+.btn-enable.prolong_time {
+  padding-left: 5px;
+}
+
+.btn-enable.prolong_time a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+}
+
+.btn-enable.prolong_time i {
+  background: url(../images/actions/action_extend_time.png) no-repeat;
+}
+
+.btn-enable.edit a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+}
+
+.btn-enable.edit i {
+  margin-top: 4px;
+  background: url(../images/actions/action_edit.png) no-repeat;
+}
+
+.btn-enable:hover {
+  color: #ffffff;
+  background-color: #363636;
+}
+
+.btn-enable:focus {
+  color: #ffffff;
+  outline: none;
+}
+
+.btn-enable.download {
+  padding-left: 5px;
+  background-color: #515151;
+}
+
+.btn-enable.download i {
+  background: url('../images/action_download.png') no-repeat;
+}
+
+.btn-enable.download:hover {
+  color: #ffffff;
+  background-color: #363636;
+}
+
+.btn-enable.del {
+  background-color: #e05c69;
+}
+
+.btn-enable.del i {
+  background: url(../images/actions/action_delete_enable.png) no-repeat;
+}
+
+.btn-enable.del:hover {
+  background-color: #D25662;
+}
+
+.btn-enable.restore i {
+  background: url('../images/actions/action_restore_hover.png') no-repeat;
+}
+
+.btn-enable.poweron i {
+  background: url('../images/actions/action_instance_poweron.png') no-repeat;
+}
+
+.btn-enable.poweron:hover {
+  text-decoration: none;
+}
+
+.btn-enable.poweroff i {
+  background: url('../images/actions/action_instance_poweroff.png') no-repeat;
+}
+
+.btn-enable.poweroff:hover {
+  text-decoration: none;
+}
+
+.btn-enable.read i {
+  background: url('../images/action_read_hover.png') no-repeat;
+}
+
+.btn-enable.fresh i {
+  background: url(../images/actions/action_refresh.png) no-repeat;
+}
+
+.btn-group.open .dropdown-toggle {
+  color: #ffffff;
+  background: #515151;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.btn-group.open .dropdown-toggle.btn-default {
+  color: #ffffff;
+  background: #515151;
+  background-color: #515151;
+}
+
+.btn-group {
+  margin-right: 0;
+}
+
+.btn-group .caret {
+  margin-right: 3px;
+  margin-left: 5px;
+}
+
+.btn-group .dropdown-menu {
+  min-width: 104px;
+  padding: 0;
+  background-color: #515151;
+  border-radius: 0;
+}
+
+.btn-group .dropdown-menu li {
+  display: block;
+  font-size: 12px;
+}
+
+.btn-group .dropdown-menu li.split-line {
+  height: 1px;
+  background: #C9C9C9;
+}
+
+.btn-group .dropdown-menu li a {
+  display: block;
+  padding: 3px 10px 3px 7px;
+  line-height: 20px;
+  cursor: pointer;
+}
+
+.btn-group .dropdown-menu li a.enable {
+  color: #FFFFFF;
+}
+
+.btn-group .dropdown-menu li a.enable:hover {
+  color: #FFFFFF;
+  background-color: #070707;
+}
+
+.btn-group .dropdown-menu li a.enable i {
+  display: inline-block;
+  float: left;
+  width: 15px;
+  height: 15px;
+  margin-top: 2px;
+  margin-right: 3px;
+  margin-left: 4px;
+}
+
+.btn-group .dropdown-menu li a.enable i.reboot {
+  background: url('../images/actions/action_instance_reboot.png') no-repeat left center;
+}
+
+.btn-group .dropdown-menu li a.enable i.snapshot {
+  background: url('../images/actions/action_instance_snapshot.png') no-repeat left center;
+}
+
+.btn-group .dropdown-menu li a.enable i.resize {
+  background: url('../images/actions/action_instance_resize.png') no-repeat left center;
+}
+
+.btn-group .dropdown-menu li a.enable i.addFloatingIp {
+  background: url('../images/actions/action_instance_addfloating.png') no-repeat left center;
+}
+
+.btn-group .dropdown-menu li a.enable i.removeFloatingIp {
+  background: url('../images/actions/action_instance_removefloating.png') no-repeat left center;
+}
+
+.btn-group .dropdown-menu li a.enable i.attach_volume {
+  background: url('../images/actions/action_instance_addvolume.png') no-repeat left center;
+}
+
+.btn-group .dropdown-menu li a.enable i.detach_volume {
+  background: url('../images/actions/action_instance_removevolume.png') no-repeat left center;
+}
+
+.btn-group .dropdown-menu li a.enable i.delete {
+  background: url('../images/actions/action_delete.png') no-repeat left center;
+}
+
+.btn-group .dropdown-menu li a.enable i.open_gateway {
+  background: url('../images/actions/opengateway.png') no-repeat left center;
+}
+
+.btn-group .dropdown-menu li a.enable i.clear_gateway {
+  background: url('../images/actions/closegateway.png') no-repeat left center;
+}
+
+.btn-group .dropdown-menu li a.enable i.add_interface {
+  background: url('../images/actions/connect.png') no-repeat left center;
+}
+
+.btn-group .dropdown-menu li a.disabled {
+  color: #989898;
+  cursor: not-allowed;
+}
+
+.btn-group .dropdown-menu li a.disabled:hover {
+  background-color: #515151;
+}
+
+.btn-group .dropdown-menu li a.disabled i {
+  display: inline-block;
+  float: left;
+  width: 15px;
+  height: 15px;
+  margin-top: 2px;
+  margin-right: 3px;
+  margin-left: 4px;
+}
+
+.btn-group .dropdown-menu li a.disabled i.reboot {
+  background: url('../images/actions/action_instance_reboot_dis.png') no-repeat left center;
+}
+
+.btn-group .dropdown-menu li a.disabled i.snapshot {
+  background: url('../images/actions/action_instance_snapshot_dis.png') no-repeat left center;
+}
+
+.btn-group .dropdown-menu li a.disabled i.resize {
+  background: url('../images/actions/action_instance_resize_dis.png') no-repeat left center;
+}
+
+.btn-group .dropdown-menu li a.disabled i.addFloatingIp {
+  background: url('../images/actions/action_instance_addfloating_dis.png') no-repeat left center;
+}
+
+.btn-group .dropdown-menu li a.disabled i.removeFloatingIp {
+  background: url('../images/actions/action_instance_removefloating_dis.png') no-repeat left center;
+}
+
+.btn-group .dropdown-menu li a.disabled i.attach_volume {
+  background: url('../images/actions/action_instance_addvolume_dis.png') no-repeat left center;
+}
+
+.btn-group .dropdown-menu li a.disabled i.detach_volume {
+  background: url('../images/actions/action_instance_removevolume_dis.png') no-repeat left center;
+}
+
+.btn-group .dropdown-menu li a.disabled i.delete {
+  background: url('../images/actions/action_delete_dis.png') no-repeat left center;
+}
+
+.btn-group .dropdown-menu li a.disabled i.open_gateway {
+  background: url('../images/actions/opengateway_disable.png') no-repeat left center;
+}
+
+.btn-group .dropdown-menu li a.disabled i.clear_gateway {
+  background: url('../images/actions/closegateway_disable.png') no-repeat left center;
+}
+
+.btn-group .dropdown-menu li a.disabled i.add_interface {
+  background: url('../images/actions/connect_disable.png') no-repeat left center;
+}
+
+.edit-btn-group {
+  position: absolute;
+  top: 0;
+  right: 20px;
+}
+
+.edit-btn-group .btn {
+  padding: 4px 8px;
+  margin: 0 5px;
+  font-size: 12px;
+  line-height: 20px;
+}

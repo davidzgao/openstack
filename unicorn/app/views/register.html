@@ -1,0 +1,109 @@
+<div class="register-main"
+  ng-style="{height: registerMainHeight}">
+  <form name="register" method="POST">
+    <div class="register-container" ng-if="!registerSuccess">
+      <div class="register-header">{{note.header}}</div>
+      <div class="register-field-area">
+        <ul>
+          <li class="register-field">
+            <span class="field-title">{{ note.username }}</span>
+            <span class="field-input">
+              <input name="username" ng-model="user.username"
+              maxlength="20"
+              ng-focus="fieldFocus('username')"
+              ng-blur="fieldBlur('username')"
+              ng-class="validateStatus.username"
+              ng-disabled="fieldDisabled"
+              class="username">
+            </span>
+            <span class="field-status error"
+              ng-if="usernameStatus=='error'"></span>
+            <span class="field-status correct"
+              ng-if="usernameStatus=='correct'"></span>
+          </li>
+
+          <li class="register-field">
+            <span class="field-title">{{ note.email }}</span>
+            <span class="field-input">
+              <input name="email" ng-model="user.email"
+              ng-focus="fieldFocus('email')"
+              ng-blur="fieldBlur('email')"
+              ng-class="validateStatus.email"
+              ng-disabled="fieldDisabled"
+              class="email">
+            </span>
+            <span class="field-status error"
+              ng-if="emailStatus=='error'"></span>
+            <span class="field-status correct"
+              ng-if="emailStatus=='correct'"></span>
+          </li>
+
+          <li class="register-field">
+            <span class="field-title">{{ note.password }}</span>
+            <span class="field-input">
+              <input name="password" ng-model="user.password"
+              maxlength="20"
+              type="password"
+              ng-focus="fieldFocus('password')"
+              ng-blur="fieldBlur('password')"
+              ng-class="validateStatus.password"
+              ng-disabled="fieldDisabled"
+              class="password">
+            </span>
+            <span class="field-status error"
+              ng-if="passwordStatus=='error'"></span>
+            <span class="field-status correct"
+              ng-if="passwordStatus=='correct'"></span>
+          </li>
+
+          <li class="register-field">
+            <span class="field-title">{{ note.passwordConf }}</span>
+            <span class="field-input">
+              <input name="passwordConf" ng-model="user.passwordConf"
+              ng-focus="fieldFocus('passwordConf')"
+              ng-blur="fieldBlur('passwordConf')"
+              maxlength="20"
+              type="password"
+              ng-class="validateStatus.passwordConf"
+              ng-disabled="fieldDisabled"
+              class="password">
+            </span>
+            <span class="field-status error"
+              ng-if="passwordConfStatus=='error'"></span>
+            <span class="field-status correct"
+              ng-if="passwordConfStatus=='correct'"></span>
+          </li>
+        </ul>
+        <div class="register-status-area">
+          <span ng-if="!showLoading">{{ inputTips }}</span>
+          <div class="loading-area" ng-if="showLoading">
+            <div class="login-loading"></div>
+            <div class="login-loading-image"></div>
+          </div>
+        </div>
+        <ul>
+          <li class="register-field">
+            <span class="field-title"></span>
+            <span class="field-input">
+              <button name="submit"
+                ng-click="registerSubmit()"
+                class="register-submit">{{ note.submit }}</button>
+            </span>
+          </li>
+        </ul>
+      </div>
+      <div class="close-button" ng-click="goBack()">&times;</div>
+    </div>
+    <div class="register-success"
+      ng-if="registerSuccess">
+      <div class="success-title">
+        {{note.congratulation}}
+      </div>
+      <div class="success-tips">
+        <p>{{note.successTips}}</p>
+        <p>{{counter}}{{note.countDown}}</p>
+      </div>
+    </div>
+  </form>
+  <div class="unicorn-copyright-area"></div>
+</div>

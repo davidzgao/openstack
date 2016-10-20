@@ -1,0 +1,577 @@
+/* Modal style css. */
+.modal-dialog {
+  margin: 6% auto 0;
+  width: 450px;
+  min-width: 300px;
+
+  .modal-loading {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    z-index: 9999999;
+    top: 0;
+    left: 0;
+
+    .backend {
+      border-radius: 3px;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: #000;
+      opacity: .2;
+    }
+  }
+
+  .modal-content {
+    border: 0;
+    border-radius: 0;
+  }
+
+  & > .modal-content > .unicorn-modal-header > .header-row {
+    height: 40px;
+    background: #323232;
+    border-radius: 0;
+
+    & > .title {
+      display: inline-block;
+      white-space:nowrap;
+      max-width: 90%;
+      line-height: 30px;
+      margin-top: 5px;
+      margin-left: 10px;
+      font-size: 16px;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    & > .close {
+      line-height: 30px;
+      font-size: 24px;
+      color: #fff;
+      font-weight: 800;
+      margin-top: 3px;
+      margin-right: 10px;
+      opacity: 1;
+      text-align: center;
+
+      &:hover {
+        text-shadow: 0 0 20px #fff;
+        -webkit-transition: text-shadow .5s;
+        -o-transition: text-shadow .5s;
+        transition: text-shadow .5s;
+      }
+    }
+  }
+
+  .unicorn-modal-body {
+    font-size: 14px;
+    padding: 30px 30px;
+    padding-bottom: 15px;
+  }
+
+  .unicorn-modal-footer {
+    background: #f6f7f7;
+    height: 55px;
+    border-radius: 0 0 5px 5px;
+    position: relative;
+
+    button {
+      position: absolute;
+      margin-top: 15px;
+      right: 50px;
+      vertical-align: middle;
+      background-color: #515151;
+      padding: 6px 3px;
+      font-size: 12px;
+      width: 64px;
+      color:  #fff;
+
+      &:hover {
+        background-color: #363636;
+      }
+
+      &[name="stepPrevious"] {
+        position: absolute;
+        left: 50px;
+        right: auto;
+      }
+
+      &[name="cancel"] {
+        background-color: #e7e7e7;
+        color: #aaa;
+        right: 140px;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  & > .modal-content > .unicorn-modal-center {
+    width: 450px;
+  }
+
+  form > div > .step-header {
+    background: #f6f7f7;
+
+    & > .step-header-empty {
+      height: 30px;
+    }
+  }
+
+  form > div > .step-header > .step-notes {
+    height: 20px;
+    padding-left: 60px;
+    padding-right: 60px;
+    font-size: 14px;
+
+    & .step-parallel {
+      position: absolute;
+      margin-top: -20px;
+      margin-left: -50px;
+
+      & > .step-tab {
+        height: 40px;
+        line-height: 40px;
+        display: inline-block;
+        width: 90px;
+        text-align: center;
+        background-color: #e6e6e6;
+        border-radius: 8px 8px 0 0;
+        margin: 0 2px;
+        color: #aaa;
+        cursor: pointer;
+
+        &.active {
+          line-height: 40px;
+          background-color: #fff;
+          color: #888;
+        }
+        &.invalid {
+          color: #e43e3e;
+        }
+      }
+    }
+
+    & > table {
+      margin-top: 10px;
+      width: 100%;
+    }
+
+    & > table tr > .step-item {
+      height: 2px;
+      border: 1px solid #c9c9c9;
+      background: #c9c9c9;
+
+      & > .step-inner {
+        position: relative;
+      }
+
+      &:first-child {
+        width: 1px;
+      }
+
+      &.active {
+
+        & > .step-inner > .step-lead-field > .step-index {
+          background: #29aaee;
+        }
+
+        & > .step-inner > .step-lead-field > .step-note {
+          color: #29aaee;
+        }
+      }
+
+      & > .step-inner > .step-lead-field {
+        position: absolute;
+        display: inline-block;
+        margin-top: -35px;
+        right: -50px;
+        z-index: 1;
+        width: 100px;
+        text-align: center;
+
+        & > .step-note {
+          color: #666;
+        }
+
+        & > .step-index {
+          color: #fff;
+          position: absolute;
+          left: 50%;
+          margin-left: -11px;
+          top: 25px;
+          background: #d9d9d9;
+          border: 3px solid #d9d9d9;
+          width: 20px;
+          height: 20px;
+          font-size: 11px;
+          line-height: 14px;
+          text-align: center;
+          border-radius: 10px;
+        }
+      }
+    }
+  }
+
+  form > div > .fields-area {
+    position: relative;
+    width: 100%;
+    overflow-x: hidden;
+    padding: 0;
+    padding-top: 10px;
+    margin-bottom: 10px;
+
+    & .field-warning {
+      margin: 10px 14% 0px;
+      color: red;
+    }
+
+    & .field {
+      margin: 10px 10px;
+    }
+
+    & .field > .field-label {
+      display: inline-block;
+      width: 100px;
+      text-align: right;
+      margin-right: 10px;
+      vertical-align: top;
+      font-size: 12px;
+      font-weight: normal;
+      padding-top: 5px;
+      padding-bottom: 5px;
+
+      &.field-next-line {
+        display: block;
+      }
+    }
+
+    & > .modal-steps > .modal-step > .note {
+      text-align: center;
+      text-decoration: underline;
+      color: #2486b7;
+      cursor: pointer;
+    }
+
+    & .field-mulit-select {
+      display: inline-block;
+      vertical-align: top;
+      margin: 0px;
+      max-height: 120px;
+      overflow-y: auto;
+
+      &.invalid {
+        border: 1px solid #e36f6f;
+        border-radius: 3px;
+        padding: 3px;
+      }
+
+      & .field-select-area {
+        max-height: 100px;
+        max-width: 300px;
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        > .field-value {
+          display: inline-block;
+        }
+
+        > .field-value-disable {
+          cursor: not-allowed;
+        }
+      }
+
+      & .field-select-item {
+        display: inline-block;
+        width: 300px;
+        height: 30px;
+        padding-left: 8%;
+        margin: 5px 0;
+        line-height: 30px;
+        color: #29AAEE;
+        cursor: pointer;
+        background-color: #FFFFFF;
+        border: 1px solid #C5DEEB;
+        border-radius: 3px;
+      }
+
+      & .active {
+        color: white;
+        background-color: #69BFEB;
+        border-color: #69BFEB;
+      }
+
+      & .field-select-area::-webkit-scrollbar-thumb {
+        background: #666;
+      }
+    }
+
+    & .field .field-input {
+      vertical-align: middle;
+      display: inline-block;
+
+      &.ip {
+        line-height: normal;
+        .ip-checkbox {
+          position: relative;
+          margin-bottom: 3px; 
+          padding-top: 8px; 
+          padding-left: 6px; 
+          border: 1px solid #C5DEEB;
+          border-radius: 2px; 
+          &.selected {
+            background-color: #29AAEE;
+            border-color: #29AAEE;
+            &.invalid {
+              background-color: white;
+              border-color: #E43E3E;
+            }
+          }
+        }
+      }
+
+      & > .credential-switch {
+        display: inline-block;
+        background: #dddddd;
+        padding: 3px 6px;
+        vertical-align: middle;
+        color: #888;
+        cursor: pointer;
+
+        &.active {
+          background: #29aaee;
+          color: #fff;
+
+          &:hover {
+            background: #29aaee;
+          }
+        }
+
+        &:hover {
+          background: #68c4f2;
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  & .modal-tip {
+    position: relative;
+    height: 24px;
+    line-height: 24px;
+    padding-left: 120px;
+    padding-right: 3px;
+    color: #e43e3e;
+
+    & > .tips-pointer {
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      left: 20px;
+      top: 22px;
+
+      & > .tips-pointer-outer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0px;
+        height: 0px;
+        border: 5px solid transparent;
+        border-left: 5px solid #e36f6f;
+        border-top: 5px solid #e36f6f;
+        border-radius: 0 0 2px 2px;
+      }
+
+      & > .tips-pointer-inner {
+        position: absolute;
+        top: 0px;
+        left: 1px;
+        width: 0px;
+        height: 0px;
+        border: 4px solid transparent;
+        border-left: 4px solid #fff;
+        border-top: 4px solid #fff;
+        border-radius: 0 0 1px 1px;
+      }
+    }
+  }
+
+  form textarea {
+    resize: none;
+  }
+
+  .fields-area .field-input .checkbox-list-field {
+    display: inline-block;
+    line-height: 27px;
+    margin-right: 10px;
+  }
+
+  form input, form textarea, form select {
+    width: 240px;
+    border: 1px solid #c9c9c9;
+    border-radius: 3px;
+    padding: 5px 3px;
+    font-size: 12px;
+    vertical-align: middle;
+    background-color: #fff;
+
+    &:hover, &:focus {
+      outline: none;
+    }
+
+    &:focus {
+      border-color: #29aaee;
+    }
+
+    & > .clear-float {
+      clear: both;
+    }
+
+    &[type="checkbox"] {
+      padding: 0;
+      margin: 0;
+      margin-top: 4px;
+      width: 20px;
+    }
+
+    &.invalid {
+      border-color: #e36f6f;
+    }
+  }
+
+  form > div > .fields-area .modal-steps {
+    width: 1000%;
+    overflow-x: hidden;
+    -webkit-transition: margin-left .5s;
+    -o-transition: margin-left .5s;
+    transition: margin-left .5s;
+  }
+
+  form > div > .fields-area .modal-step {
+    width: 450px;
+    float: left;
+  }
+}
+
+.modal {
+  position: absolute;
+
+  form > div > .fields-area .modal-step {
+    max-height: 300px;
+    margin-right: -2px;
+    overflow-y: auto;
+  }
+
+  &.form-window {
+    & > .modal-dialog {
+      width: 500px;
+    }
+  }
+
+  &.window-larger {
+
+    form > div > .fields-area .modal-step {
+      max-height: 360px;
+      min-height: 350px;
+      margin-right: -2px;
+      overflow-y: auto;
+    }
+
+    & > .modal-dialog {
+      width: 850px;
+
+      .modal-content {
+        background: #e6e6e6;
+      }
+
+      .unicorn-modal-center {
+        border-right: 2px solid #e0e0e0;
+        background: #fff;
+        float: left;
+      }
+
+      .unicorn-modal-des {
+        width: 395px;
+        float: left;
+      }
+
+      .clear-float {
+        clear: both;
+      }
+    }
+  }
+}
+
+.member_box {
+  padding: 3px 5px;
+  padding-left: 15px;
+}
+
+.box-title {
+  height: 20px;
+  font-size: 16px;
+}
+
+.selected_box, .option_box {
+  margin-bottom: 5px;
+  .tbody_area {
+    max-height: 100px;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  .datatable {
+    margin-top: 25px;
+    max-height: 100px;
+  }
+}
+
+.table_in_form {
+  width: 100%;
+  table-layout: fixed;
+  .btn-primary {
+    padding: 0px 6px;
+    background-color: #29AAEE;
+    border-color: #29AAEE;
+    &:hover {
+      background-color: #05A0DB;
+      border-color: #05A0DB;
+    }
+  }
+  thead tr th .title {
+    display: block;
+    position: absolute;
+    top: -20px;
+  }
+  tbody tr {
+    height: 30px;
+    &:hover {
+      background: #F9F9F9;
+    }
+  }
+  td {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .edit-in-cell {
+    width: 80px;
+    padding: 5px;
+    height: 25px;
+    line-height: 14px;
+    outline: none;
+    border-radius: 3px;
+    border: 1px solid #C9C9C9;
+    &:focus {
+      border-color: #29AAEE;
+    }
+  }
+}
+
+.selected_box {
+  .btn-primary {
+    padding: 1px 8px;
+  }
+}

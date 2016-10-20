@@ -1,0 +1,51 @@
+<!-- unicorn application index -->
+<div class="unicorn-index">
+  <!-- unicorn left tool bar -->
+  <div class="unicorn-frame-left">
+    <div class="unicorn-tool-nav-logo">
+      <a target="_blank" href={{logoHyperLink}}></a>
+    </div>
+    <div class="unicorn-tool-nav" ng-controller='navbarCtrl'>
+      <accordion close-others='true' class='unicorn-tool-nav-bar'>
+        <accordion-group ng-repeat="dashboard in $dashboards" is-open="{true:'true'}[dashboard.slug==currentDashboardSlug]">
+        <accordion-heading ng-if="dashboard.single==false"
+        arrow="{{dashboard.slug}}">
+          {{dashboard.name}}
+          </accordion-heading>
+          <accordion-heading ng-if="dashboard.single==true">
+          <div class='unicorn-nav-single-heading'
+               ng-class="{true: 'active'}[dashboard.panels[0].slug==currentPanelSlug]" >
+              <a ui-sref="{{$view}}.{{dashboard.panels[0].slug}}"
+                 ng-class="{true: 'active'}[dashboard.panels[0].slug==currentPanelSlug]"
+                 class="unicorn-nav-single-panel">
+                <i class="unicorn-nav-{{dashboard.slug}}"></i>
+                <span>{{dashboard.name}}</span></a>
+             </div>
+          </accordion-heading>
+          <div class="nav-title-item"
+               ng-repeat="panel in dashboard.panels"
+               ng-if="dashboard.single==false">
+            <a ui-sref="{{$view}}.{{panel.slug}}"
+               ng-if="panel.slug != 'cloud_desktop'"
+               ng-class="{true: 'active'}[panel.slug==currentPanelSlug]">
+              <i class="unicorn-nav-{{panel.slug}}"></i><span>{{panel.name}}</span>
+            </a>
+            <a href="{{panel.href}}" target="_blank"
+               ng-if="panel.slug == 'cloud_desktop'"
+               ng-class="{true: 'active'}[panel.slug==currentPanelSlug]">
+              <i class="unicorn-nav-{{panel.slug}}"></i><span>{{panel.name}}</span>
+            </a>
+          </div>
+        </accordion-group>
+      </accordion>
+    </div>
+  </div>
+
+  <!-- unicorn main view page -->
+  <div class="unicorn-frame-main">
+    <div class="unicorn-frame-main-top-tool">
+      <div ng-include="'views/common/_nav_top.html'"></div>
+    </div>
+    <div class="unicorn-frame-main-center" ui-view></div>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+settings = {
+  "debug": 'true',
+  "websiteTitle": "ECONE",
+  "hyperLink": "http://www.hihuron.com",
+  "serverURL": "http://localhost:4000",
+  "cloud_desktop": "http://localhost:9000/#/login",
+  "gossipURL": "http://localhost:9000/gossip",
+  "locale": "zh_cn",
+  "defaultView": "dashboard",
+  "hiddenProjects": ["service"],
+  "default_nameservers": ["8.8.8.8"],
+  "default_network_type": "vxlan",
+  "enable_apply_time": true,
+  "defaultHypervisorType": "QEMU",
+  "instanceRecycle": "true",
+  "useFederator": false,
+  "cloud_desktop": "http://localhost:8080/#/",
+  "allowBrowsers": [{
+    "name": "firefox",
+    "version": 27,
+    "url": "http://www.firefox.com.cn/download/#more"
+  }, {
+    "name": "chrome",
+    "version": 27,
+    "url": "http://www.google.cn/intl/zh-CN/chrome"
+  }, {
+    "name": "ie",
+    "version": 10,
+    "url": "http://windows.microsoft.com/en-us/internet-explorer/download-ie"
+  }, {
+    "name": "safari",
+    "version": 7,
+    "url": "http://support.apple.com/downloads/#safari"
+  }]
+}

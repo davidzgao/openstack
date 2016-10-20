@@ -1,0 +1,31 @@
+<div class="unicorn-dashboard-snapshot">
+  <div class='common_page_tabs'>
+    <ul>
+      <li ng-repeat="tab in tabs"
+      ng-class="{active:isActiveTab(tab.template)}"
+      class="tab"
+      ng-click="onClickTab(tab)" ng-if="tab.enable">{{tab.title}}
+      </li>
+    </ul>
+  </div>
+
+  <div ng-include="currentTab"></div>
+
+  <script type="text/ng-template" id="network.html">
+    <div class="table-tab ui-view-container" ng-controller="dashboard.networks.PriNetworkCtr">
+      <div class="action_group" action-button buttons="actionButtons"
+        items="selectedItems">
+      </div>
+      <div datatable="networksOpts" class="router_table"></div>
+    </div>
+  </script>
+
+  <script type="text/ng-template" id="subnet.html">
+    <div class="table-tab ui-view-container" ng-controller="dashboard.networks.SubnetCtr">
+      <div class="action_group" action-button buttons="actionButtons"
+        items="selectedItems">
+      </div>
+      <div datatable="subnetsOpts" class="router_table"></div>
+    </div>
+  </script>
+</div>

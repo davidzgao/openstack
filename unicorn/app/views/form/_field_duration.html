@@ -1,0 +1,42 @@
+<div class="field-duration">
+  <label>{{field.label | i18n}}</label>
+  <div class="item-group" ng-if="!custom">
+    <span ng-repeat="item in itemOpts"
+      ng-class="{true: 'active'}[item.active]"
+      ng-click="selectChange($index)"
+      class="radio-item">{{item.name}}</span>
+    <span class="custom-duration"
+      ng-if="!custom"
+      ng-click="choice()">{{customAction}}</span>
+  </div>
+
+  <div class="input-group" ng-if="custom" ng-class="direction">
+    <input type="text" class="form-control"
+      ng-model="duration.value"
+      ng-change="durationCheck()"
+      ng-class="durationValidate"
+      value="customDuration" />
+    <div class="input-group-btn">
+      <button class="btn btn-default unit-button" type="button">
+        {{currentUnit.verbose}}</button>
+      <button class="btn btn-default dropdown-toggle"
+        data-toggle="dropdown"
+        type="button">
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu">
+        <li ng-repeat="unit in unitList"
+          class="unit-list"
+          ng-click="changeUnit($index)">{{unit.verbose}}</li>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <span class="field-error-tips" ng-if="field.invalidate && custom">
+    {{invalidMsg}}
+  </span>
+  <div class="return-select" ng-if="custom"
+    ng-click="choice()">
+    {{selectAction}}
+  </div>
+</div>

@@ -1,0 +1,583 @@
+@SELECTED_ITEM_BG: #69bfeb;
+.slider.slider-horizontal {
+  .slider-track {
+    border-radius: 0;
+    .slider-selection {
+      background: #269BD8;
+      border-radius: 2px;
+    }
+    .slider-handle {
+      opacity: 1;
+      background: #B5B5B5;
+      width: 10px;
+      height: 18px;
+      margin-top: -5px;
+      &.round {
+        border-radius: 4px;
+      }
+    }
+  }
+}
+
+
+.form-modal-view {
+  position: relative;
+  .unicorn-modal-header {
+    .header-row {
+      height: 40px;
+      background: #323232;
+      border-radius: 0;
+      .title {
+        display: inline-block;
+        white-space:nowrap;
+        max-width: 90%;
+        line-height: 30px;
+        margin-top: 5px;
+        margin-left: 10px;
+        font-size: 16px;
+        font-weight: 800;
+        color: #fff;
+      }
+      .close {
+        line-height: 30px;
+        font-size: 24px;
+        color: #fff;
+        font-weight: 800;
+        margin-top: 3px;
+        margin-right: 10px;
+        opacity: 1;
+        text-align: center;
+
+        &:hover {
+          text-shadow: 0 0 20px #fff;
+          -webkit-transition: text-shadow .5s;
+          -o-transition: text-shadow .5s;
+          transition: text-shadow .5s;
+        }
+      }
+    }
+  }
+}
+
+.form-modal-view {
+  .form-area {
+    .step-header {
+      background: #EDF7FC;
+    }
+  }
+}
+
+.form-area {
+  width: 500px;
+  float: left;
+  border-right: 2px solid #E0E0E0;
+  .form-footer {
+    position: relative;
+    height: 55px;
+    background: #EDF7FC;
+    border-radius: 0 0 5px 5px;
+    button {
+      position: absolute;
+      right: 50px;
+      width: 64px;
+      padding: 6px 3px;
+      margin-top: 15px;
+      font-size: 12px;
+      color: white;
+      vertical-align: middle;
+      border-bottom: 1px solid #AAAAAA;
+    }
+    button[name="stepPrevious"] {
+      position: absolute;
+      right: auto;
+      left: 50px;
+    }
+  }
+}
+
+.form-summary {
+  float: left;
+  width: 350px;
+  .summary-content {
+    width: 310px;
+    margin: 20px;
+    background: white;
+    height: 390px;
+    max-height: 427px;
+    overflow-y: auto;
+  }
+}
+.clear {
+  clear: both;
+}
+
+.steps-container {
+  max-height: 350px;
+  width: 450px;
+  position: relative;
+  width: 100%;
+  min-height: 80px;
+  padding: 0;
+  padding-top: 10px;
+  margin-bottom: 10px;
+  overflow-x: hidden;
+  .form-steps {
+    width: 1000%;
+    overflow-x: hidden;
+    transition: margin-left 0.5s;
+    .form-step {
+      width: 500px;
+      float: left;
+      max-height: 300px;
+      min-height: 260px;
+      overflow-y: auto;
+      .form-fields {
+        .field-error-tips {
+          color: #E43E3E;
+          display: block;
+          height: 24px;
+          padding-left: 85px;
+          line-height: 24px;
+          padding-right: 3px;
+          position: relative;
+        }
+        .standard-input {
+          margin: 15px 5px;
+          label {
+            width: 70px;
+            text-align: right;
+            margin-right: 5px;
+            vertical-align: middle;
+            margin-bottom: 0px;
+          }
+          &.textarea {
+            label {
+              float: left;
+              margin-top: 2px;
+            }
+          }
+          input {
+            height: 32px;
+            width: 320px;
+            margin-left: 5px;
+            &[disabled] {
+              cursor: not-allowed;
+            }
+          }
+          textarea {
+            width: 320px;
+            margin-left: 5px;
+          }
+          input[type='checkbox'] {
+            height: 15px;
+            margin-top: 0px;
+          }
+        }
+        .update-input {
+          margin: 15px 5px;
+          position: relative;
+          .current-tip {
+            width: 155px;
+            display: inline-block;
+            padding-left: 10px;
+          }
+          label {
+            width: 80px;
+            text-align: right;
+            margin-right: 5px;
+            vertical-align: middle;
+            margin-bottom: 0px;
+          }
+          input {
+            width: 160px;
+          }
+        }
+        .field-custom-radio {
+          margin: 15px 5px 5px 5px;
+          label {
+            width: 70px;
+            text-align: right;
+            margin-right: 5px;
+          }
+          .radio-item {
+            display: inline-block;
+            padding: 5px 14px;
+            margin: 2px 10px;
+            font-size: 12px;
+            cursor: pointer;
+            color: #747474;
+            border-radius: 16px;
+            background: #EFEFEF;
+            &:hover {
+              background: #DAD8D8;
+            }
+            &.active {
+              color: white;
+              background: @SELECTED_ITEM_BG;
+            }
+          }
+          .err_tips {
+            width: 200px;
+            height: 25px;
+            display: inline-block;
+            color: #E43E3E;
+          }
+        }
+        .field-select-list {
+          padding: 5px 10px 5px 10px;
+          .select-list-area {
+            width: 100%;
+            max-height: 250px;
+            overflow-y: auto;
+            padding-left: 30px;
+          }
+          .list-item {
+            width: 98%;
+            list-style: none;
+            height: 30px;
+            padding-left: 8%;
+            margin: 5px 0;
+            line-height: 30px;
+            color: #29AAEE;
+            cursor: pointer;
+            background-color: #FFFFFF;
+            border: 1px solid #C5DEEB;
+            border-radius: 3px;
+            &:hover {
+              background-color: #E6F0F6;
+            }
+            &.active {
+              background-color: @SELECTED_ITEM_BG;
+              color: white;
+              border-color: @SELECTED_ITEM_BG;
+            }
+            &.list-null {
+              color: #E43E3E;
+            }
+          }
+        }
+        .field_select_button {
+          label {
+            width: 70px;
+            text-align: right;
+            margin-right: 5px;
+            margin-top: 12px;
+          }
+          .select-button-group {
+            width: 100%;
+            height: auto;
+            padding-left: 30px;
+            ul {
+              margin: 0px;
+            }
+            .select-button {
+              margin: 5px 5px;
+              width: 17%;
+              height: 30px;
+              line-height: 30px;
+              border-radius: 2px;
+              display: inline-block;
+              float: left;
+              text-align: center;
+              vertical-align: middle;
+              cursor: pointer;
+              border: 1px solid #C5DEEB;
+              &.active {
+                color: white;
+                background-color: @SELECTED_ITEM_BG;
+                border: 1px solid @SELECTED_ITEM_BG;
+              }
+              &.false {
+                color: #949494;
+                background-color: #E3E3E3;
+                border: 1px solid #E3E3E3;
+                cursor: not-allowed;
+              }
+            }
+          }
+        }
+        .field-slider {
+          margin: 10px 5px;
+          label {
+            width: 70px;
+            text-align: right;
+            margin-right: 15px;
+          }
+          .slider-input {
+            width: 70px;
+            margin-left: 16px;
+          }
+        }
+        .field-duration {
+          margin: 10px 5px;
+          position: relative;
+          .return-select {
+            position: absolute;
+            right: 25px;
+            top: 10px;
+            color: #29AAEE;
+            cursor: pointer;
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+          label {
+            width: 70px;
+            text-align: right;
+            margin-right: 5px;
+          }
+          .input-group {
+            left: 8px;
+            .form-control {
+              width: 226px;
+              height: 32px;
+              box-shadow: none;
+            }
+            .caret {
+              margin-left: 3px;
+            }
+            .unit-button {
+              width: 60px;
+              &:hover {
+                background-color: white;
+                color: #333333;
+              }
+              &:focus {
+                background-color: white;
+                color: #333333;
+              }
+            }
+            .input-group-btn {
+              width: auto;
+              .btn-default {
+                padding-top: 4px;
+              }
+            }
+            .dropdown-menu {
+              left: -2px;
+              margin: 0px;
+              padding: 0px;
+              width: 60px;
+              min-width: 60px;
+              .unit-list {
+                width: 100%;
+                text-align: center;
+                cursor: pointer;
+                padding: 3px;
+                &:hover {
+                  background: #29AAEE;
+                  color: white;
+                }
+              }
+            }
+            label {
+              width: auto;
+              height: 32px;
+              border: 1px solid #C9C9C9;
+              margin: 0px;
+              line-height: 30px;
+            }
+          }
+          .custom-duration {
+            display: inline-block;
+            color: #29AAEE;
+            cursor: pointer;
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+        .field-s-radio, .field-duration {
+          margin: 10px 5px;
+          label {
+            width: 70px;
+            text-align: right;
+            margin-right: 5px;
+            float: left;
+            margin-top: 8px;
+          }
+          .item-group {
+            display: inline-block;
+            width: 390px;
+            height: 34px;
+            margin-left: 9px;
+          }
+          .radio-item {
+            display: inline-block;
+            padding: 5px 14px;
+            margin: 2px 4px;
+            font-size: 12px;
+            cursor: pointer;
+            color: #747474;
+            border-radius: 16px;
+            background: #EFEFEF;
+            &:hover {
+              background: #DAD8D8;
+            }
+            &.active {
+              color: white;
+              background: @SELECTED_ITEM_BG;
+            }
+          }
+        }
+        .ip-input-area {
+          width: 350px;
+          margin-left: 75px;
+          .ip-select {
+            position: relative;
+            width: 340px;
+            max-height: 150px;
+            padding-left: 10px;
+            float: left;
+            .ip-error-tip {
+              color: #E36F6F;
+            }
+            .ip-select-area {
+              position: relative;
+              .ip-input {
+                padding: 3px;
+                &.selected {
+                  border: 1px solid #29AAEE;
+                  &.invalid {
+                    border: 1px solid #E36F6F;
+                  }
+                  &.valid {
+                    background-color: #29AAEE;
+                  }
+                }
+              }
+              .select-cancel {
+                position: absolute;
+                top: 10px;
+                right: 40px;
+                width: 25px;
+                height: 25px;
+                font-size: 20px;
+                font-weight: 800;
+                line-height: 25px;
+                cursor: pointer;
+                &:hover {
+                  text-shadow: 0 0 20px #000;
+                  transition: text-shadow 0.5s;
+                }
+              }
+            }
+          }
+          .invalidate-tips {
+            color: #E36F6F;
+          }
+        }
+        .field-complex-select {
+          .select-list-area {
+            .list-item {
+              &.active {
+                .btn-group {
+                  a {
+                    color: #EEEEEE;
+                    &:hover {
+                      text-decoration: none;
+                    }
+                  }
+                }
+              }
+              .btn-group {
+                a {
+                  margin-left: 5px;
+                  &:hover {
+                    text-decoration: none;
+                  }
+                }
+                &.open {
+                  .dropdown-toggle {
+                    background: #29AAEE;
+                    color: #EEEEEE;
+                  }
+                  .dropdown-menu {
+                    width: 160px;
+                    background-color: #FFFFFF;
+                    li {
+                      color: #29AAEE;
+                      height: 22px;
+                      line-height: 22px;
+                      padding-left: 3px;
+                      &:hover {
+                        background-color: #E6F0F6;
+                      }
+                      &.selected {
+                        background-color: #29AAEE;
+                        color: #EEEEEE;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        .field-muti-select, .field-complex-select {
+          label {
+            width: 70px;
+            text-align: right;
+            margin-right: 5px;
+            margin-top: 12px;
+            float: left;
+          }
+          .select-list-area {
+            width: 340px;
+            float: left;
+            max-height: 250px;
+            min-height: 135px;
+            overflow-y: auto;
+            padding-left: 10px;
+            .list-item {
+              list-style: none;
+              width: 98%;
+              height: 30px;
+              padding-left: 5%;
+              line-height: 30px;
+              cursor: pointer;
+              background-color: white;
+              border: 1px solid #C5DEEB;
+              border-radius: 3px;
+              margin: 5px 0px;
+              color: #29AAEE;
+              &:hover {
+                background-color: #E6F0F6;
+              }
+              &.active {
+                background-color: #29AAEE;
+                color: #EEEEEE;
+                border-color: #29AAEE;
+              }
+              &.list-null {
+                color: #E43E3E;
+              }
+            }
+          }
+          .clear {
+            clear: both;
+          }
+          .error-tips {
+            width: 100%;
+            padding-left: 110px;
+            color: #E43E3E;
+          }
+        }
+      }
+    }
+  }
+}
+
+.form-flat-view {
+  .form-step-summ {
+    margin-left: 18px;
+    font-size: 14px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #F4F5F6;
+  }
+}
+
+.form-warning {
+  margin: 5px 7% 5px;
+  color: red;
+}

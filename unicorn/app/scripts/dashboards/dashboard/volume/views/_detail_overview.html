@@ -1,0 +1,21 @@
+<div detail-tips
+  detail="volume_detail">
+</div>
+<div detail-stitcher key-set=detailKeySet source=volume_detail>
+</div>
+
+<div class='other_info detail_info'>
+    <div class='detail_title'>{{ note.attachment.info }}</div>
+  <div class='detail_area'>
+    <ul>
+      <li>
+        <span class="title">{{note.attachment.instanceName}}</span>
+        <span class="value"> {{volume_detail.attachments}}</span>
+      </li>
+      <li ng-show="volume_detail.attachDevice">
+        <span class="title">{{note.attachment.attachDevice}}</span>
+        <span class="value"> {{volume_detail.attachDevice}}</span>
+      </li>
+    </ul>
+  </div>
+</div>

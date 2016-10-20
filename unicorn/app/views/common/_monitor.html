@@ -1,0 +1,8 @@
+<div>
+  <div class="monitor-item-titel">{{indicatorSet.item}}</div>
+  <div detail-tips class="monitor-data-status"
+    flag="cpuUtil.flag"
+    ng-if="cpuUtil.flag.loading"></div>
+  <div ng-if="cpuUtil.flag.null"
+  class="datatable-null-tips">{{indicatorSet.tip}}</div>
+</div>

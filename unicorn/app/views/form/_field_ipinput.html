@@ -1,0 +1,23 @@
+<div>
+  <div ng-repeat="ip in ipObj" class="ip-select">
+    <div>{{"Network" | i18n}}: {{ip.name}}</div>
+    <div ng-repeat="address in ip.value" class="ip-select-area">
+      <div form-ip address=address
+        ng-click="ipChange(address, ip.value, ip.key)"
+        validate='address.validate(address, ip)'
+        set=ip
+        ng-class=address.select
+        class="{{address.invalid}}">
+      </div>
+      <div ng-show="address.select" class='select-cancel'
+          ng-click="selectCancel(address, ip.key, $event)">&times;
+      </div>
+      <div ng-show="address.invalid&&address.invalid!='valid'&&address.select"
+          class="ip-error-tip">
+          {{address.err_tip}}
+      </div>
+    </div>
+  </div>
+  <div ng-if="field.invalidate" class="invalidate-tips">
+      {{field.error_tips}}</div>
+</div>

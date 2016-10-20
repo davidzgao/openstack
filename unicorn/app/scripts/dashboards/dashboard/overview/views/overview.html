@@ -1,0 +1,134 @@
+<div class="unicorn-dashboard-overview">
+  <div class="service-list overview-item">
+    <div class="item-title" ng-bind="note.services"></div>
+    <div class="services">
+      <a class="instance-applay item"
+        ng-click="workflowReq(instance_req_name, $event)">
+        <span class="content" ng-bind="note.apply.instance"></span>
+      </a>
+      <a class="volume-applay item"
+        ng-click="workflowReq(volume_req_name, $event)">
+        <span class="content" ng-bind="note.apply.volume"></span>
+      </a>
+      <a class="floatingIp-applay item"
+        ng-click="workflowReq(floating_req_name, $event)">
+        <span class="content" ng-bind="note.apply.floatingIp"></span>
+      </a>
+    </div>
+    <div ng-include="'views/common/_global_loading.html'"></div>
+    <div form-view form-options=formOptions
+      target=currentTarget></div>
+  </div>
+  <div class="resource-quota overview-item">
+    <div class="item-title" ng-bind="note.quota"></div>
+    <div class="apply-quota btn btn-enable"
+      ng-click="applyQuota()">{{note.applyQuota}}</div>
+    <div class="quota">
+      <div class="usage-item">
+        <div val="usage.instance" class="sectorDirective resource-usage">
+          <div class="sector-outer">
+            <div class="sector-inner">
+              <span class="{{usage.instanceState}}">{{usage.instanceUsed}}/</span><span>{{usage.instanceTotal}}</span>
+            </div>
+            <svg><path class="{{usage.instanceState}}" /></svg>
+          </div>
+        </div>
+        <div class="usage-item-name">{{note.usage.instance}}({{note.unit.num}})</div>
+      </div>
+      <div class="usage-item">
+        <div val="usage.vcpu" class="sectorDirective resource-usage">
+          <div class="sector-outer">
+            <div class="sector-inner">
+              <span class="{{usage.vcpuState}}">{{usage.vcpuUsed}}/</span><span>{{usage.vcpuTotal}}</span>
+            </div>
+            <svg><path class="{{usage.vcpuState}}" /></svg>
+          </div>
+        </div>
+        <div class="usage-item-name">{{note.usage.vcpu}}({{note.unit.core}})</div>
+      </div>
+
+      <div class="usage-item">
+        <div val="usage.ram" class="sectorDirective resource-usage">
+          <div class="sector-outer">
+            <div class="sector-inner">
+              <span class="{{usage.ramState}}">{{usage.ramUsed}}/</span><span>{{usage.ramTotal}}</span>
+            </div>
+            <svg><path class="{{usage.ramState}}" /></svg>
+          </div>
+        </div>
+        <div class="usage-item-detail">
+        </div>
+        <div class="usage-item-name">{{note.usage.ram}}({{note.unit.gb}})</div>
+      </div>
+      <div class="usage-item">
+        <div val="usage.volume" class="sectorDirective resource-usage">
+          <div class="sector-outer">
+            <div class="sector-inner">
+              <span class="{{usage.volumeState}}">{{usage.volumeUsed}}/</span><span>{{usage.volumeTotal}}</span>
+            </div>
+            <svg><path class="{{usage.volumeState}}" /></svg>
+          </div>
+        </div>
+        <div class="usage-item-name">{{note.usage.volume}}({{note.unit.num}})</div>
+      </div>
+
+      <div class="usage-item">
+        <div val="usage.volumeCapacity" class="sectorDirective resource-usage">
+          <div class="sector-outer">
+            <div class="sector-inner">
+              <span class="{{usage.volumeCapacityState}}">{{usage.volumeCapacityUsed}}/</span><span>{{usage.volumeCapacityTotal}}</span>
+            </div>
+            <svg><path class="{{usage.volumeCapacityState}}" /></svg>
+          </div>
+        </div>
+        <div class="usage-item-name">{{note.usage.volumeCapacity}}({{note.unit.gb}})</div>
+      </div>
+
+      <div class="usage-item">
+        <div val="usage.floatingIP" class="sectorDirective resource-usage">
+          <div class="sector-outer">
+            <div class="sector-inner">
+              <span class="{{usage.floatingIPState}}">{{usage.floatingIPUsed}}/</span><span>{{usage.floatingIPTotal}}</span>
+            </div>
+            <svg><path class="{{usage.floatingIPState}}" /></svg>
+          </div>
+        </div>
+        <div class="usage-item-name">{{note.usage.floatingIP}}({{note.unit.num}})</div>
+      </div>
+    </div>
+  </div>
+  <div class="recent overview-item">
+    <div class="recent-operation">
+      <div class="item-title">
+        <span>{{note.operationLog}}</span>
+        <div class="item-more"><a ui-sref='dashboard.log'>{{note.more}}&nbsp;&raquo;</a></div>
+      </div>
+      <div class="logs">
+        <div class="item" ng-repeat="log in logs">
+          <div class="content">
+            <span>{{log.action_msg}}</span>
+            <span class="status {{log.state}}"></span>
+            <span>{{'Operator'|i18n}}: </span>
+            <span>{{log.user_name}}</span></div>
+          <div class="time">{{log.generated|dateLocalize | date:'yyyy-MM-dd HH:mm:ss'}}</div>
+        </div>
+        <div ng-if="!logs.length" class="empty-item" ng-bind="note.empty.log"></div>
+      </div>
+    </div>
+    <div class="middle-split"></div>
+    <div class="recent-alarm">
+      <div class="item-title">
+        <span ng-bind="note.workflow"></span>
+        <div class="item-more"><a ui-sref='dashboard.workflow_log'>{{note.more}}&nbsp;&raquo;</a></div>
+      </div>
+      <div class="alarms">
+        <div class="item" ng-repeat="workflow in workflow_logs">
+          <div class="content" ng-bind="workflow.content"></div>
+          <div class="time">{{workflow.generated | dateLocalize | date:'yyyy-MM-dd HH:mm:ss'}}</div>
+        </div>
+        <div ng-if="!workflow_logs.length" class="empty-item" ng-bind="note.empty.alarm"></div>
+      </div>
+    </div>
+    <div class="clear-float"></div>
+  </div>
+</div>

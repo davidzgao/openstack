@@ -1,0 +1,20 @@
+<div class="service-list-panel">
+  <div class="service-area">
+    <ul>
+    <li class="service-item" ng-repeat="service in services"
+      data-toggle="popover" data-position="top"
+      name=service.display_name
+      content=service.display_name
+      ng-if="service.name!='register'"
+      ex-popover>
+      <div class="item-image" ng-class="service.name"
+          ng-click="loadForm(service.id)"></div>
+      {{service.display_name | i18n}}
+    </li>
+    </ul>
+    <div class="clear"></div>
+    <div form-view form-options=formOptions
+      target=currentTarget></div>
+  </div>
+  <div ng-include="'views/common/_global_loading.html'"></div>
+</div>
